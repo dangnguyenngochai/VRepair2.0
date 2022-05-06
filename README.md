@@ -1,4 +1,12 @@
-# VRepair
+# NOTE
+
+Replication steps for source training:
+
+- Step 1: Generating the config file for opennmt
+- Step 2: Change the configuration for train_config.yml and vocab_config.yml
+- Step 3: Run the training script
+
+# VRepair(old repo README)
 
 This repository provides data and source files related to our paper on "Neural Transfer Learning for Repairing Security Vulnerabilities in C Code" (IEEE Transactions on Software Engineering, 2022), see <https://arxiv.org/pdf/2104.08308>
 
