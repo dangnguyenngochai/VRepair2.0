@@ -1,0 +1,1 @@
+static int mpeg4_decode_profile_level ( MpegEncContext * s , GetBitContext * gb ) //<S2SV> { //<S2SV> s -> avctx -> profile = get_bits ( gb , 4 ) ; //<S2SV> s -> avctx -> level = get_bits ( gb , 4 ) ; //<S2SV> if ( s -> avctx -> profile == 0 && s -> avctx -> level == 8 ) { //<S2SV> s -> avctx -> level = 0 ; //<S2SV> } //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

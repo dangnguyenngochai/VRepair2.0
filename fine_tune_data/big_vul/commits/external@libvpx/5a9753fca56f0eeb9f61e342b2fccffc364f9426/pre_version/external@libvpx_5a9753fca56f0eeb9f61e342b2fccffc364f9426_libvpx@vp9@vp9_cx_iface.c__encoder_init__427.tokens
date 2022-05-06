@@ -1,0 +1,1 @@
+static vpx_codec_err_t encoder_init ( vpx_codec_ctx_t * ctx , //<S2SV> vpx_codec_priv_enc_mr_cfg_t * data ) { //<S2SV> return encoder_common_init ( ctx ) ; //<S2SV> } //<S2SV> 

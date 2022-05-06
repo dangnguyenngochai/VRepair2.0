@@ -1,0 +1,1 @@
+static INLINE int write_bit_gte ( vp9_writer * w , int word , int test ) { //<S2SV> vp9_write_literal ( w , word >= test , 1 ) ; //<S2SV> return word >= test ; //<S2SV> } //<S2SV> 

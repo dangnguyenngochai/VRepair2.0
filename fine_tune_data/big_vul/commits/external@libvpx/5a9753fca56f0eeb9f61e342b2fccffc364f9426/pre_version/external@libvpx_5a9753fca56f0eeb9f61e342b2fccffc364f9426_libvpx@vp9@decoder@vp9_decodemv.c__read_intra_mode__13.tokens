@@ -1,0 +1,1 @@
+static MB_PREDICTION_MODE read_intra_mode ( vp9_reader * r , const vp9_prob * p ) { //<S2SV> return ( MB_PREDICTION_MODE ) vp9_read_tree ( r , vp9_intra_mode_tree , p ) ; //<S2SV> } //<S2SV> 

@@ -1,0 +1,1 @@
+void vp9_remove_common ( VP9_COMMON * cm ) { //<S2SV> vp9_free_frame_buffers ( cm ) ; //<S2SV> vp9_free_internal_frame_buffers ( & cm -> int_frame_buffers ) ; //<S2SV> } //<S2SV> 

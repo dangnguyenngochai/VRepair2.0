@@ -1,0 +1,1 @@
+void user_describe ( const struct key * key , struct seq_file * m ) //<S2SV> { //<S2SV> seq_puts ( m , key -> description ) ; //<S2SV> if ( key_is_positive ( key ) ) //<S2SV> seq_printf ( m , ":<S2SV_blank>%u" , key -> datalen ) ; //<S2SV> } //<S2SV> 

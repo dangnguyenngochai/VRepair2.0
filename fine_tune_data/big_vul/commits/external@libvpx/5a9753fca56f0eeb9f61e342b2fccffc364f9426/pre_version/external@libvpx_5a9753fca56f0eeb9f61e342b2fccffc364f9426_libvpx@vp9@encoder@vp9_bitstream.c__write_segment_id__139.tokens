@@ -1,0 +1,1 @@
+static void write_segment_id ( vp9_writer * w , const struct segmentation * seg , //<S2SV> int segment_id ) { //<S2SV> if ( seg -> enabled && seg -> update_map ) //<S2SV> vp9_write_tree ( w , vp9_segment_tree , seg -> tree_probs , segment_id , 3 , 0 ) ; //<S2SV> } //<S2SV> 

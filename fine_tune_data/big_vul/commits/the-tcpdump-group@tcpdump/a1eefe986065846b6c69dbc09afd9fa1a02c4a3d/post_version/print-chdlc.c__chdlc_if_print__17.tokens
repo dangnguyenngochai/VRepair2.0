@@ -1,0 +1,1 @@
+u_int //<S2SV> chdlc_if_print ( netdissect_options * ndo , const struct pcap_pkthdr * h , register const u_char * p ) //<S2SV> { //<S2SV> return chdlc_print ( ndo , p , h -> len ) ; //<S2SV> } //<S2SV> 

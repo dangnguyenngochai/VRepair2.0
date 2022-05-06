@@ -1,0 +1,1 @@
+static void prefetch_enc ( void ) //<S2SV> { //<S2SV> enc_tables . counter_head ++ ; //<S2SV> enc_tables . counter_tail ++ ; //<S2SV> prefetch_table ( ( const void * ) & enc_tables , sizeof ( enc_tables ) ) ; //<S2SV> } //<S2SV> 

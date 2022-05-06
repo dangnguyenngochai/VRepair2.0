@@ -1,0 +1,1 @@
+static void sample_to_timespec ( const clockid_t which_clock , //<S2SV> union cpu_time_count cpu , //<S2SV> struct timespec * tp ) //<S2SV> { //<S2SV> if ( CPUCLOCK_WHICH ( which_clock ) == CPUCLOCK_SCHED ) //<S2SV> * tp = ns_to_timespec ( cpu . sched ) ; //<S2SV> else //<S2SV> cputime_to_timespec ( cpu . cpu , tp ) ; //<S2SV> } //<S2SV> 

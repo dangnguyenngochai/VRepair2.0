@@ -1,0 +1,1 @@
+void uwbd_stop ( struct uwb_rc * rc ) //<S2SV> { //<S2SV> if ( rc -> uwbd . task ) //<S2SV> kthread_stop ( rc -> uwbd . task ) ; //<S2SV> uwbd_flush ( rc ) ; //<S2SV> } //<S2SV> 

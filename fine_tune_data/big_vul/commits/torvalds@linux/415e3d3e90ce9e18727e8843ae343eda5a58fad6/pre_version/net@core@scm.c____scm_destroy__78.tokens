@@ -1,0 +1,1 @@
+void __scm_destroy ( struct scm_cookie * scm ) //<S2SV> { //<S2SV> struct scm_fp_list * fpl = scm -> fp ; //<S2SV> int i ; //<S2SV> if ( fpl ) { //<S2SV> scm -> fp = NULL ; //<S2SV> for ( i = fpl -> count - 1 ; i >= 0 ; i -- ) //<S2SV> fput ( fpl -> fp [ i ] ) ; //<S2SV> kfree ( fpl ) ; //<S2SV> } //<S2SV> } //<S2SV> 

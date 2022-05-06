@@ -1,0 +1,1 @@
+static inline int accept_server_socket ( int s ) //<S2SV> { //<S2SV> struct sockaddr_un client_address ; //<S2SV> socklen_t clen ; //<S2SV> int fd = accept ( s , ( struct sockaddr * ) & client_address , & clen ) ; //<S2SV> APPL_TRACE_DEBUG ( "accepted<S2SV_blank>fd:%d<S2SV_blank>for<S2SV_blank>server<S2SV_blank>fd:%d" , fd , s ) ; //<S2SV> return fd ; //<S2SV> } //<S2SV> 

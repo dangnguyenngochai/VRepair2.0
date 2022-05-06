@@ -1,0 +1,1 @@
+static const SvcInternal_t * get_const_svc_internal ( //<S2SV> const SvcContext * svc_ctx ) { //<S2SV> if ( svc_ctx == NULL ) return NULL ; //<S2SV> return ( const SvcInternal_t * ) svc_ctx -> internal ; //<S2SV> } //<S2SV> 

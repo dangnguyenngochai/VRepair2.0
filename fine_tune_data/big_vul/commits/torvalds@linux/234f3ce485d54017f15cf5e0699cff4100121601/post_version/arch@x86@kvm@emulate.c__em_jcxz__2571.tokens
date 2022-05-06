@@ -1,0 +1,1 @@
+static int em_jcxz ( struct x86_emulate_ctxt * ctxt ) //<S2SV> { //<S2SV> int rc = X86EMUL_CONTINUE ; //<S2SV> if ( address_mask ( ctxt , reg_read ( ctxt , VCPU_REGS_RCX ) ) == 0 ) //<S2SV> rc = jmp_rel ( ctxt , ctxt -> src . val ) ; //<S2SV> return rc ; //<S2SV> } //<S2SV> 

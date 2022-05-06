@@ -1,0 +1,1 @@
+void dev_load ( struct net * net , const char * name ) //<S2SV> { //<S2SV> struct net_device * dev ; //<S2SV> rcu_read_lock ( ) ; //<S2SV> dev = dev_get_by_name_rcu ( net , name ) ; //<S2SV> rcu_read_unlock ( ) ; //<S2SV> if ( ! dev && capable ( CAP_NET_ADMIN ) ) //<S2SV> request_module ( "%s" , name ) ; //<S2SV> } //<S2SV> 

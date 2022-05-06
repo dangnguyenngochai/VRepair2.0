@@ -1,0 +1,1 @@
+static void //<S2SV> swabHorAcc32 ( TIFF * tif , uint8 * cp0 , tmsize_t cc ) //<S2SV> { //<S2SV> uint32 * wp = ( uint32 * ) cp0 ; //<S2SV> tmsize_t wc = cc / 4 ; //<S2SV> TIFFSwabArrayOfLong ( wp , wc ) ; //<S2SV> horAcc32 ( tif , cp0 , cc ) ; //<S2SV> } //<S2SV> 

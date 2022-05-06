@@ -1,0 +1,1 @@
+MagickExport void * AcquireQuantumMemory ( const size_t count , const size_t quantum ) //<S2SV> { //<S2SV> size_t //<S2SV> extent ; //<S2SV> if ( HeapOverflowSanityCheck ( count , quantum ) != MagickFalse ) //<S2SV> return ( ( void * ) NULL ) ; //<S2SV> extent = count * quantum ; //<S2SV> return ( AcquireMagickMemory ( extent ) ) ; //<S2SV> } //<S2SV> 

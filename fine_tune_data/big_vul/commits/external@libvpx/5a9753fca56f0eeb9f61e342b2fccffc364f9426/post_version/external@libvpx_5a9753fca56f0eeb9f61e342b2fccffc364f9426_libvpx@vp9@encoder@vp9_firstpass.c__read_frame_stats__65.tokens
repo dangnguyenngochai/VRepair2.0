@@ -1,0 +1,1 @@
+static const FIRSTPASS_STATS * read_frame_stats ( const TWO_PASS * p , int offset ) { //<S2SV> if ( ( offset >= 0 && p -> stats_in + offset >= p -> stats_in_end ) || //<S2SV> ( offset < 0 && p -> stats_in + offset < p -> stats_in_start ) ) { //<S2SV> return NULL ; //<S2SV> } //<S2SV> return & p -> stats_in [ offset ] ; //<S2SV> } //<S2SV> 

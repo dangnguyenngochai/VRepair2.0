@@ -1,0 +1,1 @@
+static inline bool unconditional ( const struct arpt_arp * arp ) //<S2SV> { //<S2SV> static const struct arpt_arp uncond ; //<S2SV> return memcmp ( arp , & uncond , sizeof ( uncond ) ) == 0 ; //<S2SV> } //<S2SV> 

@@ -1,0 +1,1 @@
+int av_reallocp_array ( void * ptr , size_t nmemb , size_t size ) //<S2SV> { //<S2SV> void * * ptrptr = ptr ; //<S2SV> * ptrptr = av_realloc_f ( * ptrptr , nmemb , size ) ; //<S2SV> if ( ! * ptrptr && ! ( nmemb && size ) ) //<S2SV> return AVERROR ( ENOMEM ) ; //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

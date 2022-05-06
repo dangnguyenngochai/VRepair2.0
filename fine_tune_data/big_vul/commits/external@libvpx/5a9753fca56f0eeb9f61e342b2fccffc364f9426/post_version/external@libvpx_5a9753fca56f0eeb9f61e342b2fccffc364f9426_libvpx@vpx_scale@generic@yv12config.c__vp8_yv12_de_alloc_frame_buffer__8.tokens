@@ -1,0 +1,1 @@
+int //<S2SV> vp8_yv12_de_alloc_frame_buffer ( YV12_BUFFER_CONFIG * ybf ) { //<S2SV> if ( ybf ) { //<S2SV> if ( ybf -> buffer_alloc_sz > 0 ) { //<S2SV> vpx_free ( ybf -> buffer_alloc ) ; //<S2SV> } //<S2SV> memset ( ybf , 0 , sizeof ( YV12_BUFFER_CONFIG ) ) ; //<S2SV> } else { //<S2SV> return - 1 ; //<S2SV> } //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

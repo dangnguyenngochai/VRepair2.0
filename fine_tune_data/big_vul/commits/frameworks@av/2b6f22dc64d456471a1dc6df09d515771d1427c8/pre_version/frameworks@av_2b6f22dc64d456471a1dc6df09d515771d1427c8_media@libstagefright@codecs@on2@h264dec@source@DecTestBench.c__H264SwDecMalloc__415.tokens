@@ -1,0 +1,1 @@
+void * H264SwDecMalloc ( u32 size ) //<S2SV> { //<S2SV> # if defined ( CHECK_MEMORY_USAGE ) //<S2SV> static u32 numBytes = 0 ; //<S2SV> numBytes += size ; //<S2SV> DEBUG ( ( "Allocated<S2SV_blank>%d<S2SV_blank>bytes,<S2SV_blank>total<S2SV_blank>%d\\n" , size , numBytes ) ) ; //<S2SV> # endif //<S2SV> return malloc ( size ) ; //<S2SV> } //<S2SV> 

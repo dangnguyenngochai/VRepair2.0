@@ -1,0 +1,1 @@
+int yr_re_match ( //<S2SV> RE * re , //<S2SV> const char * target ) //<S2SV> { //<S2SV> return yr_re_exec ( //<S2SV> re -> code , //<S2SV> ( uint8_t * ) target , //<S2SV> strlen ( target ) , //<S2SV> re -> flags | RE_FLAGS_SCAN , //<S2SV> NULL , //<S2SV> NULL ) ; //<S2SV> } //<S2SV> 

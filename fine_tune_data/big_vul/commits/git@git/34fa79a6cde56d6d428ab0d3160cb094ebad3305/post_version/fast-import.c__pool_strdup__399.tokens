@@ -1,0 +1,1 @@
+static char * pool_strdup ( const char * s ) //<S2SV> { //<S2SV> size_t len = strlen ( s ) + 1 ; //<S2SV> char * r = pool_alloc ( len ) ; //<S2SV> memcpy ( r , s , len ) ; //<S2SV> return r ; //<S2SV> } //<S2SV> 

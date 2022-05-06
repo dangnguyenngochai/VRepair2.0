@@ -1,0 +1,1 @@
+int yr_re_ast_create ( //<S2SV> RE_AST * * re_ast ) //<S2SV> { //<S2SV> * re_ast = ( RE_AST * ) yr_malloc ( sizeof ( RE_AST ) ) ; //<S2SV> if ( * re_ast == NULL ) //<S2SV> return ERROR_INSUFFICIENT_MEMORY ; //<S2SV> ( * re_ast ) -> flags = 0 ; //<S2SV> ( * re_ast ) -> root_node = NULL ; //<S2SV> return ERROR_SUCCESS ; //<S2SV> } //<S2SV> 

@@ -1,0 +1,1 @@
+static int ion_handle_put ( struct ion_handle * handle ) //<S2SV> { //<S2SV> struct ion_client * client = handle -> client ; //<S2SV> int ret ; //<S2SV> mutex_lock ( & client -> lock ) ; //<S2SV> ret = kref_put ( & handle -> ref , ion_handle_destroy ) ; //<S2SV> mutex_unlock ( & client -> lock ) ; //<S2SV> return ret ; //<S2SV> } //<S2SV> 

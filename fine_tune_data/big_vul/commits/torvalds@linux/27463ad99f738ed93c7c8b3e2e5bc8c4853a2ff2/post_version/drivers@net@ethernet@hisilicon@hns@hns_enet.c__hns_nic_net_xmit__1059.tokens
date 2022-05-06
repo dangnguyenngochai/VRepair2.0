@@ -1,0 +1,1 @@
+static netdev_tx_t hns_nic_net_xmit ( struct sk_buff * skb , //<S2SV> struct net_device * ndev ) //<S2SV> { //<S2SV> struct hns_nic_priv * priv = netdev_priv ( ndev ) ; //<S2SV> assert ( skb -> queue_mapping < ndev -> ae_handle -> q_num ) ; //<S2SV> return hns_nic_net_xmit_hw ( ndev , skb , //<S2SV> & tx_ring_data ( priv , skb -> queue_mapping ) ) ; //<S2SV> } //<S2SV> 

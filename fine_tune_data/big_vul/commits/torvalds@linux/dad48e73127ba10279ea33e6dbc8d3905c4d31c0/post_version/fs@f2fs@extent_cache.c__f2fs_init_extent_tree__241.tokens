@@ -1,0 +1,1 @@
+bool f2fs_init_extent_tree ( struct inode * inode , struct f2fs_extent * i_ext ) //<S2SV> { //<S2SV> bool ret = __f2fs_init_extent_tree ( inode , i_ext ) ; //<S2SV> if ( ! F2FS_I ( inode ) -> extent_tree ) //<S2SV> set_inode_flag ( inode , FI_NO_EXTENT ) ; //<S2SV> return ret ; //<S2SV> } //<S2SV> 

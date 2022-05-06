@@ -1,0 +1,1 @@
+int X509_verify ( X509 * a , EVP_PKEY * r ) //<S2SV> { //<S2SV> if ( X509_ALGOR_cmp ( a -> sig_alg , a -> cert_info -> signature ) ) //<S2SV> return 0 ; //<S2SV> return ( ASN1_item_verify ( ASN1_ITEM_rptr ( X509_CINF ) , a -> sig_alg , //<S2SV> a -> signature , a -> cert_info , r ) ) ; //<S2SV> } //<S2SV> 

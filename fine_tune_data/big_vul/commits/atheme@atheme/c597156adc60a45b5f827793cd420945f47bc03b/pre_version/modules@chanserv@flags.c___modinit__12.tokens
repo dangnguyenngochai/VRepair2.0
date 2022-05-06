@@ -1,0 +1,1 @@
+void _modinit ( module_t * m ) //<S2SV> { //<S2SV> service_named_bind_command ( "chanserv" , & cs_flags ) ; //<S2SV> } //<S2SV> 

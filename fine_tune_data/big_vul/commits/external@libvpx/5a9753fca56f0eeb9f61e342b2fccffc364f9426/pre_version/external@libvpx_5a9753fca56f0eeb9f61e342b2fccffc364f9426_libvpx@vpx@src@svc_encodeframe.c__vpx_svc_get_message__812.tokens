@@ -1,0 +1,1 @@
+const char * vpx_svc_get_message ( const SvcContext * svc_ctx ) { //<S2SV> const SvcInternal * const si = get_const_svc_internal ( svc_ctx ) ; //<S2SV> if ( svc_ctx == NULL || si == NULL ) return NULL ; //<S2SV> return si -> message_buffer ; //<S2SV> } //<S2SV> 

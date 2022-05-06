@@ -1,0 +1,1 @@
+void * //<S2SV> xcalloc ( size_t num , size_t size ) //<S2SV> { //<S2SV> size_t res ; //<S2SV> if ( check_mul_overflow ( num , size , & res ) ) //<S2SV> abort ( ) ; //<S2SV> void * ptr ; //<S2SV> ptr = malloc ( res ) ; //<S2SV> if ( ptr ) //<S2SV> { //<S2SV> memset ( ptr , '\\0' , ( res ) ) ; //<S2SV> } //<S2SV> return ptr ; //<S2SV> } //<S2SV> 

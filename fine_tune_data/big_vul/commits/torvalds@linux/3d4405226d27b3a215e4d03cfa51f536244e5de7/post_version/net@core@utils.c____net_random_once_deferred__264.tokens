@@ -1,0 +1,1 @@
+static void __net_random_once_deferred ( struct work_struct * w ) //<S2SV> { //<S2SV> struct __net_random_once_work * work = //<S2SV> container_of ( w , struct __net_random_once_work , work ) ; //<S2SV> BUG_ON ( ! static_key_enabled ( work -> key ) ) ; //<S2SV> static_key_slow_dec ( work -> key ) ; //<S2SV> kfree ( work ) ; //<S2SV> } //<S2SV> 

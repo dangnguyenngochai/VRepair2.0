@@ -1,0 +1,1 @@
+static void prefetch_enc ( void ) //<S2SV> { //<S2SV> prefetch_table ( ( const void * ) encT , sizeof ( encT ) ) ; //<S2SV> } //<S2SV> 

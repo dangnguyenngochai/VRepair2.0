@@ -1,0 +1,1 @@
+struct bpf_map * bpf_map_get_with_uref ( u32 ufd ) //<S2SV> { //<S2SV> struct fd f = fdget ( ufd ) ; //<S2SV> struct bpf_map * map ; //<S2SV> map = __bpf_map_get ( f ) ; //<S2SV> if ( IS_ERR ( map ) ) //<S2SV> return map ; //<S2SV> bpf_map_inc ( map , true ) ; //<S2SV> fdput ( f ) ; //<S2SV> return map ; //<S2SV> } //<S2SV> 

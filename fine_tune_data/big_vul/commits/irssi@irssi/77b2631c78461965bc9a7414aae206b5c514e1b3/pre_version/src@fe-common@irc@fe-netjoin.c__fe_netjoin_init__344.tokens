@@ -1,0 +1,1 @@
+void fe_netjoin_init ( void ) //<S2SV> { //<S2SV> settings_add_bool ( "misc" , "hide_netsplit_quits" , TRUE ) ; //<S2SV> settings_add_int ( "misc" , "netjoin_max_nicks" , 10 ) ; //<S2SV> join_tag = - 1 ; //<S2SV> printing_joins = FALSE ; //<S2SV> read_settings ( ) ; //<S2SV> signal_add ( "setup<S2SV_blank>changed" , ( SIGNAL_FUNC ) read_settings ) ; //<S2SV> } //<S2SV> 

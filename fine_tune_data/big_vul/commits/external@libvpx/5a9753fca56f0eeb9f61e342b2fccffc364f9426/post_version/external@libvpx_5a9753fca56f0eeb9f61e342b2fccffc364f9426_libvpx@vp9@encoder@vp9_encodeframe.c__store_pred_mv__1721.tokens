@@ -1,0 +1,1 @@
+static INLINE void store_pred_mv ( MACROBLOCK * x , PICK_MODE_CONTEXT * ctx ) { //<S2SV> memcpy ( ctx -> pred_mv , x -> pred_mv , sizeof ( x -> pred_mv ) ) ; //<S2SV> } //<S2SV> 

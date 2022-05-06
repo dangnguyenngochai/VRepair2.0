@@ -1,0 +1,1 @@
+static TX_MODE read_tx_mode ( vpx_reader * r ) { //<S2SV> TX_MODE tx_mode = vpx_read_literal ( r , 2 ) ; //<S2SV> if ( tx_mode == ALLOW_32X32 ) //<S2SV> tx_mode += vpx_read_bit ( r ) ; //<S2SV> return tx_mode ; //<S2SV> } //<S2SV> 

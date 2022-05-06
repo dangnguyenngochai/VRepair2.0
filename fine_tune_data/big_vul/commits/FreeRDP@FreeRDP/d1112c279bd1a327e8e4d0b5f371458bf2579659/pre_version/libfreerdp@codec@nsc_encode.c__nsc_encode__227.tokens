@@ -1,0 +1,1 @@
+void nsc_encode ( NSC_CONTEXT * context , const BYTE * bmpdata , UINT32 rowstride ) //<S2SV> { //<S2SV> nsc_encode_argb_to_aycocg ( context , bmpdata , rowstride ) ; //<S2SV> if ( context -> ChromaSubsamplingLevel ) //<S2SV> { //<S2SV> nsc_encode_subsampling ( context ) ; //<S2SV> } //<S2SV> } //<S2SV> 

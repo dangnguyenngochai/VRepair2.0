@@ -1,0 +1,1 @@
+int16_t vp9_dc_quant ( int qindex , int delta ) { //<S2SV> return dc_qlookup [ clamp ( qindex + delta , 0 , MAXQ ) ] ; //<S2SV> } //<S2SV> 

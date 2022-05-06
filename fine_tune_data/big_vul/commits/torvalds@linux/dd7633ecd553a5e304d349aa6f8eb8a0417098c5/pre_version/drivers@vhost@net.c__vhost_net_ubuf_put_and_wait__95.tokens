@@ -1,0 +1,1 @@
+static void vhost_net_ubuf_put_and_wait ( struct vhost_net_ubuf_ref * ubufs ) //<S2SV> { //<S2SV> kref_put ( & ubufs -> kref , vhost_net_zerocopy_done_signal ) ; //<S2SV> wait_event ( ubufs -> wait , ! atomic_read ( & ubufs -> kref . refcount ) ) ; //<S2SV> kfree ( ubufs ) ; //<S2SV> } //<S2SV> 

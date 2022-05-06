@@ -1,0 +1,1 @@
+void * jas_realloc ( void * ptr , size_t size ) //<S2SV> { //<S2SV> void * result ; //<S2SV> JAS_DBGLOG ( 101 , ( "jas_realloc(%x,<S2SV_blank>%zu)\\n" , ptr , size ) ) ; //<S2SV> result = realloc ( ptr , size ) ; //<S2SV> JAS_DBGLOG ( 100 , ( "jas_realloc(%p,<S2SV_blank>%zu)<S2SV_blank>-><S2SV_blank>%p\\n" , ptr , size , result ) ) ; //<S2SV> return result ; //<S2SV> } //<S2SV> 

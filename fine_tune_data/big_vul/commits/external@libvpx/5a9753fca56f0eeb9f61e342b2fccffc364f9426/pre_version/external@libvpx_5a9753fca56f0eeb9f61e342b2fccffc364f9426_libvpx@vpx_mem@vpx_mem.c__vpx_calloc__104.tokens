@@ -1,0 +1,1 @@
+void * vpx_calloc ( size_t num , size_t size ) { //<S2SV> void * x ; //<S2SV> x = vpx_memalign ( DEFAULT_ALIGNMENT , num * size ) ; //<S2SV> if ( x ) //<S2SV> VPX_MEMSET_L ( x , 0 , num * size ) ; //<S2SV> return x ; //<S2SV> } //<S2SV> 

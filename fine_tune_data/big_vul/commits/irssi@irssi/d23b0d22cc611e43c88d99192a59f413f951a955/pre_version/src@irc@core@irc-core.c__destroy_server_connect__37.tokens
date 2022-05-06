@@ -1,0 +1,1 @@
+static void destroy_server_connect ( SERVER_CONNECT_REC * conn ) //<S2SV> { //<S2SV> IRC_SERVER_CONNECT_REC * ircconn ; //<S2SV> ircconn = IRC_SERVER_CONNECT ( conn ) ; //<S2SV> if ( ircconn == NULL ) //<S2SV> return ; //<S2SV> g_free_not_null ( ircconn -> usermode ) ; //<S2SV> g_free_not_null ( ircconn -> alternate_nick ) ; //<S2SV> } //<S2SV> 

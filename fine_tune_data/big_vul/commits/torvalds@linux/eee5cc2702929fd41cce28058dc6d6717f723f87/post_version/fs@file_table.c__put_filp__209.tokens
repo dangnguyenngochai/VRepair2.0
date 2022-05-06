@@ -1,0 +1,1 @@
+void put_filp ( struct file * file ) //<S2SV> { //<S2SV> if ( atomic_long_dec_and_test ( & file -> f_count ) ) { //<S2SV> security_file_free ( file ) ; //<S2SV> file_free ( file ) ; //<S2SV> } //<S2SV> } //<S2SV> 

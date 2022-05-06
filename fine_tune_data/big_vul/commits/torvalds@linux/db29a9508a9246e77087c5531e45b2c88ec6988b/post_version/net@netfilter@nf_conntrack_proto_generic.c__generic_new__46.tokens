@@ -1,0 +1,1 @@
+static bool generic_new ( struct nf_conn * ct , const struct sk_buff * skb , //<S2SV> unsigned int dataoff , unsigned int * timeouts ) //<S2SV> { //<S2SV> return nf_generic_should_process ( nf_ct_protonum ( ct ) ) ; //<S2SV> } //<S2SV> 

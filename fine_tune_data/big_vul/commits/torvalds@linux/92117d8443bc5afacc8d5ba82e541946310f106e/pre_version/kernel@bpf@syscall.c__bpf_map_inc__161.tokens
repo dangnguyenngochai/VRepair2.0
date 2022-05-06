@@ -1,0 +1,1 @@
+void bpf_map_inc ( struct bpf_map * map , bool uref ) //<S2SV> { //<S2SV> atomic_inc ( & map -> refcnt ) ; //<S2SV> if ( uref ) //<S2SV> atomic_inc ( & map -> usercnt ) ; //<S2SV> } //<S2SV> 

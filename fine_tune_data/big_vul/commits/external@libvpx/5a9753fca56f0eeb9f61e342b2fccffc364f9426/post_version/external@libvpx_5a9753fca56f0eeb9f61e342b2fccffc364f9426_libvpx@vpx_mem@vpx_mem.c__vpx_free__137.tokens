@@ -1,0 +1,1 @@
+void vpx_free ( void * memblk ) { //<S2SV> if ( memblk ) { //<S2SV> void * addr = ( void * ) ( ( ( size_t * ) memblk ) [ - 1 ] ) ; //<S2SV> free ( addr ) ; //<S2SV> } //<S2SV> } //<S2SV> 

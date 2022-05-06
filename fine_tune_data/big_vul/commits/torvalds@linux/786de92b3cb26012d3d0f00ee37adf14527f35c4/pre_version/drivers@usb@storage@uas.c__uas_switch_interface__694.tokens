@@ -1,0 +1,1 @@
+static int uas_switch_interface ( struct usb_device * udev , //<S2SV> struct usb_interface * intf ) //<S2SV> { //<S2SV> int alt ; //<S2SV> alt = uas_find_uas_alt_setting ( intf ) ; //<S2SV> if ( alt < 0 ) //<S2SV> return alt ; //<S2SV> return usb_set_interface ( udev , //<S2SV> intf -> altsetting [ 0 ] . desc . bInterfaceNumber , alt ) ; //<S2SV> } //<S2SV> 

@@ -1,0 +1,1 @@
+void GKI_delay ( UINT32 timeout_ms ) { //<S2SV> struct timespec delay ; //<S2SV> delay . tv_sec = timeout_ms / 1000 ; //<S2SV> delay . tv_nsec = 1000 * 1000 * ( timeout_ms % 1000 ) ; //<S2SV> int err ; //<S2SV> do { //<S2SV> err = nanosleep ( & delay , & delay ) ; //<S2SV> } while ( err == - 1 && errno == EINTR ) ; //<S2SV> } //<S2SV> 

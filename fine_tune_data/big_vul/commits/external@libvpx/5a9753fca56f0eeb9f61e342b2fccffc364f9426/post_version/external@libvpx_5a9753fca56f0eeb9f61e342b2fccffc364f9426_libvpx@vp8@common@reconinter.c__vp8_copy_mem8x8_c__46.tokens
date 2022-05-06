@@ -1,0 +1,1 @@
+void vp8_copy_mem8x8_c ( //<S2SV> unsigned char * src , //<S2SV> int src_stride , //<S2SV> unsigned char * dst , //<S2SV> int dst_stride ) //<S2SV> { //<S2SV> int r ; //<S2SV> for ( r = 0 ; r < 8 ; r ++ ) //<S2SV> { //<S2SV> memcpy ( dst , src , 8 ) ; //<S2SV> src += src_stride ; //<S2SV> dst += dst_stride ; //<S2SV> } //<S2SV> } //<S2SV> 

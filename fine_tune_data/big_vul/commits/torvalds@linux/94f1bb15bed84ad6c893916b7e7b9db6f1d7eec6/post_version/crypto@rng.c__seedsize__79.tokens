@@ -1,0 +1,1 @@
+static unsigned int seedsize ( struct crypto_alg * alg ) //<S2SV> { //<S2SV> struct rng_alg * ralg = container_of ( alg , struct rng_alg , base ) ; //<S2SV> return ralg -> seedsize ; //<S2SV> } //<S2SV> 

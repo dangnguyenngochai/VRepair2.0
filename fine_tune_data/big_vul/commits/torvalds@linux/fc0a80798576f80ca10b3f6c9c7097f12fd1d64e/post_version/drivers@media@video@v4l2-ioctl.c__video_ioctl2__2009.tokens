@@ -1,0 +1,1 @@
+long video_ioctl2 ( struct file * file , //<S2SV> unsigned int cmd , unsigned long arg ) //<S2SV> { //<S2SV> return video_usercopy ( file , cmd , arg , __video_do_ioctl ) ; //<S2SV> } //<S2SV> 

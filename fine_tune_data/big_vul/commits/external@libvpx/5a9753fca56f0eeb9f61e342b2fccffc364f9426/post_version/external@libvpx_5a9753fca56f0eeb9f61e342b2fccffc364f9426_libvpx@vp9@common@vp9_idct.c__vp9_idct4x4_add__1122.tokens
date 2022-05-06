@@ -1,0 +1,1 @@
+void vp9_idct4x4_add ( const tran_low_t * input , uint8_t * dest , int stride , //<S2SV> int eob ) { //<S2SV> if ( eob > 1 ) //<S2SV> vpx_idct4x4_16_add ( input , dest , stride ) ; //<S2SV> else //<S2SV> vpx_idct4x4_1_add ( input , dest , stride ) ; //<S2SV> } //<S2SV> 

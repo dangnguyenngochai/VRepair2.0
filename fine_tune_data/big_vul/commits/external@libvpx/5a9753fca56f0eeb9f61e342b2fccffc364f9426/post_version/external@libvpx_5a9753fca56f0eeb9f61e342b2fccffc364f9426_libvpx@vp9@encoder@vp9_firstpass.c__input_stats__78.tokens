@@ -1,0 +1,1 @@
+static int input_stats ( TWO_PASS * p , FIRSTPASS_STATS * fps ) { //<S2SV> if ( p -> stats_in >= p -> stats_in_end ) //<S2SV> return EOF ; //<S2SV> * fps = * p -> stats_in ; //<S2SV> ++ p -> stats_in ; //<S2SV> return 1 ; //<S2SV> } //<S2SV> 

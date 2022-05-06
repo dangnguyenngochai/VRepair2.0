@@ -1,0 +1,1 @@
+static void addArgumentToVtab ( Parse * pParse ) { //<S2SV> if ( pParse -> sArg . z && pParse -> pNewTable ) { //<S2SV> const char * z = ( const char * ) pParse -> sArg . z ; //<S2SV> int n = pParse -> sArg . n ; //<S2SV> sqlite3 * db = pParse -> db ; //<S2SV> addModuleArgument ( db , pParse -> pNewTable , sqlite3DbStrNDup ( db , z , n ) ) ; //<S2SV> } //<S2SV> } //<S2SV> 

@@ -1,0 +1,1 @@
+static int load_segment_descriptor ( struct x86_emulate_ctxt * ctxt , //<S2SV> u16 selector , int seg ) //<S2SV> { //<S2SV> u8 cpl = ctxt -> ops -> cpl ( ctxt ) ; //<S2SV> return __load_segment_descriptor ( ctxt , selector , seg , cpl , false ) ; //<S2SV> } //<S2SV> 

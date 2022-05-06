@@ -1,0 +1,1 @@
+static vp9_variance_fn_t get_block_variance_fn ( BLOCK_SIZE bsize ) { //<S2SV> switch ( bsize ) { //<S2SV> case BLOCK_8X8 : //<S2SV> return vp9_mse8x8 ; //<S2SV> case BLOCK_16X8 : //<S2SV> return vp9_mse16x8 ; //<S2SV> case BLOCK_8X16 : //<S2SV> return vp9_mse8x16 ; //<S2SV> default : //<S2SV> return vp9_mse16x16 ; //<S2SV> } //<S2SV> } //<S2SV> 

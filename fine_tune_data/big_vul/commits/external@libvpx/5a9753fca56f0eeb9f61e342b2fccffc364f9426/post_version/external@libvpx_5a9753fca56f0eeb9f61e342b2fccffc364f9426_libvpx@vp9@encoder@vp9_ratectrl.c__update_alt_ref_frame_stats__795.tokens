@@ -1,0 +1,1 @@
+static void update_alt_ref_frame_stats ( VP9_COMP * cpi ) { //<S2SV> RATE_CONTROL * const rc = & cpi -> rc ; //<S2SV> rc -> frames_since_golden = 0 ; //<S2SV> rc -> source_alt_ref_pending = 0 ; //<S2SV> rc -> source_alt_ref_active = 1 ; //<S2SV> } //<S2SV> 

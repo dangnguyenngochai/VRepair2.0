@@ -1,0 +1,1 @@
+static int jas_iccgetuint32 ( jas_stream_t * in , jas_iccuint32_t * val ) //<S2SV> { //<S2SV> jas_ulonglong tmp ; //<S2SV> if ( jas_iccgetuint ( in , 4 , & tmp ) ) //<S2SV> return - 1 ; //<S2SV> * val = tmp ; //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

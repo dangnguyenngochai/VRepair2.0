@@ -1,0 +1,1 @@
+static void usage ( ) { //<S2SV> printf ( "Usage:\\n" ) ; //<S2SV> printf ( "%s<S2SV_blank><input_yuv><S2SV_blank><width>x<height><S2SV_blank><target_width>x<target_height><S2SV_blank>" , //<S2SV> exec_name ) ; //<S2SV> printf ( "<output_yuv><S2SV_blank>[<frames>]\\n" ) ; //<S2SV> } //<S2SV> 

@@ -1,0 +1,1 @@
+void vp9_tree_probs_from_distribution ( vp9_tree tree , //<S2SV> unsigned int branch_ct [ ] [ 2 ] , //<S2SV> const unsigned int num_events [ ] ) { //<S2SV> convert_distribution ( 0 , tree , branch_ct , num_events ) ; //<S2SV> } //<S2SV> 

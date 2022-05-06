@@ -1,0 +1,1 @@
+static void get_nb10 ( ut8 * dbg_data , SCV_NB10_HEADER * res ) { //<S2SV> const int nb10sz = 16 ; //<S2SV> memcpy ( res , dbg_data , nb10sz ) ; //<S2SV> res -> file_name = ( ut8 * ) strdup ( ( const char * ) dbg_data + nb10sz ) ; //<S2SV> } //<S2SV> 

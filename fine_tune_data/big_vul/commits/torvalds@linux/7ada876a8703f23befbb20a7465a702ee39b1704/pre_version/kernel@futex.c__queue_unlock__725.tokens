@@ -1,0 +1,1 @@
+static inline void //<S2SV> queue_unlock ( struct futex_q * q , struct futex_hash_bucket * hb ) //<S2SV> { //<S2SV> spin_unlock ( & hb -> lock ) ; //<S2SV> drop_futex_key_refs ( & q -> key ) ; //<S2SV> } //<S2SV> 

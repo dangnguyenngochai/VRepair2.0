@@ -1,0 +1,1 @@
+int vp9_loop_filter_worker ( void * arg1 , void * arg2 ) { //<S2SV> LFWorkerData * const lf_data = ( LFWorkerData * ) arg1 ; //<S2SV> ( void ) arg2 ; //<S2SV> vp9_loop_filter_rows ( lf_data -> frame_buffer , lf_data -> cm , & lf_data -> xd , //<S2SV> lf_data -> start , lf_data -> stop , lf_data -> y_only ) ; //<S2SV> return 1 ; //<S2SV> } //<S2SV> 

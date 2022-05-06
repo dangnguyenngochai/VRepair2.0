@@ -1,0 +1,1 @@
+static unsigned long vp8_priv_sz ( const vpx_codec_dec_cfg_t * si , vpx_codec_flags_t flags ) //<S2SV> { //<S2SV> ( void ) si ; //<S2SV> ( void ) flags ; //<S2SV> return sizeof ( vpx_codec_alg_priv_t ) ; //<S2SV> } //<S2SV> 

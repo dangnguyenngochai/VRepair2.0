@@ -1,0 +1,1 @@
+static ssize_t driver_override_show ( struct device * dev , //<S2SV> struct device_attribute * attr , char * buf ) //<S2SV> { //<S2SV> struct platform_device * pdev = to_platform_device ( dev ) ; //<S2SV> return sprintf ( buf , "%s\\n" , pdev -> driver_override ) ; //<S2SV> } //<S2SV> 

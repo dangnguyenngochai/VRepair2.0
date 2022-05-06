@@ -1,0 +1,1 @@
+static void btsnoop_write ( const void * data , size_t length ) { //<S2SV> if ( logfile_fd != INVALID_FD ) //<S2SV> write ( logfile_fd , data , length ) ; //<S2SV> btsnoop_net_write ( data , length ) ; //<S2SV> } //<S2SV> 

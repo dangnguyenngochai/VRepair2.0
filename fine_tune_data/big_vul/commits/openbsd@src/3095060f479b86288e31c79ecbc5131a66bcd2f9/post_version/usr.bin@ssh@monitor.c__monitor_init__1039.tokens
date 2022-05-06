@@ -1,0 +1,1 @@
+struct monitor * //<S2SV> monitor_init ( void ) //<S2SV> { //<S2SV> struct monitor * mon ; //<S2SV> mon = xcalloc ( 1 , sizeof ( * mon ) ) ; //<S2SV> monitor_openfds ( mon , 1 ) ; //<S2SV> return mon ; //<S2SV> } //<S2SV> 

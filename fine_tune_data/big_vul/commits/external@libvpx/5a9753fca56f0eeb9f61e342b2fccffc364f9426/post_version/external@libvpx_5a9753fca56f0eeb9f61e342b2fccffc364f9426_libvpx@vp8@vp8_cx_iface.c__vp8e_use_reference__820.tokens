@@ -1,0 +1,1 @@
+static vpx_codec_err_t vp8e_use_reference ( vpx_codec_alg_priv_t * ctx , //<S2SV> va_list args ) //<S2SV> { //<S2SV> int reference_flag = va_arg ( args , int ) ; //<S2SV> vp8_use_as_reference ( ctx -> cpi , reference_flag ) ; //<S2SV> return VPX_CODEC_OK ; //<S2SV> } //<S2SV> 

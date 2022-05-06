@@ -1,0 +1,1 @@
+void vp9_frame_init_quantizer ( VP9_COMP * cpi ) { //<S2SV> cpi -> zbin_mode_boost = 0 ; //<S2SV> vp9_init_plane_quantizers ( cpi , & cpi -> mb ) ; //<S2SV> } //<S2SV> 

@@ -1,0 +1,1 @@
+double vp9_convert_qindex_to_q ( int qindex ) { //<S2SV> return vp9_ac_quant ( qindex , 0 ) / 4.0 ; //<S2SV> } //<S2SV> 

@@ -1,0 +1,1 @@
+int TS_OBJ_print_bio ( BIO * bio , const ASN1_OBJECT * obj ) //<S2SV> { //<S2SV> char obj_txt [ 128 ] ; //<S2SV> OBJ_obj2txt ( obj_txt , sizeof ( obj_txt ) , obj , 0 ) ; //<S2SV> BIO_printf ( bio , "%s\\n" , obj_txt ) ; //<S2SV> return 1 ; //<S2SV> } //<S2SV> 

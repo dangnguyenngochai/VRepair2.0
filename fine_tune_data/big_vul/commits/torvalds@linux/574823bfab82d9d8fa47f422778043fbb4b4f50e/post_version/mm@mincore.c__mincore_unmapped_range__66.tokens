@@ -1,0 +1,1 @@
+static int mincore_unmapped_range ( unsigned long addr , unsigned long end , //<S2SV> struct mm_walk * walk ) //<S2SV> { //<S2SV> unsigned char * vec = walk -> private ; //<S2SV> unsigned long nr = ( end - addr ) >> PAGE_SHIFT ; //<S2SV> memset ( vec , 0 , nr ) ; //<S2SV> walk -> private += nr ; //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

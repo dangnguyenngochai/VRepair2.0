@@ -1,0 +1,1 @@
+static int command_read ( struct pci_dev * dev , int offset , u16 * value , void * data ) //<S2SV> { //<S2SV> int ret = pci_read_config_word ( dev , offset , value ) ; //<S2SV> const struct pci_cmd_info * cmd = data ; //<S2SV> * value &= PCI_COMMAND_GUEST ; //<S2SV> * value |= cmd -> val & ~ PCI_COMMAND_GUEST ; //<S2SV> return ret ; //<S2SV> } //<S2SV> 

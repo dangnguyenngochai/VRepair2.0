@@ -1,0 +1,1 @@
+void mp_decode_to_lua_array ( lua_State * L , mp_cur * c , size_t len ) { //<S2SV> assert ( len <= UINT_MAX ) ; //<S2SV> int index = 1 ; //<S2SV> lua_newtable ( L ) ; //<S2SV> while ( len -- ) { //<S2SV> lua_pushnumber ( L , index ++ ) ; //<S2SV> mp_decode_to_lua_type ( L , c ) ; //<S2SV> if ( c -> err ) return ; //<S2SV> lua_settable ( L , - 3 ) ; //<S2SV> } //<S2SV> } //<S2SV> 

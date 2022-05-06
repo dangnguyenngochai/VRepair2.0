@@ -1,0 +1,1 @@
+void vp9_lookahead_destroy ( struct lookahead_ctx * ctx ) { //<S2SV> if ( ctx ) { //<S2SV> if ( ctx -> buf ) { //<S2SV> unsigned int i ; //<S2SV> for ( i = 0 ; i < ctx -> max_sz ; i ++ ) //<S2SV> vpx_free_frame_buffer ( & ctx -> buf [ i ] . img ) ; //<S2SV> free ( ctx -> buf ) ; //<S2SV> } //<S2SV> free ( ctx ) ; //<S2SV> } //<S2SV> } //<S2SV> 

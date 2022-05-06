@@ -1,0 +1,1 @@
+void vp9_foreach_transformed_block ( const MACROBLOCKD * const xd , //<S2SV> BLOCK_SIZE bsize , //<S2SV> foreach_transformed_block_visitor visit , //<S2SV> void * arg ) { //<S2SV> int plane ; //<S2SV> for ( plane = 0 ; plane < MAX_MB_PLANE ; ++ plane ) //<S2SV> vp9_foreach_transformed_block_in_plane ( xd , bsize , plane , visit , arg ) ; //<S2SV> } //<S2SV> 

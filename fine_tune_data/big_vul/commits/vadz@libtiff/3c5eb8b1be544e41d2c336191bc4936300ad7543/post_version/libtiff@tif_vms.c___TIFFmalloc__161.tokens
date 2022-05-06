@@ -1,0 +1,1 @@
+tdata_t //<S2SV> _TIFFmalloc ( tsize_t s ) //<S2SV> { //<S2SV> if ( s == 0 ) //<S2SV> return ( ( void * ) NULL ) ; //<S2SV> return ( malloc ( ( size_t ) s ) ) ; //<S2SV> } //<S2SV> 

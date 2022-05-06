@@ -1,0 +1,1 @@
+static int linear_ioctl ( struct dm_target * ti , unsigned int cmd , //<S2SV> unsigned long arg ) //<S2SV> { //<S2SV> struct linear_c * lc = ( struct linear_c * ) ti -> private ; //<S2SV> return __blkdev_driver_ioctl ( lc -> dev -> bdev , lc -> dev -> mode , cmd , arg ) ; //<S2SV> } //<S2SV> 

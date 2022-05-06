@@ -1,0 +1,1 @@
+void * //<S2SV> _TIFFmalloc ( tmsize_t s ) //<S2SV> { //<S2SV> return ( malloc ( ( size_t ) s ) ) ; //<S2SV> } //<S2SV> 

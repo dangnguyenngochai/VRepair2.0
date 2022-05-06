@@ -1,0 +1,1 @@
+void * //<S2SV> checked_xmalloc ( size_t size ) //<S2SV> { //<S2SV> alloc_limit_assert ( "checked_xmalloc" , size ) ; //<S2SV> return xmalloc ( size ) ; //<S2SV> } //<S2SV> 

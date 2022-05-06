@@ -1,0 +1,1 @@
+static void ptrace_link ( struct task_struct * child , struct task_struct * new_parent ) //<S2SV> { //<S2SV> rcu_read_lock ( ) ; //<S2SV> __ptrace_link ( child , new_parent , __task_cred ( new_parent ) ) ; //<S2SV> rcu_read_unlock ( ) ; //<S2SV> } //<S2SV> 

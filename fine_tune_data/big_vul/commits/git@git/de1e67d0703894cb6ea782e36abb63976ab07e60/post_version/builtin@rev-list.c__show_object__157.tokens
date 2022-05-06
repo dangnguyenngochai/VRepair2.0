@@ -1,0 +1,1 @@
+static void show_object ( struct object * obj , const char * name , void * cb_data ) //<S2SV> { //<S2SV> struct rev_list_info * info = cb_data ; //<S2SV> finish_object ( obj , name , cb_data ) ; //<S2SV> if ( info -> flags & REV_LIST_QUIET ) //<S2SV> return ; //<S2SV> show_object_with_name ( stdout , obj , name ) ; //<S2SV> } //<S2SV> 

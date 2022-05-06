@@ -1,0 +1,1 @@
+static void numtostr ( js_State * J , const char * fmt , int w , double n ) //<S2SV> { //<S2SV> char buf [ 50 ] , * e ; //<S2SV> sprintf ( buf , fmt , w , n ) ; //<S2SV> e = strchr ( buf , 'e' ) ; //<S2SV> if ( e ) { //<S2SV> int exp = atoi ( e + 1 ) ; //<S2SV> sprintf ( e , "e%+d" , exp ) ; //<S2SV> } //<S2SV> js_pushstring ( J , buf ) ; //<S2SV> } //<S2SV> 

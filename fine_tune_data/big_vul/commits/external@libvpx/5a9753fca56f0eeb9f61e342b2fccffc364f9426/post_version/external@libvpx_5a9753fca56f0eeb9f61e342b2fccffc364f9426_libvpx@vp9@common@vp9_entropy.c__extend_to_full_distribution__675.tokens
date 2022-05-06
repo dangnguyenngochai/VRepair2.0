@@ -1,0 +1,1 @@
+static void extend_to_full_distribution ( vpx_prob * probs , vpx_prob p ) { //<S2SV> memcpy ( probs , vp9_pareto8_full [ p = 0 ? 0 : p - 1 ] , //<S2SV> MODEL_NODES * sizeof ( vpx_prob ) ) ; //<S2SV> } //<S2SV> 

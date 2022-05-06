@@ -1,0 +1,1 @@
+static int compare_tile_buffers ( const void * a , const void * b ) { //<S2SV> const TileBuffer * const buf1 = ( const TileBuffer * ) a ; //<S2SV> const TileBuffer * const buf2 = ( const TileBuffer * ) b ; //<S2SV> return ( int ) ( buf2 -> size - buf1 -> size ) ; //<S2SV> } //<S2SV> 

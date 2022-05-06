@@ -1,0 +1,1 @@
+static void encode_quantization ( VP9_COMMON * cm , //<S2SV> struct vp9_write_bit_buffer * wb ) { //<S2SV> vp9_wb_write_literal ( wb , cm -> base_qindex , QINDEX_BITS ) ; //<S2SV> write_delta_q ( wb , cm -> y_dc_delta_q ) ; //<S2SV> write_delta_q ( wb , cm -> uv_dc_delta_q ) ; //<S2SV> write_delta_q ( wb , cm -> uv_ac_delta_q ) ; //<S2SV> } //<S2SV> 

@@ -1,0 +1,1 @@
+void vp8_end_second_pass ( VP8_COMP * cpi ) //<S2SV> { //<S2SV> } //<S2SV> 

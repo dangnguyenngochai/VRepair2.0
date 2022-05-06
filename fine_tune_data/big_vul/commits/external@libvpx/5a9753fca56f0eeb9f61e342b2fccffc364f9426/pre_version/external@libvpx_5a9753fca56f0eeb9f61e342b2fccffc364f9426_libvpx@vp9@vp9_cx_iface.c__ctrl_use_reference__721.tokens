@@ -1,0 +1,1 @@
+static vpx_codec_err_t ctrl_use_reference ( vpx_codec_alg_priv_t * ctx , //<S2SV> int ctr_id , va_list args ) { //<S2SV> const int reference_flag = va_arg ( args , int ) ; //<S2SV> vp9_use_as_reference ( ctx -> cpi , reference_flag ) ; //<S2SV> return VPX_CODEC_OK ; //<S2SV> } //<S2SV> 

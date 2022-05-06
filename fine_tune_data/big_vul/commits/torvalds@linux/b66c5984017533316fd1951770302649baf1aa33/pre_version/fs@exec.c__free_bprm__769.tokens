@@ -1,0 +1,1 @@
+void free_bprm ( struct linux_binprm * bprm ) //<S2SV> { //<S2SV> free_arg_pages ( bprm ) ; //<S2SV> if ( bprm -> cred ) { //<S2SV> mutex_unlock ( & current -> signal -> cred_guard_mutex ) ; //<S2SV> abort_creds ( bprm -> cred ) ; //<S2SV> } //<S2SV> kfree ( bprm ) ; //<S2SV> } //<S2SV> 

@@ -1,0 +1,1 @@
+static void kvmclock_reset ( struct kvm_vcpu * vcpu ) //<S2SV> { //<S2SV> vcpu -> arch . pv_time_enabled = false ; //<S2SV> } //<S2SV> 

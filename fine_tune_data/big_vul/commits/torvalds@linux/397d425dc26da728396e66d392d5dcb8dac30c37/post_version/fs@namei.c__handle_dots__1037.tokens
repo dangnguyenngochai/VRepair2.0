@@ -1,0 +1,1 @@
+static inline int handle_dots ( struct nameidata * nd , int type ) //<S2SV> { //<S2SV> if ( type == LAST_DOTDOT ) { //<S2SV> if ( nd -> flags & LOOKUP_RCU ) { //<S2SV> return follow_dotdot_rcu ( nd ) ; //<S2SV> } else //<S2SV> return follow_dotdot ( nd ) ; //<S2SV> } //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

@@ -1,0 +1,1 @@
+static void svc_log_reset ( SvcContext * svc_ctx ) { //<S2SV> SvcInternal_t * const si = ( SvcInternal_t * ) svc_ctx -> internal ; //<S2SV> si -> message_buffer [ 0 ] = '\\0' ; //<S2SV> } //<S2SV> 

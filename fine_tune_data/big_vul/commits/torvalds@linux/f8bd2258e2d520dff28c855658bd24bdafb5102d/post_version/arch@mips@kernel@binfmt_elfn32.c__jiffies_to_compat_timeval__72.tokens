@@ -1,0 +1,1 @@
+static __inline__ void //<S2SV> jiffies_to_compat_timeval ( unsigned long jiffies , struct compat_timeval * value ) //<S2SV> { //<S2SV> u64 nsec = ( u64 ) jiffies * TICK_NSEC ; //<S2SV> u32 rem ; //<S2SV> value -> tv_sec = div_u64_rem ( nsec , NSEC_PER_SEC , & rem ) ; //<S2SV> value -> tv_usec = rem / NSEC_PER_USEC ; //<S2SV> } //<S2SV> 

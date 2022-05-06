@@ -1,0 +1,1 @@
+int jas_stream_pad ( jas_stream_t * stream , int n , int c ) //<S2SV> { //<S2SV> int m ; //<S2SV> m = n ; //<S2SV> for ( m = n ; m > 0 ; -- m ) { //<S2SV> if ( jas_stream_putc ( stream , c ) == EOF ) //<S2SV> return n - m ; //<S2SV> } //<S2SV> return n ; //<S2SV> } //<S2SV> 

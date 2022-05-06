@@ -1,0 +1,1 @@
+void vp9_remove_common ( VP9_COMMON * cm ) { //<S2SV> vp9_free_context_buffers ( cm ) ; //<S2SV> vpx_free ( cm -> fc ) ; //<S2SV> cm -> fc = NULL ; //<S2SV> vpx_free ( cm -> frame_contexts ) ; //<S2SV> cm -> frame_contexts = NULL ; //<S2SV> } //<S2SV> 

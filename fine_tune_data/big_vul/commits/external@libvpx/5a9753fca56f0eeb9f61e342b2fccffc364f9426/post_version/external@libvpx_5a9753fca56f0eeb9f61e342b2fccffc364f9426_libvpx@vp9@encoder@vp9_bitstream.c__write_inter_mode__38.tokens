@@ -1,0 +1,1 @@
+static void write_inter_mode ( vpx_writer * w , PREDICTION_MODE mode , //<S2SV> const vpx_prob * probs ) { //<S2SV> assert ( is_inter_mode ( mode ) ) ; //<S2SV> vp9_write_token ( w , vp9_inter_mode_tree , probs , //<S2SV> & inter_mode_encodings [ INTER_OFFSET ( mode ) ] ) ; //<S2SV> } //<S2SV> 

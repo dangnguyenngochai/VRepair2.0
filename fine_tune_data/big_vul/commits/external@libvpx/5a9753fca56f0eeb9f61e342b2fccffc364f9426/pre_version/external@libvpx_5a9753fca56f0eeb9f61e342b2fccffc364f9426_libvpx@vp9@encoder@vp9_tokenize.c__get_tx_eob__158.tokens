@@ -1,0 +1,1 @@
+static INLINE int get_tx_eob ( const struct segmentation * seg , int segment_id , //<S2SV> TX_SIZE tx_size ) { //<S2SV> const int eob_max = 16 << ( tx_size << 1 ) ; //<S2SV> return vp9_segfeature_active ( seg , segment_id , SEG_LVL_SKIP ) ? 0 : eob_max ; //<S2SV> } //<S2SV> 

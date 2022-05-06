@@ -1,0 +1,1 @@
+static void __local_bh_enable ( unsigned int cnt ) //<S2SV> { //<S2SV> lockdep_assert_irqs_disabled ( ) ; //<S2SV> if ( softirq_count ( ) == ( cnt & SOFTIRQ_MASK ) ) //<S2SV> trace_softirqs_on ( _RET_IP_ ) ; //<S2SV> preempt_count_sub ( cnt ) ; //<S2SV> } //<S2SV> 

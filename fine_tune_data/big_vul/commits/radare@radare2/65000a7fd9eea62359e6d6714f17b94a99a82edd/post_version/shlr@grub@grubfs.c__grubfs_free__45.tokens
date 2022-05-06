@@ -1,0 +1,1 @@
+void grubfs_free ( GrubFS * gf ) { //<S2SV> if ( gf ) { //<S2SV> if ( gf -> file && gf -> file -> device ) { //<S2SV> free ( gf -> file -> device -> disk ) ; //<S2SV> } //<S2SV> free ( gf -> file ) ; //<S2SV> free ( gf ) ; //<S2SV> } //<S2SV> } //<S2SV> 

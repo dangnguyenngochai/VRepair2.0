@@ -1,0 +1,1 @@
+static int get_max_filter_level ( const VP9_COMP * cpi ) { //<S2SV> if ( cpi -> oxcf . pass == 2 ) { //<S2SV> return cpi -> twopass . section_intra_rating > 8 ? MAX_LOOP_FILTER * 3 / 4 //<S2SV> : MAX_LOOP_FILTER ; //<S2SV> } else { //<S2SV> return MAX_LOOP_FILTER ; //<S2SV> } //<S2SV> } //<S2SV> 

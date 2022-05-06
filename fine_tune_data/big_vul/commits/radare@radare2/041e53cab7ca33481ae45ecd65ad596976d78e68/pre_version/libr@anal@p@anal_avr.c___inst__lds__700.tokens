@@ -1,0 +1,1 @@
+INST_HANDLER ( lds ) { //<S2SV> int d = ( ( buf [ 0 ] >> 4 ) & 0xf ) | ( ( buf [ 1 ] & 0x1 ) << 4 ) ; //<S2SV> int k = ( buf [ 3 ] << 8 ) | buf [ 2 ] ; //<S2SV> op -> ptr = k ; //<S2SV> __generic_ld_st ( op , "ram" , 0 , 1 , 0 , k , 0 ) ; //<S2SV> ESIL_A ( "r%d,=," , d ) ; //<S2SV> } //<S2SV> 

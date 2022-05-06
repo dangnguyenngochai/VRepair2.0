@@ -1,0 +1,1 @@
+static void skcipher_release ( void * private ) //<S2SV> { //<S2SV> struct skcipher_tfm * tfm = private ; //<S2SV> crypto_free_skcipher ( tfm -> skcipher ) ; //<S2SV> kfree ( tfm ) ; //<S2SV> } //<S2SV> 

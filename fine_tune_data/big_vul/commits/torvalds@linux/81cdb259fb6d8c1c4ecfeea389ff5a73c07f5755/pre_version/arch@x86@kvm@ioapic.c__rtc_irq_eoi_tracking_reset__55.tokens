@@ -1,0 +1,1 @@
+static void rtc_irq_eoi_tracking_reset ( struct kvm_ioapic * ioapic ) //<S2SV> { //<S2SV> ioapic -> rtc_status . pending_eoi = 0 ; //<S2SV> bitmap_zero ( ioapic -> rtc_status . dest_map . map , KVM_MAX_VCPUS ) ; //<S2SV> } //<S2SV> 

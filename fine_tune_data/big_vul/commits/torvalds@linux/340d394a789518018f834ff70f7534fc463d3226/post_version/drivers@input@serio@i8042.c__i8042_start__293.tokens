@@ -1,0 +1,1 @@
+static int i8042_start ( struct serio * serio ) //<S2SV> { //<S2SV> struct i8042_port * port = serio -> port_data ; //<S2SV> spin_lock_irq ( & i8042_lock ) ; //<S2SV> port -> exists = true ; //<S2SV> spin_unlock_irq ( & i8042_lock ) ; //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

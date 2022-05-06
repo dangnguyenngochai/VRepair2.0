@@ -1,0 +1,1 @@
+void vp9_cyclic_refresh_free ( CYCLIC_REFRESH * cr ) { //<S2SV> vpx_free ( cr -> map ) ; //<S2SV> vpx_free ( cr -> last_coded_q_map ) ; //<S2SV> vpx_free ( cr ) ; //<S2SV> } //<S2SV> 

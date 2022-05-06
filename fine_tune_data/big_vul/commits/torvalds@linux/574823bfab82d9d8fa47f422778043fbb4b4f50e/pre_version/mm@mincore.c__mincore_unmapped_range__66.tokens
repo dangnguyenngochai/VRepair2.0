@@ -1,0 +1,1 @@
+static int mincore_unmapped_range ( unsigned long addr , unsigned long end , //<S2SV> struct mm_walk * walk ) //<S2SV> { //<S2SV> walk -> private += __mincore_unmapped_range ( addr , end , //<S2SV> walk -> vma , walk -> private ) ; //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

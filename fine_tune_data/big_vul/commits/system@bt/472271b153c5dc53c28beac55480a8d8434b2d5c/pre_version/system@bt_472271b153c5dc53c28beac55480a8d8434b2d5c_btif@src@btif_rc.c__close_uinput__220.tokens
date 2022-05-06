@@ -1,0 +1,1 @@
+void close_uinput ( void ) //<S2SV> { //<S2SV> BTIF_TRACE_DEBUG ( "%s" , __FUNCTION__ ) ; //<S2SV> if ( uinput_fd > 0 ) { //<S2SV> ioctl ( uinput_fd , UI_DEV_DESTROY ) ; //<S2SV> close ( uinput_fd ) ; //<S2SV> uinput_fd = - 1 ; //<S2SV> } //<S2SV> } //<S2SV> 

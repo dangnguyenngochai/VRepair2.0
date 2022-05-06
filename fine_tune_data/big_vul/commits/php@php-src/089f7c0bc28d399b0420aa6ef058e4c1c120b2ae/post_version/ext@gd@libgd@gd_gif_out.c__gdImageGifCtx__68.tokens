@@ -1,0 +1,1 @@
+void gdImageGifCtx ( gdImagePtr im , gdIOCtxPtr out ) //<S2SV> { //<S2SV> _gdImageGifCtx ( im , out ) ; //<S2SV> } //<S2SV> 

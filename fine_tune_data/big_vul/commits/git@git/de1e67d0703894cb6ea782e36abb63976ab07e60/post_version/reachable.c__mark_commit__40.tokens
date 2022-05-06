@@ -1,0 +1,1 @@
+static void mark_commit ( struct commit * c , void * data ) //<S2SV> { //<S2SV> mark_object ( & c -> object , NULL , data ) ; //<S2SV> } //<S2SV> 

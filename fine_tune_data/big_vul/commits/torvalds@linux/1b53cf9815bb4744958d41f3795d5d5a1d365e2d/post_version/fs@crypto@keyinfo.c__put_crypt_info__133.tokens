@@ -1,0 +1,1 @@
+static void put_crypt_info ( struct fscrypt_info * ci ) //<S2SV> { //<S2SV> if ( ! ci ) //<S2SV> return ; //<S2SV> crypto_free_skcipher ( ci -> ci_ctfm ) ; //<S2SV> kmem_cache_free ( fscrypt_info_cachep , ci ) ; //<S2SV> } //<S2SV> 

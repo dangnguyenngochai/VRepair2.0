@@ -1,0 +1,1 @@
+void vp9_cost_tokens_skip ( int * costs , const vp9_prob * probs , vp9_tree tree ) { //<S2SV> assert ( tree [ 0 ] <= 0 && tree [ 1 ] > 0 ) ; //<S2SV> costs [ - tree [ 0 ] ] = vp9_cost_bit ( probs [ 0 ] , 0 ) ; //<S2SV> cost ( costs , tree , probs , 2 , 0 ) ; //<S2SV> } //<S2SV> 

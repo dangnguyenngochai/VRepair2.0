@@ -1,0 +1,1 @@
+static ssize_t aio_setup_single_vector ( struct kiocb * kiocb ) //<S2SV> { //<S2SV> kiocb -> ki_iovec = & kiocb -> ki_inline_vec ; //<S2SV> kiocb -> ki_iovec -> iov_base = kiocb -> ki_buf ; //<S2SV> kiocb -> ki_iovec -> iov_len = kiocb -> ki_left ; //<S2SV> kiocb -> ki_nr_segs = 1 ; //<S2SV> kiocb -> ki_cur_seg = 0 ; //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

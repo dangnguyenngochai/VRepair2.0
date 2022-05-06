@@ -1,0 +1,1 @@
+static bool ndp_msg_check_valid ( struct ndp_msg * msg ) //<S2SV> { //<S2SV> size_t len = ndp_msg_payload_len ( msg ) ; //<S2SV> enum ndp_msg_type msg_type = ndp_msg_type ( msg ) ; //<S2SV> if ( len < ndp_msg_type_info ( msg_type ) -> raw_struct_size ) //<S2SV> return false ; //<S2SV> return true ; //<S2SV> } //<S2SV> 

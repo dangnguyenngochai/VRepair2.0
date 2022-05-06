@@ -1,0 +1,1 @@
+static int inotify_release ( struct inode * ignored , struct file * file ) //<S2SV> { //<S2SV> struct fsnotify_group * group = file -> private_data ; //<S2SV> pr_debug ( "%s:<S2SV_blank>group=%p\\n" , __func__ , group ) ; //<S2SV> fsnotify_clear_marks_by_group ( group ) ; //<S2SV> fsnotify_put_group ( group ) ; //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

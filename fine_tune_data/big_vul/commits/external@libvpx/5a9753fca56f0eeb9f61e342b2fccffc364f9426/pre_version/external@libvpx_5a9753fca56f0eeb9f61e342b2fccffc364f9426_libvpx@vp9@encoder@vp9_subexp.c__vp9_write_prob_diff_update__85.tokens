@@ -1,0 +1,1 @@
+void vp9_write_prob_diff_update ( vp9_writer * w , vp9_prob newp , vp9_prob oldp ) { //<S2SV> const int delp = remap_prob ( newp , oldp ) ; //<S2SV> encode_term_subexp ( w , delp ) ; //<S2SV> } //<S2SV> 

@@ -1,0 +1,1 @@
+void vp8_vertical_band_2_1_scale_c ( unsigned char * source , //<S2SV> unsigned int src_pitch , //<S2SV> unsigned char * dest , //<S2SV> unsigned int dest_pitch , //<S2SV> unsigned int dest_width ) { //<S2SV> ( void ) dest_pitch ; //<S2SV> ( void ) src_pitch ; //<S2SV> memcpy ( dest , source , dest_width ) ; //<S2SV> } //<S2SV> 

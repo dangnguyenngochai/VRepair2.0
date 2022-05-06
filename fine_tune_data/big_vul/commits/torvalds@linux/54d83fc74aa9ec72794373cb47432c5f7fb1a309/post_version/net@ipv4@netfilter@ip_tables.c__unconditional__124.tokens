@@ -1,0 +1,1 @@
+static inline bool unconditional ( const struct ipt_entry * e ) //<S2SV> { //<S2SV> static const struct ipt_ip uncond ; //<S2SV> return e -> target_offset == sizeof ( struct ipt_entry ) && //<S2SV> memcmp ( & e -> ip , & uncond , sizeof ( uncond ) ) == 0 ; //<S2SV> # undef FWINV //<S2SV> } //<S2SV> 

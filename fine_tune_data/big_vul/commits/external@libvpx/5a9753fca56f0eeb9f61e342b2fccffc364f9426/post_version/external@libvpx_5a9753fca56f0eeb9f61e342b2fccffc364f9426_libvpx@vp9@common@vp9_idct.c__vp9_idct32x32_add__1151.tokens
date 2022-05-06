@@ -1,0 +1,1 @@
+void vp9_idct32x32_add ( const tran_low_t * input , uint8_t * dest , int stride , //<S2SV> int eob ) { //<S2SV> if ( eob == 1 ) //<S2SV> vpx_idct32x32_1_add ( input , dest , stride ) ; //<S2SV> else if ( eob <= 34 ) //<S2SV> vpx_idct32x32_34_add ( input , dest , stride ) ; //<S2SV> else //<S2SV> vpx_idct32x32_1024_add ( input , dest , stride ) ; //<S2SV> } //<S2SV> 

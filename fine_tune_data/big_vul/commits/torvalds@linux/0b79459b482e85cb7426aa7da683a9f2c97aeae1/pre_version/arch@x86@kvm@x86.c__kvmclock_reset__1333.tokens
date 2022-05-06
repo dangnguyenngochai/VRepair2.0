@@ -1,0 +1,1 @@
+static void kvmclock_reset ( struct kvm_vcpu * vcpu ) //<S2SV> { //<S2SV> if ( vcpu -> arch . time_page ) { //<S2SV> kvm_release_page_dirty ( vcpu -> arch . time_page ) ; //<S2SV> vcpu -> arch . time_page = NULL ; //<S2SV> } //<S2SV> } //<S2SV> 

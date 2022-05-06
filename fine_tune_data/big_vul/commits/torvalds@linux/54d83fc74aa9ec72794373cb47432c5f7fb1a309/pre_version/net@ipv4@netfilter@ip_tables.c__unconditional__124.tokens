@@ -1,0 +1,1 @@
+static inline bool unconditional ( const struct ipt_ip * ip ) //<S2SV> { //<S2SV> static const struct ipt_ip uncond ; //<S2SV> return memcmp ( ip , & uncond , sizeof ( uncond ) ) == 0 ; //<S2SV> # undef FWINV //<S2SV> } //<S2SV> 

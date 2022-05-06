@@ -1,0 +1,1 @@
+static void veth_setup ( struct net_device * dev ) //<S2SV> { //<S2SV> ether_setup ( dev ) ; //<S2SV> dev -> netdev_ops = & veth_netdev_ops ; //<S2SV> dev -> ethtool_ops = & veth_ethtool_ops ; //<S2SV> dev -> features |= NETIF_F_LLTX ; //<S2SV> dev -> destructor = veth_dev_free ; //<S2SV> dev -> hw_features = NETIF_F_NO_CSUM | NETIF_F_SG | NETIF_F_RXCSUM ; //<S2SV> } //<S2SV> 

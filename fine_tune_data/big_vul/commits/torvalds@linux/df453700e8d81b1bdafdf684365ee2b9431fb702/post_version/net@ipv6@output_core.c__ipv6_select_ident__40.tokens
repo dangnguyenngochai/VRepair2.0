@@ -1,0 +1,1 @@
+__be32 ipv6_select_ident ( struct net * net , //<S2SV> const struct in6_addr * daddr , //<S2SV> const struct in6_addr * saddr ) //<S2SV> { //<S2SV> u32 id ; //<S2SV> id = __ipv6_select_ident ( net , daddr , saddr ) ; //<S2SV> return htonl ( id ) ; //<S2SV> } //<S2SV> 

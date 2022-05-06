@@ -1,0 +1,1 @@
+void * //<S2SV> vips_malloc ( VipsObject * object , size_t size ) //<S2SV> { //<S2SV> void * buf ; //<S2SV> buf = g_malloc ( size ) ; //<S2SV> if ( object ) { //<S2SV> g_signal_connect ( object , "postclose" , //<S2SV> G_CALLBACK ( vips_malloc_cb ) , buf ) ; //<S2SV> object -> local_memory += size ; //<S2SV> } //<S2SV> return ( buf ) ; //<S2SV> } //<S2SV> 

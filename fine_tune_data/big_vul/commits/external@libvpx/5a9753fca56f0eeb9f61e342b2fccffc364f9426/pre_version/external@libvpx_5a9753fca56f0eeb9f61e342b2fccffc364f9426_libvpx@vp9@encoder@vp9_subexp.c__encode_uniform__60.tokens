@@ -1,0 +1,1 @@
+static void encode_uniform ( vp9_writer * w , int v ) { //<S2SV> const int l = 8 ; //<S2SV> const int m = ( 1 << l ) - 191 ; //<S2SV> if ( v < m ) { //<S2SV> vp9_write_literal ( w , v , l - 1 ) ; //<S2SV> } else { //<S2SV> vp9_write_literal ( w , m + ( ( v - m ) >> 1 ) , l - 1 ) ; //<S2SV> vp9_write_literal ( w , ( v - m ) & 1 , 1 ) ; //<S2SV> } //<S2SV> } //<S2SV> 

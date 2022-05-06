@@ -1,0 +1,1 @@
+void vp9_set_segment_data ( struct segmentation * seg , //<S2SV> signed char * feature_data , //<S2SV> unsigned char abs_delta ) { //<S2SV> seg -> abs_delta = abs_delta ; //<S2SV> memcpy ( seg -> feature_data , feature_data , sizeof ( seg -> feature_data ) ) ; //<S2SV> } //<S2SV> 

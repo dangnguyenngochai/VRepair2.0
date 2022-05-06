@@ -1,0 +1,1 @@
+void * H264SwDecMalloc ( u32 size , u32 num ) { //<S2SV> if ( size > UINT32_MAX / num ) { //<S2SV> ALOGE ( "can\'t<S2SV_blank>allocate<S2SV_blank>%u<S2SV_blank>*<S2SV_blank>%u<S2SV_blank>bytes" , size , num ) ; //<S2SV> android_errorWriteLog ( 0x534e4554 , "27855419" ) ; //<S2SV> return NULL ; //<S2SV> } //<S2SV> return malloc ( size * num ) ; //<S2SV> } //<S2SV> 

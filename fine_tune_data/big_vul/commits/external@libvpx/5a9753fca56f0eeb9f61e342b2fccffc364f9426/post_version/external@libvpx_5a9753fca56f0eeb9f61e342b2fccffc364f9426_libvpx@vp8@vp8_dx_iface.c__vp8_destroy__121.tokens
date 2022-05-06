@@ -1,0 +1,1 @@
+static vpx_codec_err_t vp8_destroy ( vpx_codec_alg_priv_t * ctx ) //<S2SV> { //<S2SV> vp8_remove_decoder_instances ( & ctx -> yv12_frame_buffers ) ; //<S2SV> vpx_free ( ctx ) ; //<S2SV> return VPX_CODEC_OK ; //<S2SV> } //<S2SV> 

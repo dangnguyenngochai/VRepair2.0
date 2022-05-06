@@ -1,0 +1,1 @@
+static inline size_t GetPSDRowSize ( Image * image ) //<S2SV> { //<S2SV> if ( image -> depth == 1 ) //<S2SV> return ( ( ( image -> columns + 7 ) / 8 ) * GetPSDPacketSize ( image ) ) ; //<S2SV> else //<S2SV> return ( image -> columns * GetPSDPacketSize ( image ) ) ; //<S2SV> } //<S2SV> 

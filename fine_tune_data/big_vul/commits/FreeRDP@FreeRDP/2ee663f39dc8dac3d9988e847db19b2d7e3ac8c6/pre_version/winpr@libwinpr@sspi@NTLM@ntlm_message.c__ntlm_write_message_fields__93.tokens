@@ -1,0 +1,1 @@
+void ntlm_write_message_fields ( wStream * s , NTLM_MESSAGE_FIELDS * fields ) //<S2SV> { //<S2SV> if ( fields -> MaxLen < 1 ) //<S2SV> fields -> MaxLen = fields -> Len ; //<S2SV> Stream_Write_UINT16 ( s , fields -> Len ) ; //<S2SV> Stream_Write_UINT16 ( s , fields -> MaxLen ) ; //<S2SV> Stream_Write_UINT32 ( s , fields -> BufferOffset ) ; //<S2SV> } //<S2SV> 

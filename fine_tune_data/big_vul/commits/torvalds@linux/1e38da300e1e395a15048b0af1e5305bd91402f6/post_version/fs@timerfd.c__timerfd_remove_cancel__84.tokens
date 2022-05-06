@@ -1,0 +1,1 @@
+static void timerfd_remove_cancel ( struct timerfd_ctx * ctx ) //<S2SV> { //<S2SV> spin_lock ( & ctx -> cancel_lock ) ; //<S2SV> __timerfd_remove_cancel ( ctx ) ; //<S2SV> spin_unlock ( & ctx -> cancel_lock ) ; //<S2SV> } //<S2SV> 

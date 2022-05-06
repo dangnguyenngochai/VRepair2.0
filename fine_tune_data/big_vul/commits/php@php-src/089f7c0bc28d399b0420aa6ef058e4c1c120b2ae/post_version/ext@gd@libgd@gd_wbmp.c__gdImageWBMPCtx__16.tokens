@@ -1,0 +1,1 @@
+void gdImageWBMPCtx ( gdImagePtr image , int fg , gdIOCtx * out ) //<S2SV> { //<S2SV> _gdImageWBMPCtx ( image , fg , out ) ; //<S2SV> } //<S2SV> 

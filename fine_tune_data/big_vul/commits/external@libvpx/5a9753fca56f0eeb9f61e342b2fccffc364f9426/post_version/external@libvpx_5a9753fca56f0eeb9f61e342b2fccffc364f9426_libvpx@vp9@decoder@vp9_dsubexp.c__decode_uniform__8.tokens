@@ -1,0 +1,1 @@
+static int decode_uniform ( vpx_reader * r ) { //<S2SV> const int l = 8 ; //<S2SV> const int m = ( 1 << l ) - 191 ; //<S2SV> const int v = vpx_read_literal ( r , l - 1 ) ; //<S2SV> return v < m ? v : ( v << 1 ) - m + vpx_read_bit ( r ) ; //<S2SV> } //<S2SV> 

@@ -1,0 +1,1 @@
+void pid_ns_release_proc ( struct pid_namespace * ns ) //<S2SV> { //<S2SV> kern_unmount ( ns -> proc_mnt ) ; //<S2SV> } //<S2SV> 

@@ -1,0 +1,1 @@
+static vpx_codec_err_t update_error_state ( vpx_codec_alg_priv_t * ctx , //<S2SV> const struct vpx_internal_error_info * error ) { //<S2SV> if ( error -> error_code ) //<S2SV> ctx -> base . err_detail = error -> has_detail ? error -> detail : NULL ; //<S2SV> return error -> error_code ; //<S2SV> } //<S2SV> 

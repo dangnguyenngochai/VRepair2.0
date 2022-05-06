@@ -1,0 +1,1 @@
+int shash_no_setkey ( struct crypto_shash * tfm , const u8 * key , //<S2SV> unsigned int keylen ) //<S2SV> { //<S2SV> return - ENOSYS ; //<S2SV> } //<S2SV> 

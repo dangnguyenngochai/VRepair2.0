@@ -1,0 +1,1 @@
+static float * get_window ( vorb * f , int len ) //<S2SV> { //<S2SV> len <<= 1 ; //<S2SV> if ( len == f -> blocksize_0 ) return f -> window [ 0 ] ; //<S2SV> if ( len == f -> blocksize_1 ) return f -> window [ 1 ] ; //<S2SV> return NULL ; //<S2SV> } //<S2SV> 

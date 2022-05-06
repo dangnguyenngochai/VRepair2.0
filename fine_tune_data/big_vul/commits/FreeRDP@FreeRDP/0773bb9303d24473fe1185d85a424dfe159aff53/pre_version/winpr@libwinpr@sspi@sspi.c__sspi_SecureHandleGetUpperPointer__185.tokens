@@ -1,0 +1,1 @@
+void * sspi_SecureHandleGetUpperPointer ( SecHandle * handle ) //<S2SV> { //<S2SV> void * pointer ; //<S2SV> if ( ! handle ) //<S2SV> return NULL ; //<S2SV> pointer = ( void * ) ~ ( ( size_t ) handle -> dwUpper ) ; //<S2SV> return pointer ; //<S2SV> } //<S2SV> 

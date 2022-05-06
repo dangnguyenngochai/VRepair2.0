@@ -1,0 +1,1 @@
+static int //<S2SV> l_strnstart ( netdissect_options * ndo , const char * tstr1 , u_int tl1 , //<S2SV> const char * str2 , u_int l2 ) //<S2SV> { //<S2SV> if ( ! ND_TTEST2 ( * str2 , tl1 ) ) { //<S2SV> return 0 ; //<S2SV> } //<S2SV> if ( tl1 > l2 ) //<S2SV> return 0 ; //<S2SV> return ( strncmp ( tstr1 , str2 , tl1 ) == 0 ? 1 : 0 ) ; //<S2SV> } //<S2SV> 

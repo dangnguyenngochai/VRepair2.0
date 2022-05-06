@@ -1,0 +1,1 @@
+static vpx_codec_err_t decoder_destroy ( vpx_codec_alg_priv_t * ctx ) { //<S2SV> if ( ctx -> pbi ) { //<S2SV> vp9_decoder_remove ( ctx -> pbi ) ; //<S2SV> ctx -> pbi = NULL ; //<S2SV> } //<S2SV> vpx_free ( ctx ) ; //<S2SV> return VPX_CODEC_OK ; //<S2SV> } //<S2SV> 

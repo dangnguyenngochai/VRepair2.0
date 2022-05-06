@@ -1,0 +1,1 @@
+static void update_mv_probs ( vpx_prob * p , int n , vpx_reader * r ) { //<S2SV> int i ; //<S2SV> for ( i = 0 ; i < n ; ++ i ) //<S2SV> if ( vpx_read ( r , MV_UPDATE_PROB ) ) //<S2SV> p [ i ] = ( vpx_read_literal ( r , 7 ) << 1 ) | 1 ; //<S2SV> } //<S2SV> 

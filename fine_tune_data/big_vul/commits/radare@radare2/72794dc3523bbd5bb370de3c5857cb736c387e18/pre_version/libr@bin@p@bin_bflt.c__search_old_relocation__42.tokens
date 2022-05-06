@@ -1,0 +1,1 @@
+static int search_old_relocation ( struct reloc_struct_t * reloc_table , ut32 addr_to_patch , int n_reloc ) { //<S2SV> int i ; //<S2SV> for ( i = 0 ; i < n_reloc ; i ++ ) { //<S2SV> if ( addr_to_patch == reloc_table [ i ] . data_offset ) { //<S2SV> return i ; //<S2SV> } //<S2SV> } //<S2SV> return - 1 ; //<S2SV> } //<S2SV> 

@@ -1,0 +1,1 @@
+int snmp_version ( void * context , size_t hdrlen , unsigned char tag , //<S2SV> const void * data , size_t datalen ) //<S2SV> { //<S2SV> if ( * ( unsigned char * ) data > 1 ) //<S2SV> return - ENOTSUPP ; //<S2SV> return 1 ; //<S2SV> } //<S2SV> 

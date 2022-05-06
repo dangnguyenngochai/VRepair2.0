@@ -1,0 +1,1 @@
+static CURLcode pop3_parse_url_path ( struct connectdata * conn ) //<S2SV> { //<S2SV> struct pop3_conn * pop3c = & conn -> proto . pop3c ; //<S2SV> struct SessionHandle * data = conn -> data ; //<S2SV> const char * path = data -> state . path ; //<S2SV> return Curl_urldecode ( data , path , 0 , & pop3c -> mailbox , NULL , TRUE ) ; //<S2SV> } //<S2SV> 

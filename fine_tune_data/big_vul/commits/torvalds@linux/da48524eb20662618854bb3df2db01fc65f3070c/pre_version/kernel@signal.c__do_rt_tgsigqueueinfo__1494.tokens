@@ -1,0 +1,1 @@
+long do_rt_tgsigqueueinfo ( pid_t tgid , pid_t pid , int sig , siginfo_t * info ) //<S2SV> { //<S2SV> if ( pid <= 0 || tgid <= 0 ) //<S2SV> return - EINVAL ; //<S2SV> if ( info -> si_code >= 0 ) //<S2SV> return - EPERM ; //<S2SV> info -> si_signo = sig ; //<S2SV> return do_send_specific ( tgid , pid , sig , info ) ; //<S2SV> } //<S2SV> 

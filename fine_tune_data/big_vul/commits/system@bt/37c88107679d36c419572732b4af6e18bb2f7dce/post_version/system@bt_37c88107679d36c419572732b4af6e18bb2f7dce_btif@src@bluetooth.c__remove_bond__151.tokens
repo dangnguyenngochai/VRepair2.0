@@ -1,0 +1,1 @@
+static int remove_bond ( const bt_bdaddr_t * bd_addr ) //<S2SV> { //<S2SV> if ( is_restricted_mode ( ) && ! btif_storage_is_restricted_device ( bd_addr ) ) //<S2SV> return BT_STATUS_SUCCESS ; //<S2SV> if ( interface_ready ( ) == FALSE ) //<S2SV> return BT_STATUS_NOT_READY ; //<S2SV> return btif_dm_remove_bond ( bd_addr ) ; //<S2SV> } //<S2SV> 

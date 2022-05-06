@@ -1,0 +1,1 @@
+void vp9_tile_init ( TileInfo * tile , const VP9_COMMON * cm , int row , int col ) { //<S2SV> vp9_tile_set_row ( tile , cm , row ) ; //<S2SV> vp9_tile_set_col ( tile , cm , col ) ; //<S2SV> } //<S2SV> 

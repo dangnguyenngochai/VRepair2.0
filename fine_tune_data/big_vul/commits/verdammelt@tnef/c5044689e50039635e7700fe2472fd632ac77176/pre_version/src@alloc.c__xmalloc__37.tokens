@@ -1,0 +1,1 @@
+void * //<S2SV> xmalloc ( size_t size ) //<S2SV> { //<S2SV> void * ptr = malloc ( size ) ; //<S2SV> if ( ! ptr //<S2SV> && ( size != 0 ) ) //<S2SV> { //<S2SV> perror ( "xmalloc:<S2SV_blank>Memory<S2SV_blank>allocation<S2SV_blank>failure" ) ; //<S2SV> abort ( ) ; //<S2SV> } //<S2SV> return ptr ; //<S2SV> } //<S2SV> 

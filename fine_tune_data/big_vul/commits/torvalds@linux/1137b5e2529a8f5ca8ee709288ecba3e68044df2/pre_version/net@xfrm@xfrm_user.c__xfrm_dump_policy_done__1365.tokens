@@ -1,0 +1,1 @@
+static int xfrm_dump_policy_done ( struct netlink_callback * cb ) //<S2SV> { //<S2SV> struct xfrm_policy_walk * walk = ( struct xfrm_policy_walk * ) & cb -> args [ 1 ] ; //<S2SV> struct net * net = sock_net ( cb -> skb -> sk ) ; //<S2SV> xfrm_policy_walk_done ( walk , net ) ; //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

@@ -1,0 +1,1 @@
+static void ntlm_write_message_fields_buffer ( wStream * s , NTLM_MESSAGE_FIELDS * fields ) //<S2SV> { //<S2SV> if ( fields -> Len > 0 ) //<S2SV> { //<S2SV> Stream_SetPosition ( s , fields -> BufferOffset ) ; //<S2SV> Stream_Write ( s , fields -> Buffer , fields -> Len ) ; //<S2SV> } //<S2SV> } //<S2SV> 

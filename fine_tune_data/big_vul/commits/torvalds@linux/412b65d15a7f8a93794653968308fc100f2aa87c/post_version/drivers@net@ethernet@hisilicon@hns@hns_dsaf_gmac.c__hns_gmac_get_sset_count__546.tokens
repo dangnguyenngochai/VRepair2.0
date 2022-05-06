@@ -1,0 +1,1 @@
+static int hns_gmac_get_sset_count ( int stringset ) //<S2SV> { //<S2SV> if ( stringset == ETH_SS_STATS || stringset == ETH_SS_PRIV_FLAGS ) //<S2SV> return ARRAY_SIZE ( g_gmac_stats_string ) ; //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

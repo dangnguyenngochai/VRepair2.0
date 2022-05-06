@@ -1,0 +1,1 @@
+static void write_frame_size ( const VP9_COMMON * cm , //<S2SV> struct vpx_write_bit_buffer * wb ) { //<S2SV> vpx_wb_write_literal ( wb , cm -> width - 1 , 16 ) ; //<S2SV> vpx_wb_write_literal ( wb , cm -> height - 1 , 16 ) ; //<S2SV> write_display_size ( cm , wb ) ; //<S2SV> } //<S2SV> 

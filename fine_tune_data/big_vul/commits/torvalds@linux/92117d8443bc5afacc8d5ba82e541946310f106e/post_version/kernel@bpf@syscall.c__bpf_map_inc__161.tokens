@@ -1,0 +1,1 @@
+struct bpf_map * bpf_map_inc ( struct bpf_map * map , bool uref ) //<S2SV> { //<S2SV> if ( atomic_inc_return ( & map -> refcnt ) > BPF_MAX_REFCNT ) { //<S2SV> atomic_dec ( & map -> refcnt ) ; //<S2SV> return ERR_PTR ( - EBUSY ) ; //<S2SV> } //<S2SV> if ( uref ) //<S2SV> atomic_inc ( & map -> usercnt ) ; //<S2SV> return map ; //<S2SV> } //<S2SV> 

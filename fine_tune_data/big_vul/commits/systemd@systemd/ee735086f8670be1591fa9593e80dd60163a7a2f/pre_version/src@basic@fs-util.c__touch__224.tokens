@@ -1,0 +1,1 @@
+int touch ( const char * path ) { //<S2SV> return touch_file ( path , false , USEC_INFINITY , UID_INVALID , GID_INVALID , 0 ) ; //<S2SV> } //<S2SV> 

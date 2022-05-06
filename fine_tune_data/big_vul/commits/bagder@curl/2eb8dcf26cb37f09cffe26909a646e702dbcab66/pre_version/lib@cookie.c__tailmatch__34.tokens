@@ -1,0 +1,1 @@
+static bool tailmatch ( const char * little , const char * bigone ) //<S2SV> { //<S2SV> size_t littlelen = strlen ( little ) ; //<S2SV> size_t biglen = strlen ( bigone ) ; //<S2SV> if ( littlelen > biglen ) //<S2SV> return FALSE ; //<S2SV> return Curl_raw_equal ( little , bigone + biglen - littlelen ) ? TRUE : FALSE ; //<S2SV> } //<S2SV> 

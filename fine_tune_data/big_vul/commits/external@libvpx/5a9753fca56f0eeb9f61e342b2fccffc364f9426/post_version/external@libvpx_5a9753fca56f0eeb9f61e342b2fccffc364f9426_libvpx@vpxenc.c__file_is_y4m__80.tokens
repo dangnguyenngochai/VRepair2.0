@@ -1,0 +1,1 @@
+static int file_is_y4m ( const char detect [ 4 ] ) { //<S2SV> if ( memcmp ( detect , "YUV4" , 4 ) == 0 ) { //<S2SV> return 1 ; //<S2SV> } //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

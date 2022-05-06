@@ -1,0 +1,1 @@
+static void tty_set_termios_ldisc ( struct tty_struct * tty , int num ) //<S2SV> { //<S2SV> down_write ( & tty -> termios_rwsem ) ; //<S2SV> tty -> termios . c_line = num ; //<S2SV> up_write ( & tty -> termios_rwsem ) ; //<S2SV> } //<S2SV> 

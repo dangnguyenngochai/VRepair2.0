@@ -1,0 +1,1 @@
+static char * //<S2SV> get_next_file ( FILE * VFile , char * ptr ) //<S2SV> { //<S2SV> char * ret ; //<S2SV> ret = fgets ( ptr , PATH_MAX , VFile ) ; //<S2SV> if ( ! ret ) //<S2SV> return NULL ; //<S2SV> if ( ptr [ strlen ( ptr ) - 1 ] == '\\n' ) //<S2SV> ptr [ strlen ( ptr ) - 1 ] = '\\0' ; //<S2SV> return ret ; //<S2SV> } //<S2SV> 

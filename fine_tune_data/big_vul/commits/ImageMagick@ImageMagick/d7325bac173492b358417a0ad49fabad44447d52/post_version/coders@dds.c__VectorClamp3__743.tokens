@@ -1,0 +1,1 @@
+static inline void VectorClamp3 ( DDSVector3 * value ) //<S2SV> { //<S2SV> value -> x = MagickMin ( 1.0f , MagickMax ( 0.0f , value -> x ) ) ; //<S2SV> value -> y = MagickMin ( 1.0f , MagickMax ( 0.0f , value -> y ) ) ; //<S2SV> value -> z = MagickMin ( 1.0f , MagickMax ( 0.0f , value -> z ) ) ; //<S2SV> } //<S2SV> 
