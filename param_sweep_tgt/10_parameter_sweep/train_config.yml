@@ -32,12 +32,12 @@ param_init: 0
 param_init_glorot: true
 encoder_type: transformer
 decoder_type: transformer
-enc_layers: 6
-dec_layers: 6
-heads: 8
+enc_layers: 3
+dec_layers: 3
+heads: 4
 rnn_size: 256
 word_vec_size: 256
-transformer_ff: 2048
+transformer_ff: 1024
 dropout:
 - 0.1
 attention_dropout:

@@ -1,0 +1,374 @@
+[2022-05-17 19:45:44,406 INFO] Missing transforms field for github data, set to default: [].
+[2022-05-17 19:45:44,406 WARNING] Corpus github's weight should be given. We default it to 1 for you.
+[2022-05-17 19:45:44,406 INFO] Missing transforms field for valid data, set to default: [].
+[2022-05-17 19:45:44,406 INFO] Parsed 2 corpora from -data.
+[2022-05-17 19:45:44,406 INFO] Get special vocabs from Transforms: {'src': set(), 'tgt': set()}.
+[2022-05-17 19:45:44,406 INFO] Loading vocab from text file...
+[2022-05-17 19:45:44,406 INFO] Loading src vocabulary from /home/lgm/VRepair2.0/param_sweep_tgt/1_parameter_sweep/data.vocab.src
+[2022-05-17 19:45:44,459 INFO] Loaded src vocab has 36352 tokens.
+[2022-05-17 19:45:44,468 INFO] Loading tgt vocabulary from /home/lgm/VRepair2.0/param_sweep_tgt/1_parameter_sweep/data.vocab.tgt
+[2022-05-17 19:45:44,477 INFO] Loaded tgt vocab has 5924 tokens.
+[2022-05-17 19:45:44,480 INFO] Building fields with vocab in counters...
+[2022-05-17 19:45:44,484 INFO]  * tgt vocab size: 5004.
+[2022-05-17 19:45:44,525 INFO]  * src vocab size: 5002.
+[2022-05-17 19:45:44,526 INFO]  * src vocab size = 5002
+[2022-05-17 19:45:44,526 INFO]  * tgt vocab size = 5004
+[2022-05-17 19:45:44,527 INFO] Building model...
+[2022-05-17 19:45:47,121 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(5002, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (4): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (5): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(5004, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+    (transformer_layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+      )
+      (4): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+      )
+      (5): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+      )
+    )
+  )
+  (generator): CopyGenerator(
+    (linear): Linear(in_features=256, out_features=5004, bias=True)
+    (linear_copy): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+[2022-05-17 19:45:47,122 INFO] encoder: 9171456
+[2022-05-17 19:45:47,122 INFO] decoder: 12040333
+[2022-05-17 19:45:47,122 INFO] * number of parameters: 21211789
+[2022-05-17 19:45:47,160 INFO] Starting training on GPU: [0]
+[2022-05-17 19:45:47,160 INFO] Start training loop and validate every 20000 steps...
+[2022-05-17 19:45:47,160 INFO] github's transforms: TransformPipe()
+[2022-05-17 19:45:47,160 INFO] Weighted corpora loaded so far:
+			* github: 1
+/home/lgm/miniconda3/lib/python3.8/site-packages/torchtext/data/field.py:359: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  var = torch.tensor(arr, dtype=self.dtype, device=device)
+Traceback (most recent call last):
+  File "/home/lgm/miniconda3/bin/onmt_train", line 8, in <module>
+    sys.exit(main())
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/onmt/bin/train.py", line 172, in main
+    train(opt)
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/onmt/bin/train.py", line 157, in train
+    train_process(opt, device_id=0)
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/onmt/train_single.py", line 109, in main
+    trainer.train(
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/onmt/trainer.py", line 242, in train
+    self._gradient_accumulation(
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/onmt/trainer.py", line 366, in _gradient_accumulation
+    outputs, attns = self.model(
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/onmt/models/model.py", line 63, in forward
+    enc_state, memory_bank, lengths = self.encoder(src, lengths)
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/onmt/encoders/transformer.py", line 138, in forward
+    out = layer(out, mask)
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/onmt/encoders/transformer.py", line 54, in forward
+    context, _ = self.self_attn(input_norm, input_norm, input_norm,
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/onmt/modules/multi_headed_attn.py", line 199, in forward
+    scores = scores.masked_fill(mask, -1e18)
+RuntimeError: CUDA out of memory. Tried to allocate 28.00 MiB (GPU 0; 23.65 GiB total capacity; 243.48 MiB already allocated; 5.56 MiB free; 264.00 MiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
