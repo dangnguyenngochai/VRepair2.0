@@ -1,4 +1,6 @@
-save_data: /home/lgm/VRepair/param_sweep_tgt/15_parameter_sweep/data
+save_data: /home/lgm/VRepair2.0/param_sweep_tgt/15_parameter_sweep/data
+src_vocab: /home/lgm/VRepair2.0/param_sweep_tgt/15_parameter_sweep/data.vocab.src
+tgt_vocab: /home/lgm/VRepair2.0/param_sweep_tgt/15_parameter_sweep/data.vocab.tgt
 overwrite: false
 n_sample: -1
 src_vocab_size: 2000
@@ -7,11 +9,11 @@ src_seq_length: 1000
 tgt_seq_length: 100
 data:
   github:
-    path_src: /home/lgm/VRepair/vul_data/random_fine_tune_train.src.txt
-    path_tgt: /home/lgm/VRepair/vul_data/random_fine_tune_train.tgt.txt
+    path_src: /home/lgm/VRepair2.0/vul_data/random_fine_tune_train.src.txt
+    path_tgt: /home/lgm/VRepair2.0/vul_data/random_fine_tune_train.tgt.txt
   valid:
-    path_src: /home/lgm/VRepair/vul_data/random_fine_tune_valid.src.txt
-    path_tgt: /home/lgm/VRepair/vul_data/random_fine_tune_valid.tgt.txt
+    path_src: /home/lgm/VRepair2.0/vul_data/random_fine_tune_valid.src.txt
+    path_tgt: /home/lgm/VRepair2.0/vul_data/random_fine_tune_valid.tgt.txt
 seed: 0
 learning_rate: 0.0001
 rnn_size: 1024

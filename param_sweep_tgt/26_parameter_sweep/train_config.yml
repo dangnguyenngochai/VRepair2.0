@@ -3,22 +3,22 @@ gpu_ranks:
 - 0
 batch_size: 4
 valid_batch_size: 1
-src_vocab: /home/lgm/VRepair/param_sweep_tgt/26_parameter_sweep/data.vocab.src
-tgt_vocab: /home/lgm/VRepair/param_sweep_tgt/26_parameter_sweep/data.vocab.tgt
+src_vocab: /home/lgm/VRepair2.0/param_sweep_tgt/26_parameter_sweep/data.vocab.src
+tgt_vocab: /home/lgm/VRepair2.0/param_sweep_tgt/26_parameter_sweep/data.vocab.tgt
 src_vocab_size: 10000
 tgt_vocab_size: 10000
 src_seq_length: 1000
 tgt_seq_length: 100
 data:
   github:
-    path_src: /home/lgm/VRepair/vul_data/random_fine_tune_train.src.txt
-    path_tgt: /home/lgm/VRepair/vul_data/random_fine_tune_train.tgt.txt
+    path_src: /home/lgm/VRepair2.0/vul_data/random_fine_tune_train.src.txt
+    path_tgt: /home/lgm/VRepair2.0/vul_data/random_fine_tune_train.tgt.txt
   valid:
-    path_src: /home/lgm/VRepair/vul_data/random_fine_tune_valid.src.txt
-    path_tgt: /home/lgm/VRepair/vul_data/random_fine_tune_valid.tgt.txt
-save_model: /home/lgm/VRepair/param_sweep_tgt/26_parameter_sweep/model
+    path_src: /home/lgm/VRepair2.0/vul_data/random_fine_tune_valid.src.txt
+    path_tgt: /home/lgm/VRepair2.0/vul_data/random_fine_tune_valid.tgt.txt
+save_model: /home/lgm/VRepair2.0/param_sweep_tgt/26_parameter_sweep/model
 overwrite: false
-train_steps: 1000000
+train_steps: 100000
 valid_steps: 20000
 save_checkpoint_steps: 20000
 early_stopping: 2
@@ -47,5 +47,5 @@ position_encoding: true
 accum_count: 8
 bridge: true
 tensorboard: true
-tensorboard_log_dir: /home/lgm/VRepair/param_sweep_tgt/26_parameter_sweep/tensorboard_log_dir
+tensorboard_log_dir: /home/lgm/VRepair2.0/param_sweep_tgt/26_parameter_sweep/tensorboard_log_dir
 seed: 0

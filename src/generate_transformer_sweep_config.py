@@ -16,7 +16,7 @@ def get_opennmt_train_config(save_data_path_pattern, save_model_path_pattern,
                              tensorboard_log_dir,
                              train_features_file, train_labels_file,
                              valid_features_file, valid_labels_file,
-                             train_steps=1000000, valid_steps=20000,
+                             train_steps=100000, valid_steps=20000,
                              src_vocab_size=2000, tgt_vocab_size=2000,
                              src_seq_length=1000, tgt_seq_length=100,
                              number_of_gpus=1, batch_size=4,
@@ -96,6 +96,8 @@ def get_opennmt_vocab_config(save_data_path_pattern,
     opennmt_vocab_config = nested_dict()
 
     opennmt_vocab_config['save_data'] = save_data_path_pattern
+    opennmt_vocab_config['src_vocab'] = save_data_path_pattern + '.vocab.src'
+    opennmt_vocab_config['tgt_vocab'] = save_data_path_pattern + '.vocab.tgt'
     opennmt_vocab_config['overwrite'] = False
     opennmt_vocab_config['n_sample'] = -1
     opennmt_vocab_config['src_vocab_size'] = src_vocab_size
