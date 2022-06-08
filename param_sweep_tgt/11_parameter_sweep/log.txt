@@ -1,0 +1,345 @@
+[2022-06-08 16:58:37,052 INFO] Missing transforms field for github data, set to default: [].
+[2022-06-08 16:58:37,052 WARNING] Corpus github's weight should be given. We default it to 1 for you.
+[2022-06-08 16:58:37,052 INFO] Missing transforms field for valid data, set to default: [].
+[2022-06-08 16:58:37,052 INFO] Parsed 2 corpora from -data.
+[2022-06-08 16:58:37,052 INFO] Get special vocabs from Transforms: {'src': set(), 'tgt': set()}.
+[2022-06-08 16:58:37,052 INFO] Loading vocab from text file...
+[2022-06-08 16:58:37,052 INFO] Loading src vocabulary from /home/lgm/VRepair2.0/param_sweep_tgt/11_parameter_sweep/data.vocab.src
+[2022-06-08 16:58:37,095 INFO] Loaded src vocab has 36352 tokens.
+[2022-06-08 16:58:37,104 INFO] Loading tgt vocabulary from /home/lgm/VRepair2.0/param_sweep_tgt/11_parameter_sweep/data.vocab.tgt
+[2022-06-08 16:58:37,110 INFO] Loaded tgt vocab has 5924 tokens.
+[2022-06-08 16:58:37,111 INFO] Building fields with vocab in counters...
+[2022-06-08 16:58:37,115 INFO]  * tgt vocab size: 5928.
+[2022-06-08 16:58:37,147 INFO]  * src vocab size: 10002.
+[2022-06-08 16:58:37,148 INFO]  * src vocab size = 10002
+[2022-06-08 16:58:37,148 INFO]  * tgt vocab size = 5928
+[2022-06-08 16:58:37,149 INFO] Building model...
+[2022-06-08 16:58:38,750 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(10002, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=1024, bias=True)
+          (w_2): Linear(in_features=1024, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=1024, bias=True)
+          (w_2): Linear(in_features=1024, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=1024, bias=True)
+          (w_2): Linear(in_features=1024, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(5928, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+    (transformer_layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=1024, bias=True)
+          (w_2): Linear(in_features=1024, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=1024, bias=True)
+          (w_2): Linear(in_features=1024, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=1024, bias=True)
+          (w_2): Linear(in_features=1024, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+      )
+    )
+  )
+  (generator): CopyGenerator(
+    (linear): Linear(in_features=256, out_features=5928, bias=True)
+    (linear_copy): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+[2022-06-08 16:58:38,751 INFO] encoder: 4930304
+[2022-06-08 16:58:38,751 INFO] decoder: 6202153
+[2022-06-08 16:58:38,751 INFO] * number of parameters: 11132457
+[2022-06-08 16:58:38,779 INFO] Starting training on GPU: [0]
+[2022-06-08 16:58:38,779 INFO] Start training loop and validate every 20000 steps...
+[2022-06-08 16:58:38,779 INFO] github's transforms: TransformPipe()
+[2022-06-08 16:58:38,779 INFO] Weighted corpora loaded so far:
+			* github: 1
+/home/lgm/miniconda3/lib/python3.8/site-packages/torchtext/data/field.py:359: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  var = torch.tensor(arr, dtype=self.dtype, device=device)
+[2022-06-08 16:58:47,321 INFO] Step 50/100000; acc:   9.33; ppl: 143.56; xent: 4.97; lr: 0.00010; 52900/5408 tok/s;      9 sec
+[2022-06-08 16:58:49,738 INFO] Weighted corpora loaded so far:
+			* github: 2
+[2022-06-08 16:58:56,054 INFO] Step 100/100000; acc:  13.70; ppl: 75.68; xent: 4.33; lr: 0.00010; 53353/5155 tok/s;     17 sec
+[2022-06-08 16:59:00,849 INFO] Weighted corpora loaded so far:
+			* github: 3
+[2022-06-08 16:59:04,904 INFO] Step 150/100000; acc:  17.99; ppl: 49.18; xent: 3.90; lr: 0.00010; 53245/5229 tok/s;     26 sec
+[2022-06-08 16:59:12,016 INFO] Weighted corpora loaded so far:
+			* github: 4
+[2022-06-08 16:59:13,717 INFO] Step 200/100000; acc:  22.41; ppl: 36.04; xent: 3.58; lr: 0.00010; 52987/5264 tok/s;     35 sec
+[2022-06-08 16:59:22,002 INFO] Step 250/100000; acc:  25.48; ppl: 28.79; xent: 3.36; lr: 0.00010; 53932/5542 tok/s;     43 sec
+[2022-06-08 16:59:23,115 INFO] Weighted corpora loaded so far:
+			* github: 5
+[2022-06-08 16:59:31,349 INFO] Step 300/100000; acc:  27.96; ppl: 24.64; xent: 3.20; lr: 0.00010; 50126/4914 tok/s;     53 sec
+[2022-06-08 16:59:35,162 INFO] Weighted corpora loaded so far:
+			* github: 6
+[2022-06-08 16:59:40,685 INFO] Step 350/100000; acc:  29.78; ppl: 21.66; xent: 3.08; lr: 0.00010; 49300/4847 tok/s;     62 sec
+[2022-06-08 16:59:46,462 INFO] Weighted corpora loaded so far:
+			* github: 7
+[2022-06-08 16:59:49,488 INFO] Step 400/100000; acc:  32.85; ppl: 19.14; xent: 2.95; lr: 0.00010; 53222/5287 tok/s;     71 sec
+[2022-06-08 16:59:57,502 INFO] Weighted corpora loaded so far:
+			* github: 8
+[2022-06-08 16:59:58,156 INFO] Step 450/100000; acc:  35.12; ppl: 17.24; xent: 2.85; lr: 0.00010; 53192/5189 tok/s;     79 sec
+[2022-06-08 17:00:06,511 INFO] Step 500/100000; acc:  37.34; ppl: 15.79; xent: 2.76; lr: 0.00010; 54013/5510 tok/s;     88 sec
+[2022-06-08 17:00:08,698 INFO] Weighted corpora loaded so far:
+			* github: 9
+[2022-06-08 17:00:15,431 INFO] Step 550/100000; acc:  38.83; ppl: 14.33; xent: 2.66; lr: 0.00010; 52735/5201 tok/s;     97 sec
+[2022-06-08 17:00:19,867 INFO] Weighted corpora loaded so far:
+			* github: 10
+[2022-06-08 17:00:24,227 INFO] Step 600/100000; acc:  40.41; ppl: 13.46; xent: 2.60; lr: 0.00010; 52717/5187 tok/s;    105 sec
+[2022-06-08 17:00:31,075 INFO] Weighted corpora loaded so far:
+			* github: 11
+[2022-06-08 17:00:33,164 INFO] Step 650/100000; acc:  41.70; ppl: 12.75; xent: 2.55; lr: 0.00010; 51592/5241 tok/s;    114 sec
+[2022-06-08 17:00:41,653 INFO] Step 700/100000; acc:  44.01; ppl: 11.35; xent: 2.43; lr: 0.00010; 53567/5353 tok/s;    123 sec
+[2022-06-08 17:00:42,385 INFO] Weighted corpora loaded so far:
+			* github: 12
+[2022-06-08 17:00:50,419 INFO] Step 750/100000; acc:  45.18; ppl: 10.74; xent: 2.37; lr: 0.00010; 51963/5239 tok/s;    132 sec
+[2022-06-08 17:00:53,572 INFO] Weighted corpora loaded so far:
+			* github: 13
+[2022-06-08 17:00:59,432 INFO] Step 800/100000; acc:  45.99; ppl: 10.18; xent: 2.32; lr: 0.00010; 51438/5096 tok/s;    141 sec
+[2022-06-08 17:01:13,524 INFO] Step 850/100000; acc:  47.81; ppl:  9.36; xent: 2.24; lr: 0.00010; 32772/3238 tok/s;    155 sec
+[2022-06-08 17:01:27,514 INFO] Weighted corpora loaded so far:
+			* github: 14
+[2022-06-08 17:01:29,169 INFO] Step 900/100000; acc:  48.77; ppl:  8.89; xent: 2.18; lr: 0.00010; 29887/2923 tok/s;    170 sec
+[2022-06-08 17:01:44,046 INFO] Step 950/100000; acc:  49.92; ppl:  8.38; xent: 2.13; lr: 0.00010; 30594/3143 tok/s;    185 sec
+[2022-06-08 17:01:47,127 INFO] Weighted corpora loaded so far:
+			* github: 15
+[2022-06-08 17:01:59,820 INFO] Step 1000/100000; acc:  51.34; ppl:  7.84; xent: 2.06; lr: 0.00010; 29409/2918 tok/s;    201 sec
+[2022-06-08 17:02:07,183 INFO] Weighted corpora loaded so far:
+			* github: 16
+[2022-06-08 17:02:15,204 INFO] Step 1050/100000; acc:  52.72; ppl:  7.44; xent: 2.01; lr: 0.00010; 30082/2919 tok/s;    216 sec
+[2022-06-08 17:02:26,439 INFO] Weighted corpora loaded so far:
+			* github: 17
+[2022-06-08 17:02:30,696 INFO] Step 1100/100000; acc:  52.67; ppl:  7.31; xent: 1.99; lr: 0.00010; 30697/3042 tok/s;    232 sec
+[2022-06-08 17:02:45,206 INFO] Step 1150/100000; acc:  54.36; ppl:  6.70; xent: 1.90; lr: 0.00010; 31267/3127 tok/s;    246 sec
+[2022-06-08 17:02:45,819 INFO] Weighted corpora loaded so far:
+			* github: 18
+[2022-06-08 17:03:00,453 INFO] Step 1200/100000; acc:  55.15; ppl:  6.41; xent: 1.86; lr: 0.00010; 29839/2991 tok/s;    262 sec
+[2022-06-08 17:03:05,440 INFO] Weighted corpora loaded so far:
+			* github: 19
+[2022-06-08 17:03:15,959 INFO] Step 1250/100000; acc:  56.93; ppl:  5.96; xent: 1.78; lr: 0.00010; 30147/2923 tok/s;    277 sec
+[2022-06-08 17:03:24,913 INFO] Weighted corpora loaded so far:
+			* github: 20
+[2022-06-08 17:03:31,220 INFO] Step 1300/100000; acc:  57.32; ppl:  5.81; xent: 1.76; lr: 0.00010; 30181/3013 tok/s;    292 sec
+[2022-06-08 17:03:44,708 INFO] Weighted corpora loaded so far:
+			* github: 21
+[2022-06-08 17:03:47,058 INFO] Step 1350/100000; acc:  58.36; ppl:  5.54; xent: 1.71; lr: 0.00010; 29570/2925 tok/s;    308 sec
+[2022-06-08 17:04:01,969 INFO] Step 1400/100000; acc:  59.39; ppl:  5.28; xent: 1.66; lr: 0.00010; 30127/3093 tok/s;    323 sec
+[2022-06-08 17:04:04,595 INFO] Weighted corpora loaded so far:
+			* github: 22
+[2022-06-08 17:04:18,007 INFO] Step 1450/100000; acc:  60.40; ppl:  5.00; xent: 1.61; lr: 0.00010; 29056/2830 tok/s;    339 sec
+[2022-06-08 17:04:24,979 INFO] Weighted corpora loaded so far:
+			* github: 23
+[2022-06-08 17:04:33,971 INFO] Step 1500/100000; acc:  60.79; ppl:  4.97; xent: 1.60; lr: 0.00010; 28675/2895 tok/s;    355 sec
+[2022-06-08 17:04:44,669 INFO] Weighted corpora loaded so far:
+			* github: 24
+[2022-06-08 17:04:49,472 INFO] Step 1550/100000; acc:  61.88; ppl:  4.78; xent: 1.56; lr: 0.00010; 30488/3016 tok/s;    371 sec
+[2022-06-08 17:05:04,395 INFO] Step 1600/100000; acc:  63.14; ppl:  4.46; xent: 1.49; lr: 0.00010; 30454/3050 tok/s;    386 sec
+[2022-06-08 17:05:04,426 INFO] Weighted corpora loaded so far:
+			* github: 25
+[2022-06-08 17:05:19,651 INFO] Step 1650/100000; acc:  63.52; ppl:  4.36; xent: 1.47; lr: 0.00010; 29439/2949 tok/s;    401 sec
+[2022-06-08 17:05:24,216 INFO] Weighted corpora loaded so far:
+			* github: 26
+[2022-06-08 17:05:35,186 INFO] Step 1700/100000; acc:  64.05; ppl:  4.25; xent: 1.45; lr: 0.00010; 29777/2990 tok/s;    416 sec
+[2022-06-08 17:05:50,796 INFO] Step 1750/100000; acc:  65.33; ppl:  4.00; xent: 1.39; lr: 0.00010; 30015/2914 tok/s;    432 sec
+[2022-06-08 17:06:03,132 INFO] Weighted corpora loaded so far:
+			* github: 27
+[2022-06-08 17:06:06,027 INFO] Step 1800/100000; acc:  66.16; ppl:  3.91; xent: 1.36; lr: 0.00010; 30633/3014 tok/s;    447 sec
+[2022-06-08 17:06:21,295 INFO] Step 1850/100000; acc:  66.29; ppl:  3.80; xent: 1.34; lr: 0.00010; 29308/3027 tok/s;    463 sec
+[2022-06-08 17:06:23,151 INFO] Weighted corpora loaded so far:
+			* github: 28
+[2022-06-08 17:06:36,397 INFO] Step 1900/100000; acc:  67.46; ppl:  3.67; xent: 1.30; lr: 0.00010; 31012/3096 tok/s;    478 sec
+[2022-06-08 17:06:42,674 INFO] Weighted corpora loaded so far:
+			* github: 29
+[2022-06-08 17:06:52,010 INFO] Step 1950/100000; acc:  67.91; ppl:  3.54; xent: 1.26; lr: 0.00010; 29700/2884 tok/s;    493 sec
+[2022-06-08 17:07:02,693 INFO] Weighted corpora loaded so far:
+			* github: 30
+[2022-06-08 17:07:07,975 INFO] Step 2000/100000; acc:  68.30; ppl:  3.52; xent: 1.26; lr: 0.00010; 29658/2889 tok/s;    509 sec
+[2022-06-08 17:07:22,120 INFO] Weighted corpora loaded so far:
+			* github: 31
+[2022-06-08 17:07:23,077 INFO] Step 2050/100000; acc:  68.79; ppl:  3.38; xent: 1.22; lr: 0.00010; 30624/3047 tok/s;    524 sec
+[2022-06-08 17:07:38,467 INFO] Step 2100/100000; acc:  69.78; ppl:  3.27; xent: 1.19; lr: 0.00010; 29077/2955 tok/s;    540 sec
+[2022-06-08 17:07:42,059 INFO] Weighted corpora loaded so far:
+			* github: 32
+[2022-06-08 17:07:53,631 INFO] Step 2150/100000; acc:  70.87; ppl:  3.16; xent: 1.15; lr: 0.00010; 30739/3043 tok/s;    555 sec
+[2022-06-08 17:08:01,603 INFO] Weighted corpora loaded so far:
+			* github: 33
+[2022-06-08 17:08:09,380 INFO] Step 2200/100000; acc:  71.39; ppl:  3.06; xent: 1.12; lr: 0.00010; 29405/2901 tok/s;    571 sec
+[2022-06-08 17:08:21,202 INFO] Weighted corpora loaded so far:
+			* github: 34
+[2022-06-08 17:08:24,469 INFO] Step 2250/100000; acc:  71.85; ppl:  3.00; xent: 1.10; lr: 0.00010; 30792/3071 tok/s;    586 sec
+[2022-06-08 17:08:39,259 INFO] Step 2300/100000; acc:  72.42; ppl:  2.92; xent: 1.07; lr: 0.00010; 30899/3064 tok/s;    600 sec
+[2022-06-08 17:08:40,596 INFO] Weighted corpora loaded so far:
+			* github: 35
+[2022-06-08 17:08:54,863 INFO] Step 2350/100000; acc:  73.00; ppl:  2.84; xent: 1.04; lr: 0.00010; 29333/2914 tok/s;    616 sec
+[2022-06-08 17:09:00,531 INFO] Weighted corpora loaded so far:
+			* github: 36
+[2022-06-08 17:09:10,022 INFO] Step 2400/100000; acc:  72.84; ppl:  2.84; xent: 1.04; lr: 0.00010; 30669/3043 tok/s;    631 sec
+[2022-06-08 17:09:19,885 INFO] Weighted corpora loaded so far:
+			* github: 37
+[2022-06-08 17:09:25,817 INFO] Step 2450/100000; acc:  73.94; ppl:  2.74; xent: 1.01; lr: 0.00010; 29180/3002 tok/s;    647 sec
+[2022-06-08 17:09:39,467 INFO] Weighted corpora loaded so far:
+			* github: 38
+[2022-06-08 17:09:41,083 INFO] Step 2500/100000; acc:  74.49; ppl:  2.66; xent: 0.98; lr: 0.00010; 30422/2981 tok/s;    662 sec
+[2022-06-08 17:09:55,931 INFO] Step 2550/100000; acc:  75.33; ppl:  2.59; xent: 0.95; lr: 0.00010; 30486/3027 tok/s;    677 sec
+[2022-06-08 17:09:59,056 INFO] Weighted corpora loaded so far:
+			* github: 39
+[2022-06-08 17:10:11,477 INFO] Step 2600/100000; acc:  75.24; ppl:  2.56; xent: 0.94; lr: 0.00010; 29680/2997 tok/s;    693 sec
+[2022-06-08 17:10:26,582 INFO] Step 2650/100000; acc:  75.89; ppl:  2.52; xent: 0.93; lr: 0.00010; 30528/3019 tok/s;    708 sec
+[2022-06-08 17:10:38,371 INFO] Weighted corpora loaded so far:
+			* github: 40
+[2022-06-08 17:10:42,438 INFO] Step 2700/100000; acc:  76.68; ppl:  2.43; xent: 0.89; lr: 0.00010; 29918/2904 tok/s;    724 sec
+[2022-06-08 17:10:57,320 INFO] Step 2750/100000; acc:  76.85; ppl:  2.42; xent: 0.88; lr: 0.00010; 30318/3083 tok/s;    739 sec
+[2022-06-08 17:10:57,904 INFO] Weighted corpora loaded so far:
+			* github: 41
+[2022-06-08 17:11:12,595 INFO] Step 2800/100000; acc:  77.56; ppl:  2.33; xent: 0.85; lr: 0.00010; 30046/3035 tok/s;    754 sec
+[2022-06-08 17:11:17,511 INFO] Weighted corpora loaded so far:
+			* github: 42
+[2022-06-08 17:11:28,047 INFO] Step 2850/100000; acc:  77.89; ppl:  2.30; xent: 0.83; lr: 0.00010; 30522/2957 tok/s;    769 sec
+[2022-06-08 17:11:37,338 INFO] Weighted corpora loaded so far:
+			* github: 43
+[2022-06-08 17:11:43,741 INFO] Step 2900/100000; acc:  78.58; ppl:  2.26; xent: 0.81; lr: 0.00010; 29603/2890 tok/s;    785 sec
