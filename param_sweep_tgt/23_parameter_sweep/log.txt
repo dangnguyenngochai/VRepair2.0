@@ -1,0 +1,2517 @@
+[2022-06-22 13:58:12,873 INFO] Missing transforms field for github data, set to default: [].
+[2022-06-22 13:58:12,873 WARNING] Corpus github's weight should be given. We default it to 1 for you.
+[2022-06-22 13:58:12,873 INFO] Missing transforms field for valid data, set to default: [].
+[2022-06-22 13:58:12,873 INFO] Parsed 2 corpora from -data.
+[2022-06-22 13:58:12,873 INFO] Get special vocabs from Transforms: {'src': set(), 'tgt': set()}.
+[2022-06-22 13:58:12,873 INFO] Loading vocab from text file...
+[2022-06-22 13:58:12,873 INFO] Loading src vocabulary from /home/lgm/VRepair2.0/param_sweep_tgt/23_parameter_sweep/data.vocab.src
+[2022-06-22 13:58:12,916 INFO] Loaded src vocab has 36352 tokens.
+[2022-06-22 13:58:12,925 INFO] Loading tgt vocabulary from /home/lgm/VRepair2.0/param_sweep_tgt/23_parameter_sweep/data.vocab.tgt
+[2022-06-22 13:58:12,931 INFO] Loaded tgt vocab has 5924 tokens.
+[2022-06-22 13:58:12,932 INFO] Building fields with vocab in counters...
+[2022-06-22 13:58:12,936 INFO]  * tgt vocab size: 5928.
+[2022-06-22 13:58:12,971 INFO]  * src vocab size: 10002.
+[2022-06-22 13:58:12,971 INFO]  * src vocab size = 10002
+[2022-06-22 13:58:12,971 INFO]  * tgt vocab size = 5928
+[2022-06-22 13:58:12,972 INFO] Building model...
+[2022-06-22 13:58:15,585 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(10002, 512, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=1024, bias=True)
+          (w_2): Linear(in_features=1024, out_features=512, bias=True)
+          (layer_norm): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=1024, bias=True)
+          (w_2): Linear(in_features=1024, out_features=512, bias=True)
+          (layer_norm): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=1024, bias=True)
+          (w_2): Linear(in_features=1024, out_features=512, bias=True)
+          (layer_norm): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(5928, 512, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (layer_norm): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+    (transformer_layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=1024, bias=True)
+          (w_2): Linear(in_features=1024, out_features=512, bias=True)
+          (layer_norm): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (layer_norm_2): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=1024, bias=True)
+          (w_2): Linear(in_features=1024, out_features=512, bias=True)
+          (layer_norm): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (layer_norm_2): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=1024, bias=True)
+          (w_2): Linear(in_features=1024, out_features=512, bias=True)
+          (layer_norm): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (layer_norm_2): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+      )
+    )
+  )
+  (generator): CopyGenerator(
+    (linear): Linear(in_features=512, out_features=5928, bias=True)
+    (linear_copy): Linear(in_features=512, out_features=1, bias=True)
+  )
+)
+[2022-06-22 13:58:15,586 INFO] encoder: 11430400
+[2022-06-22 13:58:15,586 INFO] decoder: 15541033
+[2022-06-22 13:58:15,586 INFO] * number of parameters: 26971433
+[2022-06-22 13:58:15,615 INFO] Starting training on GPU: [0]
+[2022-06-22 13:58:15,615 INFO] Start training loop and validate every 20000 steps...
+[2022-06-22 13:58:15,615 INFO] github's transforms: TransformPipe()
+[2022-06-22 13:58:15,615 INFO] Weighted corpora loaded so far:
+			* github: 1
+/home/lgm/miniconda3/lib/python3.8/site-packages/torchtext/data/field.py:359: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  var = torch.tensor(arr, dtype=self.dtype, device=device)
+[2022-06-22 13:58:36,905 INFO] Step 50/100000; acc:  10.56; ppl: 115.90; xent: 4.75; lr: 0.00005; 21551/2158 tok/s;     21 sec
+[2022-06-22 13:58:42,503 INFO] Weighted corpora loaded so far:
+			* github: 2
+[2022-06-22 13:58:59,061 INFO] Step 100/100000; acc:  15.49; ppl: 58.60; xent: 4.07; lr: 0.00005; 21336/2038 tok/s;     43 sec
+[2022-06-22 13:59:11,128 INFO] Weighted corpora loaded so far:
+			* github: 3
+[2022-06-22 13:59:21,540 INFO] Step 150/100000; acc:  20.77; ppl: 41.71; xent: 3.73; lr: 0.00005; 20363/2074 tok/s;     66 sec
+[2022-06-22 13:59:40,528 INFO] Weighted corpora loaded so far:
+			* github: 4
+[2022-06-22 13:59:44,284 INFO] Step 200/100000; acc:  23.70; ppl: 32.51; xent: 3.48; lr: 0.00005; 20587/2026 tok/s;     89 sec
+[2022-06-22 14:00:06,544 INFO] Step 250/100000; acc:  27.03; ppl: 26.64; xent: 3.28; lr: 0.00005; 20059/2054 tok/s;    111 sec
+[2022-06-22 14:00:09,365 INFO] Weighted corpora loaded so far:
+			* github: 5
+[2022-06-22 14:00:29,617 INFO] Step 300/100000; acc:  29.10; ppl: 23.67; xent: 3.16; lr: 0.00005; 20380/2021 tok/s;    134 sec
+[2022-06-22 14:00:39,057 INFO] Weighted corpora loaded so far:
+			* github: 6
+[2022-06-22 14:00:52,950 INFO] Step 350/100000; acc:  31.90; ppl: 20.15; xent: 3.00; lr: 0.00005; 20504/1953 tok/s;    157 sec
+[2022-06-22 14:01:08,745 INFO] Weighted corpora loaded so far:
+			* github: 7
+[2022-06-22 14:01:16,524 INFO] Step 400/100000; acc:  34.15; ppl: 18.25; xent: 2.90; lr: 0.00005; 18862/1938 tok/s;    181 sec
+[2022-06-22 14:01:38,401 INFO] Weighted corpora loaded so far:
+			* github: 8
+[2022-06-22 14:01:39,689 INFO] Step 450/100000; acc:  35.98; ppl: 16.22; xent: 2.79; lr: 0.00005; 20044/1952 tok/s;    204 sec
+[2022-06-22 14:02:02,631 INFO] Step 500/100000; acc:  38.73; ppl: 14.58; xent: 2.68; lr: 0.00005; 20172/2019 tok/s;    227 sec
+[2022-06-22 14:02:08,222 INFO] Weighted corpora loaded so far:
+			* github: 9
+[2022-06-22 14:02:26,251 INFO] Step 550/100000; acc:  39.46; ppl: 13.89; xent: 2.63; lr: 0.00005; 20051/1938 tok/s;    251 sec
+[2022-06-22 14:02:37,820 INFO] Weighted corpora loaded so far:
+			* github: 10
+[2022-06-22 14:02:49,306 INFO] Step 600/100000; acc:  42.64; ppl: 12.14; xent: 2.50; lr: 0.00005; 19577/1999 tok/s;    274 sec
+[2022-06-22 14:03:07,392 INFO] Weighted corpora loaded so far:
+			* github: 11
+[2022-06-22 14:03:12,287 INFO] Step 650/100000; acc:  42.97; ppl: 11.77; xent: 2.47; lr: 0.00005; 20038/2023 tok/s;    297 sec
+[2022-06-22 14:03:34,570 INFO] Step 700/100000; acc:  45.65; ppl: 10.42; xent: 2.34; lr: 0.00005; 20046/2029 tok/s;    319 sec
+[2022-06-22 14:03:36,790 INFO] Weighted corpora loaded so far:
+			* github: 12
+[2022-06-22 14:03:58,510 INFO] Step 750/100000; acc:  46.74; ppl:  9.89; xent: 2.29; lr: 0.00005; 19511/1931 tok/s;    343 sec
+[2022-06-22 14:04:06,641 INFO] Weighted corpora loaded so far:
+			* github: 13
+[2022-06-22 14:04:22,070 INFO] Step 800/100000; acc:  48.10; ppl:  9.18; xent: 2.22; lr: 0.00005; 20206/1929 tok/s;    366 sec
+[2022-06-22 14:04:45,332 INFO] Step 850/100000; acc:  49.41; ppl:  8.65; xent: 2.16; lr: 0.00005; 19015/2001 tok/s;    390 sec
+[2022-06-22 14:05:06,428 INFO] Weighted corpora loaded so far:
+			* github: 14
+[2022-06-22 14:05:08,390 INFO] Step 900/100000; acc:  50.52; ppl:  8.11; xent: 2.09; lr: 0.00005; 20147/1967 tok/s;    413 sec
+[2022-06-22 14:05:31,242 INFO] Step 950/100000; acc:  51.99; ppl:  7.65; xent: 2.03; lr: 0.00005; 20359/2004 tok/s;    436 sec
+[2022-06-22 14:05:35,783 INFO] Weighted corpora loaded so far:
+			* github: 15
+[2022-06-22 14:05:54,612 INFO] Step 1000/100000; acc:  53.00; ppl:  7.22; xent: 1.98; lr: 0.00005; 20091/1968 tok/s;    459 sec
+[2022-06-22 14:06:05,793 INFO] Weighted corpora loaded so far:
+			* github: 16
+[2022-06-22 14:06:17,556 INFO] Step 1050/100000; acc:  54.05; ppl:  6.90; xent: 1.93; lr: 0.00005; 20455/2027 tok/s;    482 sec
+[2022-06-22 14:06:34,722 INFO] Weighted corpora loaded so far:
+			* github: 17
+[2022-06-22 14:06:40,413 INFO] Step 1100/100000; acc:  55.19; ppl:  6.40; xent: 1.86; lr: 0.00005; 19665/1993 tok/s;    505 sec
+[2022-06-22 14:07:02,968 INFO] Step 1150/100000; acc:  56.93; ppl:  6.08; xent: 1.80; lr: 0.00005; 20254/2045 tok/s;    527 sec
+[2022-06-22 14:07:04,018 INFO] Weighted corpora loaded so far:
+			* github: 18
+[2022-06-22 14:07:26,095 INFO] Step 1200/100000; acc:  57.65; ppl:  5.82; xent: 1.76; lr: 0.00005; 20203/1973 tok/s;    550 sec
+[2022-06-22 14:07:33,493 INFO] Weighted corpora loaded so far:
+			* github: 19
+[2022-06-22 14:07:49,018 INFO] Step 1250/100000; acc:  59.27; ppl:  5.41; xent: 1.69; lr: 0.00005; 20340/2004 tok/s;    573 sec
+[2022-06-22 14:08:02,288 INFO] Weighted corpora loaded so far:
+			* github: 20
+[2022-06-22 14:08:11,788 INFO] Step 1300/100000; acc:  59.68; ppl:  5.31; xent: 1.67; lr: 0.00005; 19845/2041 tok/s;    596 sec
+[2022-06-22 14:08:31,586 INFO] Weighted corpora loaded so far:
+			* github: 21
+[2022-06-22 14:08:34,666 INFO] Step 1350/100000; acc:  60.80; ppl:  4.93; xent: 1.60; lr: 0.00005; 20443/2004 tok/s;    619 sec
+[2022-06-22 14:08:56,669 INFO] Step 1400/100000; acc:  62.18; ppl:  4.69; xent: 1.55; lr: 0.00005; 20650/2080 tok/s;    641 sec
+[2022-06-22 14:09:00,323 INFO] Weighted corpora loaded so far:
+			* github: 22
+[2022-06-22 14:09:20,312 INFO] Step 1450/100000; acc:  62.96; ppl:  4.53; xent: 1.51; lr: 0.00005; 19886/1910 tok/s;    665 sec
+[2022-06-22 14:09:30,068 INFO] Weighted corpora loaded so far:
+			* github: 23
+[2022-06-22 14:09:43,800 INFO] Step 1500/100000; acc:  63.96; ppl:  4.40; xent: 1.48; lr: 0.00005; 20072/1946 tok/s;    688 sec
+[2022-06-22 14:10:00,176 INFO] Weighted corpora loaded so far:
+			* github: 24
+[2022-06-22 14:10:06,438 INFO] Step 1550/100000; acc:  64.41; ppl:  4.26; xent: 1.45; lr: 0.00005; 19653/2080 tok/s;    711 sec
+[2022-06-22 14:10:29,290 INFO] Step 1600/100000; acc:  65.06; ppl:  4.07; xent: 1.40; lr: 0.00005; 20225/2005 tok/s;    734 sec
+[2022-06-22 14:10:29,319 INFO] Weighted corpora loaded so far:
+			* github: 25
+[2022-06-22 14:10:52,702 INFO] Step 1650/100000; acc:  66.24; ppl:  3.89; xent: 1.36; lr: 0.00005; 19477/1957 tok/s;    757 sec
+[2022-06-22 14:10:59,104 INFO] Weighted corpora loaded so far:
+			* github: 26
+[2022-06-22 14:11:16,152 INFO] Step 1700/100000; acc:  67.21; ppl:  3.74; xent: 1.32; lr: 0.00005; 20018/1940 tok/s;    781 sec
+[2022-06-22 14:11:39,234 INFO] Step 1750/100000; acc:  68.06; ppl:  3.62; xent: 1.29; lr: 0.00005; 19724/1997 tok/s;    804 sec
+[2022-06-22 14:11:58,575 INFO] Weighted corpora loaded so far:
+			* github: 27
+[2022-06-22 14:12:02,619 INFO] Step 1800/100000; acc:  68.63; ppl:  3.54; xent: 1.26; lr: 0.00005; 20003/1961 tok/s;    827 sec
+[2022-06-22 14:12:24,969 INFO] Step 1850/100000; acc:  69.71; ppl:  3.37; xent: 1.21; lr: 0.00005; 20002/2033 tok/s;    849 sec
+[2022-06-22 14:12:27,935 INFO] Weighted corpora loaded so far:
+			* github: 28
+[2022-06-22 14:12:47,811 INFO] Step 1900/100000; acc:  69.74; ppl:  3.32; xent: 1.20; lr: 0.00005; 20570/2029 tok/s;    872 sec
+[2022-06-22 14:12:57,226 INFO] Weighted corpora loaded so far:
+			* github: 29
+[2022-06-22 14:13:11,059 INFO] Step 1950/100000; acc:  70.77; ppl:  3.19; xent: 1.16; lr: 0.00005; 20743/1989 tok/s;    895 sec
+[2022-06-22 14:13:26,578 INFO] Weighted corpora loaded so far:
+			* github: 30
+[2022-06-22 14:13:34,459 INFO] Step 2000/100000; acc:  71.82; ppl:  3.05; xent: 1.12; lr: 0.00005; 19205/1953 tok/s;    919 sec
+[2022-06-22 14:13:56,199 INFO] Weighted corpora loaded so far:
+			* github: 31
+[2022-06-22 14:13:57,524 INFO] Step 2050/100000; acc:  72.18; ppl:  3.04; xent: 1.11; lr: 0.00005; 20197/1992 tok/s;    942 sec
+[2022-06-22 14:14:20,524 INFO] Step 2100/100000; acc:  72.73; ppl:  2.92; xent: 1.07; lr: 0.00005; 19957/1997 tok/s;    965 sec
+[2022-06-22 14:14:25,474 INFO] Weighted corpora loaded so far:
+			* github: 32
+[2022-06-22 14:14:43,860 INFO] Step 2150/100000; acc:  73.37; ppl:  2.84; xent: 1.04; lr: 0.00005; 20123/1998 tok/s;    988 sec
+[2022-06-22 14:14:55,180 INFO] Weighted corpora loaded so far:
+			* github: 33
+[2022-06-22 14:15:06,883 INFO] Step 2200/100000; acc:  74.13; ppl:  2.76; xent: 1.01; lr: 0.00005; 19573/1956 tok/s;   1011 sec
+[2022-06-22 14:15:25,375 INFO] Weighted corpora loaded so far:
+			* github: 34
+[2022-06-22 14:15:29,986 INFO] Step 2250/100000; acc:  74.85; ppl:  2.67; xent: 0.98; lr: 0.00005; 20075/1975 tok/s;   1034 sec
+[2022-06-22 14:15:52,879 INFO] Step 2300/100000; acc:  75.37; ppl:  2.62; xent: 0.96; lr: 0.00005; 19621/1987 tok/s;   1057 sec
+[2022-06-22 14:15:54,790 INFO] Weighted corpora loaded so far:
+			* github: 35
+[2022-06-22 14:16:15,847 INFO] Step 2350/100000; acc:  75.96; ppl:  2.57; xent: 0.94; lr: 0.00005; 20423/2034 tok/s;   1080 sec
+[2022-06-22 14:16:24,583 INFO] Weighted corpora loaded so far:
+			* github: 36
+[2022-06-22 14:16:39,905 INFO] Step 2400/100000; acc:  76.55; ppl:  2.49; xent: 0.91; lr: 0.00005; 19833/1929 tok/s;   1104 sec
+[2022-06-22 14:16:54,471 INFO] Weighted corpora loaded so far:
+			* github: 37
+[2022-06-22 14:17:02,730 INFO] Step 2450/100000; acc:  77.18; ppl:  2.43; xent: 0.89; lr: 0.00005; 19356/1983 tok/s;   1127 sec
+[2022-06-22 14:17:23,809 INFO] Weighted corpora loaded so far:
+			* github: 38
+[2022-06-22 14:17:25,841 INFO] Step 2500/100000; acc:  77.71; ppl:  2.38; xent: 0.87; lr: 0.00005; 19962/2003 tok/s;   1150 sec
+[2022-06-22 14:17:48,823 INFO] Step 2550/100000; acc:  78.32; ppl:  2.32; xent: 0.84; lr: 0.00005; 20130/2003 tok/s;   1173 sec
+[2022-06-22 14:17:53,733 INFO] Weighted corpora loaded so far:
+			* github: 39
+[2022-06-22 14:18:11,881 INFO] Step 2600/100000; acc:  79.02; ppl:  2.24; xent: 0.81; lr: 0.00005; 20262/1980 tok/s;   1196 sec
+[2022-06-22 14:18:35,817 INFO] Step 2650/100000; acc:  79.17; ppl:  2.24; xent: 0.81; lr: 0.00005; 19540/1932 tok/s;   1220 sec
+[2022-06-22 14:18:53,088 INFO] Weighted corpora loaded so far:
+			* github: 40
+[2022-06-22 14:18:58,953 INFO] Step 2700/100000; acc:  79.75; ppl:  2.18; xent: 0.78; lr: 0.00005; 19378/1940 tok/s;   1243 sec
+[2022-06-22 14:19:21,870 INFO] Step 2750/100000; acc:  80.27; ppl:  2.14; xent: 0.76; lr: 0.00005; 19819/2021 tok/s;   1266 sec
+[2022-06-22 14:19:22,899 INFO] Weighted corpora loaded so far:
+			* github: 41
+[2022-06-22 14:19:45,787 INFO] Step 2800/100000; acc:  80.37; ppl:  2.11; xent: 0.75; lr: 0.00005; 19698/1922 tok/s;   1290 sec
+[2022-06-22 14:19:52,697 INFO] Weighted corpora loaded so far:
+			* github: 42
+[2022-06-22 14:20:08,634 INFO] Step 2850/100000; acc:  81.06; ppl:  2.06; xent: 0.72; lr: 0.00005; 20595/2041 tok/s;   1313 sec
+[2022-06-22 14:20:22,047 INFO] Weighted corpora loaded so far:
+			* github: 43
+[2022-06-22 14:20:31,551 INFO] Step 2900/100000; acc:  81.56; ppl:  2.01; xent: 0.70; lr: 0.00005; 19893/1978 tok/s;   1336 sec
+[2022-06-22 14:20:51,821 INFO] Weighted corpora loaded so far:
+			* github: 44
+[2022-06-22 14:20:54,774 INFO] Step 2950/100000; acc:  82.18; ppl:  1.97; xent: 0.68; lr: 0.00005; 20235/1972 tok/s;   1359 sec
+[2022-06-22 14:21:17,313 INFO] Step 3000/100000; acc:  82.50; ppl:  1.95; xent: 0.67; lr: 0.00005; 19823/2039 tok/s;   1382 sec
+[2022-06-22 14:21:21,231 INFO] Weighted corpora loaded so far:
+			* github: 45
+[2022-06-22 14:21:40,804 INFO] Step 3050/100000; acc:  83.10; ppl:  1.91; xent: 0.65; lr: 0.00005; 19882/1945 tok/s;   1405 sec
+[2022-06-22 14:21:50,927 INFO] Weighted corpora loaded so far:
+			* github: 46
+[2022-06-22 14:22:04,411 INFO] Step 3100/100000; acc:  83.44; ppl:  1.89; xent: 0.63; lr: 0.00005; 20113/1971 tok/s;   1429 sec
+[2022-06-22 14:22:21,241 INFO] Weighted corpora loaded so far:
+			* github: 47
+[2022-06-22 14:22:28,025 INFO] Step 3150/100000; acc:  84.15; ppl:  1.84; xent: 0.61; lr: 0.00005; 19088/1914 tok/s;   1452 sec
+[2022-06-22 14:22:51,100 INFO] Step 3200/100000; acc:  84.57; ppl:  1.80; xent: 0.59; lr: 0.00005; 20066/2003 tok/s;   1475 sec
+[2022-06-22 14:22:51,122 INFO] Weighted corpora loaded so far:
+			* github: 48
+[2022-06-22 14:23:14,012 INFO] Step 3250/100000; acc:  84.86; ppl:  1.78; xent: 0.58; lr: 0.00005; 19890/2012 tok/s;   1498 sec
+[2022-06-22 14:23:20,796 INFO] Weighted corpora loaded so far:
+			* github: 49
+[2022-06-22 14:23:37,576 INFO] Step 3300/100000; acc:  85.14; ppl:  1.76; xent: 0.57; lr: 0.00005; 19958/1965 tok/s;   1522 sec
+[2022-06-22 14:23:50,296 INFO] Weighted corpora loaded so far:
+			* github: 50
+[2022-06-22 14:24:00,818 INFO] Step 3350/100000; acc:  86.20; ppl:  1.72; xent: 0.54; lr: 0.00005; 19563/1967 tok/s;   1545 sec
+[2022-06-22 14:24:20,051 INFO] Weighted corpora loaded so far:
+			* github: 51
+[2022-06-22 14:24:24,165 INFO] Step 3400/100000; acc:  86.02; ppl:  1.71; xent: 0.54; lr: 0.00005; 19879/1983 tok/s;   1569 sec
+[2022-06-22 14:24:46,510 INFO] Step 3450/100000; acc:  86.51; ppl:  1.68; xent: 0.52; lr: 0.00005; 19848/2018 tok/s;   1591 sec
+[2022-06-22 14:25:09,977 INFO] Step 3500/100000; acc:  86.86; ppl:  1.66; xent: 0.51; lr: 0.00005; 19915/1959 tok/s;   1614 sec
+[2022-06-22 14:25:19,032 INFO] Weighted corpora loaded so far:
+			* github: 52
+[2022-06-22 14:25:33,742 INFO] Step 3550/100000; acc:  86.88; ppl:  1.65; xent: 0.50; lr: 0.00005; 20289/1918 tok/s;   1638 sec
+[2022-06-22 14:25:48,769 INFO] Weighted corpora loaded so far:
+			* github: 53
+[2022-06-22 14:25:56,648 INFO] Step 3600/100000; acc:  87.31; ppl:  1.63; xent: 0.49; lr: 0.00005; 19648/2029 tok/s;   1661 sec
+[2022-06-22 14:26:19,050 INFO] Weighted corpora loaded so far:
+			* github: 54
+[2022-06-22 14:26:20,263 INFO] Step 3650/100000; acc:  88.23; ppl:  1.58; xent: 0.46; lr: 0.00005; 19687/1917 tok/s;   1685 sec
+[2022-06-22 14:26:43,334 INFO] Step 3700/100000; acc:  88.03; ppl:  1.58; xent: 0.46; lr: 0.00005; 20081/2050 tok/s;   1708 sec
+[2022-06-22 14:26:48,367 INFO] Weighted corpora loaded so far:
+			* github: 55
+[2022-06-22 14:27:06,207 INFO] Step 3750/100000; acc:  88.90; ppl:  1.54; xent: 0.43; lr: 0.00005; 20681/1967 tok/s;   1731 sec
+[2022-06-22 14:27:17,868 INFO] Weighted corpora loaded so far:
+			* github: 56
+[2022-06-22 14:27:28,893 INFO] Step 3800/100000; acc:  89.19; ppl:  1.53; xent: 0.43; lr: 0.00005; 19893/2023 tok/s;   1753 sec
+[2022-06-22 14:27:47,916 INFO] Weighted corpora loaded so far:
+			* github: 57
+[2022-06-22 14:27:52,678 INFO] Step 3850/100000; acc:  88.95; ppl:  1.54; xent: 0.43; lr: 0.00005; 19405/1949 tok/s;   1777 sec
+[2022-06-22 14:28:15,443 INFO] Step 3900/100000; acc:  89.54; ppl:  1.50; xent: 0.40; lr: 0.00005; 19604/1987 tok/s;   1800 sec
+[2022-06-22 14:28:17,354 INFO] Weighted corpora loaded so far:
+			* github: 58
+[2022-06-22 14:28:38,429 INFO] Step 3950/100000; acc:  90.09; ppl:  1.48; xent: 0.39; lr: 0.00005; 20338/2013 tok/s;   1823 sec
+[2022-06-22 14:28:46,922 INFO] Weighted corpora loaded so far:
+			* github: 59
+[2022-06-22 14:29:02,219 INFO] Step 4000/100000; acc:  90.15; ppl:  1.47; xent: 0.39; lr: 0.00005; 20162/1962 tok/s;   1847 sec
+[2022-06-22 14:29:16,369 INFO] Weighted corpora loaded so far:
+			* github: 60
+[2022-06-22 14:29:25,018 INFO] Step 4050/100000; acc:  90.67; ppl:  1.44; xent: 0.37; lr: 0.00005; 19582/1965 tok/s;   1869 sec
+[2022-06-22 14:29:46,000 INFO] Weighted corpora loaded so far:
+			* github: 61
+[2022-06-22 14:29:48,082 INFO] Step 4100/100000; acc:  90.50; ppl:  1.45; xent: 0.37; lr: 0.00005; 20220/2002 tok/s;   1892 sec
+[2022-06-22 14:30:10,713 INFO] Step 4150/100000; acc:  90.93; ppl:  1.42; xent: 0.35; lr: 0.00005; 20272/2013 tok/s;   1915 sec
+[2022-06-22 14:30:15,270 INFO] Weighted corpora loaded so far:
+			* github: 62
+[2022-06-22 14:30:34,094 INFO] Step 4200/100000; acc:  91.17; ppl:  1.42; xent: 0.35; lr: 0.00005; 19954/2014 tok/s;   1938 sec
+[2022-06-22 14:30:44,601 INFO] Weighted corpora loaded so far:
+			* github: 63
+[2022-06-22 14:30:57,518 INFO] Step 4250/100000; acc:  91.40; ppl:  1.40; xent: 0.34; lr: 0.00005; 19901/1957 tok/s;   1962 sec
+[2022-06-22 14:31:14,702 INFO] Weighted corpora loaded so far:
+			* github: 64
+[2022-06-22 14:31:20,018 INFO] Step 4300/100000; acc:  91.52; ppl:  1.39; xent: 0.33; lr: 0.00005; 19817/2003 tok/s;   1984 sec
+[2022-06-22 14:31:42,759 INFO] Step 4350/100000; acc:  92.05; ppl:  1.38; xent: 0.32; lr: 0.00005; 19908/2033 tok/s;   2007 sec
+[2022-06-22 14:32:05,821 INFO] Step 4400/100000; acc:  92.42; ppl:  1.35; xent: 0.30; lr: 0.00005; 20303/1961 tok/s;   2030 sec
+[2022-06-22 14:32:13,143 INFO] Weighted corpora loaded so far:
+			* github: 65
+[2022-06-22 14:32:29,004 INFO] Step 4450/100000; acc:  92.48; ppl:  1.36; xent: 0.30; lr: 0.00005; 20253/2001 tok/s;   2053 sec
+[2022-06-22 14:32:42,735 INFO] Weighted corpora loaded so far:
+			* github: 66
+[2022-06-22 14:32:52,321 INFO] Step 4500/100000; acc:  92.41; ppl:  1.35; xent: 0.30; lr: 0.00005; 19532/1953 tok/s;   2077 sec
+[2022-06-22 14:33:12,376 INFO] Weighted corpora loaded so far:
+			* github: 67
+[2022-06-22 14:33:15,603 INFO] Step 4550/100000; acc:  93.20; ppl:  1.32; xent: 0.28; lr: 0.00005; 20195/1983 tok/s;   2100 sec
+[2022-06-22 14:33:37,923 INFO] Step 4600/100000; acc:  92.83; ppl:  1.33; xent: 0.28; lr: 0.00005; 20419/2059 tok/s;   2122 sec
+[2022-06-22 14:33:41,866 INFO] Weighted corpora loaded so far:
+			* github: 68
+[2022-06-22 14:34:00,637 INFO] Step 4650/100000; acc:  93.06; ppl:  1.31; xent: 0.27; lr: 0.00005; 20694/2011 tok/s;   2145 sec
+[2022-06-22 14:34:10,726 INFO] Weighted corpora loaded so far:
+			* github: 69
+[2022-06-22 14:34:24,158 INFO] Step 4700/100000; acc:  93.68; ppl:  1.30; xent: 0.26; lr: 0.00005; 20086/1984 tok/s;   2169 sec
+[2022-06-22 14:34:39,942 INFO] Weighted corpora loaded so far:
+			* github: 70
+[2022-06-22 14:34:46,785 INFO] Step 4750/100000; acc:  93.44; ppl:  1.30; xent: 0.26; lr: 0.00005; 19714/2003 tok/s;   2191 sec
+[2022-06-22 14:35:09,386 INFO] Step 4800/100000; acc:  93.60; ppl:  1.29; xent: 0.25; lr: 0.00005; 20365/2030 tok/s;   2214 sec
+[2022-06-22 14:35:09,403 INFO] Weighted corpora loaded so far:
+			* github: 71
+[2022-06-22 14:35:33,312 INFO] Step 4850/100000; acc:  94.00; ppl:  1.27; xent: 0.24; lr: 0.00005; 19072/1918 tok/s;   2238 sec
+[2022-06-22 14:35:39,474 INFO] Weighted corpora loaded so far:
+			* github: 72
+[2022-06-22 14:35:56,726 INFO] Step 4900/100000; acc:  94.16; ppl:  1.27; xent: 0.24; lr: 0.00005; 20203/1977 tok/s;   2261 sec
+[2022-06-22 14:36:09,426 INFO] Weighted corpora loaded so far:
+			* github: 73
+[2022-06-22 14:36:19,716 INFO] Step 4950/100000; acc:  94.40; ppl:  1.26; xent: 0.23; lr: 0.00005; 19933/2012 tok/s;   2284 sec
+[2022-06-22 14:36:38,797 INFO] Weighted corpora loaded so far:
+			* github: 74
+[2022-06-22 14:36:42,941 INFO] Step 5000/100000; acc:  94.53; ppl:  1.25; xent: 0.22; lr: 0.00005; 20112/1962 tok/s;   2307 sec
+[2022-06-22 14:37:05,347 INFO] Step 5050/100000; acc:  94.29; ppl:  1.25; xent: 0.22; lr: 0.00005; 19720/2035 tok/s;   2330 sec
+[2022-06-22 14:37:08,311 INFO] Weighted corpora loaded so far:
+			* github: 75
+[2022-06-22 14:37:28,605 INFO] Step 5100/100000; acc:  94.92; ppl:  1.23; xent: 0.21; lr: 0.00005; 20046/1986 tok/s;   2353 sec
+[2022-06-22 14:37:37,993 INFO] Weighted corpora loaded so far:
+			* github: 76
+[2022-06-22 14:37:52,004 INFO] Step 5150/100000; acc:  94.88; ppl:  1.23; xent: 0.21; lr: 0.00005; 20470/1978 tok/s;   2376 sec
+[2022-06-22 14:38:07,535 INFO] Weighted corpora loaded so far:
+			* github: 77
+[2022-06-22 14:38:15,085 INFO] Step 5200/100000; acc:  94.66; ppl:  1.24; xent: 0.21; lr: 0.00005; 19332/1981 tok/s;   2399 sec
+[2022-06-22 14:38:38,130 INFO] Step 5250/100000; acc:  95.10; ppl:  1.22; xent: 0.20; lr: 0.00005; 20053/1968 tok/s;   2423 sec
+[2022-06-22 14:39:00,942 INFO] Step 5300/100000; acc:  95.20; ppl:  1.21; xent: 0.19; lr: 0.00005; 20339/2023 tok/s;   2445 sec
+[2022-06-22 14:39:06,503 INFO] Weighted corpora loaded so far:
+			* github: 78
+[2022-06-22 14:39:24,334 INFO] Step 5350/100000; acc:  95.38; ppl:  1.21; xent: 0.19; lr: 0.00005; 20227/1936 tok/s;   2469 sec
+[2022-06-22 14:39:35,875 INFO] Weighted corpora loaded so far:
+			* github: 79
+[2022-06-22 14:39:47,174 INFO] Step 5400/100000; acc:  95.55; ppl:  1.20; xent: 0.18; lr: 0.00005; 19777/2008 tok/s;   2492 sec
+[2022-06-22 14:40:04,770 INFO] Weighted corpora loaded so far:
+			* github: 80
+[2022-06-22 14:40:10,127 INFO] Step 5450/100000; acc:  95.50; ppl:  1.20; xent: 0.18; lr: 0.00005; 20174/2049 tok/s;   2515 sec
+[2022-06-22 14:40:32,776 INFO] Step 5500/100000; acc:  95.68; ppl:  1.19; xent: 0.17; lr: 0.00005; 19944/2003 tok/s;   2537 sec
+[2022-06-22 14:40:34,469 INFO] Weighted corpora loaded so far:
+			* github: 81
+[2022-06-22 14:40:55,700 INFO] Step 5550/100000; acc:  95.71; ppl:  1.19; xent: 0.17; lr: 0.00005; 20480/1988 tok/s;   2560 sec
+[2022-06-22 14:41:04,055 INFO] Weighted corpora loaded so far:
+			* github: 82
+[2022-06-22 14:41:19,124 INFO] Step 5600/100000; acc:  95.80; ppl:  1.18; xent: 0.17; lr: 0.00005; 20350/1982 tok/s;   2584 sec
+[2022-06-22 14:41:33,621 INFO] Weighted corpora loaded so far:
+			* github: 83
+[2022-06-22 14:41:42,020 INFO] Step 5650/100000; acc:  95.97; ppl:  1.18; xent: 0.16; lr: 0.00005; 19296/1997 tok/s;   2606 sec
+[2022-06-22 14:42:03,322 INFO] Weighted corpora loaded so far:
+			* github: 84
+[2022-06-22 14:42:05,408 INFO] Step 5700/100000; acc:  96.01; ppl:  1.17; xent: 0.16; lr: 0.00005; 19797/1966 tok/s;   2630 sec
+[2022-06-22 14:42:28,723 INFO] Step 5750/100000; acc:  96.11; ppl:  1.17; xent: 0.15; lr: 0.00005; 19970/1976 tok/s;   2653 sec
+[2022-06-22 14:42:33,087 INFO] Weighted corpora loaded so far:
+			* github: 85
+[2022-06-22 14:42:51,680 INFO] Step 5800/100000; acc:  96.24; ppl:  1.16; xent: 0.15; lr: 0.00005; 20437/1975 tok/s;   2676 sec
+[2022-06-22 14:43:02,781 INFO] Weighted corpora loaded so far:
+			* github: 86
+[2022-06-22 14:43:14,984 INFO] Step 5850/100000; acc:  96.24; ppl:  1.16; xent: 0.15; lr: 0.00005; 20076/1966 tok/s;   2699 sec
+[2022-06-22 14:43:32,048 INFO] Weighted corpora loaded so far:
+			* github: 87
+[2022-06-22 14:43:37,879 INFO] Step 5900/100000; acc:  96.31; ppl:  1.16; xent: 0.15; lr: 0.00005; 19521/2025 tok/s;   2722 sec
+[2022-06-22 14:44:00,266 INFO] Step 5950/100000; acc:  96.37; ppl:  1.16; xent: 0.15; lr: 0.00005; 20222/2064 tok/s;   2745 sec
+[2022-06-22 14:44:01,367 INFO] Weighted corpora loaded so far:
+			* github: 88
+[2022-06-22 14:44:23,140 INFO] Step 6000/100000; acc:  96.52; ppl:  1.15; xent: 0.14; lr: 0.00005; 20336/1993 tok/s;   2768 sec
+[2022-06-22 14:44:30,908 INFO] Weighted corpora loaded so far:
+			* github: 89
+[2022-06-22 14:44:47,332 INFO] Step 6050/100000; acc:  96.60; ppl:  1.14; xent: 0.14; lr: 0.00005; 19304/1915 tok/s;   2792 sec
+[2022-06-22 14:45:00,402 INFO] Weighted corpora loaded so far:
+			* github: 90
+[2022-06-22 14:45:09,966 INFO] Step 6100/100000; acc:  96.77; ppl:  1.14; xent: 0.13; lr: 0.00005; 20015/2018 tok/s;   2814 sec
+[2022-06-22 14:45:32,625 INFO] Step 6150/100000; acc:  96.59; ppl:  1.14; xent: 0.13; lr: 0.00005; 20653/2032 tok/s;   2837 sec
+[2022-06-22 14:45:55,216 INFO] Step 6200/100000; acc:  96.65; ppl:  1.14; xent: 0.13; lr: 0.00005; 20165/2035 tok/s;   2860 sec
+[2022-06-22 14:45:59,107 INFO] Weighted corpora loaded so far:
+			* github: 91
+[2022-06-22 14:46:18,662 INFO] Step 6250/100000; acc:  97.01; ppl:  1.13; xent: 0.12; lr: 0.00005; 19958/1921 tok/s;   2883 sec
+[2022-06-22 14:46:28,732 INFO] Weighted corpora loaded so far:
+			* github: 92
+[2022-06-22 14:46:41,924 INFO] Step 6300/100000; acc:  96.79; ppl:  1.13; xent: 0.12; lr: 0.00005; 20379/1995 tok/s;   2906 sec
+[2022-06-22 14:46:58,443 INFO] Weighted corpora loaded so far:
+			* github: 93
+[2022-06-22 14:47:05,240 INFO] Step 6350/100000; acc:  96.93; ppl:  1.13; xent: 0.12; lr: 0.00005; 19316/1968 tok/s;   2930 sec
+[2022-06-22 14:47:27,867 INFO] Step 6400/100000; acc:  97.00; ppl:  1.13; xent: 0.12; lr: 0.00005; 20485/2034 tok/s;   2952 sec
+[2022-06-22 14:47:27,881 INFO] Weighted corpora loaded so far:
+			* github: 94
+[2022-06-22 14:47:50,936 INFO] Step 6450/100000; acc:  96.88; ppl:  1.13; xent: 0.12; lr: 0.00005; 19879/2022 tok/s;   2975 sec
+[2022-06-22 14:47:57,388 INFO] Weighted corpora loaded so far:
+			* github: 95
+[2022-06-22 14:48:13,732 INFO] Step 6500/100000; acc:  97.18; ppl:  1.12; xent: 0.11; lr: 0.00005; 20624/1944 tok/s;   2998 sec
+[2022-06-22 14:48:26,800 INFO] Weighted corpora loaded so far:
+			* github: 96
+[2022-06-22 14:48:37,207 INFO] Step 6550/100000; acc:  96.93; ppl:  1.12; xent: 0.12; lr: 0.00005; 19340/1997 tok/s;   3022 sec
+[2022-06-22 14:48:56,066 INFO] Weighted corpora loaded so far:
+			* github: 97
+[2022-06-22 14:49:00,316 INFO] Step 6600/100000; acc:  97.27; ppl:  1.11; xent: 0.11; lr: 0.00005; 20132/1996 tok/s;   3045 sec
+[2022-06-22 14:49:22,636 INFO] Step 6650/100000; acc:  97.33; ppl:  1.11; xent: 0.11; lr: 0.00005; 20039/2037 tok/s;   3067 sec
+[2022-06-22 14:49:25,611 INFO] Weighted corpora loaded so far:
+			* github: 98
+[2022-06-22 14:49:46,515 INFO] Step 6700/100000; acc:  97.26; ppl:  1.11; xent: 0.11; lr: 0.00005; 19713/1944 tok/s;   3091 sec
+[2022-06-22 14:49:55,199 INFO] Weighted corpora loaded so far:
+			* github: 99
+[2022-06-22 14:50:09,872 INFO] Step 6750/100000; acc:  97.32; ppl:  1.11; xent: 0.10; lr: 0.00005; 20538/1945 tok/s;   3114 sec
+[2022-06-22 14:50:24,639 INFO] Weighted corpora loaded so far:
+			* github: 100
+[2022-06-22 14:50:32,643 INFO] Step 6800/100000; acc:  97.34; ppl:  1.11; xent: 0.10; lr: 0.00005; 19556/2061 tok/s;   3137 sec
+[2022-06-22 14:50:54,013 INFO] Weighted corpora loaded so far:
+			* github: 101
+[2022-06-22 14:50:55,210 INFO] Step 6850/100000; acc:  97.41; ppl:  1.11; xent: 0.10; lr: 0.00005; 20533/2002 tok/s;   3160 sec
+[2022-06-22 14:51:18,634 INFO] Step 6900/100000; acc:  97.34; ppl:  1.11; xent: 0.10; lr: 0.00005; 19647/1967 tok/s;   3183 sec
+[2022-06-22 14:51:24,000 INFO] Weighted corpora loaded so far:
+			* github: 102
+[2022-06-22 14:51:42,055 INFO] Step 6950/100000; acc:  97.40; ppl:  1.10; xent: 0.10; lr: 0.00005; 20025/1910 tok/s;   3206 sec
+[2022-06-22 14:52:05,128 INFO] Step 7000/100000; acc:  97.41; ppl:  1.10; xent: 0.10; lr: 0.00005; 19449/2050 tok/s;   3230 sec
+[2022-06-22 14:52:22,943 INFO] Weighted corpora loaded so far:
+			* github: 103
+[2022-06-22 14:52:27,920 INFO] Step 7050/100000; acc:  97.36; ppl:  1.10; xent: 0.10; lr: 0.00005; 20273/1989 tok/s;   3252 sec
+[2022-06-22 14:52:49,849 INFO] Step 7100/100000; acc:  97.55; ppl:  1.10; xent: 0.09; lr: 0.00005; 20644/2082 tok/s;   3274 sec
+[2022-06-22 14:52:51,843 INFO] Weighted corpora loaded so far:
+			* github: 104
+[2022-06-22 14:53:12,952 INFO] Step 7150/100000; acc:  97.50; ppl:  1.10; xent: 0.09; lr: 0.00005; 20296/1987 tok/s;   3297 sec
+[2022-06-22 14:53:21,495 INFO] Weighted corpora loaded so far:
+			* github: 105
+[2022-06-22 14:53:36,740 INFO] Step 7200/100000; acc:  97.78; ppl:  1.09; xent: 0.09; lr: 0.00005; 20193/1942 tok/s;   3321 sec
+[2022-06-22 14:53:50,903 INFO] Weighted corpora loaded so far:
+			* github: 106
+[2022-06-22 14:53:59,517 INFO] Step 7250/100000; acc:  97.54; ppl:  1.10; xent: 0.09; lr: 0.00005; 19614/2031 tok/s;   3344 sec
+[2022-06-22 14:54:20,601 INFO] Weighted corpora loaded so far:
+			* github: 107
+[2022-06-22 14:54:22,741 INFO] Step 7300/100000; acc:  97.60; ppl:  1.09; xent: 0.09; lr: 0.00005; 20044/1974 tok/s;   3367 sec
+[2022-06-22 14:54:45,273 INFO] Step 7350/100000; acc:  97.73; ppl:  1.09; xent: 0.09; lr: 0.00005; 20464/2001 tok/s;   3390 sec
+[2022-06-22 14:54:50,157 INFO] Weighted corpora loaded so far:
+			* github: 108
+[2022-06-22 14:55:09,317 INFO] Step 7400/100000; acc:  97.74; ppl:  1.09; xent: 0.08; lr: 0.00005; 19417/1950 tok/s;   3414 sec
+[2022-06-22 14:55:19,996 INFO] Weighted corpora loaded so far:
+			* github: 109
+[2022-06-22 14:55:32,698 INFO] Step 7450/100000; acc:  97.86; ppl:  1.08; xent: 0.08; lr: 0.00005; 19914/1971 tok/s;   3437 sec
+[2022-06-22 14:55:49,437 INFO] Weighted corpora loaded so far:
+			* github: 110
+[2022-06-22 14:55:55,325 INFO] Step 7500/100000; acc:  97.89; ppl:  1.08; xent: 0.08; lr: 0.00005; 19729/1999 tok/s;   3460 sec
+[2022-06-22 14:56:18,024 INFO] Step 7550/100000; acc:  97.86; ppl:  1.08; xent: 0.08; lr: 0.00005; 20190/2025 tok/s;   3482 sec
+[2022-06-22 14:56:19,047 INFO] Weighted corpora loaded so far:
+			* github: 111
+[2022-06-22 14:56:41,442 INFO] Step 7600/100000; acc:  97.99; ppl:  1.08; xent: 0.08; lr: 0.00005; 20038/1954 tok/s;   3506 sec
+[2022-06-22 14:56:48,766 INFO] Weighted corpora loaded so far:
+			* github: 112
+[2022-06-22 14:57:04,529 INFO] Step 7650/100000; acc:  98.00; ppl:  1.08; xent: 0.08; lr: 0.00005; 20177/1974 tok/s;   3529 sec
+[2022-06-22 14:57:18,117 INFO] Weighted corpora loaded so far:
+			* github: 113
+[2022-06-22 14:57:27,157 INFO] Step 7700/100000; acc:  98.01; ppl:  1.08; xent: 0.08; lr: 0.00005; 19927/2074 tok/s;   3552 sec
+[2022-06-22 14:57:48,007 INFO] Weighted corpora loaded so far:
+			* github: 114
+[2022-06-22 14:57:51,018 INFO] Step 7750/100000; acc:  97.99; ppl:  1.08; xent: 0.08; lr: 0.00005; 19608/1937 tok/s;   3575 sec
+[2022-06-22 14:58:14,055 INFO] Step 7800/100000; acc:  97.99; ppl:  1.08; xent: 0.08; lr: 0.00005; 19654/1985 tok/s;   3598 sec
+[2022-06-22 14:58:17,575 INFO] Weighted corpora loaded so far:
+			* github: 115
+[2022-06-22 14:58:36,662 INFO] Step 7850/100000; acc:  98.02; ppl:  1.08; xent: 0.07; lr: 0.00005; 20611/1966 tok/s;   3621 sec
+[2022-06-22 14:59:00,513 INFO] Step 7900/100000; acc:  98.18; ppl:  1.07; xent: 0.07; lr: 0.00005; 19803/1968 tok/s;   3645 sec
+[2022-06-22 14:59:16,298 INFO] Weighted corpora loaded so far:
+			* github: 116
+[2022-06-22 14:59:22,974 INFO] Step 7950/100000; acc:  98.02; ppl:  1.07; xent: 0.07; lr: 0.00005; 19993/2017 tok/s;   3667 sec
+[2022-06-22 14:59:45,762 INFO] Step 8000/100000; acc:  98.17; ppl:  1.07; xent: 0.07; lr: 0.00005; 20349/2017 tok/s;   3690 sec
+[2022-06-22 14:59:45,767 INFO] Weighted corpora loaded so far:
+			* github: 117
+[2022-06-22 15:00:08,870 INFO] Step 8050/100000; acc:  98.16; ppl:  1.07; xent: 0.07; lr: 0.00005; 19809/2007 tok/s;   3713 sec
+[2022-06-22 15:00:15,388 INFO] Weighted corpora loaded so far:
+			* github: 118
+[2022-06-22 15:00:32,179 INFO] Step 8100/100000; acc:  98.10; ppl:  1.07; xent: 0.07; lr: 0.00005; 20391/1967 tok/s;   3737 sec
+[2022-06-22 15:00:44,786 INFO] Weighted corpora loaded so far:
+			* github: 119
+[2022-06-22 15:00:55,469 INFO] Step 8150/100000; acc:  98.19; ppl:  1.07; xent: 0.07; lr: 0.00005; 19703/1988 tok/s;   3760 sec
+[2022-06-22 15:01:14,405 INFO] Weighted corpora loaded so far:
+			* github: 120
+[2022-06-22 15:01:18,626 INFO] Step 8200/100000; acc:  98.21; ppl:  1.07; xent: 0.07; lr: 0.00005; 20099/1983 tok/s;   3783 sec
+[2022-06-22 15:01:41,182 INFO] Step 8250/100000; acc:  98.13; ppl:  1.07; xent: 0.07; lr: 0.00005; 19646/2003 tok/s;   3806 sec
+[2022-06-22 15:01:44,187 INFO] Weighted corpora loaded so far:
+			* github: 121
+[2022-06-22 15:02:04,530 INFO] Step 8300/100000; acc:  98.22; ppl:  1.07; xent: 0.07; lr: 0.00005; 20001/1984 tok/s;   3829 sec
+[2022-06-22 15:02:13,665 INFO] Weighted corpora loaded so far:
+			* github: 122
+[2022-06-22 15:02:27,179 INFO] Step 8350/100000; acc:  98.30; ppl:  1.07; xent: 0.06; lr: 0.00005; 21197/2020 tok/s;   3852 sec
+[2022-06-22 15:02:42,536 INFO] Weighted corpora loaded so far:
+			* github: 123
+[2022-06-22 15:02:50,192 INFO] Step 8400/100000; acc:  98.22; ppl:  1.06; xent: 0.06; lr: 0.00005; 19473/1984 tok/s;   3875 sec
+[2022-06-22 15:03:12,397 INFO] Weighted corpora loaded so far:
+			* github: 124
+[2022-06-22 15:03:13,644 INFO] Step 8450/100000; acc:  98.27; ppl:  1.07; xent: 0.06; lr: 0.00005; 19841/1945 tok/s;   3898 sec
+[2022-06-22 15:03:36,789 INFO] Step 8500/100000; acc:  98.36; ppl:  1.06; xent: 0.06; lr: 0.00005; 20015/2037 tok/s;   3921 sec
+[2022-06-22 15:03:42,287 INFO] Weighted corpora loaded so far:
+			* github: 125
+[2022-06-22 15:03:59,967 INFO] Step 8550/100000; acc:  98.44; ppl:  1.06; xent: 0.06; lr: 0.00005; 20273/1955 tok/s;   3944 sec
+[2022-06-22 15:04:11,924 INFO] Weighted corpora loaded so far:
+			* github: 126
+[2022-06-22 15:04:23,404 INFO] Step 8600/100000; acc:  98.41; ppl:  1.06; xent: 0.06; lr: 0.00005; 19106/1982 tok/s;   3968 sec
+[2022-06-22 15:04:41,814 INFO] Weighted corpora loaded so far:
+			* github: 127
+[2022-06-22 15:04:46,900 INFO] Step 8650/100000; acc:  98.17; ppl:  1.07; xent: 0.06; lr: 0.00005; 19565/1957 tok/s;   3991 sec
+[2022-06-22 15:05:09,148 INFO] Step 8700/100000; acc:  98.41; ppl:  1.06; xent: 0.06; lr: 0.00005; 20181/2030 tok/s;   4014 sec
+[2022-06-22 15:05:11,294 INFO] Weighted corpora loaded so far:
+			* github: 128
+[2022-06-22 15:05:33,073 INFO] Step 8750/100000; acc:  98.44; ppl:  1.06; xent: 0.06; lr: 0.00005; 19487/1926 tok/s;   4037 sec
+[2022-06-22 15:05:55,844 INFO] Step 8800/100000; acc:  98.54; ppl:  1.06; xent: 0.06; lr: 0.00005; 21044/1996 tok/s;   4060 sec
+[2022-06-22 15:06:09,984 INFO] Weighted corpora loaded so far:
+			* github: 129
+[2022-06-22 15:06:18,766 INFO] Step 8850/100000; acc:  98.38; ppl:  1.06; xent: 0.06; lr: 0.00005; 19443/2003 tok/s;   4083 sec
+[2022-06-22 15:06:39,384 INFO] Weighted corpora loaded so far:
+			* github: 130
+[2022-06-22 15:06:41,498 INFO] Step 8900/100000; acc:  98.52; ppl:  1.06; xent: 0.05; lr: 0.00005; 20446/2011 tok/s;   4106 sec
+[2022-06-22 15:07:04,409 INFO] Step 8950/100000; acc:  98.49; ppl:  1.06; xent: 0.06; lr: 0.00005; 20261/2042 tok/s;   4129 sec
+[2022-06-22 15:07:08,863 INFO] Weighted corpora loaded so far:
+			* github: 131
+[2022-06-22 15:07:27,728 INFO] Step 9000/100000; acc:  98.36; ppl:  1.06; xent: 0.06; lr: 0.00005; 20197/1967 tok/s;   4152 sec
+[2022-06-22 15:07:38,272 INFO] Weighted corpora loaded so far:
+			* github: 132
+[2022-06-22 15:07:50,739 INFO] Step 9050/100000; acc:  98.55; ppl:  1.06; xent: 0.05; lr: 0.00005; 20402/1992 tok/s;   4175 sec
+[2022-06-22 15:08:08,134 INFO] Weighted corpora loaded so far:
+			* github: 133
+[2022-06-22 15:08:13,711 INFO] Step 9100/100000; acc:  98.48; ppl:  1.06; xent: 0.06; lr: 0.00005; 19455/1967 tok/s;   4198 sec
+[2022-06-22 15:08:36,565 INFO] Step 9150/100000; acc:  98.56; ppl:  1.05; xent: 0.05; lr: 0.00005; 19699/2026 tok/s;   4221 sec
+[2022-06-22 15:08:37,612 INFO] Weighted corpora loaded so far:
+			* github: 134
+[2022-06-22 15:08:59,322 INFO] Step 9200/100000; acc:  98.63; ppl:  1.05; xent: 0.05; lr: 0.00005; 20540/2031 tok/s;   4244 sec
+[2022-06-22 15:09:06,821 INFO] Weighted corpora loaded so far:
+			* github: 135
+[2022-06-22 15:09:22,685 INFO] Step 9250/100000; acc:  98.60; ppl:  1.05; xent: 0.05; lr: 0.00005; 20130/1993 tok/s;   4267 sec
+[2022-06-22 15:09:36,452 INFO] Weighted corpora loaded so far:
+			* github: 136
+[2022-06-22 15:09:45,959 INFO] Step 9300/100000; acc:  98.56; ppl:  1.05; xent: 0.05; lr: 0.00005; 19590/1945 tok/s;   4290 sec
+[2022-06-22 15:10:05,870 INFO] Weighted corpora loaded so far:
+			* github: 137
+[2022-06-22 15:10:09,189 INFO] Step 9350/100000; acc:  98.64; ppl:  1.05; xent: 0.05; lr: 0.00005; 20195/1990 tok/s;   4314 sec
+[2022-06-22 15:10:31,311 INFO] Step 9400/100000; acc:  98.67; ppl:  1.05; xent: 0.05; lr: 0.00005; 20440/2057 tok/s;   4336 sec
+[2022-06-22 15:10:35,228 INFO] Weighted corpora loaded so far:
+			* github: 138
+[2022-06-22 15:10:54,630 INFO] Step 9450/100000; acc:  98.66; ppl:  1.05; xent: 0.05; lr: 0.00005; 20007/1968 tok/s;   4359 sec
+[2022-06-22 15:11:04,218 INFO] Weighted corpora loaded so far:
+			* github: 139
+[2022-06-22 15:11:17,623 INFO] Step 9500/100000; acc:  98.77; ppl:  1.05; xent: 0.05; lr: 0.00005; 20484/2010 tok/s;   4382 sec
+[2022-06-22 15:11:33,501 INFO] Weighted corpora loaded so far:
+			* github: 140
+[2022-06-22 15:11:40,309 INFO] Step 9550/100000; acc:  98.66; ppl:  1.05; xent: 0.05; lr: 0.00005; 19663/2008 tok/s;   4405 sec
+[2022-06-22 15:12:03,253 INFO] Step 9600/100000; acc:  98.69; ppl:  1.05; xent: 0.05; lr: 0.00005; 20077/2003 tok/s;   4428 sec
+[2022-06-22 15:12:26,362 INFO] Step 9650/100000; acc:  98.71; ppl:  1.05; xent: 0.05; lr: 0.00005; 19707/2002 tok/s;   4451 sec
+[2022-06-22 15:12:32,774 INFO] Weighted corpora loaded so far:
+			* github: 141
+[2022-06-22 15:12:49,121 INFO] Step 9700/100000; acc:  98.76; ppl:  1.05; xent: 0.05; lr: 0.00005; 20867/1965 tok/s;   4474 sec
+[2022-06-22 15:13:01,886 INFO] Weighted corpora loaded so far:
+			* github: 142
+[2022-06-22 15:13:11,698 INFO] Step 9750/100000; acc:  98.75; ppl:  1.05; xent: 0.05; lr: 0.00005; 20313/2072 tok/s;   4496 sec
+[2022-06-22 15:13:31,180 INFO] Weighted corpora loaded so far:
+			* github: 143
+[2022-06-22 15:13:35,011 INFO] Step 9800/100000; acc:  98.71; ppl:  1.05; xent: 0.05; lr: 0.00005; 19975/1955 tok/s;   4519 sec
+[2022-06-22 15:13:57,761 INFO] Step 9850/100000; acc:  98.73; ppl:  1.05; xent: 0.05; lr: 0.00005; 19668/2033 tok/s;   4542 sec
+[2022-06-22 15:14:00,740 INFO] Weighted corpora loaded so far:
+			* github: 144
+[2022-06-22 15:14:21,116 INFO] Step 9900/100000; acc:  98.73; ppl:  1.05; xent: 0.05; lr: 0.00005; 20126/1959 tok/s;   4566 sec
+[2022-06-22 15:14:30,709 INFO] Weighted corpora loaded so far:
+			* github: 145
+[2022-06-22 15:14:44,875 INFO] Step 9950/100000; acc:  98.82; ppl:  1.04; xent: 0.04; lr: 0.00005; 20238/1920 tok/s;   4589 sec
+[2022-06-22 15:15:00,497 INFO] Weighted corpora loaded so far:
+			* github: 146
+[2022-06-22 15:15:08,363 INFO] Step 10000/100000; acc:  98.74; ppl:  1.04; xent: 0.04; lr: 0.00005; 19007/1965 tok/s;   4613 sec
+[2022-06-22 15:15:29,897 INFO] Weighted corpora loaded so far:
+			* github: 147
+[2022-06-22 15:15:31,146 INFO] Step 10050/100000; acc:  98.79; ppl:  1.04; xent: 0.04; lr: 0.00005; 20274/2003 tok/s;   4636 sec
+[2022-06-22 15:15:53,921 INFO] Step 10100/100000; acc:  98.80; ppl:  1.04; xent: 0.04; lr: 0.00005; 20252/2023 tok/s;   4658 sec
+[2022-06-22 15:15:59,268 INFO] Weighted corpora loaded so far:
+			* github: 148
+[2022-06-22 15:16:17,539 INFO] Step 10150/100000; acc:  98.77; ppl:  1.04; xent: 0.04; lr: 0.00005; 20002/1960 tok/s;   4682 sec
+[2022-06-22 15:16:28,877 INFO] Weighted corpora loaded so far:
+			* github: 149
+[2022-06-22 15:16:40,657 INFO] Step 10200/100000; acc:  98.91; ppl:  1.04; xent: 0.04; lr: 0.00005; 19576/1970 tok/s;   4705 sec
+[2022-06-22 15:16:59,081 INFO] Weighted corpora loaded so far:
+			* github: 150
+[2022-06-22 15:17:03,897 INFO] Step 10250/100000; acc:  98.83; ppl:  1.04; xent: 0.04; lr: 0.00005; 19960/1972 tok/s;   4728 sec
+[2022-06-22 15:17:26,584 INFO] Step 10300/100000; acc:  98.76; ppl:  1.04; xent: 0.04; lr: 0.00005; 19686/2037 tok/s;   4751 sec
+[2022-06-22 15:17:28,555 INFO] Weighted corpora loaded so far:
+			* github: 151
+[2022-06-22 15:17:49,753 INFO] Step 10350/100000; acc:  98.92; ppl:  1.04; xent: 0.04; lr: 0.00005; 20108/2013 tok/s;   4774 sec
+[2022-06-22 15:17:58,189 INFO] Weighted corpora loaded so far:
+			* github: 152
+[2022-06-22 15:18:13,422 INFO] Step 10400/100000; acc:  98.88; ppl:  1.04; xent: 0.04; lr: 0.00005; 20165/1927 tok/s;   4798 sec
+[2022-06-22 15:18:27,869 INFO] Weighted corpora loaded so far:
+			* github: 153
+[2022-06-22 15:18:35,934 INFO] Step 10450/100000; acc:  98.83; ppl:  1.04; xent: 0.04; lr: 0.00005; 19675/2000 tok/s;   4820 sec
+[2022-06-22 15:18:59,162 INFO] Step 10500/100000; acc:  98.92; ppl:  1.04; xent: 0.04; lr: 0.00005; 19882/1985 tok/s;   4844 sec
+[2022-06-22 15:19:22,239 INFO] Step 10550/100000; acc:  98.92; ppl:  1.04; xent: 0.04; lr: 0.00005; 20050/2012 tok/s;   4867 sec
+[2022-06-22 15:19:26,941 INFO] Weighted corpora loaded so far:
+			* github: 154
+[2022-06-22 15:19:45,527 INFO] Step 10600/100000; acc:  98.90; ppl:  1.04; xent: 0.04; lr: 0.00005; 20208/1949 tok/s;   4890 sec
+[2022-06-22 15:19:56,508 INFO] Weighted corpora loaded so far:
+			* github: 155
+[2022-06-22 15:20:09,278 INFO] Step 10650/100000; acc:  98.96; ppl:  1.04; xent: 0.04; lr: 0.00005; 19725/1974 tok/s;   4914 sec
+[2022-06-22 15:20:25,938 INFO] Weighted corpora loaded so far:
+			* github: 156
+[2022-06-22 15:20:31,766 INFO] Step 10700/100000; acc:  98.92; ppl:  1.04; xent: 0.04; lr: 0.00005; 19910/1988 tok/s;   4936 sec
+[2022-06-22 15:20:54,300 INFO] Step 10750/100000; acc:  98.94; ppl:  1.04; xent: 0.04; lr: 0.00005; 20353/2063 tok/s;   4959 sec
+[2022-06-22 15:20:55,310 INFO] Weighted corpora loaded so far:
+			* github: 157
+[2022-06-22 15:21:18,086 INFO] Step 10800/100000; acc:  98.91; ppl:  1.04; xent: 0.04; lr: 0.00005; 19745/1929 tok/s;   4982 sec
+[2022-06-22 15:21:24,962 INFO] Weighted corpora loaded so far:
+			* github: 158
+[2022-06-22 15:21:40,986 INFO] Step 10850/100000; acc:  99.04; ppl:  1.04; xent: 0.04; lr: 0.00005; 20424/2020 tok/s;   5005 sec
+[2022-06-22 15:21:54,021 INFO] Weighted corpora loaded so far:
+			* github: 159
+[2022-06-22 15:22:03,501 INFO] Step 10900/100000; acc:  98.95; ppl:  1.04; xent: 0.04; lr: 0.00005; 20074/2029 tok/s;   5028 sec
+[2022-06-22 15:22:23,558 INFO] Weighted corpora loaded so far:
+			* github: 160
+[2022-06-22 15:22:26,655 INFO] Step 10950/100000; acc:  98.88; ppl:  1.04; xent: 0.04; lr: 0.00005; 20151/1987 tok/s;   5051 sec
+[2022-06-22 15:22:49,314 INFO] Step 11000/100000; acc:  99.00; ppl:  1.04; xent: 0.03; lr: 0.00005; 19945/2008 tok/s;   5074 sec
+[2022-06-22 15:22:53,191 INFO] Weighted corpora loaded so far:
+			* github: 161
+[2022-06-22 15:23:13,305 INFO] Step 11050/100000; acc:  98.98; ppl:  1.04; xent: 0.04; lr: 0.00005; 19584/1916 tok/s;   5098 sec
+[2022-06-22 15:23:22,987 INFO] Weighted corpora loaded so far:
+			* github: 162
+[2022-06-22 15:23:35,990 INFO] Step 11100/100000; acc:  98.97; ppl:  1.04; xent: 0.04; lr: 0.00005; 20931/2029 tok/s;   5120 sec
+[2022-06-22 15:23:52,645 INFO] Weighted corpora loaded so far:
+			* github: 163
+[2022-06-22 15:23:58,840 INFO] Step 11150/100000; acc:  98.93; ppl:  1.04; xent: 0.04; lr: 0.00005; 19623/1984 tok/s;   5143 sec
+[2022-06-22 15:24:22,097 INFO] Step 11200/100000; acc:  98.95; ppl:  1.04; xent: 0.04; lr: 0.00005; 19701/2003 tok/s;   5166 sec
+[2022-06-22 15:24:22,127 INFO] Weighted corpora loaded so far:
+			* github: 164
+[2022-06-22 15:24:45,233 INFO] Step 11250/100000; acc:  99.05; ppl:  1.03; xent: 0.03; lr: 0.00005; 19672/2005 tok/s;   5190 sec
+[2022-06-22 15:24:51,633 INFO] Weighted corpora loaded so far:
+			* github: 165
+[2022-06-22 15:25:07,923 INFO] Step 11300/100000; acc:  99.07; ppl:  1.03; xent: 0.03; lr: 0.00005; 20798/2025 tok/s;   5212 sec
+[2022-06-22 15:25:20,951 INFO] Weighted corpora loaded so far:
+			* github: 166
+[2022-06-22 15:25:31,291 INFO] Step 11350/100000; acc:  99.00; ppl:  1.04; xent: 0.04; lr: 0.00005; 19483/1950 tok/s;   5236 sec
+[2022-06-22 15:25:54,589 INFO] Step 11400/100000; acc:  98.94; ppl:  1.04; xent: 0.04; lr: 0.00005; 19889/1981 tok/s;   5259 sec
+[2022-06-22 15:26:16,667 INFO] Step 11450/100000; acc:  99.05; ppl:  1.03; xent: 0.03; lr: 0.00005; 20275/2059 tok/s;   5281 sec
+[2022-06-22 15:26:19,519 INFO] Weighted corpora loaded so far:
+			* github: 167
+[2022-06-22 15:26:39,878 INFO] Step 11500/100000; acc:  99.00; ppl:  1.04; xent: 0.03; lr: 0.00005; 20246/1947 tok/s;   5304 sec
+[2022-06-22 15:26:48,854 INFO] Weighted corpora loaded so far:
+			* github: 168
+[2022-06-22 15:27:03,414 INFO] Step 11550/100000; acc:  99.11; ppl:  1.03; xent: 0.03; lr: 0.00005; 20430/1971 tok/s;   5328 sec
+[2022-06-22 15:27:18,413 INFO] Weighted corpora loaded so far:
+			* github: 169
+[2022-06-22 15:27:26,098 INFO] Step 11600/100000; acc:  99.06; ppl:  1.03; xent: 0.03; lr: 0.00005; 19782/2014 tok/s;   5350 sec
+[2022-06-22 15:27:48,900 INFO] Weighted corpora loaded so far:
+			* github: 170
+[2022-06-22 15:27:50,002 INFO] Step 11650/100000; acc:  99.17; ppl:  1.03; xent: 0.03; lr: 0.00005; 19565/1936 tok/s;   5374 sec
+[2022-06-22 15:28:13,853 INFO] Step 11700/100000; acc:  99.12; ppl:  1.03; xent: 0.03; lr: 0.00005; 19406/1959 tok/s;   5398 sec
+[2022-06-22 15:28:19,116 INFO] Weighted corpora loaded so far:
+			* github: 171
+[2022-06-22 15:28:36,835 INFO] Step 11750/100000; acc:  99.10; ppl:  1.03; xent: 0.03; lr: 0.00005; 20425/1947 tok/s;   5421 sec
+[2022-06-22 15:28:48,106 INFO] Weighted corpora loaded so far:
+			* github: 172
+[2022-06-22 15:28:59,176 INFO] Step 11800/100000; acc:  99.15; ppl:  1.03; xent: 0.03; lr: 0.00005; 20059/2062 tok/s;   5444 sec
+[2022-06-22 15:29:17,748 INFO] Weighted corpora loaded so far:
+			* github: 173
+[2022-06-22 15:29:22,689 INFO] Step 11850/100000; acc:  99.03; ppl:  1.04; xent: 0.04; lr: 0.00005; 19613/1979 tok/s;   5467 sec
+[2022-06-22 15:29:45,228 INFO] Step 11900/100000; acc:  99.14; ppl:  1.03; xent: 0.03; lr: 0.00005; 20011/2017 tok/s;   5490 sec
+[2022-06-22 15:29:47,215 INFO] Weighted corpora loaded so far:
+			* github: 174
+[2022-06-22 15:30:08,137 INFO] Step 11950/100000; acc:  99.09; ppl:  1.03; xent: 0.03; lr: 0.00005; 20478/1984 tok/s;   5513 sec
+[2022-06-22 15:30:16,667 INFO] Weighted corpora loaded so far:
+			* github: 175
+[2022-06-22 15:30:31,686 INFO] Step 12000/100000; acc:  99.09; ppl:  1.03; xent: 0.03; lr: 0.00005; 20348/1985 tok/s;   5536 sec
+[2022-06-22 15:30:46,097 INFO] Weighted corpora loaded so far:
+			* github: 176
+[2022-06-22 15:30:54,811 INFO] Step 12050/100000; acc:  99.05; ppl:  1.03; xent: 0.03; lr: 0.00005; 19198/2022 tok/s;   5559 sec
+[2022-06-22 15:31:16,177 INFO] Weighted corpora loaded so far:
+			* github: 177
+[2022-06-22 15:31:18,429 INFO] Step 12100/100000; acc:  99.13; ppl:  1.03; xent: 0.03; lr: 0.00005; 19571/1914 tok/s;   5583 sec
+[2022-06-22 15:31:40,474 INFO] Step 12150/100000; acc:  99.15; ppl:  1.03; xent: 0.03; lr: 0.00005; 20839/2069 tok/s;   5605 sec
+[2022-06-22 15:31:45,261 INFO] Weighted corpora loaded so far:
+			* github: 178
+[2022-06-22 15:32:04,023 INFO] Step 12200/100000; acc:  99.19; ppl:  1.03; xent: 0.03; lr: 0.00005; 19843/1947 tok/s;   5628 sec
+[2022-06-22 15:32:14,418 INFO] Weighted corpora loaded so far:
+			* github: 179
+[2022-06-22 15:32:27,006 INFO] Step 12250/100000; acc:  99.11; ppl:  1.03; xent: 0.03; lr: 0.00005; 20296/2022 tok/s;   5651 sec
+[2022-06-22 15:32:49,289 INFO] Step 12300/100000; acc:  99.12; ppl:  1.03; xent: 0.03; lr: 0.00005; 20039/2022 tok/s;   5674 sec
+[2022-06-22 15:33:12,326 INFO] Step 12350/100000; acc:  99.21; ppl:  1.03; xent: 0.03; lr: 0.00005; 19874/1999 tok/s;   5697 sec
+[2022-06-22 15:33:13,487 INFO] Weighted corpora loaded so far:
+			* github: 180
+[2022-06-22 15:33:35,769 INFO] Step 12400/100000; acc:  99.12; ppl:  1.03; xent: 0.03; lr: 0.00005; 19925/1937 tok/s;   5720 sec
+[2022-06-22 15:33:42,814 INFO] Weighted corpora loaded so far:
+			* github: 181
+[2022-06-22 15:33:58,723 INFO] Step 12450/100000; acc:  99.16; ppl:  1.03; xent: 0.03; lr: 0.00005; 20482/2026 tok/s;   5743 sec
+[2022-06-22 15:34:12,241 INFO] Weighted corpora loaded so far:
+			* github: 182
+[2022-06-22 15:34:21,259 INFO] Step 12500/100000; acc:  99.18; ppl:  1.03; xent: 0.03; lr: 0.00005; 20251/2082 tok/s;   5766 sec
+[2022-06-22 15:34:41,527 INFO] Weighted corpora loaded so far:
+			* github: 183
+[2022-06-22 15:34:44,548 INFO] Step 12550/100000; acc:  99.11; ppl:  1.03; xent: 0.03; lr: 0.00005; 20174/1947 tok/s;   5789 sec
+[2022-06-22 15:35:07,341 INFO] Step 12600/100000; acc:  99.13; ppl:  1.03; xent: 0.03; lr: 0.00005; 19950/2026 tok/s;   5812 sec
+[2022-06-22 15:35:10,935 INFO] Weighted corpora loaded so far:
+			* github: 184
+[2022-06-22 15:35:29,988 INFO] Step 12650/100000; acc:  99.22; ppl:  1.03; xent: 0.03; lr: 0.00005; 20554/1935 tok/s;   5834 sec
+[2022-06-22 15:35:40,088 INFO] Weighted corpora loaded so far:
+			* github: 185
+[2022-06-22 15:35:53,271 INFO] Step 12700/100000; acc:  99.19; ppl:  1.03; xent: 0.03; lr: 0.00005; 20203/2035 tok/s;   5858 sec
+[2022-06-22 15:36:09,212 INFO] Weighted corpora loaded so far:
+			* github: 186
+[2022-06-22 15:36:16,339 INFO] Step 12750/100000; acc:  99.20; ppl:  1.03; xent: 0.03; lr: 0.00005; 19412/2004 tok/s;   5881 sec
+[2022-06-22 15:36:38,725 INFO] Step 12800/100000; acc:  99.18; ppl:  1.03; xent: 0.03; lr: 0.00005; 20797/2024 tok/s;   5903 sec
+[2022-06-22 15:36:38,747 INFO] Weighted corpora loaded so far:
+			* github: 187
+[2022-06-22 15:37:02,396 INFO] Step 12850/100000; acc:  99.20; ppl:  1.03; xent: 0.03; lr: 0.00005; 19342/1973 tok/s;   5927 sec
+[2022-06-22 15:37:08,467 INFO] Weighted corpora loaded so far:
+			* github: 188
+[2022-06-22 15:37:25,264 INFO] Step 12900/100000; acc:  99.26; ppl:  1.03; xent: 0.03; lr: 0.00005; 20639/1999 tok/s;   5950 sec
+[2022-06-22 15:37:37,809 INFO] Weighted corpora loaded so far:
+			* github: 189
+[2022-06-22 15:37:48,587 INFO] Step 12950/100000; acc:  99.21; ppl:  1.03; xent: 0.03; lr: 0.00005; 19501/1950 tok/s;   5973 sec
+[2022-06-22 15:38:08,041 INFO] Weighted corpora loaded so far:
+			* github: 190
+[2022-06-22 15:38:11,932 INFO] Step 13000/100000; acc:  99.23; ppl:  1.03; xent: 0.03; lr: 0.00005; 19853/1989 tok/s;   5996 sec
+[2022-06-22 15:38:34,870 INFO] Step 13050/100000; acc:  99.25; ppl:  1.03; xent: 0.03; lr: 0.00005; 19347/1996 tok/s;   6019 sec
+[2022-06-22 15:38:37,925 INFO] Weighted corpora loaded so far:
+			* github: 191
+[2022-06-22 15:38:58,037 INFO] Step 13100/100000; acc:  99.26; ppl:  1.03; xent: 0.03; lr: 0.00005; 20116/1954 tok/s;   6042 sec
+[2022-06-22 15:39:21,361 INFO] Step 13150/100000; acc:  99.21; ppl:  1.03; xent: 0.03; lr: 0.00005; 20518/2005 tok/s;   6066 sec
+[2022-06-22 15:39:36,673 INFO] Weighted corpora loaded so far:
+			* github: 192
+[2022-06-22 15:39:44,356 INFO] Step 13200/100000; acc:  99.24; ppl:  1.03; xent: 0.03; lr: 0.00005; 19483/1936 tok/s;   6089 sec
+[2022-06-22 15:40:06,342 INFO] Weighted corpora loaded so far:
+			* github: 193
+[2022-06-22 15:40:07,594 INFO] Step 13250/100000; acc:  99.13; ppl:  1.03; xent: 0.03; lr: 0.00005; 20153/1989 tok/s;   6112 sec
+[2022-06-22 15:40:30,397 INFO] Step 13300/100000; acc:  99.13; ppl:  1.03; xent: 0.03; lr: 0.00005; 20278/2049 tok/s;   6135 sec
+[2022-06-22 15:40:35,752 INFO] Weighted corpora loaded so far:
+			* github: 194
+[2022-06-22 15:40:53,537 INFO] Step 13350/100000; acc:  99.21; ppl:  1.03; xent: 0.03; lr: 0.00005; 20475/1974 tok/s;   6158 sec
+[2022-06-22 15:41:05,490 INFO] Weighted corpora loaded so far:
+			* github: 195
+[2022-06-22 15:41:16,681 INFO] Step 13400/100000; acc:  99.31; ppl:  1.02; xent: 0.02; lr: 0.00005; 19554/1984 tok/s;   6181 sec
+[2022-06-22 15:41:34,433 INFO] Weighted corpora loaded so far:
+			* github: 196
+[2022-06-22 15:41:39,518 INFO] Step 13450/100000; acc:  99.28; ppl:  1.03; xent: 0.03; lr: 0.00005; 20252/2030 tok/s;   6204 sec
+[2022-06-22 15:42:01,584 INFO] Step 13500/100000; acc:  99.28; ppl:  1.03; xent: 0.03; lr: 0.00005; 20311/2033 tok/s;   6226 sec
+[2022-06-22 15:42:03,659 INFO] Weighted corpora loaded so far:
+			* github: 197
+[2022-06-22 15:42:24,969 INFO] Step 13550/100000; acc:  99.27; ppl:  1.03; xent: 0.03; lr: 0.00005; 19941/1977 tok/s;   6249 sec
+[2022-06-22 15:42:32,920 INFO] Weighted corpora loaded so far:
+			* github: 198
+[2022-06-22 15:42:48,068 INFO] Step 13600/100000; acc:  99.30; ppl:  1.02; xent: 0.02; lr: 0.00005; 20652/1985 tok/s;   6272 sec
+[2022-06-22 15:43:02,141 INFO] Weighted corpora loaded so far:
+			* github: 199
+[2022-06-22 15:43:10,961 INFO] Step 13650/100000; acc:  99.28; ppl:  1.03; xent: 0.03; lr: 0.00005; 19428/2025 tok/s;   6295 sec
+[2022-06-22 15:43:31,880 INFO] Weighted corpora loaded so far:
+			* github: 200
+[2022-06-22 15:43:33,778 INFO] Step 13700/100000; acc:  99.27; ppl:  1.03; xent: 0.02; lr: 0.00005; 20496/1981 tok/s;   6318 sec
+[2022-06-22 15:43:56,769 INFO] Step 13750/100000; acc:  99.34; ppl:  1.02; xent: 0.02; lr: 0.00005; 20121/2028 tok/s;   6341 sec
+[2022-06-22 15:44:00,959 INFO] Weighted corpora loaded so far:
+			* github: 201
+[2022-06-22 15:44:19,248 INFO] Step 13800/100000; acc:  99.29; ppl:  1.03; xent: 0.03; lr: 0.00005; 20699/2005 tok/s;   6364 sec
+[2022-06-22 15:44:29,769 INFO] Weighted corpora loaded so far:
+			* github: 202
+[2022-06-22 15:44:41,835 INFO] Step 13850/100000; acc:  99.34; ppl:  1.02; xent: 0.02; lr: 0.00005; 20571/2079 tok/s;   6386 sec
+[2022-06-22 15:44:59,341 INFO] Weighted corpora loaded so far:
+			* github: 203
+[2022-06-22 15:45:04,911 INFO] Step 13900/100000; acc:  99.28; ppl:  1.02; xent: 0.02; lr: 0.00005; 19332/1969 tok/s;   6409 sec
+[2022-06-22 15:45:28,150 INFO] Step 13950/100000; acc:  99.36; ppl:  1.02; xent: 0.02; lr: 0.00005; 19598/1987 tok/s;   6433 sec
+[2022-06-22 15:45:29,241 INFO] Weighted corpora loaded so far:
+			* github: 204
+[2022-06-22 15:45:50,920 INFO] Step 14000/100000; acc:  99.33; ppl:  1.02; xent: 0.02; lr: 0.00005; 20451/2006 tok/s;   6455 sec
+[2022-06-22 15:46:13,932 INFO] Step 14050/100000; acc:  99.30; ppl:  1.03; xent: 0.02; lr: 0.00005; 20352/2006 tok/s;   6478 sec
+[2022-06-22 15:46:27,495 INFO] Weighted corpora loaded so far:
+			* github: 205
+[2022-06-22 15:46:36,818 INFO] Step 14100/100000; acc:  99.26; ppl:  1.03; xent: 0.03; lr: 0.00005; 19879/1995 tok/s;   6501 sec
+[2022-06-22 15:46:56,432 INFO] Weighted corpora loaded so far:
+			* github: 206
+[2022-06-22 15:46:59,611 INFO] Step 14150/100000; acc:  99.34; ppl:  1.02; xent: 0.02; lr: 0.00005; 20610/2007 tok/s;   6524 sec
+[2022-06-22 15:47:22,074 INFO] Step 14200/100000; acc:  99.24; ppl:  1.03; xent: 0.02; lr: 0.00005; 20235/2048 tok/s;   6546 sec
+[2022-06-22 15:47:25,914 INFO] Weighted corpora loaded so far:
+			* github: 207
+[2022-06-22 15:47:45,770 INFO] Step 14250/100000; acc:  99.37; ppl:  1.02; xent: 0.02; lr: 0.00005; 19899/1935 tok/s;   6570 sec
+[2022-06-22 15:47:55,291 INFO] Weighted corpora loaded so far:
+			* github: 208
+[2022-06-22 15:48:09,025 INFO] Step 14300/100000; acc:  99.33; ppl:  1.02; xent: 0.02; lr: 0.00005; 20393/2000 tok/s;   6593 sec
+[2022-06-22 15:48:25,157 INFO] Weighted corpora loaded so far:
+			* github: 209
+[2022-06-22 15:48:31,566 INFO] Step 14350/100000; acc:  99.28; ppl:  1.02; xent: 0.02; lr: 0.00005; 19837/2001 tok/s;   6616 sec
+[2022-06-22 15:48:54,878 INFO] Step 14400/100000; acc:  99.32; ppl:  1.02; xent: 0.02; lr: 0.00005; 19756/1974 tok/s;   6639 sec
+[2022-06-22 15:48:54,892 INFO] Weighted corpora loaded so far:
+			* github: 210
+[2022-06-22 15:49:18,398 INFO] Step 14450/100000; acc:  99.38; ppl:  1.02; xent: 0.02; lr: 0.00005; 19337/1983 tok/s;   6663 sec
+[2022-06-22 15:49:24,436 INFO] Weighted corpora loaded so far:
+			* github: 211
+[2022-06-22 15:49:41,251 INFO] Step 14500/100000; acc:  99.41; ppl:  1.02; xent: 0.02; lr: 0.00005; 20680/2000 tok/s;   6686 sec
+[2022-06-22 15:49:53,983 INFO] Weighted corpora loaded so far:
+			* github: 212
+[2022-06-22 15:50:04,482 INFO] Step 14550/100000; acc:  99.30; ppl:  1.02; xent: 0.02; lr: 0.00005; 19680/1943 tok/s;   6709 sec
+[2022-06-22 15:50:24,001 INFO] Weighted corpora loaded so far:
+			* github: 213
+[2022-06-22 15:50:28,093 INFO] Step 14600/100000; acc:  99.36; ppl:  1.02; xent: 0.02; lr: 0.00005; 19742/1959 tok/s;   6732 sec
+[2022-06-22 15:50:50,228 INFO] Step 14650/100000; acc:  99.34; ppl:  1.02; xent: 0.02; lr: 0.00005; 20217/2097 tok/s;   6755 sec
+[2022-06-22 15:50:53,091 INFO] Weighted corpora loaded so far:
+			* github: 214
+[2022-06-22 15:51:13,164 INFO] Step 14700/100000; acc:  99.36; ppl:  1.02; xent: 0.02; lr: 0.00005; 20328/1962 tok/s;   6778 sec
+[2022-06-22 15:51:22,531 INFO] Weighted corpora loaded so far:
+			* github: 215
+[2022-06-22 15:51:37,132 INFO] Step 14750/100000; acc:  99.37; ppl:  1.02; xent: 0.02; lr: 0.00005; 19899/1987 tok/s;   6802 sec
+[2022-06-22 15:51:52,250 INFO] Weighted corpora loaded so far:
+			* github: 216
+[2022-06-22 15:52:00,337 INFO] Step 14800/100000; acc:  99.34; ppl:  1.02; xent: 0.02; lr: 0.00005; 19202/1963 tok/s;   6825 sec
+[2022-06-22 15:52:21,746 INFO] Weighted corpora loaded so far:
+			* github: 217
+[2022-06-22 15:52:23,112 INFO] Step 14850/100000; acc:  99.38; ppl:  1.02; xent: 0.02; lr: 0.00005; 20421/1979 tok/s;   6847 sec
+[2022-06-22 15:52:46,273 INFO] Step 14900/100000; acc:  99.37; ppl:  1.02; xent: 0.02; lr: 0.00005; 19814/2022 tok/s;   6871 sec
+[2022-06-22 15:53:09,322 INFO] Step 14950/100000; acc:  99.30; ppl:  1.02; xent: 0.02; lr: 0.00005; 20523/1961 tok/s;   6894 sec
+[2022-06-22 15:53:20,796 INFO] Weighted corpora loaded so far:
+			* github: 218
+[2022-06-22 15:53:32,348 INFO] Step 15000/100000; acc:  99.47; ppl:  1.02; xent: 0.02; lr: 0.00005; 19606/1978 tok/s;   6917 sec
+[2022-06-22 15:53:50,129 INFO] Weighted corpora loaded so far:
+			* github: 219
+[2022-06-22 15:53:54,741 INFO] Step 15050/100000; acc:  99.39; ppl:  1.02; xent: 0.02; lr: 0.00005; 20637/2049 tok/s;   6939 sec
+[2022-06-22 15:54:17,083 INFO] Step 15100/100000; acc:  99.36; ppl:  1.02; xent: 0.02; lr: 0.00005; 20180/2048 tok/s;   6961 sec
+[2022-06-22 15:54:19,015 INFO] Weighted corpora loaded so far:
+			* github: 220
+[2022-06-22 15:54:40,431 INFO] Step 15150/100000; acc:  99.39; ppl:  1.02; xent: 0.02; lr: 0.00005; 20186/1982 tok/s;   6985 sec
+[2022-06-22 15:54:48,760 INFO] Weighted corpora loaded so far:
+			* github: 221
+[2022-06-22 15:55:03,924 INFO] Step 15200/100000; acc:  99.40; ppl:  1.02; xent: 0.02; lr: 0.00005; 20450/1975 tok/s;   7008 sec
+[2022-06-22 15:55:18,162 INFO] Weighted corpora loaded so far:
+			* github: 222
+[2022-06-22 15:55:26,832 INFO] Step 15250/100000; acc:  99.43; ppl:  1.02; xent: 0.02; lr: 0.00005; 19371/1987 tok/s;   7031 sec
+[2022-06-22 15:55:47,852 INFO] Weighted corpora loaded so far:
+			* github: 223
+[2022-06-22 15:55:50,085 INFO] Step 15300/100000; acc:  99.36; ppl:  1.02; xent: 0.02; lr: 0.00005; 19850/1991 tok/s;   7054 sec
+[2022-06-22 15:56:12,742 INFO] Step 15350/100000; acc:  99.38; ppl:  1.02; xent: 0.02; lr: 0.00005; 20308/2006 tok/s;   7077 sec
+[2022-06-22 15:56:17,467 INFO] Weighted corpora loaded so far:
+			* github: 224
+[2022-06-22 15:56:36,023 INFO] Step 15400/100000; acc:  99.37; ppl:  1.02; xent: 0.02; lr: 0.00005; 20207/1974 tok/s;   7100 sec
+[2022-06-22 15:56:46,924 INFO] Weighted corpora loaded so far:
+			* github: 225
+[2022-06-22 15:56:59,301 INFO] Step 15450/100000; acc:  99.39; ppl:  1.02; xent: 0.02; lr: 0.00005; 20156/1965 tok/s;   7124 sec
+[2022-06-22 15:57:15,962 INFO] Weighted corpora loaded so far:
+			* github: 226
+[2022-06-22 15:57:21,700 INFO] Step 15500/100000; acc:  99.41; ppl:  1.02; xent: 0.02; lr: 0.00005; 19982/2035 tok/s;   7146 sec
+[2022-06-22 15:57:44,314 INFO] Step 15550/100000; acc:  99.34; ppl:  1.02; xent: 0.02; lr: 0.00005; 20132/2056 tok/s;   7169 sec
+[2022-06-22 15:57:45,302 INFO] Weighted corpora loaded so far:
+			* github: 227
+[2022-06-22 15:58:07,788 INFO] Step 15600/100000; acc:  99.43; ppl:  1.02; xent: 0.02; lr: 0.00005; 19795/1945 tok/s;   7192 sec
+[2022-06-22 15:58:14,852 INFO] Weighted corpora loaded so far:
+			* github: 228
+[2022-06-22 15:58:31,171 INFO] Step 15650/100000; acc:  99.41; ppl:  1.02; xent: 0.02; lr: 0.00005; 19933/2008 tok/s;   7216 sec
+[2022-06-22 15:58:44,570 INFO] Weighted corpora loaded so far:
+			* github: 229
+[2022-06-22 15:58:53,659 INFO] Step 15700/100000; acc:  99.44; ppl:  1.02; xent: 0.02; lr: 0.00005; 20119/2010 tok/s;   7238 sec
+[2022-06-22 15:59:17,656 INFO] Step 15750/100000; acc:  99.42; ppl:  1.02; xent: 0.02; lr: 0.00005; 19487/1941 tok/s;   7262 sec
+[2022-06-22 15:59:40,009 INFO] Step 15800/100000; acc:  99.35; ppl:  1.02; xent: 0.02; lr: 0.00005; 20205/2026 tok/s;   7284 sec
+[2022-06-22 15:59:43,647 INFO] Weighted corpora loaded so far:
+			* github: 230
+[2022-06-22 16:00:03,340 INFO] Step 15850/100000; acc:  99.49; ppl:  1.02; xent: 0.02; lr: 0.00005; 20204/1932 tok/s;   7308 sec
+[2022-06-22 16:00:13,301 INFO] Weighted corpora loaded so far:
+			* github: 231
+[2022-06-22 16:00:26,192 INFO] Step 15900/100000; acc:  99.48; ppl:  1.02; xent: 0.02; lr: 0.00005; 20740/2011 tok/s;   7331 sec
+[2022-06-22 16:00:42,978 INFO] Weighted corpora loaded so far:
+			* github: 232
+[2022-06-22 16:00:49,511 INFO] Step 15950/100000; acc:  99.38; ppl:  1.02; xent: 0.02; lr: 0.00005; 19218/1961 tok/s;   7354 sec
+[2022-06-22 16:01:12,206 INFO] Step 16000/100000; acc:  99.34; ppl:  1.02; xent: 0.02; lr: 0.00005; 20495/2056 tok/s;   7377 sec
+[2022-06-22 16:01:12,214 INFO] Weighted corpora loaded so far:
+			* github: 233
+[2022-06-22 16:01:35,319 INFO] Step 16050/100000; acc:  99.38; ppl:  1.02; xent: 0.02; lr: 0.00005; 19788/1985 tok/s;   7400 sec
+[2022-06-22 16:01:41,801 INFO] Weighted corpora loaded so far:
+			* github: 234
+[2022-06-22 16:01:58,686 INFO] Step 16100/100000; acc:  99.49; ppl:  1.02; xent: 0.02; lr: 0.00005; 20269/1989 tok/s;   7423 sec
+[2022-06-22 16:02:11,518 INFO] Weighted corpora loaded so far:
+			* github: 235
+[2022-06-22 16:02:21,897 INFO] Step 16150/100000; acc:  99.47; ppl:  1.02; xent: 0.02; lr: 0.00005; 19648/1958 tok/s;   7446 sec
+[2022-06-22 16:02:40,386 INFO] Weighted corpora loaded so far:
+			* github: 236
+[2022-06-22 16:02:44,378 INFO] Step 16200/100000; acc:  99.44; ppl:  1.02; xent: 0.02; lr: 0.00005; 20594/2057 tok/s;   7469 sec
+[2022-06-22 16:03:06,838 INFO] Step 16250/100000; acc:  99.43; ppl:  1.02; xent: 0.02; lr: 0.00005; 19796/2011 tok/s;   7491 sec
+[2022-06-22 16:03:09,289 INFO] Weighted corpora loaded so far:
+			* github: 237
+[2022-06-22 16:03:30,040 INFO] Step 16300/100000; acc:  99.45; ppl:  1.02; xent: 0.02; lr: 0.00005; 20241/1974 tok/s;   7514 sec
+[2022-06-22 16:03:39,554 INFO] Weighted corpora loaded so far:
+			* github: 238
+[2022-06-22 16:03:54,160 INFO] Step 16350/100000; acc:  99.49; ppl:  1.02; xent: 0.02; lr: 0.00005; 19974/1927 tok/s;   7539 sec
+[2022-06-22 16:04:09,497 INFO] Weighted corpora loaded so far:
+			* github: 239
+[2022-06-22 16:04:16,355 INFO] Step 16400/100000; acc:  99.47; ppl:  1.02; xent: 0.02; lr: 0.00005; 20206/2040 tok/s;   7561 sec
+[2022-06-22 16:04:38,401 INFO] Weighted corpora loaded so far:
+			* github: 240
+[2022-06-22 16:04:39,793 INFO] Step 16450/100000; acc:  99.48; ppl:  1.02; xent: 0.02; lr: 0.00005; 19769/2002 tok/s;   7584 sec
+[2022-06-22 16:05:02,536 INFO] Step 16500/100000; acc:  99.47; ppl:  1.02; xent: 0.02; lr: 0.00005; 20180/2011 tok/s;   7607 sec
+[2022-06-22 16:05:08,199 INFO] Weighted corpora loaded so far:
+			* github: 241
+[2022-06-22 16:05:25,881 INFO] Step 16550/100000; acc:  99.48; ppl:  1.02; xent: 0.02; lr: 0.00005; 20155/1951 tok/s;   7630 sec
+[2022-06-22 16:05:37,810 INFO] Weighted corpora loaded so far:
+			* github: 242
+[2022-06-22 16:05:49,186 INFO] Step 16600/100000; acc:  99.42; ppl:  1.02; xent: 0.02; lr: 0.00005; 19256/1973 tok/s;   7654 sec
+[2022-06-22 16:06:12,129 INFO] Step 16650/100000; acc:  99.50; ppl:  1.02; xent: 0.02; lr: 0.00005; 20024/2024 tok/s;   7677 sec
+[2022-06-22 16:06:34,761 INFO] Step 16700/100000; acc:  99.55; ppl:  1.02; xent: 0.02; lr: 0.00005; 19848/1984 tok/s;   7699 sec
+[2022-06-22 16:06:36,845 INFO] Weighted corpora loaded so far:
+			* github: 243
+[2022-06-22 16:06:58,052 INFO] Step 16750/100000; acc:  99.49; ppl:  1.02; xent: 0.02; lr: 0.00005; 20228/1950 tok/s;   7722 sec
+[2022-06-22 16:07:06,284 INFO] Weighted corpora loaded so far:
+			* github: 244
+[2022-06-22 16:07:21,786 INFO] Step 16800/100000; acc:  99.47; ppl:  1.02; xent: 0.02; lr: 0.00005; 20213/2014 tok/s;   7746 sec
+[2022-06-22 16:07:35,822 INFO] Weighted corpora loaded so far:
+			* github: 245
+[2022-06-22 16:07:44,544 INFO] Step 16850/100000; acc:  99.41; ppl:  1.02; xent: 0.02; lr: 0.00005; 19578/1983 tok/s;   7769 sec
+[2022-06-22 16:08:05,599 INFO] Weighted corpora loaded so far:
+			* github: 246
+[2022-06-22 16:08:08,032 INFO] Step 16900/100000; acc:  99.50; ppl:  1.02; xent: 0.02; lr: 0.00005; 19891/1949 tok/s;   7792 sec
+[2022-06-22 16:08:31,268 INFO] Step 16950/100000; acc:  99.54; ppl:  1.02; xent: 0.02; lr: 0.00005; 19955/1980 tok/s;   7816 sec
+[2022-06-22 16:08:35,503 INFO] Weighted corpora loaded so far:
+			* github: 247
+[2022-06-22 16:08:54,429 INFO] Step 17000/100000; acc:  99.47; ppl:  1.02; xent: 0.02; lr: 0.00005; 20211/1968 tok/s;   7839 sec
+[2022-06-22 16:09:04,899 INFO] Weighted corpora loaded so far:
+			* github: 248
+[2022-06-22 16:09:17,622 INFO] Step 17050/100000; acc:  99.44; ppl:  1.02; xent: 0.02; lr: 0.00005; 20061/2005 tok/s;   7862 sec
+[2022-06-22 16:09:34,607 INFO] Weighted corpora loaded so far:
+			* github: 249
+[2022-06-22 16:09:39,977 INFO] Step 17100/100000; acc:  99.52; ppl:  1.02; xent: 0.02; lr: 0.00005; 19892/2025 tok/s;   7884 sec
+[2022-06-22 16:10:02,646 INFO] Step 17150/100000; acc:  99.48; ppl:  1.02; xent: 0.02; lr: 0.00005; 20064/2019 tok/s;   7907 sec
+[2022-06-22 16:10:03,671 INFO] Weighted corpora loaded so far:
+			* github: 250
+[2022-06-22 16:10:26,031 INFO] Step 17200/100000; acc:  99.46; ppl:  1.02; xent: 0.02; lr: 0.00005; 20082/1990 tok/s;   7930 sec
+[2022-06-22 16:10:33,030 INFO] Weighted corpora loaded so far:
+			* github: 251
+[2022-06-22 16:10:48,687 INFO] Step 17250/100000; acc:  99.51; ppl:  1.02; xent: 0.02; lr: 0.00005; 20744/1994 tok/s;   7953 sec
+[2022-06-22 16:11:02,681 INFO] Weighted corpora loaded so far:
+			* github: 252
+[2022-06-22 16:11:12,037 INFO] Step 17300/100000; acc:  99.49; ppl:  1.02; xent: 0.02; lr: 0.00005; 19420/1967 tok/s;   7976 sec
+[2022-06-22 16:11:32,337 INFO] Weighted corpora loaded so far:
+			* github: 253
+[2022-06-22 16:11:35,626 INFO] Step 17350/100000; acc:  99.44; ppl:  1.02; xent: 0.02; lr: 0.00005; 19716/2014 tok/s;   8000 sec
+[2022-06-22 16:11:58,330 INFO] Step 17400/100000; acc:  99.55; ppl:  1.02; xent: 0.02; lr: 0.00005; 19896/2003 tok/s;   8023 sec
+[2022-06-22 16:12:02,251 INFO] Weighted corpora loaded so far:
+			* github: 254
+[2022-06-22 16:12:21,547 INFO] Step 17450/100000; acc:  99.50; ppl:  1.02; xent: 0.02; lr: 0.00005; 20188/1958 tok/s;   8046 sec
+[2022-06-22 16:12:31,978 INFO] Weighted corpora loaded so far:
+			* github: 255
+[2022-06-22 16:12:45,390 INFO] Step 17500/100000; acc:  99.55; ppl:  1.02; xent: 0.02; lr: 0.00005; 19741/1936 tok/s;   8070 sec
+[2022-06-22 16:13:08,481 INFO] Step 17550/100000; acc:  99.51; ppl:  1.02; xent: 0.02; lr: 0.00005; 19296/1950 tok/s;   8093 sec
+[2022-06-22 16:13:31,036 INFO] Step 17600/100000; acc:  99.55; ppl:  1.02; xent: 0.02; lr: 0.00005; 20596/2036 tok/s;   8115 sec
+[2022-06-22 16:13:31,038 INFO] Weighted corpora loaded so far:
+			* github: 256
+[2022-06-22 16:13:54,079 INFO] Step 17650/100000; acc:  99.57; ppl:  1.01; xent: 0.01; lr: 0.00005; 19874/1975 tok/s;   8138 sec
+[2022-06-22 16:13:59,965 INFO] Weighted corpora loaded so far:
+			* github: 257
+[2022-06-22 16:14:17,241 INFO] Step 17700/100000; acc:  99.52; ppl:  1.02; xent: 0.02; lr: 0.00005; 20444/1999 tok/s;   8162 sec
+[2022-06-22 16:14:29,835 INFO] Weighted corpora loaded so far:
+			* github: 258
+[2022-06-22 16:14:40,416 INFO] Step 17750/100000; acc:  99.47; ppl:  1.02; xent: 0.02; lr: 0.00005; 19800/1999 tok/s;   8185 sec
+[2022-06-22 16:14:59,470 INFO] Weighted corpora loaded so far:
+			* github: 259
+[2022-06-22 16:15:03,228 INFO] Step 17800/100000; acc:  99.56; ppl:  1.02; xent: 0.02; lr: 0.00005; 20546/2007 tok/s;   8208 sec
+[2022-06-22 16:15:25,996 INFO] Step 17850/100000; acc:  99.53; ppl:  1.02; xent: 0.02; lr: 0.00005; 19591/2028 tok/s;   8230 sec
+[2022-06-22 16:15:28,615 INFO] Weighted corpora loaded so far:
+			* github: 260
+[2022-06-22 16:15:48,547 INFO] Step 17900/100000; acc:  99.56; ppl:  1.02; xent: 0.02; lr: 0.00005; 20668/2004 tok/s;   8253 sec
+[2022-06-22 16:15:57,772 INFO] Weighted corpora loaded so far:
+			* github: 261
+[2022-06-22 16:16:11,553 INFO] Step 17950/100000; acc:  99.55; ppl:  1.02; xent: 0.02; lr: 0.00005; 20749/2049 tok/s;   8276 sec
+[2022-06-22 16:16:26,813 INFO] Weighted corpora loaded so far:
+			* github: 262
+[2022-06-22 16:16:34,529 INFO] Step 18000/100000; acc:  99.56; ppl:  1.02; xent: 0.02; lr: 0.00005; 19430/1980 tok/s;   8299 sec
+[2022-06-22 16:16:56,334 INFO] Weighted corpora loaded so far:
+			* github: 263
+[2022-06-22 16:16:57,530 INFO] Step 18050/100000; acc:  99.56; ppl:  1.02; xent: 0.02; lr: 0.00005; 20292/1975 tok/s;   8322 sec
+[2022-06-22 16:17:20,222 INFO] Step 18100/100000; acc:  99.53; ppl:  1.02; xent: 0.02; lr: 0.00005; 20364/2007 tok/s;   8345 sec
+[2022-06-22 16:17:25,556 INFO] Weighted corpora loaded so far:
+			* github: 264
+[2022-06-22 16:17:43,604 INFO] Step 18150/100000; acc:  99.60; ppl:  1.01; xent: 0.01; lr: 0.00005; 20217/1984 tok/s;   8368 sec
+[2022-06-22 16:17:54,972 INFO] Weighted corpora loaded so far:
+			* github: 265
+[2022-06-22 16:18:06,171 INFO] Step 18200/100000; acc:  99.50; ppl:  1.02; xent: 0.02; lr: 0.00005; 19942/2062 tok/s;   8391 sec
+[2022-06-22 16:18:24,348 INFO] Weighted corpora loaded so far:
+			* github: 266
+[2022-06-22 16:18:29,335 INFO] Step 18250/100000; acc:  99.59; ppl:  1.01; xent: 0.01; lr: 0.00005; 19830/1994 tok/s;   8414 sec
+[2022-06-22 16:18:51,787 INFO] Step 18300/100000; acc:  99.55; ppl:  1.02; xent: 0.02; lr: 0.00005; 19850/2010 tok/s;   8436 sec
+[2022-06-22 16:18:54,071 INFO] Weighted corpora loaded so far:
+			* github: 267
+[2022-06-22 16:19:15,705 INFO] Step 18350/100000; acc:  99.58; ppl:  1.02; xent: 0.02; lr: 0.00005; 19579/1941 tok/s;   8460 sec
+[2022-06-22 16:19:23,848 INFO] Weighted corpora loaded so far:
+			* github: 268
+[2022-06-22 16:19:39,461 INFO] Step 18400/100000; acc:  99.48; ppl:  1.02; xent: 0.02; lr: 0.00005; 20108/1942 tok/s;   8484 sec
+[2022-06-22 16:20:02,650 INFO] Step 18450/100000; acc:  99.55; ppl:  1.02; xent: 0.02; lr: 0.00005; 19160/1977 tok/s;   8507 sec
+[2022-06-22 16:20:23,885 INFO] Weighted corpora loaded so far:
+			* github: 269
+[2022-06-22 16:20:26,071 INFO] Step 18500/100000; acc:  99.58; ppl:  1.02; xent: 0.02; lr: 0.00005; 19935/1917 tok/s;   8530 sec
+[2022-06-22 16:20:48,660 INFO] Step 18550/100000; acc:  99.56; ppl:  1.01; xent: 0.01; lr: 0.00005; 20390/2034 tok/s;   8553 sec
+[2022-06-22 16:20:53,365 INFO] Weighted corpora loaded so far:
+			* github: 270
+[2022-06-22 16:21:11,991 INFO] Step 18600/100000; acc:  99.57; ppl:  1.01; xent: 0.01; lr: 0.00005; 20168/1974 tok/s;   8576 sec
+[2022-06-22 16:21:23,098 INFO] Weighted corpora loaded so far:
+			* github: 271
+[2022-06-22 16:21:35,090 INFO] Step 18650/100000; acc:  99.59; ppl:  1.02; xent: 0.02; lr: 0.00005; 20328/2027 tok/s;   8599 sec
+[2022-06-22 16:21:52,376 INFO] Weighted corpora loaded so far:
+			* github: 272
+[2022-06-22 16:21:58,004 INFO] Step 18700/100000; acc:  99.57; ppl:  1.02; xent: 0.02; lr: 0.00005; 19569/1954 tok/s;   8622 sec
+[2022-06-22 16:22:20,928 INFO] Step 18750/100000; acc:  99.50; ppl:  1.02; xent: 0.02; lr: 0.00005; 19952/2041 tok/s;   8645 sec
+[2022-06-22 16:22:21,875 INFO] Weighted corpora loaded so far:
+			* github: 273
+[2022-06-22 16:22:43,548 INFO] Step 18800/100000; acc:  99.53; ppl:  1.02; xent: 0.02; lr: 0.00005; 20507/1962 tok/s;   8668 sec
+[2022-06-22 16:22:51,048 INFO] Weighted corpora loaded so far:
+			* github: 274
+[2022-06-22 16:23:07,023 INFO] Step 18850/100000; acc:  99.56; ppl:  1.01; xent: 0.01; lr: 0.00005; 19854/1981 tok/s;   8691 sec
+[2022-06-22 16:23:20,733 INFO] Weighted corpora loaded so far:
+			* github: 275
+[2022-06-22 16:23:30,516 INFO] Step 18900/100000; acc:  99.57; ppl:  1.02; xent: 0.02; lr: 0.00005; 19345/1991 tok/s;   8715 sec
+[2022-06-22 16:23:50,658 INFO] Weighted corpora loaded so far:
+			* github: 276
+[2022-06-22 16:23:54,011 INFO] Step 18950/100000; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00005; 20081/1956 tok/s;   8738 sec
+[2022-06-22 16:24:16,576 INFO] Step 19000/100000; acc:  99.64; ppl:  1.01; xent: 0.01; lr: 0.00005; 20116/2019 tok/s;   8761 sec
+[2022-06-22 16:24:19,809 INFO] Weighted corpora loaded so far:
+			* github: 277
+[2022-06-22 16:24:38,916 INFO] Step 19050/100000; acc:  99.53; ppl:  1.02; xent: 0.02; lr: 0.00005; 20959/2094 tok/s;   8783 sec
+[2022-06-22 16:24:48,388 INFO] Weighted corpora loaded so far:
+			* github: 278
+[2022-06-22 16:25:01,419 INFO] Step 19100/100000; acc:  99.57; ppl:  1.01; xent: 0.01; lr: 0.00005; 20918/1996 tok/s;   8806 sec
+[2022-06-22 16:25:18,154 INFO] Weighted corpora loaded so far:
+			* github: 279
+[2022-06-22 16:25:24,455 INFO] Step 19150/100000; acc:  99.59; ppl:  1.01; xent: 0.01; lr: 0.00005; 19341/1999 tok/s;   8829 sec
+[2022-06-22 16:25:47,882 INFO] Step 19200/100000; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00005; 19694/1967 tok/s;   8852 sec
+[2022-06-22 16:25:47,911 INFO] Weighted corpora loaded so far:
+			* github: 280
+[2022-06-22 16:26:10,690 INFO] Step 19250/100000; acc:  99.54; ppl:  1.01; xent: 0.01; lr: 0.00005; 19895/2023 tok/s;   8875 sec
+[2022-06-22 16:26:33,715 INFO] Step 19300/100000; acc:  99.51; ppl:  1.02; xent: 0.02; lr: 0.00005; 20471/1993 tok/s;   8898 sec
+[2022-06-22 16:26:45,925 INFO] Weighted corpora loaded so far:
+			* github: 281
+[2022-06-22 16:26:56,363 INFO] Step 19350/100000; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00005; 20223/1976 tok/s;   8921 sec
+[2022-06-22 16:27:15,513 INFO] Weighted corpora loaded so far:
+			* github: 282
+[2022-06-22 16:27:19,638 INFO] Step 19400/100000; acc:  99.57; ppl:  1.01; xent: 0.01; lr: 0.00005; 20148/2003 tok/s;   8944 sec
+[2022-06-22 16:27:41,744 INFO] Step 19450/100000; acc:  99.59; ppl:  1.01; xent: 0.01; lr: 0.00005; 20182/2067 tok/s;   8966 sec
+[2022-06-22 16:27:44,829 INFO] Weighted corpora loaded so far:
+			* github: 283
+[2022-06-22 16:28:05,341 INFO] Step 19500/100000; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00005; 19910/1948 tok/s;   8990 sec
+[2022-06-22 16:28:14,573 INFO] Weighted corpora loaded so far:
+			* github: 284
+[2022-06-22 16:28:28,884 INFO] Step 19550/100000; acc:  99.57; ppl:  1.01; xent: 0.01; lr: 0.00005; 20448/1970 tok/s;   9013 sec
+[2022-06-22 16:28:43,433 INFO] Weighted corpora loaded so far:
+			* github: 285
+[2022-06-22 16:28:50,966 INFO] Step 19600/100000; acc:  99.55; ppl:  1.02; xent: 0.02; lr: 0.00005; 20285/2044 tok/s;   9035 sec
+[2022-06-22 16:29:12,475 INFO] Weighted corpora loaded so far:
+			* github: 286
+[2022-06-22 16:29:13,699 INFO] Step 19650/100000; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00005; 20412/2052 tok/s;   9058 sec
+[2022-06-22 16:29:36,499 INFO] Step 19700/100000; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00005; 20175/2019 tok/s;   9081 sec
+[2022-06-22 16:29:41,818 INFO] Weighted corpora loaded so far:
+			* github: 287
+[2022-06-22 16:30:00,020 INFO] Step 19750/100000; acc:  99.58; ppl:  1.01; xent: 0.01; lr: 0.00005; 20011/1939 tok/s;   9104 sec
+[2022-06-22 16:30:11,161 INFO] Weighted corpora loaded so far:
+			* github: 288
+[2022-06-22 16:30:22,280 INFO] Step 19800/100000; acc:  99.56; ppl:  1.01; xent: 0.01; lr: 0.00005; 20281/2090 tok/s;   9127 sec
+[2022-06-22 16:30:40,533 INFO] Weighted corpora loaded so far:
+			* github: 289
+[2022-06-22 16:30:45,357 INFO] Step 19850/100000; acc:  99.59; ppl:  1.01; xent: 0.01; lr: 0.00005; 20128/1977 tok/s;   9150 sec
+[2022-06-22 16:31:07,501 INFO] Step 19900/100000; acc:  99.57; ppl:  1.01; xent: 0.01; lr: 0.00005; 20330/2039 tok/s;   9172 sec
+[2022-06-22 16:31:09,552 INFO] Weighted corpora loaded so far:
+			* github: 290
+[2022-06-22 16:31:30,667 INFO] Step 19950/100000; acc:  99.59; ppl:  1.01; xent: 0.01; lr: 0.00005; 20089/1989 tok/s;   9195 sec
+[2022-06-22 16:31:39,098 INFO] Weighted corpora loaded so far:
+			* github: 291
+[2022-06-22 16:31:54,366 INFO] Step 20000/100000; acc:  99.58; ppl:  1.01; xent: 0.01; lr: 0.00005; 20044/1970 tok/s;   9219 sec
+[2022-06-22 16:31:54,367 INFO] valid's transforms: TransformPipe()
+[2022-06-22 16:31:58,961 INFO] Validation perplexity: 700.54
+[2022-06-22 16:31:58,961 INFO] Validation accuracy: 47.8455
+[2022-06-22 16:31:58,961 INFO] Model is improving acc: -inf --> 47.8455.
+[2022-06-22 16:31:59,056 INFO] Saving checkpoint /home/lgm/VRepair2.0/param_sweep_tgt/23_parameter_sweep/model_step_20000.pt
+[2022-06-22 16:32:13,873 INFO] Weighted corpora loaded so far:
+			* github: 292
+[2022-06-22 16:32:22,500 INFO] Step 20050/100000; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00005; 15730/1606 tok/s;   9247 sec
+[2022-06-22 16:32:43,470 INFO] Weighted corpora loaded so far:
+			* github: 293
+[2022-06-22 16:32:45,666 INFO] Step 20100/100000; acc:  99.59; ppl:  1.01; xent: 0.01; lr: 0.00005; 20066/2003 tok/s;   9270 sec
+[2022-06-22 16:33:08,583 INFO] Step 20150/100000; acc:  99.53; ppl:  1.02; xent: 0.02; lr: 0.00005; 20092/2001 tok/s;   9293 sec
+[2022-06-22 16:33:31,662 INFO] Step 20200/100000; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00005; 20300/1971 tok/s;   9316 sec
+[2022-06-22 16:33:42,712 INFO] Weighted corpora loaded so far:
+			* github: 294
+[2022-06-22 16:33:55,060 INFO] Step 20250/100000; acc:  99.60; ppl:  1.01; xent: 0.01; lr: 0.00005; 20013/1947 tok/s;   9339 sec
+[2022-06-22 16:34:12,250 INFO] Weighted corpora loaded so far:
+			* github: 295
+[2022-06-22 16:34:18,418 INFO] Step 20300/100000; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00005; 19190/1958 tok/s;   9363 sec
+[2022-06-22 16:34:40,848 INFO] Step 20350/100000; acc:  99.64; ppl:  1.01; xent: 0.01; lr: 0.00005; 20364/2079 tok/s;   9385 sec
+[2022-06-22 16:34:41,895 INFO] Weighted corpora loaded so far:
+			* github: 296
+[2022-06-22 16:35:04,440 INFO] Step 20400/100000; acc:  99.60; ppl:  1.01; xent: 0.01; lr: 0.00005; 19964/1954 tok/s;   9409 sec
+[2022-06-22 16:35:11,281 INFO] Weighted corpora loaded so far:
+			* github: 297
+[2022-06-22 16:35:27,324 INFO] Step 20450/100000; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00005; 20528/1997 tok/s;   9432 sec
+[2022-06-22 16:35:41,056 INFO] Weighted corpora loaded so far:
+			* github: 298
+[2022-06-22 16:35:50,802 INFO] Step 20500/100000; acc:  99.66; ppl:  1.01; xent: 0.01; lr: 0.00005; 19326/1966 tok/s;   9455 sec
+[2022-06-22 16:36:10,910 INFO] Weighted corpora loaded so far:
+			* github: 299
+[2022-06-22 16:36:13,907 INFO] Step 20550/100000; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00005; 20221/1968 tok/s;   9478 sec
+[2022-06-22 16:36:36,944 INFO] Step 20600/100000; acc:  99.55; ppl:  1.01; xent: 0.01; lr: 0.00005; 19560/2015 tok/s;   9501 sec
+[2022-06-22 16:36:40,627 INFO] Weighted corpora loaded so far:
+			* github: 300
+[2022-06-22 16:37:00,190 INFO] Step 20650/100000; acc:  99.59; ppl:  1.01; xent: 0.01; lr: 0.00005; 20151/1971 tok/s;   9525 sec
+[2022-06-22 16:37:10,222 INFO] Weighted corpora loaded so far:
+			* github: 301
+[2022-06-22 16:37:23,363 INFO] Step 20700/100000; acc:  99.64; ppl:  1.01; xent: 0.01; lr: 0.00005; 20413/1997 tok/s;   9548 sec
+[2022-06-22 16:37:39,870 INFO] Weighted corpora loaded so far:
+			* github: 302
+[2022-06-22 16:37:46,429 INFO] Step 20750/100000; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00005; 19461/1971 tok/s;   9571 sec
+[2022-06-22 16:38:09,475 INFO] Step 20800/100000; acc:  99.59; ppl:  1.01; xent: 0.01; lr: 0.00005; 20197/1977 tok/s;   9594 sec
+[2022-06-22 16:38:09,499 INFO] Weighted corpora loaded so far:
+			* github: 303
+[2022-06-22 16:38:32,404 INFO] Step 20850/100000; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00005; 19744/2008 tok/s;   9617 sec
+[2022-06-22 16:38:39,264 INFO] Weighted corpora loaded so far:
+			* github: 304
+[2022-06-22 16:38:56,058 INFO] Step 20900/100000; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00005; 19843/1953 tok/s;   9640 sec
+[2022-06-22 16:39:09,257 INFO] Weighted corpora loaded so far:
+			* github: 305
+[2022-06-22 16:39:19,645 INFO] Step 20950/100000; acc:  99.55; ppl:  1.01; xent: 0.01; lr: 0.00005; 19294/1947 tok/s;   9664 sec
+[2022-06-22 16:39:38,194 INFO] Weighted corpora loaded so far:
+			* github: 306
+[2022-06-22 16:39:42,745 INFO] Step 21000/100000; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00005; 20130/1987 tok/s;   9687 sec
+[2022-06-22 16:40:05,011 INFO] Step 21050/100000; acc:  99.64; ppl:  1.01; xent: 0.01; lr: 0.00005; 19880/2056 tok/s;   9709 sec
+[2022-06-22 16:40:28,240 INFO] Step 21100/100000; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00005; 20269/1975 tok/s;   9733 sec
+[2022-06-22 16:40:36,983 INFO] Weighted corpora loaded so far:
+			* github: 307
+[2022-06-22 16:40:51,661 INFO] Step 21150/100000; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00005; 20547/1961 tok/s;   9756 sec
+[2022-06-22 16:41:06,491 INFO] Weighted corpora loaded so far:
+			* github: 308
+[2022-06-22 16:41:14,237 INFO] Step 21200/100000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00005; 19845/1998 tok/s;   9779 sec
+[2022-06-22 16:41:36,089 INFO] Weighted corpora loaded so far:
+			* github: 309
+[2022-06-22 16:41:37,481 INFO] Step 21250/100000; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00005; 20071/1993 tok/s;   9802 sec
+[2022-06-22 16:42:00,353 INFO] Step 21300/100000; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00005; 20308/2038 tok/s;   9825 sec
+[2022-06-22 16:42:05,716 INFO] Weighted corpora loaded so far:
+			* github: 310
+[2022-06-22 16:42:23,353 INFO] Step 21350/100000; acc:  99.66; ppl:  1.01; xent: 0.01; lr: 0.00005; 20576/1966 tok/s;   9848 sec
+[2022-06-22 16:42:35,392 INFO] Weighted corpora loaded so far:
+			* github: 311
+[2022-06-22 16:42:46,336 INFO] Step 21400/100000; acc:  99.60; ppl:  1.01; xent: 0.01; lr: 0.00005; 19561/1998 tok/s;   9871 sec
+[2022-06-22 16:43:04,921 INFO] Weighted corpora loaded so far:
+			* github: 312
+[2022-06-22 16:43:09,965 INFO] Step 21450/100000; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00005; 19443/1983 tok/s;   9894 sec
+[2022-06-22 16:43:32,778 INFO] Step 21500/100000; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00005; 19584/1965 tok/s;   9917 sec
+[2022-06-22 16:43:34,726 INFO] Weighted corpora loaded so far:
+			* github: 313
+[2022-06-22 16:43:55,735 INFO] Step 21550/100000; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00005; 20487/2004 tok/s;   9940 sec
+[2022-06-22 16:44:04,272 INFO] Weighted corpora loaded so far:
+			* github: 314
+[2022-06-22 16:44:19,426 INFO] Step 21600/100000; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00005; 20252/1940 tok/s;   9964 sec
+[2022-06-22 16:44:33,179 INFO] Weighted corpora loaded so far:
+			* github: 315
+[2022-06-22 16:44:41,979 INFO] Step 21650/100000; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00005; 19748/2042 tok/s;   9986 sec
+[2022-06-22 16:45:02,797 INFO] Weighted corpora loaded so far:
+			* github: 316
+[2022-06-22 16:45:05,143 INFO] Step 21700/100000; acc:  99.68; ppl:  1.01; xent: 0.01; lr: 0.00005; 20082/1997 tok/s;  10010 sec
+[2022-06-22 16:45:27,863 INFO] Step 21750/100000; acc:  99.64; ppl:  1.01; xent: 0.01; lr: 0.00005; 20152/2006 tok/s;  10032 sec
+[2022-06-22 16:45:32,226 INFO] Weighted corpora loaded so far:
+			* github: 317
+[2022-06-22 16:45:51,373 INFO] Step 21800/100000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00005; 19831/1988 tok/s;  10056 sec
+[2022-06-22 16:46:01,577 INFO] Weighted corpora loaded so far:
+			* github: 318
+[2022-06-22 16:46:14,113 INFO] Step 21850/100000; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00005; 20504/2015 tok/s;  10078 sec
+[2022-06-22 16:46:31,078 INFO] Weighted corpora loaded so far:
+			* github: 319
+[2022-06-22 16:46:36,680 INFO] Step 21900/100000; acc:  99.66; ppl:  1.01; xent: 0.01; lr: 0.00005; 19786/2026 tok/s;  10101 sec
+[2022-06-22 16:46:56,048 INFO] Step 21950/100000; acc:  99.60; ppl:  1.01; xent: 0.01; lr: 0.00005; 23437/2355 tok/s;  10120 sec
+[2022-06-22 16:47:18,725 INFO] Step 22000/100000; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00005; 20763/2008 tok/s;  10143 sec
+[2022-06-22 16:47:26,544 INFO] Weighted corpora loaded so far:
+			* github: 320
+[2022-06-22 16:47:42,185 INFO] Step 22050/100000; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00005; 19970/1937 tok/s;  10167 sec
+[2022-06-22 16:47:55,431 INFO] Weighted corpora loaded so far:
+			* github: 321
+[2022-06-22 16:48:04,898 INFO] Step 22100/100000; acc:  99.66; ppl:  1.01; xent: 0.01; lr: 0.00005; 20004/2043 tok/s;  10189 sec
+[2022-06-22 16:48:24,534 INFO] Weighted corpora loaded so far:
+			* github: 322
+[2022-06-22 16:48:27,955 INFO] Step 22150/100000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00005; 20443/1998 tok/s;  10212 sec
+[2022-06-22 16:48:50,540 INFO] Step 22200/100000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00005; 20111/2042 tok/s;  10235 sec
+[2022-06-22 16:48:54,342 INFO] Weighted corpora loaded so far:
+			* github: 323
+[2022-06-22 16:49:14,075 INFO] Step 22250/100000; acc:  99.68; ppl:  1.01; xent: 0.01; lr: 0.00005; 20004/1978 tok/s;  10258 sec
+[2022-06-22 16:49:23,802 INFO] Weighted corpora loaded so far:
+			* github: 324
+[2022-06-22 16:49:37,026 INFO] Step 22300/100000; acc:  99.66; ppl:  1.01; xent: 0.01; lr: 0.00005; 20541/1961 tok/s;  10281 sec
+[2022-06-22 16:49:53,106 INFO] Weighted corpora loaded so far:
+			* github: 325
+[2022-06-22 16:49:59,478 INFO] Step 22350/100000; acc:  99.66; ppl:  1.01; xent: 0.01; lr: 0.00005; 19807/2047 tok/s;  10304 sec
+[2022-06-22 16:50:23,050 INFO] Step 22400/100000; acc:  99.66; ppl:  1.01; xent: 0.01; lr: 0.00005; 19590/1929 tok/s;  10327 sec
+[2022-06-22 16:50:23,073 INFO] Weighted corpora loaded so far:
+			* github: 326
+[2022-06-22 16:50:45,923 INFO] Step 22450/100000; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00005; 20010/2020 tok/s;  10350 sec
+[2022-06-22 16:50:52,437 INFO] Weighted corpora loaded so far:
+			* github: 327
+[2022-06-22 16:51:09,473 INFO] Step 22500/100000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00005; 20161/1956 tok/s;  10374 sec
+[2022-06-22 16:51:22,245 INFO] Weighted corpora loaded so far:
+			* github: 328
+[2022-06-22 16:51:32,392 INFO] Step 22550/100000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00005; 19958/2019 tok/s;  10397 sec
+[2022-06-22 16:51:51,867 INFO] Weighted corpora loaded so far:
+			* github: 329
+[2022-06-22 16:51:55,821 INFO] Step 22600/100000; acc:  99.68; ppl:  1.01; xent: 0.01; lr: 0.00005; 19779/1960 tok/s;  10420 sec
+[2022-06-22 16:52:18,168 INFO] Step 22650/100000; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00005; 19856/2041 tok/s;  10443 sec
+[2022-06-22 16:52:21,171 INFO] Weighted corpora loaded so far:
+			* github: 330
+[2022-06-22 16:52:40,516 INFO] Step 22700/100000; acc:  99.66; ppl:  1.01; xent: 0.01; lr: 0.00005; 20910/2048 tok/s;  10465 sec
+[2022-06-22 16:52:50,137 INFO] Weighted corpora loaded so far:
+			* github: 331
+[2022-06-22 16:53:04,529 INFO] Step 22750/100000; acc:  99.64; ppl:  1.01; xent: 0.01; lr: 0.00005; 19877/1916 tok/s;  10489 sec
+[2022-06-22 16:53:27,330 INFO] Step 22800/100000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00005; 19508/2038 tok/s;  10512 sec
+[2022-06-22 16:53:48,753 INFO] Weighted corpora loaded so far:
+			* github: 332
+[2022-06-22 16:53:49,983 INFO] Step 22850/100000; acc:  99.64; ppl:  1.01; xent: 0.01; lr: 0.00005; 20529/1984 tok/s;  10534 sec
+[2022-06-22 16:54:12,498 INFO] Step 22900/100000; acc:  99.64; ppl:  1.01; xent: 0.01; lr: 0.00005; 20648/2016 tok/s;  10557 sec
+[2022-06-22 16:54:17,453 INFO] Weighted corpora loaded so far:
+			* github: 333
+[2022-06-22 16:54:35,830 INFO] Step 22950/100000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00005; 20256/1986 tok/s;  10580 sec
+[2022-06-22 16:54:47,437 INFO] Weighted corpora loaded so far:
+			* github: 334
+[2022-06-22 16:54:58,933 INFO] Step 23000/100000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00005; 19586/2012 tok/s;  10603 sec
+[2022-06-22 16:55:17,255 INFO] Weighted corpora loaded so far:
+			* github: 335
+[2022-06-22 16:55:22,088 INFO] Step 23050/100000; acc:  99.64; ppl:  1.01; xent: 0.01; lr: 0.00005; 20071/1990 tok/s;  10626 sec
+[2022-06-22 16:55:44,742 INFO] Step 23100/100000; acc:  99.68; ppl:  1.01; xent: 0.01; lr: 0.00005; 19862/2016 tok/s;  10649 sec
+[2022-06-22 16:55:46,753 INFO] Weighted corpora loaded so far:
+			* github: 336
+[2022-06-22 16:56:08,094 INFO] Step 23150/100000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00005; 20029/1959 tok/s;  10672 sec
+[2022-06-22 16:56:16,302 INFO] Weighted corpora loaded so far:
+			* github: 337
+[2022-06-22 16:56:31,114 INFO] Step 23200/100000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00005; 20694/1992 tok/s;  10695 sec
+[2022-06-22 16:56:45,536 INFO] Weighted corpora loaded so far:
+			* github: 338
+[2022-06-22 16:56:54,183 INFO] Step 23250/100000; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00005; 19174/2005 tok/s;  10719 sec
+[2022-06-22 16:57:15,282 INFO] Weighted corpora loaded so far:
+			* github: 339
+[2022-06-22 16:57:17,480 INFO] Step 23300/100000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00005; 19905/1964 tok/s;  10742 sec
+[2022-06-22 16:57:40,236 INFO] Step 23350/100000; acc:  99.68; ppl:  1.01; xent: 0.01; lr: 0.00005; 20395/2028 tok/s;  10765 sec
+[2022-06-22 16:57:44,778 INFO] Weighted corpora loaded so far:
+			* github: 340
+[2022-06-22 16:58:03,117 INFO] Step 23400/100000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00005; 20549/1997 tok/s;  10788 sec
+[2022-06-22 16:58:13,889 INFO] Weighted corpora loaded so far:
+			* github: 341
+[2022-06-22 16:58:26,122 INFO] Step 23450/100000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00005; 20262/1972 tok/s;  10811 sec
+[2022-06-22 16:58:43,115 INFO] Weighted corpora loaded so far:
+			* github: 342
+[2022-06-22 16:58:49,066 INFO] Step 23500/100000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00005; 19338/2050 tok/s;  10833 sec
+[2022-06-22 16:59:11,075 INFO] Step 23550/100000; acc:  99.68; ppl:  1.01; xent: 0.01; lr: 0.00005; 20668/2070 tok/s;  10855 sec
+[2022-06-22 16:59:12,115 INFO] Weighted corpora loaded so far:
+			* github: 343
+[2022-06-22 16:59:34,222 INFO] Step 23600/100000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00005; 20213/1982 tok/s;  10879 sec
+[2022-06-22 16:59:41,509 INFO] Weighted corpora loaded so far:
+			* github: 344
+[2022-06-22 16:59:57,741 INFO] Step 23650/100000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00005; 19788/1962 tok/s;  10902 sec
+[2022-06-22 17:00:19,917 INFO] Step 23700/100000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00005; 20381/2077 tok/s;  10924 sec
+[2022-06-22 17:00:40,342 INFO] Weighted corpora loaded so far:
+			* github: 345
+[2022-06-22 17:00:43,486 INFO] Step 23750/100000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00005; 19984/1913 tok/s;  10948 sec
+[2022-06-22 17:01:06,078 INFO] Step 23800/100000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00005; 20113/2029 tok/s;  10970 sec
+[2022-06-22 17:01:09,595 INFO] Weighted corpora loaded so far:
+			* github: 346
+[2022-06-22 17:01:29,011 INFO] Step 23850/100000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00005; 20482/2007 tok/s;  10993 sec
+[2022-06-22 17:01:38,920 INFO] Weighted corpora loaded so far:
+			* github: 347
+[2022-06-22 17:01:51,779 INFO] Step 23900/100000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00005; 20866/2052 tok/s;  11016 sec
+[2022-06-22 17:02:08,110 INFO] Weighted corpora loaded so far:
+			* github: 348
+[2022-06-22 17:02:14,771 INFO] Step 23950/100000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00005; 19577/1962 tok/s;  11039 sec
+[2022-06-22 17:02:37,673 INFO] Step 24000/100000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00005; 20227/2013 tok/s;  11062 sec
+[2022-06-22 17:02:37,685 INFO] Weighted corpora loaded so far:
+			* github: 349
+[2022-06-22 17:03:00,747 INFO] Step 24050/100000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00005; 19700/1998 tok/s;  11085 sec
+[2022-06-22 17:03:07,601 INFO] Weighted corpora loaded so far:
+			* github: 350
+[2022-06-22 17:03:24,975 INFO] Step 24100/100000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00005; 19413/1914 tok/s;  11109 sec
+[2022-06-22 17:03:37,235 INFO] Weighted corpora loaded so far:
+			* github: 351
+[2022-06-22 17:03:47,372 INFO] Step 24150/100000; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00005; 20370/2015 tok/s;  11132 sec
+[2022-06-22 17:04:06,200 INFO] Weighted corpora loaded so far:
+			* github: 352
+[2022-06-22 17:04:10,285 INFO] Step 24200/100000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00005; 20391/2007 tok/s;  11155 sec
+[2022-06-22 17:04:32,863 INFO] Step 24250/100000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00005; 19738/1996 tok/s;  11177 sec
+[2022-06-22 17:04:36,117 INFO] Weighted corpora loaded so far:
+			* github: 353
+[2022-06-22 17:04:57,067 INFO] Step 24300/100000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00005; 19420/1919 tok/s;  11201 sec
+[2022-06-22 17:05:05,987 INFO] Weighted corpora loaded so far:
+			* github: 354
+[2022-06-22 17:05:20,843 INFO] Step 24350/100000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00005; 20147/1977 tok/s;  11225 sec
+[2022-06-22 17:05:35,912 INFO] Weighted corpora loaded so far:
+			* github: 355
+[2022-06-22 17:05:43,126 INFO] Step 24400/100000; acc:  99.68; ppl:  1.01; xent: 0.01; lr: 0.00005; 19944/2022 tok/s;  11248 sec
+[2022-06-22 17:06:05,067 INFO] Weighted corpora loaded so far:
+			* github: 356
+[2022-06-22 17:06:06,317 INFO] Step 24450/100000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00005; 19885/1996 tok/s;  11271 sec
+[2022-06-22 17:06:29,403 INFO] Step 24500/100000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00005; 20030/1994 tok/s;  11294 sec
+[2022-06-22 17:06:34,685 INFO] Weighted corpora loaded so far:
+			* github: 357
+[2022-06-22 17:06:52,083 INFO] Step 24550/100000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00005; 20729/2006 tok/s;  11316 sec
+[2022-06-22 17:07:15,128 INFO] Step 24600/100000; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00005; 19551/1993 tok/s;  11340 sec
+[2022-06-22 17:07:33,280 INFO] Weighted corpora loaded so far:
+			* github: 358
+[2022-06-22 17:07:38,323 INFO] Step 24650/100000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00005; 19984/1987 tok/s;  11363 sec
+[2022-06-22 17:08:00,579 INFO] Step 24700/100000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00005; 20108/2054 tok/s;  11385 sec
+[2022-06-22 17:08:02,737 INFO] Weighted corpora loaded so far:
+			* github: 359
+[2022-06-22 17:08:23,726 INFO] Step 24750/100000; acc:  99.66; ppl:  1.01; xent: 0.01; lr: 0.00005; 20361/1971 tok/s;  11408 sec
+[2022-06-22 17:08:32,129 INFO] Weighted corpora loaded so far:
+			* github: 360
+[2022-06-22 17:08:47,502 INFO] Step 24800/100000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00005; 20224/1965 tok/s;  11432 sec
+[2022-06-22 17:09:01,577 INFO] Weighted corpora loaded so far:
+			* github: 361
+[2022-06-22 17:09:10,348 INFO] Step 24850/100000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00005; 19538/1980 tok/s;  11455 sec
+[2022-06-22 17:09:30,933 INFO] Weighted corpora loaded so far:
+			* github: 362
+[2022-06-22 17:09:33,030 INFO] Step 24900/100000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00005; 20556/2018 tok/s;  11477 sec
+[2022-06-22 17:09:56,572 INFO] Step 24950/100000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00005; 19390/1962 tok/s;  11501 sec
+[2022-06-22 17:10:00,656 INFO] Weighted corpora loaded so far:
+			* github: 363
+[2022-06-22 17:10:19,618 INFO] Step 25000/100000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00005; 20244/1980 tok/s;  11524 sec
+[2022-06-22 17:10:30,090 INFO] Weighted corpora loaded so far:
+			* github: 364
+[2022-06-22 17:10:42,494 INFO] Step 25050/100000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00005; 20503/2017 tok/s;  11547 sec
+[2022-06-22 17:10:59,432 INFO] Weighted corpora loaded so far:
+			* github: 365
+[2022-06-22 17:11:05,048 INFO] Step 25100/100000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00005; 19967/2034 tok/s;  11569 sec
+[2022-06-22 17:11:27,552 INFO] Step 25150/100000; acc:  99.68; ppl:  1.01; xent: 0.01; lr: 0.00005; 20266/2047 tok/s;  11592 sec
+[2022-06-22 17:11:28,615 INFO] Weighted corpora loaded so far:
+			* github: 366
+[2022-06-22 17:11:50,761 INFO] Step 25200/100000; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00005; 20125/1991 tok/s;  11615 sec
+[2022-06-22 17:11:58,055 INFO] Weighted corpora loaded so far:
+			* github: 367
+[2022-06-22 17:12:13,637 INFO] Step 25250/100000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00005; 20375/1984 tok/s;  11638 sec
+[2022-06-22 17:12:27,448 INFO] Weighted corpora loaded so far:
+			* github: 368
+[2022-06-22 17:12:37,222 INFO] Step 25300/100000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00005; 19159/1976 tok/s;  11662 sec
+[2022-06-22 17:12:57,090 INFO] Weighted corpora loaded so far:
+			* github: 369
+[2022-06-22 17:13:00,252 INFO] Step 25350/100000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00005; 20282/2005 tok/s;  11685 sec
+[2022-06-22 17:13:22,696 INFO] Step 25400/100000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00005; 20093/2013 tok/s;  11707 sec
+[2022-06-22 17:13:46,031 INFO] Step 25450/100000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00005; 20059/1978 tok/s;  11730 sec
+[2022-06-22 17:13:55,997 INFO] Weighted corpora loaded so far:
+			* github: 370
+[2022-06-22 17:14:09,454 INFO] Step 25500/100000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00005; 20271/1912 tok/s;  11754 sec
+[2022-06-22 17:14:25,827 INFO] Weighted corpora loaded so far:
+			* github: 371
+[2022-06-22 17:14:32,644 INFO] Step 25550/100000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00005; 19409/2007 tok/s;  11777 sec
+[2022-06-22 17:14:55,233 INFO] Step 25600/100000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00005; 20452/2034 tok/s;  11800 sec
+[2022-06-22 17:14:55,239 INFO] Weighted corpora loaded so far:
+			* github: 372
+[2022-06-22 17:15:18,819 INFO] Step 25650/100000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00005; 19466/1971 tok/s;  11823 sec
+[2022-06-22 17:15:24,794 INFO] Weighted corpora loaded so far:
+			* github: 373
+[2022-06-22 17:15:42,229 INFO] Step 25700/100000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00005; 20251/1947 tok/s;  11847 sec
+[2022-06-22 17:15:55,041 INFO] Weighted corpora loaded so far:
+			* github: 374
+[2022-06-22 17:16:04,847 INFO] Step 25750/100000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00005; 20210/2010 tok/s;  11869 sec
+[2022-06-22 17:16:23,963 INFO] Weighted corpora loaded so far:
+			* github: 375
+[2022-06-22 17:16:28,093 INFO] Step 25800/100000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00005; 19979/2000 tok/s;  11892 sec
+[2022-06-22 17:16:50,674 INFO] Step 25850/100000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00005; 19610/2015 tok/s;  11915 sec
+[2022-06-22 17:16:53,328 INFO] Weighted corpora loaded so far:
+			* github: 376
+[2022-06-22 17:17:13,455 INFO] Step 25900/100000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00005; 20550/2025 tok/s;  11938 sec
+[2022-06-22 17:17:22,710 INFO] Weighted corpora loaded so far:
+			* github: 377
+[2022-06-22 17:17:36,717 INFO] Step 25950/100000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00005; 20673/1995 tok/s;  11961 sec
+[2022-06-22 17:17:52,275 INFO] Weighted corpora loaded so far:
+			* github: 378
+[2022-06-22 17:17:59,924 INFO] Step 26000/100000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00005; 19353/1936 tok/s;  11984 sec
+[2022-06-22 17:18:21,905 INFO] Weighted corpora loaded so far:
+			* github: 379
+[2022-06-22 17:18:23,105 INFO] Step 26050/100000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00005; 20175/1995 tok/s;  12007 sec
+[2022-06-22 17:18:45,274 INFO] Step 26100/100000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00005; 20660/2050 tok/s;  12030 sec
+[2022-06-22 17:18:51,192 INFO] Weighted corpora loaded so far:
+			* github: 380
+[2022-06-22 17:19:09,068 INFO] Step 26150/100000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00005; 19716/2021 tok/s;  12053 sec
+[2022-06-22 17:19:20,249 INFO] Weighted corpora loaded so far:
+			* github: 381
+[2022-06-22 17:19:31,788 INFO] Step 26200/100000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00005; 19790/1960 tok/s;  12076 sec
+[2022-06-22 17:19:49,779 INFO] Weighted corpora loaded so far:
+			* github: 382
+[2022-06-22 17:19:54,879 INFO] Step 26250/100000; acc:  99.68; ppl:  1.01; xent: 0.01; lr: 0.00005; 19987/2015 tok/s;  12099 sec
+[2022-06-22 17:20:17,056 INFO] Step 26300/100000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00005; 20086/2041 tok/s;  12121 sec
+[2022-06-22 17:20:40,622 INFO] Step 26350/100000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00005; 19884/1921 tok/s;  12145 sec
+[2022-06-22 17:20:48,892 INFO] Weighted corpora loaded so far:
+			* github: 383
+[2022-06-22 17:21:04,507 INFO] Step 26400/100000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00005; 20108/1957 tok/s;  12169 sec
+[2022-06-22 17:21:18,733 INFO] Weighted corpora loaded so far:
+			* github: 384
+[2022-06-22 17:21:26,859 INFO] Step 26450/100000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00005; 19961/2026 tok/s;  12191 sec
+[2022-06-22 17:21:48,179 INFO] Weighted corpora loaded so far:
+			* github: 385
+[2022-06-22 17:21:50,334 INFO] Step 26500/100000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00005; 19819/1945 tok/s;  12215 sec
+[2022-06-22 17:22:13,186 INFO] Step 26550/100000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00005; 20340/2032 tok/s;  12238 sec
+[2022-06-22 17:22:17,517 INFO] Weighted corpora loaded so far:
+			* github: 386
+[2022-06-22 17:22:35,911 INFO] Step 26600/100000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00005; 20692/1997 tok/s;  12260 sec
+[2022-06-22 17:22:46,941 INFO] Weighted corpora loaded so far:
+			* github: 387
+[2022-06-22 17:22:59,055 INFO] Step 26650/100000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00005; 20185/2032 tok/s;  12283 sec
+[2022-06-22 17:23:16,602 INFO] Weighted corpora loaded so far:
+			* github: 388
+[2022-06-22 17:23:22,624 INFO] Step 26700/100000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00005; 18892/1914 tok/s;  12307 sec
+[2022-06-22 17:23:45,385 INFO] Step 26750/100000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00005; 19923/2016 tok/s;  12330 sec
+[2022-06-22 17:23:46,351 INFO] Weighted corpora loaded so far:
+			* github: 389
+[2022-06-22 17:24:08,250 INFO] Step 26800/100000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00005; 20449/2002 tok/s;  12353 sec
+[2022-06-22 17:24:15,832 INFO] Weighted corpora loaded so far:
+			* github: 390
+[2022-06-22 17:24:31,645 INFO] Step 26850/100000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00005; 20043/1999 tok/s;  12376 sec
+[2022-06-22 17:24:45,362 INFO] Weighted corpora loaded so far:
+			* github: 391
+[2022-06-22 17:24:54,842 INFO] Step 26900/100000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00005; 19638/1965 tok/s;  12399 sec
+[2022-06-22 17:25:14,679 INFO] Weighted corpora loaded so far:
+			* github: 392
+[2022-06-22 17:25:17,783 INFO] Step 26950/100000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00005; 20514/1998 tok/s;  12422 sec
+[2022-06-22 17:25:40,059 INFO] Step 27000/100000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00005; 20143/2073 tok/s;  12444 sec
+[2022-06-22 17:25:43,843 INFO] Weighted corpora loaded so far:
+			* github: 393
+[2022-06-22 17:26:03,775 INFO] Step 27050/100000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00005; 19655/1949 tok/s;  12468 sec
+[2022-06-22 17:26:13,588 INFO] Weighted corpora loaded so far:
+			* github: 394
+[2022-06-22 17:26:27,192 INFO] Step 27100/100000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00005; 20157/1967 tok/s;  12492 sec
+[2022-06-22 17:26:43,515 INFO] Weighted corpora loaded so far:
+			* github: 395
+[2022-06-22 17:26:49,848 INFO] Step 27150/100000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00005; 19735/1996 tok/s;  12514 sec
+[2022-06-22 17:27:12,664 INFO] Step 27200/100000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00005; 20130/1999 tok/s;  12537 sec
+[2022-06-22 17:27:35,498 INFO] Step 27250/100000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00005; 20096/2013 tok/s;  12560 sec
+[2022-06-22 17:27:41,991 INFO] Weighted corpora loaded so far:
+			* github: 396
+[2022-06-22 17:27:58,705 INFO] Step 27300/100000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00005; 20419/1966 tok/s;  12583 sec
+[2022-06-22 17:28:11,736 INFO] Weighted corpora loaded so far:
+			* github: 397
+[2022-06-22 17:28:22,298 INFO] Step 27350/100000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00005; 19407/1940 tok/s;  12607 sec
+[2022-06-22 17:28:41,337 INFO] Weighted corpora loaded so far:
+			* github: 398
+[2022-06-22 17:28:45,359 INFO] Step 27400/100000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00005; 20239/2022 tok/s;  12630 sec
+[2022-06-22 17:29:07,915 INFO] Step 27450/100000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00005; 19841/2022 tok/s;  12652 sec
+[2022-06-22 17:29:11,085 INFO] Weighted corpora loaded so far:
+			* github: 399
+[2022-06-22 17:29:30,890 INFO] Step 27500/100000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00005; 20454/2005 tok/s;  12675 sec
+[2022-06-22 17:29:40,250 INFO] Weighted corpora loaded so far:
+			* github: 400
+[2022-06-22 17:29:54,686 INFO] Step 27550/100000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00005; 20121/1946 tok/s;  12699 sec
+[2022-06-22 17:30:09,551 INFO] Weighted corpora loaded so far:
+			* github: 401
+[2022-06-22 17:30:17,145 INFO] Step 27600/100000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00005; 19806/2011 tok/s;  12722 sec
+[2022-06-22 17:30:38,741 INFO] Weighted corpora loaded so far:
+			* github: 402
+[2022-06-22 17:30:40,120 INFO] Step 27650/100000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00005; 20136/2006 tok/s;  12745 sec
+[2022-06-22 17:31:03,483 INFO] Step 27700/100000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00005; 19888/1996 tok/s;  12768 sec
+[2022-06-22 17:31:08,306 INFO] Weighted corpora loaded so far:
+			* github: 403
+[2022-06-22 17:31:26,634 INFO] Step 27750/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 20405/1934 tok/s;  12791 sec
+[2022-06-22 17:31:38,228 INFO] Weighted corpora loaded so far:
+			* github: 404
+[2022-06-22 17:31:49,537 INFO] Step 27800/100000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00005; 19707/2012 tok/s;  12814 sec
+[2022-06-22 17:32:07,626 INFO] Weighted corpora loaded so far:
+			* github: 405
+[2022-06-22 17:32:12,000 INFO] Step 27850/100000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00005; 20585/2089 tok/s;  12836 sec
+[2022-06-22 17:32:34,594 INFO] Step 27900/100000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00005; 19758/2001 tok/s;  12859 sec
+[2022-06-22 17:32:36,715 INFO] Weighted corpora loaded so far:
+			* github: 406
+[2022-06-22 17:32:58,176 INFO] Step 27950/100000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00005; 19738/1941 tok/s;  12883 sec
+[2022-06-22 17:33:06,417 INFO] Weighted corpora loaded so far:
+			* github: 407
+[2022-06-22 17:33:21,198 INFO] Step 28000/100000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00005; 20715/2020 tok/s;  12906 sec
+[2022-06-22 17:33:35,621 INFO] Weighted corpora loaded so far:
+			* github: 408
+[2022-06-22 17:33:43,886 INFO] Step 28050/100000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00005; 19547/2007 tok/s;  12928 sec
+[2022-06-22 17:34:06,883 INFO] Step 28100/100000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00005; 20150/1989 tok/s;  12951 sec
+[2022-06-22 17:34:29,207 INFO] Step 28150/100000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00005; 20829/2074 tok/s;  12974 sec
+[2022-06-22 17:34:34,125 INFO] Weighted corpora loaded so far:
+			* github: 409
+[2022-06-22 17:34:53,405 INFO] Step 28200/100000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00005; 19345/1869 tok/s;  12998 sec
+[2022-06-22 17:35:04,033 INFO] Weighted corpora loaded so far:
+			* github: 410
+[2022-06-22 17:35:16,538 INFO] Step 28250/100000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00005; 20253/2010 tok/s;  13021 sec
+[2022-06-22 17:35:33,046 INFO] Weighted corpora loaded so far:
+			* github: 411
+[2022-06-22 17:35:38,961 INFO] Step 28300/100000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00005; 20046/2051 tok/s;  13043 sec
+[2022-06-22 17:36:00,867 INFO] Step 28350/100000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00005; 20827/2092 tok/s;  13065 sec
+[2022-06-22 17:36:01,912 INFO] Weighted corpora loaded so far:
+			* github: 412
+[2022-06-22 17:36:24,593 INFO] Step 28400/100000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00005; 19820/1961 tok/s;  13089 sec
+[2022-06-22 17:36:31,597 INFO] Weighted corpora loaded so far:
+			* github: 413
+[2022-06-22 17:36:47,881 INFO] Step 28450/100000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00005; 20022/1925 tok/s;  13112 sec
+[2022-06-22 17:37:01,768 INFO] Weighted corpora loaded so far:
+			* github: 414
+[2022-06-22 17:37:11,018 INFO] Step 28500/100000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00005; 19494/1997 tok/s;  13135 sec
+[2022-06-22 17:37:31,648 INFO] Weighted corpora loaded so far:
+			* github: 415
+[2022-06-22 17:37:34,787 INFO] Step 28550/100000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00005; 19693/1933 tok/s;  13159 sec
+[2022-06-22 17:37:57,571 INFO] Step 28600/100000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00005; 19988/2036 tok/s;  13182 sec
+[2022-06-22 17:38:00,965 INFO] Weighted corpora loaded so far:
+			* github: 416
+[2022-06-22 17:38:20,559 INFO] Step 28650/100000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00005; 20473/1997 tok/s;  13205 sec
+[2022-06-22 17:38:30,366 INFO] Weighted corpora loaded so far:
+			* github: 417
+[2022-06-22 17:38:43,386 INFO] Step 28700/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 20716/1995 tok/s;  13228 sec
+[2022-06-22 17:38:59,897 INFO] Weighted corpora loaded so far:
+			* github: 418
+[2022-06-22 17:39:06,471 INFO] Step 28750/100000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00005; 19310/2001 tok/s;  13251 sec
+[2022-06-22 17:39:29,308 INFO] Step 28800/100000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00005; 20144/2010 tok/s;  13274 sec
+[2022-06-22 17:39:29,349 INFO] Weighted corpora loaded so far:
+			* github: 419
+[2022-06-22 17:39:51,877 INFO] Step 28850/100000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00005; 20180/2041 tok/s;  13296 sec
+[2022-06-22 17:39:58,748 INFO] Weighted corpora loaded so far:
+			* github: 420
+[2022-06-22 17:40:15,521 INFO] Step 28900/100000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00005; 19880/1882 tok/s;  13320 sec
+[2022-06-22 17:40:38,165 INFO] Step 28950/100000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00005; 20086/2083 tok/s;  13343 sec
+[2022-06-22 17:40:56,669 INFO] Weighted corpora loaded so far:
+			* github: 421
+[2022-06-22 17:41:00,865 INFO] Step 29000/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 20523/1997 tok/s;  13365 sec
+[2022-06-22 17:41:22,926 INFO] Step 29050/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 20320/2074 tok/s;  13387 sec
+[2022-06-22 17:41:25,991 INFO] Weighted corpora loaded so far:
+			* github: 422
+[2022-06-22 17:41:46,623 INFO] Step 29100/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 19807/1932 tok/s;  13411 sec
+[2022-06-22 17:41:55,674 INFO] Weighted corpora loaded so far:
+			* github: 423
+[2022-06-22 17:42:10,520 INFO] Step 29150/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 20181/1947 tok/s;  13435 sec
+[2022-06-22 17:42:25,954 INFO] Weighted corpora loaded so far:
+			* github: 424
+[2022-06-22 17:42:33,364 INFO] Step 29200/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 19692/2008 tok/s;  13458 sec
+[2022-06-22 17:42:55,392 INFO] Weighted corpora loaded so far:
+			* github: 425
+[2022-06-22 17:42:56,757 INFO] Step 29250/100000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00005; 19893/1964 tok/s;  13481 sec
+[2022-06-22 17:43:19,218 INFO] Step 29300/100000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00005; 20501/2017 tok/s;  13504 sec
+[2022-06-22 17:43:24,653 INFO] Weighted corpora loaded so far:
+			* github: 426
+[2022-06-22 17:43:42,494 INFO] Step 29350/100000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00005; 20190/2036 tok/s;  13527 sec
+[2022-06-22 17:43:54,247 INFO] Weighted corpora loaded so far:
+			* github: 427
+[2022-06-22 17:44:05,117 INFO] Step 29400/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 19861/2022 tok/s;  13550 sec
+[2022-06-22 17:44:23,589 INFO] Weighted corpora loaded so far:
+			* github: 428
+[2022-06-22 17:44:28,496 INFO] Step 29450/100000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00005; 19761/1952 tok/s;  13573 sec
+[2022-06-22 17:44:50,733 INFO] Step 29500/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 20305/2030 tok/s;  13595 sec
+[2022-06-22 17:44:52,841 INFO] Weighted corpora loaded so far:
+			* github: 429
+[2022-06-22 17:45:13,515 INFO] Step 29550/100000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00005; 20597/2008 tok/s;  13618 sec
+[2022-06-22 17:45:21,716 INFO] Weighted corpora loaded so far:
+			* github: 430
+[2022-06-22 17:45:36,466 INFO] Step 29600/100000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00005; 20740/2001 tok/s;  13641 sec
+[2022-06-22 17:45:50,733 INFO] Weighted corpora loaded so far:
+			* github: 431
+[2022-06-22 17:45:59,265 INFO] Step 29650/100000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00005; 19360/2049 tok/s;  13664 sec
+[2022-06-22 17:46:20,015 INFO] Weighted corpora loaded so far:
+			* github: 432
+[2022-06-22 17:46:22,187 INFO] Step 29700/100000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00005; 20231/2002 tok/s;  13687 sec
+[2022-06-22 17:46:45,739 INFO] Step 29750/100000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00005; 19623/1965 tok/s;  13710 sec
+[2022-06-22 17:46:49,704 INFO] Weighted corpora loaded so far:
+			* github: 433
+[2022-06-22 17:47:08,733 INFO] Step 29800/100000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00005; 20256/1932 tok/s;  13733 sec
+[2022-06-22 17:47:31,747 INFO] Step 29850/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 20271/2041 tok/s;  13756 sec
+[2022-06-22 17:47:49,035 INFO] Weighted corpora loaded so far:
+			* github: 434
+[2022-06-22 17:47:54,585 INFO] Step 29900/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 19639/1974 tok/s;  13779 sec
+[2022-06-22 17:48:17,407 INFO] Step 29950/100000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00005; 20025/2016 tok/s;  13802 sec
+[2022-06-22 17:48:18,390 INFO] Weighted corpora loaded so far:
+			* github: 435
+[2022-06-22 17:48:40,475 INFO] Step 30000/100000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00005; 20343/2000 tok/s;  13825 sec
+[2022-06-22 17:48:47,929 INFO] Weighted corpora loaded so far:
+			* github: 436
+[2022-06-22 17:49:03,625 INFO] Step 30050/100000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00005; 20351/1978 tok/s;  13848 sec
+[2022-06-22 17:49:17,739 INFO] Weighted corpora loaded so far:
+			* github: 437
+[2022-06-22 17:49:27,089 INFO] Step 30100/100000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00005; 19441/1984 tok/s;  13871 sec
+[2022-06-22 17:49:47,431 INFO] Weighted corpora loaded so far:
+			* github: 438
+[2022-06-22 17:49:50,480 INFO] Step 30150/100000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00005; 20029/1960 tok/s;  13895 sec
+[2022-06-22 17:50:12,677 INFO] Step 30200/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 20289/2046 tok/s;  13917 sec
+[2022-06-22 17:50:16,627 INFO] Weighted corpora loaded so far:
+			* github: 439
+[2022-06-22 17:50:35,876 INFO] Step 30250/100000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00005; 20142/1997 tok/s;  13940 sec
+[2022-06-22 17:50:46,110 INFO] Weighted corpora loaded so far:
+			* github: 440
+[2022-06-22 17:50:59,655 INFO] Step 30300/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 19882/1920 tok/s;  13964 sec
+[2022-06-22 17:51:15,677 INFO] Weighted corpora loaded so far:
+			* github: 441
+[2022-06-22 17:51:22,358 INFO] Step 30350/100000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00005; 19746/1995 tok/s;  13987 sec
+[2022-06-22 17:51:44,390 INFO] Step 30400/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 21004/2092 tok/s;  14009 sec
+[2022-06-22 17:51:44,417 INFO] Weighted corpora loaded so far:
+			* github: 442
+[2022-06-22 17:52:07,558 INFO] Step 30450/100000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00005; 19799/2023 tok/s;  14032 sec
+[2022-06-22 17:52:13,813 INFO] Weighted corpora loaded so far:
+			* github: 443
+[2022-06-22 17:52:31,117 INFO] Step 30500/100000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00005; 19976/1895 tok/s;  14056 sec
+[2022-06-22 17:52:43,815 INFO] Weighted corpora loaded so far:
+			* github: 444
+[2022-06-22 17:52:54,363 INFO] Step 30550/100000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00005; 19511/2020 tok/s;  14079 sec
+[2022-06-22 17:53:13,985 INFO] Weighted corpora loaded so far:
+			* github: 445
+[2022-06-22 17:53:17,657 INFO] Step 30600/100000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00005; 19884/1995 tok/s;  14102 sec
+[2022-06-22 17:53:40,199 INFO] Step 30650/100000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00005; 19754/2002 tok/s;  14125 sec
+[2022-06-22 17:53:42,902 INFO] Weighted corpora loaded so far:
+			* github: 446
+[2022-06-22 17:54:03,071 INFO] Step 30700/100000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00005; 20411/2008 tok/s;  14147 sec
+[2022-06-22 17:54:26,040 INFO] Step 30750/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 20926/1978 tok/s;  14170 sec
+[2022-06-22 17:54:41,729 INFO] Weighted corpora loaded so far:
+			* github: 447
+[2022-06-22 17:54:49,429 INFO] Step 30800/100000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00005; 19182/1963 tok/s;  14194 sec
+[2022-06-22 17:55:11,069 INFO] Weighted corpora loaded so far:
+			* github: 448
+[2022-06-22 17:55:12,252 INFO] Step 30850/100000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00005; 20375/2006 tok/s;  14217 sec
+[2022-06-22 17:55:35,070 INFO] Step 30900/100000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00005; 20303/2032 tok/s;  14239 sec
+[2022-06-22 17:55:40,905 INFO] Weighted corpora loaded so far:
+			* github: 449
+[2022-06-22 17:55:58,672 INFO] Step 30950/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 20097/1946 tok/s;  14263 sec
+[2022-06-22 17:56:10,636 INFO] Weighted corpora loaded so far:
+			* github: 450
+[2022-06-22 17:56:21,977 INFO] Step 31000/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 19434/1996 tok/s;  14286 sec
+[2022-06-22 17:56:39,647 INFO] Weighted corpora loaded so far:
+			* github: 451
+[2022-06-22 17:56:44,693 INFO] Step 31050/100000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00005; 20354/1991 tok/s;  14309 sec
+[2022-06-22 17:57:07,107 INFO] Step 31100/100000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00005; 19837/2051 tok/s;  14331 sec
+[2022-06-22 17:57:09,059 INFO] Weighted corpora loaded so far:
+			* github: 452
+[2022-06-22 17:57:30,584 INFO] Step 31150/100000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00005; 19875/1961 tok/s;  14355 sec
+[2022-06-22 17:57:38,372 INFO] Weighted corpora loaded so far:
+			* github: 453
+[2022-06-22 17:57:53,991 INFO] Step 31200/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 20502/2005 tok/s;  14378 sec
+[2022-06-22 17:58:08,014 INFO] Weighted corpora loaded so far:
+			* github: 454
+[2022-06-22 17:58:16,605 INFO] Step 31250/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 19750/1980 tok/s;  14401 sec
+[2022-06-22 17:58:37,421 INFO] Weighted corpora loaded so far:
+			* github: 455
+[2022-06-22 17:58:39,478 INFO] Step 31300/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 20340/2010 tok/s;  14424 sec
+[2022-06-22 17:59:02,379 INFO] Step 31350/100000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00005; 20161/2016 tok/s;  14447 sec
+[2022-06-22 17:59:06,802 INFO] Weighted corpora loaded so far:
+			* github: 456
+[2022-06-22 17:59:25,654 INFO] Step 31400/100000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00005; 20030/1966 tok/s;  14470 sec
+[2022-06-22 17:59:36,553 INFO] Weighted corpora loaded so far:
+			* github: 457
+[2022-06-22 17:59:48,770 INFO] Step 31450/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 20125/1992 tok/s;  14493 sec
+[2022-06-22 18:00:06,348 INFO] Weighted corpora loaded so far:
+			* github: 458
+[2022-06-22 18:00:11,948 INFO] Step 31500/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 19218/1976 tok/s;  14516 sec
+[2022-06-22 18:00:34,540 INFO] Step 31550/100000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00005; 20085/2030 tok/s;  14539 sec
+[2022-06-22 18:00:57,224 INFO] Step 31600/100000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00005; 20601/2042 tok/s;  14562 sec
+[2022-06-22 18:01:04,700 INFO] Weighted corpora loaded so far:
+			* github: 459
+[2022-06-22 18:01:20,665 INFO] Step 31650/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 20068/1915 tok/s;  14585 sec
+[2022-06-22 18:01:34,415 INFO] Weighted corpora loaded so far:
+			* github: 460
+[2022-06-22 18:01:44,160 INFO] Step 31700/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 19392/1963 tok/s;  14609 sec
+[2022-06-22 18:02:04,044 INFO] Weighted corpora loaded so far:
+			* github: 461
+[2022-06-22 18:02:07,224 INFO] Step 31750/100000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00005; 20323/1993 tok/s;  14632 sec
+[2022-06-22 18:02:29,714 INFO] Step 31800/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20232/2063 tok/s;  14654 sec
+[2022-06-22 18:02:33,497 INFO] Weighted corpora loaded so far:
+			* github: 462
+[2022-06-22 18:02:52,827 INFO] Step 31850/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 20341/1969 tok/s;  14677 sec
+[2022-06-22 18:03:02,819 INFO] Weighted corpora loaded so far:
+			* github: 463
+[2022-06-22 18:03:16,226 INFO] Step 31900/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 20253/1942 tok/s;  14701 sec
+[2022-06-22 18:03:32,052 INFO] Weighted corpora loaded so far:
+			* github: 464
+[2022-06-22 18:03:38,823 INFO] Step 31950/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 19786/2047 tok/s;  14723 sec
+[2022-06-22 18:04:01,614 INFO] Step 32000/100000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00005; 20137/2017 tok/s;  14746 sec
+[2022-06-22 18:04:01,631 INFO] Weighted corpora loaded so far:
+			* github: 465
+[2022-06-22 18:04:24,828 INFO] Step 32050/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 19657/1981 tok/s;  14769 sec
+[2022-06-22 18:04:31,144 INFO] Weighted corpora loaded so far:
+			* github: 466
+[2022-06-22 18:04:48,175 INFO] Step 32100/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 20275/1980 tok/s;  14793 sec
+[2022-06-22 18:05:00,873 INFO] Weighted corpora loaded so far:
+			* github: 467
+[2022-06-22 18:05:10,838 INFO] Step 32150/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 20232/2011 tok/s;  14815 sec
+[2022-06-22 18:05:30,380 INFO] Weighted corpora loaded so far:
+			* github: 468
+[2022-06-22 18:05:34,389 INFO] Step 32200/100000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00005; 19848/1941 tok/s;  14839 sec
+[2022-06-22 18:05:57,139 INFO] Step 32250/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 19491/2045 tok/s;  14862 sec
+[2022-06-22 18:05:59,853 INFO] Weighted corpora loaded so far:
+			* github: 469
+[2022-06-22 18:06:19,936 INFO] Step 32300/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20443/2044 tok/s;  14884 sec
+[2022-06-22 18:06:29,504 INFO] Weighted corpora loaded so far:
+			* github: 470
+[2022-06-22 18:06:43,455 INFO] Step 32350/100000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00005; 20342/1907 tok/s;  14908 sec
+[2022-06-22 18:06:58,839 INFO] Weighted corpora loaded so far:
+			* github: 471
+[2022-06-22 18:07:06,470 INFO] Step 32400/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 19368/1994 tok/s;  14931 sec
+[2022-06-22 18:07:29,012 INFO] Step 32450/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 20503/2040 tok/s;  14953 sec
+[2022-06-22 18:07:51,978 INFO] Step 32500/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 20117/2012 tok/s;  14976 sec
+[2022-06-22 18:07:57,727 INFO] Weighted corpora loaded so far:
+			* github: 472
+[2022-06-22 18:08:15,773 INFO] Step 32550/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 19910/1916 tok/s;  15000 sec
+[2022-06-22 18:08:27,081 INFO] Weighted corpora loaded so far:
+			* github: 473
+[2022-06-22 18:08:38,534 INFO] Step 32600/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 19855/2060 tok/s;  15023 sec
+[2022-06-22 18:08:56,365 INFO] Weighted corpora loaded so far:
+			* github: 474
+[2022-06-22 18:09:01,306 INFO] Step 32650/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20313/1961 tok/s;  15046 sec
+[2022-06-22 18:09:24,281 INFO] Step 32700/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 19689/2017 tok/s;  15069 sec
+[2022-06-22 18:09:26,238 INFO] Weighted corpora loaded so far:
+			* github: 475
+[2022-06-22 18:09:47,576 INFO] Step 32750/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20166/1973 tok/s;  15092 sec
+[2022-06-22 18:09:55,603 INFO] Weighted corpora loaded so far:
+			* github: 476
+[2022-06-22 18:10:10,388 INFO] Step 32800/100000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00005; 20967/1994 tok/s;  15115 sec
+[2022-06-22 18:10:25,156 INFO] Weighted corpora loaded so far:
+			* github: 477
+[2022-06-22 18:10:33,209 INFO] Step 32850/100000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00005; 19402/2043 tok/s;  15138 sec
+[2022-06-22 18:10:54,802 INFO] Weighted corpora loaded so far:
+			* github: 478
+[2022-06-22 18:10:57,024 INFO] Step 32900/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 19409/1912 tok/s;  15161 sec
+[2022-06-22 18:11:19,770 INFO] Step 32950/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 20295/2012 tok/s;  15184 sec
+[2022-06-22 18:11:24,179 INFO] Weighted corpora loaded so far:
+			* github: 479
+[2022-06-22 18:11:42,773 INFO] Step 33000/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 20414/2015 tok/s;  15207 sec
+[2022-06-22 18:11:53,783 INFO] Weighted corpora loaded so far:
+			* github: 480
+[2022-06-22 18:12:06,052 INFO] Step 33050/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 20145/1940 tok/s;  15230 sec
+[2022-06-22 18:12:23,042 INFO] Weighted corpora loaded so far:
+			* github: 481
+[2022-06-22 18:12:28,520 INFO] Step 33100/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 19924/2031 tok/s;  15253 sec
+[2022-06-22 18:12:50,968 INFO] Step 33150/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 20098/2081 tok/s;  15275 sec
+[2022-06-22 18:12:51,958 INFO] Weighted corpora loaded so far:
+			* github: 482
+[2022-06-22 18:13:13,917 INFO] Step 33200/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 20338/2032 tok/s;  15298 sec
+[2022-06-22 18:13:20,784 INFO] Weighted corpora loaded so far:
+			* github: 483
+[2022-06-22 18:13:36,485 INFO] Step 33250/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 20733/2007 tok/s;  15321 sec
+[2022-06-22 18:13:49,763 INFO] Weighted corpora loaded so far:
+			* github: 484
+[2022-06-22 18:13:59,073 INFO] Step 33300/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 20029/2041 tok/s;  15343 sec
+[2022-06-22 18:14:21,647 INFO] Step 33350/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20631/2040 tok/s;  15366 sec
+[2022-06-22 18:14:44,663 INFO] Step 33400/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 19779/1973 tok/s;  15389 sec
+[2022-06-22 18:14:48,180 INFO] Weighted corpora loaded so far:
+			* github: 485
+[2022-06-22 18:15:07,637 INFO] Step 33450/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 20463/1968 tok/s;  15412 sec
+[2022-06-22 18:15:17,734 INFO] Weighted corpora loaded so far:
+			* github: 486
+[2022-06-22 18:15:30,726 INFO] Step 33500/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 20533/2023 tok/s;  15435 sec
+[2022-06-22 18:15:47,072 INFO] Weighted corpora loaded so far:
+			* github: 487
+[2022-06-22 18:15:53,570 INFO] Step 33550/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 19672/1992 tok/s;  15458 sec
+[2022-06-22 18:16:17,141 INFO] Step 33600/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 19727/1965 tok/s;  15482 sec
+[2022-06-22 18:16:17,152 INFO] Weighted corpora loaded so far:
+			* github: 488
+[2022-06-22 18:16:40,173 INFO] Step 33650/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 19875/2014 tok/s;  15505 sec
+[2022-06-22 18:16:46,859 INFO] Weighted corpora loaded so far:
+			* github: 489
+[2022-06-22 18:17:03,600 INFO] Step 33700/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20074/1934 tok/s;  15528 sec
+[2022-06-22 18:17:15,955 INFO] Weighted corpora loaded so far:
+			* github: 490
+[2022-06-22 18:17:26,590 INFO] Step 33750/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 19753/1975 tok/s;  15551 sec
+[2022-06-22 18:17:45,500 INFO] Weighted corpora loaded so far:
+			* github: 491
+[2022-06-22 18:17:49,840 INFO] Step 33800/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 19980/2034 tok/s;  15574 sec
+[2022-06-22 18:18:11,708 INFO] Step 33850/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20447/2069 tok/s;  15596 sec
+[2022-06-22 18:18:14,577 INFO] Weighted corpora loaded so far:
+			* github: 492
+[2022-06-22 18:18:34,560 INFO] Step 33900/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20537/1968 tok/s;  15619 sec
+[2022-06-22 18:18:43,543 INFO] Weighted corpora loaded so far:
+			* github: 493
+[2022-06-22 18:18:58,357 INFO] Step 33950/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 20205/1988 tok/s;  15643 sec
+[2022-06-22 18:19:13,181 INFO] Weighted corpora loaded so far:
+			* github: 494
+[2022-06-22 18:19:21,054 INFO] Step 34000/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 19702/2050 tok/s;  15665 sec
+[2022-06-22 18:19:43,117 INFO] Weighted corpora loaded so far:
+			* github: 495
+[2022-06-22 18:19:44,573 INFO] Step 34050/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 19668/1910 tok/s;  15689 sec
+[2022-06-22 18:20:07,020 INFO] Step 34100/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 20436/2040 tok/s;  15711 sec
+[2022-06-22 18:20:12,558 INFO] Weighted corpora loaded so far:
+			* github: 496
+[2022-06-22 18:20:30,449 INFO] Step 34150/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20094/1990 tok/s;  15735 sec
+[2022-06-22 18:20:42,096 INFO] Weighted corpora loaded so far:
+			* github: 497
+[2022-06-22 18:20:52,794 INFO] Step 34200/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 20139/2017 tok/s;  15757 sec
+[2022-06-22 18:21:16,038 INFO] Step 34250/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 19835/1985 tok/s;  15780 sec
+[2022-06-22 18:21:38,744 INFO] Step 34300/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 19857/2008 tok/s;  15803 sec
+[2022-06-22 18:21:40,831 INFO] Weighted corpora loaded so far:
+			* github: 498
+[2022-06-22 18:22:01,872 INFO] Step 34350/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20239/1938 tok/s;  15826 sec
+[2022-06-22 18:22:10,526 INFO] Weighted corpora loaded so far:
+			* github: 499
+[2022-06-22 18:22:25,431 INFO] Step 34400/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20371/2016 tok/s;  15850 sec
+[2022-06-22 18:22:39,709 INFO] Weighted corpora loaded so far:
+			* github: 500
+[2022-06-22 18:22:48,610 INFO] Step 34450/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 19270/1992 tok/s;  15873 sec
+[2022-06-22 18:23:09,086 INFO] Weighted corpora loaded so far:
+			* github: 501
+[2022-06-22 18:23:11,160 INFO] Step 34500/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 20663/2011 tok/s;  15896 sec
+[2022-06-22 18:23:33,817 INFO] Step 34550/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 20500/2064 tok/s;  15918 sec
+[2022-06-22 18:23:38,388 INFO] Weighted corpora loaded so far:
+			* github: 502
+[2022-06-22 18:23:57,017 INFO] Step 34600/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20072/1906 tok/s;  15941 sec
+[2022-06-22 18:24:07,409 INFO] Weighted corpora loaded so far:
+			* github: 503
+[2022-06-22 18:24:19,983 INFO] Step 34650/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20226/2044 tok/s;  15964 sec
+[2022-06-22 18:24:37,338 INFO] Weighted corpora loaded so far:
+			* github: 504
+[2022-06-22 18:24:43,264 INFO] Step 34700/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 19178/1975 tok/s;  15988 sec
+[2022-06-22 18:25:05,540 INFO] Step 34750/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 20584/2055 tok/s;  16010 sec
+[2022-06-22 18:25:06,518 INFO] Weighted corpora loaded so far:
+			* github: 505
+[2022-06-22 18:25:28,920 INFO] Step 34800/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 20101/1974 tok/s;  16033 sec
+[2022-06-22 18:25:35,996 INFO] Weighted corpora loaded so far:
+			* github: 506
+[2022-06-22 18:25:51,647 INFO] Step 34850/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20576/1991 tok/s;  16056 sec
+[2022-06-22 18:26:05,425 INFO] Weighted corpora loaded so far:
+			* github: 507
+[2022-06-22 18:26:14,365 INFO] Step 34900/100000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00005; 19885/2037 tok/s;  16079 sec
+[2022-06-22 18:26:34,903 INFO] Weighted corpora loaded so far:
+			* github: 508
+[2022-06-22 18:26:37,916 INFO] Step 34950/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 19824/1968 tok/s;  16102 sec
+[2022-06-22 18:27:00,473 INFO] Step 35000/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20009/2022 tok/s;  16125 sec
+[2022-06-22 18:27:04,137 INFO] Weighted corpora loaded so far:
+			* github: 509
+[2022-06-22 18:27:23,621 INFO] Step 35050/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 20144/1973 tok/s;  16148 sec
+[2022-06-22 18:27:46,869 INFO] Step 35100/100000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00005; 20273/2002 tok/s;  16171 sec
+[2022-06-22 18:28:02,705 INFO] Weighted corpora loaded so far:
+			* github: 510
+[2022-06-22 18:28:09,405 INFO] Step 35150/100000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00005; 19884/1986 tok/s;  16194 sec
+[2022-06-22 18:28:31,945 INFO] Step 35200/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20664/2039 tok/s;  16216 sec
+[2022-06-22 18:28:31,948 INFO] Weighted corpora loaded so far:
+			* github: 511
+[2022-06-22 18:28:55,285 INFO] Step 35250/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 19606/1981 tok/s;  16240 sec
+[2022-06-22 18:29:01,360 INFO] Weighted corpora loaded so far:
+			* github: 512
+[2022-06-22 18:29:18,418 INFO] Step 35300/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 20506/2007 tok/s;  16263 sec
+[2022-06-22 18:29:30,824 INFO] Weighted corpora loaded so far:
+			* github: 513
+[2022-06-22 18:29:41,750 INFO] Step 35350/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 19663/1967 tok/s;  16286 sec
+[2022-06-22 18:30:00,837 INFO] Weighted corpora loaded so far:
+			* github: 514
+[2022-06-22 18:30:04,456 INFO] Step 35400/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20543/2007 tok/s;  16309 sec
+[2022-06-22 18:30:26,862 INFO] Step 35450/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 19813/2020 tok/s;  16331 sec
+[2022-06-22 18:30:29,960 INFO] Weighted corpora loaded so far:
+			* github: 515
+[2022-06-22 18:30:50,046 INFO] Step 35500/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20139/2020 tok/s;  16354 sec
+[2022-06-22 18:30:59,066 INFO] Weighted corpora loaded so far:
+			* github: 516
+[2022-06-22 18:31:13,181 INFO] Step 35550/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20682/1989 tok/s;  16378 sec
+[2022-06-22 18:31:28,828 INFO] Weighted corpora loaded so far:
+			* github: 517
+[2022-06-22 18:31:36,631 INFO] Step 35600/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 19085/1931 tok/s;  16401 sec
+[2022-06-22 18:31:58,433 INFO] Weighted corpora loaded so far:
+			* github: 518
+[2022-06-22 18:31:59,664 INFO] Step 35650/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20347/1976 tok/s;  16424 sec
+[2022-06-22 18:32:22,544 INFO] Step 35700/100000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00005; 20174/2029 tok/s;  16447 sec
+[2022-06-22 18:32:27,927 INFO] Weighted corpora loaded so far:
+			* github: 519
+[2022-06-22 18:32:45,290 INFO] Step 35750/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 20607/2004 tok/s;  16470 sec
+[2022-06-22 18:32:57,096 INFO] Weighted corpora loaded so far:
+			* github: 520
+[2022-06-22 18:33:08,153 INFO] Step 35800/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 19587/2052 tok/s;  16493 sec
+[2022-06-22 18:33:26,267 INFO] Weighted corpora loaded so far:
+			* github: 521
+[2022-06-22 18:33:31,388 INFO] Step 35850/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 19835/1967 tok/s;  16516 sec
+[2022-06-22 18:33:53,475 INFO] Step 35900/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 20333/2078 tok/s;  16538 sec
+[2022-06-22 18:33:55,530 INFO] Weighted corpora loaded so far:
+			* github: 522
+[2022-06-22 18:34:16,760 INFO] Step 35950/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 20010/1953 tok/s;  16561 sec
+[2022-06-22 18:34:39,970 INFO] Step 36000/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 20605/2004 tok/s;  16584 sec
+[2022-06-22 18:34:54,300 INFO] Weighted corpora loaded so far:
+			* github: 523
+[2022-06-22 18:35:02,882 INFO] Step 36050/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 19449/1971 tok/s;  16607 sec
+[2022-06-22 18:35:24,001 INFO] Weighted corpora loaded so far:
+			* github: 524
+[2022-06-22 18:35:25,823 INFO] Step 36100/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20304/1992 tok/s;  16630 sec
+[2022-06-22 18:35:48,786 INFO] Step 36150/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20178/2027 tok/s;  16653 sec
+[2022-06-22 18:35:53,092 INFO] Weighted corpora loaded so far:
+			* github: 525
+[2022-06-22 18:36:11,944 INFO] Step 36200/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 20362/1962 tok/s;  16676 sec
+[2022-06-22 18:36:22,576 INFO] Weighted corpora loaded so far:
+			* github: 526
+[2022-06-22 18:36:34,778 INFO] Step 36250/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 20539/2052 tok/s;  16699 sec
+[2022-06-22 18:36:52,213 INFO] Weighted corpora loaded so far:
+			* github: 527
+[2022-06-22 18:36:57,955 INFO] Step 36300/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 19264/1947 tok/s;  16722 sec
+[2022-06-22 18:37:20,497 INFO] Step 36350/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20130/2027 tok/s;  16745 sec
+[2022-06-22 18:37:21,593 INFO] Weighted corpora loaded so far:
+			* github: 528
+[2022-06-22 18:37:43,487 INFO] Step 36400/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20289/2039 tok/s;  16768 sec
+[2022-06-22 18:37:50,649 INFO] Weighted corpora loaded so far:
+			* github: 529
+[2022-06-22 18:38:06,397 INFO] Step 36450/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 20427/1977 tok/s;  16791 sec
+[2022-06-22 18:38:20,023 INFO] Weighted corpora loaded so far:
+			* github: 530
+[2022-06-22 18:38:29,465 INFO] Step 36500/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 19696/1971 tok/s;  16814 sec
+[2022-06-22 18:38:49,446 INFO] Weighted corpora loaded so far:
+			* github: 531
+[2022-06-22 18:38:52,789 INFO] Step 36550/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 20144/1971 tok/s;  16837 sec
+[2022-06-22 18:39:15,314 INFO] Step 36600/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20172/2061 tok/s;  16860 sec
+[2022-06-22 18:39:18,927 INFO] Weighted corpora loaded so far:
+			* github: 532
+[2022-06-22 18:39:38,174 INFO] Step 36650/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 20398/1976 tok/s;  16883 sec
+[2022-06-22 18:39:47,811 INFO] Weighted corpora loaded so far:
+			* github: 533
+[2022-06-22 18:40:01,103 INFO] Step 36700/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20499/2055 tok/s;  16905 sec
+[2022-06-22 18:40:17,100 INFO] Weighted corpora loaded so far:
+			* github: 534
+[2022-06-22 18:40:23,945 INFO] Step 36750/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 19530/1991 tok/s;  16928 sec
+[2022-06-22 18:40:46,652 INFO] Step 36800/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20359/2008 tok/s;  16951 sec
+[2022-06-22 18:40:46,683 INFO] Weighted corpora loaded so far:
+			* github: 535
+[2022-06-22 18:41:09,450 INFO] Step 36850/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 19909/2045 tok/s;  16974 sec
+[2022-06-22 18:41:32,322 INFO] Step 36900/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 20714/1992 tok/s;  16997 sec
+[2022-06-22 18:41:45,161 INFO] Weighted corpora loaded so far:
+			* github: 536
+[2022-06-22 18:41:55,518 INFO] Step 36950/100000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00005; 19739/1961 tok/s;  17020 sec
+[2022-06-22 18:42:14,695 INFO] Weighted corpora loaded so far:
+			* github: 537
+[2022-06-22 18:42:18,822 INFO] Step 37000/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 19981/1972 tok/s;  17043 sec
+[2022-06-22 18:42:41,546 INFO] Step 37050/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 19661/2004 tok/s;  17066 sec
+[2022-06-22 18:42:44,470 INFO] Weighted corpora loaded so far:
+			* github: 538
+[2022-06-22 18:43:04,530 INFO] Step 37100/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20525/2009 tok/s;  17089 sec
+[2022-06-22 18:43:13,843 INFO] Weighted corpora loaded so far:
+			* github: 539
+[2022-06-22 18:43:27,936 INFO] Step 37150/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20596/1976 tok/s;  17112 sec
+[2022-06-22 18:43:42,847 INFO] Weighted corpora loaded so far:
+			* github: 540
+[2022-06-22 18:43:50,535 INFO] Step 37200/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 19775/2016 tok/s;  17135 sec
+[2022-06-22 18:44:12,288 INFO] Weighted corpora loaded so far:
+			* github: 541
+[2022-06-22 18:44:13,575 INFO] Step 37250/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 20062/2012 tok/s;  17158 sec
+[2022-06-22 18:44:36,228 INFO] Step 37300/100000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00005; 20266/2022 tok/s;  17181 sec
+[2022-06-22 18:44:41,449 INFO] Weighted corpora loaded so far:
+			* github: 542
+[2022-06-22 18:44:59,911 INFO] Step 37350/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 19988/1940 tok/s;  17204 sec
+[2022-06-22 18:45:11,527 INFO] Weighted corpora loaded so far:
+			* github: 543
+[2022-06-22 18:45:23,002 INFO] Step 37400/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 19598/1983 tok/s;  17227 sec
+[2022-06-22 18:45:41,325 INFO] Weighted corpora loaded so far:
+			* github: 544
+[2022-06-22 18:45:46,191 INFO] Step 37450/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 19951/1974 tok/s;  17251 sec
+[2022-06-22 18:46:08,942 INFO] Step 37500/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00005; 19738/2025 tok/s;  17273 sec
+[2022-06-22 18:46:10,905 INFO] Weighted corpora loaded so far:
+			* github: 545
+[2022-06-22 18:46:31,422 INFO] Step 37550/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20679/2055 tok/s;  17296 sec
+[2022-06-22 18:46:39,484 INFO] Weighted corpora loaded so far:
+			* github: 546
+[2022-06-22 18:46:54,427 INFO] Step 37600/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 20686/2017 tok/s;  17319 sec
+[2022-06-22 18:47:09,231 INFO] Weighted corpora loaded so far:
+			* github: 547
+[2022-06-22 18:47:17,612 INFO] Step 37650/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 19112/1979 tok/s;  17342 sec
+[2022-06-22 18:47:40,169 INFO] Step 37700/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20585/2025 tok/s;  17365 sec
+[2022-06-22 18:48:03,257 INFO] Step 37750/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 19954/1999 tok/s;  17388 sec
+[2022-06-22 18:48:07,891 INFO] Weighted corpora loaded so far:
+			* github: 548
+[2022-06-22 18:48:26,599 INFO] Step 37800/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 20162/1930 tok/s;  17411 sec
+[2022-06-22 18:48:37,265 INFO] Weighted corpora loaded so far:
+			* github: 549
+[2022-06-22 18:48:49,615 INFO] Step 37850/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20352/1979 tok/s;  17434 sec
+[2022-06-22 18:49:06,642 INFO] Weighted corpora loaded so far:
+			* github: 550
+[2022-06-22 18:49:12,679 INFO] Step 37900/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 19399/1986 tok/s;  17457 sec
+[2022-06-22 18:49:35,327 INFO] Step 37950/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 20216/2057 tok/s;  17480 sec
+[2022-06-22 18:49:36,543 INFO] Weighted corpora loaded so far:
+			* github: 551
+[2022-06-22 18:49:58,738 INFO] Step 38000/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 20033/1962 tok/s;  17503 sec
+[2022-06-22 18:50:05,652 INFO] Weighted corpora loaded so far:
+			* github: 552
+[2022-06-22 18:50:21,939 INFO] Step 38050/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 20244/2023 tok/s;  17526 sec
+[2022-06-22 18:50:35,091 INFO] Weighted corpora loaded so far:
+			* github: 553
+[2022-06-22 18:50:44,724 INFO] Step 38100/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 19904/1965 tok/s;  17549 sec
+[2022-06-22 18:51:04,842 INFO] Weighted corpora loaded so far:
+			* github: 554
+[2022-06-22 18:51:07,681 INFO] Step 38150/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 20296/2018 tok/s;  17572 sec
+[2022-06-22 18:51:31,053 INFO] Step 38200/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 19333/1953 tok/s;  17595 sec
+[2022-06-22 18:51:34,866 INFO] Weighted corpora loaded so far:
+			* github: 555
+[2022-06-22 18:51:54,155 INFO] Step 38250/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20333/1973 tok/s;  17619 sec
+[2022-06-22 18:52:04,094 INFO] Weighted corpora loaded so far:
+			* github: 556
+[2022-06-22 18:52:17,055 INFO] Step 38300/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20724/2010 tok/s;  17641 sec
+[2022-06-22 18:52:33,721 INFO] Weighted corpora loaded so far:
+			* github: 557
+[2022-06-22 18:52:40,058 INFO] Step 38350/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 19520/1975 tok/s;  17664 sec
+[2022-06-22 18:53:02,825 INFO] Step 38400/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 20238/2047 tok/s;  17687 sec
+[2022-06-22 18:53:02,849 INFO] Weighted corpora loaded so far:
+			* github: 558
+[2022-06-22 18:53:25,636 INFO] Step 38450/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 19910/2024 tok/s;  17710 sec
+[2022-06-22 18:53:31,972 INFO] Weighted corpora loaded so far:
+			* github: 559
+[2022-06-22 18:53:48,329 INFO] Step 38500/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 20775/1991 tok/s;  17733 sec
+[2022-06-22 18:54:01,456 INFO] Weighted corpora loaded so far:
+			* github: 560
+[2022-06-22 18:54:11,940 INFO] Step 38550/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 19264/1980 tok/s;  17756 sec
+[2022-06-22 18:54:35,308 INFO] Step 38600/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 19794/1963 tok/s;  17780 sec
+[2022-06-22 18:54:57,073 INFO] Step 38650/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 20456/2072 tok/s;  17801 sec
+[2022-06-22 18:55:00,358 INFO] Weighted corpora loaded so far:
+			* github: 561
+[2022-06-22 18:55:21,086 INFO] Step 38700/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 19626/1895 tok/s;  17825 sec
+[2022-06-22 18:55:29,867 INFO] Weighted corpora loaded so far:
+			* github: 562
+[2022-06-22 18:55:44,376 INFO] Step 38750/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20679/2019 tok/s;  17849 sec
+[2022-06-22 18:55:59,007 INFO] Weighted corpora loaded so far:
+			* github: 563
+[2022-06-22 18:56:06,843 INFO] Step 38800/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 19969/2025 tok/s;  17871 sec
+[2022-06-22 18:56:28,772 INFO] Weighted corpora loaded so far:
+			* github: 564
+[2022-06-22 18:56:29,587 INFO] Step 38850/100000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00005; 20570/2027 tok/s;  17894 sec
+[2022-06-22 18:56:52,980 INFO] Step 38900/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 19784/1969 tok/s;  17917 sec
+[2022-06-22 18:56:58,470 INFO] Weighted corpora loaded so far:
+			* github: 565
+[2022-06-22 18:57:16,098 INFO] Step 38950/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20377/1977 tok/s;  17940 sec
+[2022-06-22 18:57:27,496 INFO] Weighted corpora loaded so far:
+			* github: 566
+[2022-06-22 18:57:38,343 INFO] Step 39000/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20179/2054 tok/s;  17963 sec
+[2022-06-22 18:57:56,818 INFO] Weighted corpora loaded so far:
+			* github: 567
+[2022-06-22 18:58:01,931 INFO] Step 39050/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 19511/1966 tok/s;  17986 sec
+[2022-06-22 18:58:24,242 INFO] Step 39100/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20060/2025 tok/s;  18009 sec
+[2022-06-22 18:58:26,120 INFO] Weighted corpora loaded so far:
+			* github: 568
+[2022-06-22 18:58:46,888 INFO] Step 39150/100000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00005; 20757/2070 tok/s;  18031 sec
+[2022-06-22 18:58:55,134 INFO] Weighted corpora loaded so far:
+			* github: 569
+[2022-06-22 18:59:10,256 INFO] Step 39200/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 20539/1947 tok/s;  18055 sec
+[2022-06-22 18:59:24,600 INFO] Weighted corpora loaded so far:
+			* github: 570
+[2022-06-22 18:59:32,923 INFO] Step 39250/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 19592/2001 tok/s;  18077 sec
+[2022-06-22 18:59:53,350 INFO] Weighted corpora loaded so far:
+			* github: 571
+[2022-06-22 18:59:55,649 INFO] Step 39300/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20289/2068 tok/s;  18100 sec
+[2022-06-22 19:00:17,761 INFO] Step 39350/100000; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00005; 20843/2082 tok/s;  18122 sec
+[2022-06-22 19:00:22,377 INFO] Weighted corpora loaded so far:
+			* github: 572
+[2022-06-22 19:00:41,356 INFO] Step 39400/100000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00005; 19874/1916 tok/s;  18146 sec
+[2022-06-22 19:00:51,729 INFO] Weighted corpora loaded so far:
+			* github: 573
+[2022-06-22 19:01:04,534 INFO] Step 39450/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 20079/2024 tok/s;  18169 sec
+[2022-06-22 19:01:26,922 INFO] Step 39500/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 19832/2003 tok/s;  18191 sec
+[2022-06-22 19:01:49,892 INFO] Step 39550/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 19922/1991 tok/s;  18214 sec
+[2022-06-22 19:01:50,850 INFO] Weighted corpora loaded so far:
+			* github: 574
+[2022-06-22 19:02:12,891 INFO] Step 39600/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 20424/1977 tok/s;  18237 sec
+[2022-06-22 19:02:19,864 INFO] Weighted corpora loaded so far:
+			* github: 575
+[2022-06-22 19:02:35,758 INFO] Step 39650/100000; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00005; 20536/2031 tok/s;  18260 sec
+[2022-06-22 19:02:48,954 INFO] Weighted corpora loaded so far:
+			* github: 576
+[2022-06-22 19:02:57,913 INFO] Step 39700/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00005; 20572/2075 tok/s;  18282 sec
+[2022-06-22 19:03:18,216 INFO] Weighted corpora loaded so far:
+			* github: 577
+[2022-06-22 19:03:21,645 INFO] Step 39750/100000; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00005; 19867/1932 tok/s;  18306 sec
+[2022-06-22 19:03:44,576 INFO] Step 39800/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 19789/2024 tok/s;  18329 sec
+[2022-06-22 19:03:48,233 INFO] Weighted corpora loaded so far:
+			* github: 578
+[2022-06-22 19:04:07,551 INFO] Step 39850/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20304/1971 tok/s;  18352 sec
+[2022-06-22 19:04:17,939 INFO] Weighted corpora loaded so far:
+			* github: 579
+[2022-06-22 19:04:31,303 INFO] Step 39900/100000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00005; 19794/1958 tok/s;  18376 sec
+[2022-06-22 19:04:47,156 INFO] Weighted corpora loaded so far:
+			* github: 580
+[2022-06-22 19:04:54,346 INFO] Step 39950/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 19382/1999 tok/s;  18399 sec
+[2022-06-22 19:05:16,571 INFO] Step 40000/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 20905/2032 tok/s;  18421 sec
+[2022-06-22 19:05:22,009 INFO] Validation perplexity: 2287.13
+[2022-06-22 19:05:22,009 INFO] Validation accuracy: 47.5125
+[2022-06-22 19:05:22,009 INFO] Decreasing patience: 1/2
+[2022-06-22 19:05:22,104 INFO] Saving checkpoint /home/lgm/VRepair2.0/param_sweep_tgt/23_parameter_sweep/model_step_40000.pt
+[2022-06-22 19:05:22,437 INFO] Weighted corpora loaded so far:
+			* github: 581
+[2022-06-22 19:05:44,907 INFO] Step 40050/100000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00005; 16125/1608 tok/s;  18449 sec
+[2022-06-22 19:05:51,532 INFO] Weighted corpora loaded so far:
+			* github: 582
+[2022-06-22 19:06:08,267 INFO] Step 40100/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 20264/1987 tok/s;  18473 sec
+[2022-06-22 19:06:20,894 INFO] Weighted corpora loaded so far:
+			* github: 583
+[2022-06-22 19:06:31,363 INFO] Step 40150/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 19764/2025 tok/s;  18496 sec
+[2022-06-22 19:06:50,063 INFO] Weighted corpora loaded so far:
+			* github: 584
+[2022-06-22 19:06:54,307 INFO] Step 40200/100000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00005; 20191/1980 tok/s;  18519 sec
+[2022-06-22 19:07:16,339 INFO] Step 40250/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 20032/2068 tok/s;  18541 sec
+[2022-06-22 19:07:18,839 INFO] Weighted corpora loaded so far:
+			* github: 585
+[2022-06-22 19:07:39,529 INFO] Step 40300/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 20202/1994 tok/s;  18564 sec
+[2022-06-22 19:07:48,421 INFO] Weighted corpora loaded so far:
+			* github: 586
+[2022-06-22 19:08:02,636 INFO] Step 40350/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 20741/1999 tok/s;  18587 sec
+[2022-06-22 19:08:25,578 INFO] Step 40400/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 19477/1998 tok/s;  18610 sec
+[2022-06-22 19:08:47,620 INFO] Weighted corpora loaded so far:
+			* github: 587
+[2022-06-22 19:08:48,872 INFO] Step 40450/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 20066/1933 tok/s;  18633 sec
+[2022-06-22 19:09:11,621 INFO] Step 40500/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20230/2023 tok/s;  18656 sec
+[2022-06-22 19:09:16,997 INFO] Weighted corpora loaded so far:
+			* github: 588
+[2022-06-22 19:09:34,860 INFO] Step 40550/100000; acc:  99.85; ppl:  1.01; xent: 0.00; lr: 0.00005; 20366/1973 tok/s;  18679 sec
+[2022-06-22 19:09:46,829 INFO] Weighted corpora loaded so far:
+			* github: 589
+[2022-06-22 19:09:58,003 INFO] Step 40600/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 19582/2006 tok/s;  18702 sec
+[2022-06-22 19:10:16,290 INFO] Weighted corpora loaded so far:
+			* github: 590
+[2022-06-22 19:10:21,218 INFO] Step 40650/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20000/1980 tok/s;  18726 sec
+[2022-06-22 19:10:43,611 INFO] Step 40700/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00005; 20131/2066 tok/s;  18748 sec
+[2022-06-22 19:10:45,621 INFO] Weighted corpora loaded so far:
+			* github: 591
+[2022-06-22 19:11:05,975 INFO] Step 40750/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 20733/2000 tok/s;  18770 sec
+[2022-06-22 19:11:14,521 INFO] Weighted corpora loaded so far:
+			* github: 592
+[2022-06-22 19:11:29,344 INFO] Step 40800/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 20357/1984 tok/s;  18794 sec
+[2022-06-22 19:11:43,826 INFO] Weighted corpora loaded so far:
+			* github: 593
+[2022-06-22 19:11:52,671 INFO] Step 40850/100000; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00005; 19075/1968 tok/s;  18817 sec
+[2022-06-22 19:12:13,356 INFO] Weighted corpora loaded so far:
+			* github: 594
+[2022-06-22 19:12:15,473 INFO] Step 40900/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 20521/2024 tok/s;  18840 sec
+[2022-06-22 19:12:38,536 INFO] Step 40950/100000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00005; 20087/1996 tok/s;  18863 sec
+[2022-06-22 19:12:42,623 INFO] Weighted corpora loaded so far:
+			* github: 595
+[2022-06-22 19:13:01,700 INFO] Step 41000/100000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00005; 20215/2019 tok/s;  18886 sec
+[2022-06-22 19:13:12,317 INFO] Weighted corpora loaded so far:
+			* github: 596
+[2022-06-22 19:13:24,939 INFO] Step 41050/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 20024/1929 tok/s;  18909 sec
+[2022-06-22 19:13:42,079 INFO] Weighted corpora loaded so far:
+			* github: 597
+[2022-06-22 19:13:47,411 INFO] Step 41100/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 19779/2059 tok/s;  18932 sec
+[2022-06-22 19:14:09,681 INFO] Step 41150/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 20392/2060 tok/s;  18954 sec
+[2022-06-22 19:14:10,698 INFO] Weighted corpora loaded so far:
+			* github: 598
+[2022-06-22 19:14:32,973 INFO] Step 41200/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 19998/1994 tok/s;  18977 sec
+[2022-06-22 19:14:55,876 INFO] Step 41250/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20391/2008 tok/s;  19000 sec
+[2022-06-22 19:15:09,655 INFO] Weighted corpora loaded so far:
+			* github: 599
+[2022-06-22 19:15:18,973 INFO] Step 41300/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 19689/1924 tok/s;  19023 sec
+[2022-06-22 19:15:39,129 INFO] Weighted corpora loaded so far:
+			* github: 600
+[2022-06-22 19:15:42,289 INFO] Step 41350/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 20245/1979 tok/s;  19047 sec
+[2022-06-22 19:16:04,451 INFO] Step 41400/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 20474/2078 tok/s;  19069 sec
+[2022-06-22 19:16:08,177 INFO] Weighted corpora loaded so far:
+			* github: 601
+[2022-06-22 19:16:27,305 INFO] Step 41450/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 20578/2042 tok/s;  19092 sec
+[2022-06-22 19:16:37,253 INFO] Weighted corpora loaded so far:
+			* github: 602
+[2022-06-22 19:16:50,733 INFO] Step 41500/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 20241/1959 tok/s;  19115 sec
+[2022-06-22 19:17:06,720 INFO] Weighted corpora loaded so far:
+			* github: 603
+[2022-06-22 19:17:13,573 INFO] Step 41550/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 19626/1966 tok/s;  19138 sec
+[2022-06-22 19:17:36,620 INFO] Step 41600/100000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00005; 20049/2013 tok/s;  19161 sec
+[2022-06-22 19:17:36,633 INFO] Weighted corpora loaded so far:
+			* github: 604
+[2022-06-22 19:17:59,813 INFO] Step 41650/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00005; 19597/1977 tok/s;  19184 sec
+[2022-06-22 19:18:05,768 INFO] Weighted corpora loaded so far:
+			* github: 605
+[2022-06-22 19:18:22,966 INFO] Step 41700/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 20351/1984 tok/s;  19207 sec
+[2022-06-22 19:18:35,344 INFO] Weighted corpora loaded so far:
+			* github: 606
+[2022-06-22 19:18:45,662 INFO] Step 41750/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 20145/2071 tok/s;  19230 sec
+[2022-06-22 19:19:04,407 INFO] Weighted corpora loaded so far:
+			* github: 607
+[2022-06-22 19:19:08,505 INFO] Step 41800/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20500/1975 tok/s;  19253 sec
+[2022-06-22 19:19:31,161 INFO] Step 41850/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 19725/2009 tok/s;  19276 sec
+[2022-06-22 19:19:34,138 INFO] Weighted corpora loaded so far:
+			* github: 608
+[2022-06-22 19:19:53,799 INFO] Step 41900/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 20562/1980 tok/s;  19298 sec
+[2022-06-22 19:20:03,045 INFO] Weighted corpora loaded so far:
+			* github: 609
+[2022-06-22 19:20:16,931 INFO] Step 41950/100000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00005; 20621/2082 tok/s;  19321 sec
+[2022-06-22 19:20:32,389 INFO] Weighted corpora loaded so far:
+			* github: 610
+[2022-06-22 19:20:39,767 INFO] Step 42000/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 19529/1964 tok/s;  19344 sec
+[2022-06-22 19:21:01,482 INFO] Weighted corpora loaded so far:
+			* github: 611
+[2022-06-22 19:21:02,545 INFO] Step 42050/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00005; 20424/2020 tok/s;  19367 sec
+[2022-06-22 19:21:24,825 INFO] Step 42100/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 20600/2076 tok/s;  19389 sec
+[2022-06-22 19:21:48,109 INFO] Step 42150/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 20241/1955 tok/s;  19412 sec
+[2022-06-22 19:21:59,253 INFO] Weighted corpora loaded so far:
+			* github: 612
+[2022-06-22 19:22:10,862 INFO] Step 42200/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 19850/2020 tok/s;  19435 sec
+[2022-06-22 19:22:28,951 INFO] Weighted corpora loaded so far:
+			* github: 613
+[2022-06-22 19:22:33,966 INFO] Step 42250/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 20070/1973 tok/s;  19458 sec
+[2022-06-22 19:22:56,126 INFO] Step 42300/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 20314/2072 tok/s;  19481 sec
+[2022-06-22 19:22:58,207 INFO] Weighted corpora loaded so far:
+			* github: 614
+[2022-06-22 19:23:19,645 INFO] Step 42350/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 20037/1970 tok/s;  19504 sec
+[2022-06-22 19:23:27,845 INFO] Weighted corpora loaded so far:
+			* github: 615
+[2022-06-22 19:23:43,195 INFO] Step 42400/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 20392/1943 tok/s;  19528 sec
+[2022-06-22 19:23:57,596 INFO] Weighted corpora loaded so far:
+			* github: 616
+[2022-06-22 19:24:05,590 INFO] Step 42450/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 19851/2059 tok/s;  19550 sec
+[2022-06-22 19:24:26,515 INFO] Weighted corpora loaded so far:
+			* github: 617
+[2022-06-22 19:24:28,656 INFO] Step 42500/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 20073/1976 tok/s;  19573 sec
+[2022-06-22 19:24:50,922 INFO] Step 42550/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 20643/2066 tok/s;  19595 sec
+[2022-06-22 19:24:55,225 INFO] Weighted corpora loaded so far:
+			* github: 618
+[2022-06-22 19:25:13,369 INFO] Step 42600/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00005; 20857/2059 tok/s;  19618 sec
+[2022-06-22 19:25:24,290 INFO] Weighted corpora loaded so far:
+			* github: 619
+[2022-06-22 19:25:36,561 INFO] Step 42650/100000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00005; 20168/2011 tok/s;  19641 sec
+[2022-06-22 19:25:53,071 INFO] Weighted corpora loaded so far:
+			* github: 620
+[2022-06-22 19:25:58,899 INFO] Step 42700/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 20062/2002 tok/s;  19663 sec
+[2022-06-22 19:26:21,934 INFO] Step 42750/100000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00005; 19876/2006 tok/s;  19686 sec
+[2022-06-22 19:26:23,088 INFO] Weighted corpora loaded so far:
+			* github: 621
+[2022-06-22 19:26:45,209 INFO] Step 42800/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 19963/1965 tok/s;  19710 sec
+[2022-06-22 19:26:52,658 INFO] Weighted corpora loaded so far:
+			* github: 622
+[2022-06-22 19:27:08,631 INFO] Step 42850/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00005; 19870/1985 tok/s;  19733 sec
+[2022-06-22 19:27:21,875 INFO] Weighted corpora loaded so far:
+			* github: 623
+[2022-06-22 19:27:31,461 INFO] Step 42900/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00005; 19816/1998 tok/s;  19756 sec
+[2022-06-22 19:27:50,632 INFO] Weighted corpora loaded so far:
+			* github: 624
+[2022-06-22 19:27:53,933 INFO] Step 42950/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 20845/2055 tok/s;  19778 sec
+[2022-06-22 19:28:16,433 INFO] Step 43000/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 20012/2026 tok/s;  19801 sec
+[2022-06-22 19:28:39,933 INFO] Step 43050/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20018/1942 tok/s;  19824 sec
+[2022-06-22 19:28:49,849 INFO] Weighted corpora loaded so far:
+			* github: 625
+[2022-06-22 19:29:03,276 INFO] Step 43100/100000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00005; 20296/1972 tok/s;  19848 sec
+[2022-06-22 19:29:19,078 INFO] Weighted corpora loaded so far:
+			* github: 626
+[2022-06-22 19:29:25,329 INFO] Step 43150/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00005; 20329/2030 tok/s;  19870 sec
+[2022-06-22 19:29:48,223 INFO] Step 43200/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 20265/2049 tok/s;  19893 sec
+[2022-06-22 19:29:48,231 INFO] Weighted corpora loaded so far:
+			* github: 627
+[2022-06-22 19:30:11,485 INFO] Step 43250/100000; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00005; 19751/1995 tok/s;  19916 sec
+[2022-06-22 19:30:18,062 INFO] Weighted corpora loaded so far:
+			* github: 628
+[2022-06-22 19:30:34,641 INFO] Step 43300/100000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00005; 20481/1976 tok/s;  19939 sec
+[2022-06-22 19:30:47,676 INFO] Weighted corpora loaded so far:
+			* github: 629
+[2022-06-22 19:30:58,124 INFO] Step 43350/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 19408/1938 tok/s;  19963 sec
+[2022-06-22 19:31:17,212 INFO] Weighted corpora loaded so far:
+			* github: 630
+[2022-06-22 19:31:21,263 INFO] Step 43400/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 19993/2016 tok/s;  19986 sec
+[2022-06-22 19:31:43,398 INFO] Step 43450/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20029/2049 tok/s;  20008 sec
+[2022-06-22 19:31:46,242 INFO] Weighted corpora loaded so far:
+			* github: 631
+[2022-06-22 19:32:06,625 INFO] Step 43500/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00005; 20290/1972 tok/s;  20031 sec
+[2022-06-22 19:32:15,755 INFO] Weighted corpora loaded so far:
+			* github: 632
+[2022-06-22 19:32:30,359 INFO] Step 43550/100000; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00005; 20275/1940 tok/s;  20055 sec
+[2022-06-22 19:32:45,265 INFO] Weighted corpora loaded so far:
+			* github: 633
+[2022-06-22 19:32:52,927 INFO] Step 43600/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 19835/2001 tok/s;  20077 sec
+[2022-06-22 19:33:14,443 INFO] Weighted corpora loaded so far:
+			* github: 634
+[2022-06-22 19:33:15,860 INFO] Step 43650/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 20305/2039 tok/s;  20100 sec
+[2022-06-22 19:33:38,670 INFO] Step 43700/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 20057/1998 tok/s;  20123 sec
+[2022-06-22 19:33:44,144 INFO] Weighted corpora loaded so far:
+			* github: 635
+[2022-06-22 19:34:02,013 INFO] Step 43750/100000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00005; 20109/2000 tok/s;  20146 sec
+[2022-06-22 19:34:13,867 INFO] Weighted corpora loaded so far:
+			* github: 636
+[2022-06-22 19:34:25,005 INFO] Step 43800/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 19550/1991 tok/s;  20169 sec
+[2022-06-22 19:34:43,133 INFO] Weighted corpora loaded so far:
+			* github: 637
+[2022-06-22 19:34:48,109 INFO] Step 43850/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 19970/1984 tok/s;  20192 sec
+[2022-06-22 19:35:09,980 INFO] Step 43900/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 20464/2084 tok/s;  20214 sec
+[2022-06-22 19:35:33,094 INFO] Step 43950/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00005; 20381/1982 tok/s;  20237 sec
+[2022-06-22 19:35:41,699 INFO] Weighted corpora loaded so far:
+			* github: 638
+[2022-06-22 19:35:55,888 INFO] Step 44000/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20997/2014 tok/s;  20260 sec
+[2022-06-22 19:36:07,942 INFO] Weighted corpora loaded so far:
+			* github: 639
+[2022-06-22 19:36:16,524 INFO] Step 44050/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00005; 21554/2198 tok/s;  20281 sec
+[2022-06-22 19:36:37,521 INFO] Weighted corpora loaded so far:
+			* github: 640
+[2022-06-22 19:36:39,607 INFO] Step 44100/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 20261/2010 tok/s;  20304 sec
+[2022-06-22 19:37:02,883 INFO] Step 44150/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 19888/2014 tok/s;  20327 sec
+[2022-06-22 19:37:07,020 INFO] Weighted corpora loaded so far:
+			* github: 641
+[2022-06-22 19:37:25,841 INFO] Step 44200/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00005; 20503/1995 tok/s;  20350 sec
+[2022-06-22 19:37:36,442 INFO] Weighted corpora loaded so far:
+			* github: 642
+[2022-06-22 19:37:48,957 INFO] Step 44250/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 20169/1968 tok/s;  20373 sec
+[2022-06-22 19:38:05,624 INFO] Weighted corpora loaded so far:
+			* github: 643
+[2022-06-22 19:38:11,107 INFO] Step 44300/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 20031/2061 tok/s;  20395 sec
+[2022-06-22 19:38:33,245 INFO] Step 44350/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 20533/2057 tok/s;  20418 sec
+[2022-06-22 19:38:34,309 INFO] Weighted corpora loaded so far:
+			* github: 644
+[2022-06-22 19:38:56,445 INFO] Step 44400/100000; acc:  99.88; ppl:  1.01; xent: 0.01; lr: 0.00005; 20237/1978 tok/s;  20441 sec
+[2022-06-22 19:39:03,886 INFO] Weighted corpora loaded so far:
+			* github: 645
+[2022-06-22 19:39:19,704 INFO] Step 44450/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 20224/1987 tok/s;  20464 sec
+[2022-06-22 19:39:33,958 INFO] Weighted corpora loaded so far:
+			* github: 646
+[2022-06-22 19:39:43,324 INFO] Step 44500/100000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00005; 19249/1943 tok/s;  20488 sec
+[2022-06-22 19:40:03,445 INFO] Weighted corpora loaded so far:
+			* github: 647
+[2022-06-22 19:40:06,398 INFO] Step 44550/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00005; 20227/2023 tok/s;  20511 sec
+[2022-06-22 19:40:28,537 INFO] Step 44600/100000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00005; 20377/2051 tok/s;  20533 sec
+[2022-06-22 19:40:32,497 INFO] Weighted corpora loaded so far:
+			* github: 648
+[2022-06-22 19:40:51,638 INFO] Step 44650/100000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00005; 20241/1982 tok/s;  20556 sec
+[2022-06-22 19:41:01,904 INFO] Weighted corpora loaded so far:
+			* github: 649
+[2022-06-22 19:41:14,963 INFO] Step 44700/100000; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00005; 20161/1959 tok/s;  20579 sec
+[2022-06-22 19:41:37,354 INFO] Step 44750/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00005; 19873/2042 tok/s;  20602 sec
+[2022-06-22 19:41:59,946 INFO] Step 44800/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 20448/2040 tok/s;  20624 sec
+[2022-06-22 19:41:59,948 INFO] Weighted corpora loaded so far:
+			* github: 650
+[2022-06-22 19:42:22,494 INFO] Step 44850/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 20399/1987 tok/s;  20647 sec
+[2022-06-22 19:42:28,501 INFO] Weighted corpora loaded so far:
+			* github: 651
+[2022-06-22 19:42:45,994 INFO] Step 44900/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 20172/1973 tok/s;  20670 sec
+[2022-06-22 19:42:58,621 INFO] Weighted corpora loaded so far:
+			* github: 652
+[2022-06-22 19:43:09,045 INFO] Step 44950/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 19886/2039 tok/s;  20693 sec
+[2022-06-22 19:43:28,134 INFO] Weighted corpora loaded so far:
+			* github: 653
+[2022-06-22 19:43:31,802 INFO] Step 45000/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 20563/2034 tok/s;  20716 sec
+[2022-06-22 19:43:54,648 INFO] Step 45050/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 19542/1978 tok/s;  20739 sec
+[2022-06-22 19:43:57,606 INFO] Weighted corpora loaded so far:
+			* github: 654
+[2022-06-22 19:44:18,054 INFO] Step 45100/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 19994/1951 tok/s;  20762 sec
+[2022-06-22 19:44:27,241 INFO] Weighted corpora loaded so far:
+			* github: 655
+[2022-06-22 19:44:41,208 INFO] Step 45150/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 20644/2010 tok/s;  20786 sec
+[2022-06-22 19:44:56,549 INFO] Weighted corpora loaded so far:
+			* github: 656
+[2022-06-22 19:45:04,145 INFO] Step 45200/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 19418/1993 tok/s;  20809 sec
+[2022-06-22 19:45:26,153 INFO] Weighted corpora loaded so far:
+			* github: 657
+[2022-06-22 19:45:27,328 INFO] Step 45250/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00005; 20028/1967 tok/s;  20832 sec
+[2022-06-22 19:45:50,399 INFO] Step 45300/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 20099/2016 tok/s;  20855 sec
+[2022-06-22 19:45:55,684 INFO] Weighted corpora loaded so far:
+			* github: 658
+[2022-06-22 19:46:13,105 INFO] Step 45350/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 20832/1996 tok/s;  20877 sec
+[2022-06-22 19:46:25,469 INFO] Weighted corpora loaded so far:
+			* github: 659
+[2022-06-22 19:46:36,444 INFO] Step 45400/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 19263/1939 tok/s;  20901 sec
+[2022-06-22 19:46:54,654 INFO] Weighted corpora loaded so far:
+			* github: 660
+[2022-06-22 19:46:59,617 INFO] Step 45450/100000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00005; 19797/2055 tok/s;  20924 sec
+[2022-06-22 19:47:21,615 INFO] Step 45500/100000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00005; 20362/2066 tok/s;  20946 sec
+[2022-06-22 19:47:23,599 INFO] Weighted corpora loaded so far:
+			* github: 661
+[2022-06-22 19:47:44,884 INFO] Step 45550/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00005; 20130/1964 tok/s;  20969 sec
+[2022-06-22 19:47:52,895 INFO] Weighted corpora loaded so far:
+			* github: 662
+[2022-06-22 19:48:08,186 INFO] Step 45600/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 20413/1994 tok/s;  20993 sec
+[2022-06-22 19:48:30,684 INFO] Step 45650/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00005; 19657/2014 tok/s;  21015 sec
+[2022-06-22 19:48:51,654 INFO] Weighted corpora loaded so far:
+			* github: 663
+[2022-06-22 19:48:53,372 INFO] Step 45700/100000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00005; 20571/2008 tok/s;  21038 sec
+[2022-06-22 19:49:16,639 INFO] Step 45750/100000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00005; 19922/1971 tok/s;  21061 sec
+[2022-06-22 19:49:21,118 INFO] Weighted corpora loaded so far:
+			* github: 664
+[2022-06-22 19:49:39,596 INFO] Step 45800/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 20473/1989 tok/s;  21084 sec
+[2022-06-22 19:49:50,339 INFO] Weighted corpora loaded so far:
+			* github: 665
+[2022-06-22 19:50:02,306 INFO] Step 45850/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00005; 20687/2063 tok/s;  21107 sec
+[2022-06-22 19:50:19,291 INFO] Weighted corpora loaded so far:
+			* github: 666
+[2022-06-22 19:50:24,877 INFO] Step 45900/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 19905/2006 tok/s;  21129 sec
+[2022-06-22 19:50:47,083 INFO] Step 45950/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 20538/2082 tok/s;  21151 sec
+[2022-06-22 19:50:48,122 INFO] Weighted corpora loaded so far:
+			* github: 667
+[2022-06-22 19:51:09,973 INFO] Step 46000/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00005; 20367/2005 tok/s;  21174 sec
+[2022-06-22 19:51:17,483 INFO] Weighted corpora loaded so far:
+			* github: 668
+[2022-06-22 19:51:33,215 INFO] Step 46050/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 20063/1981 tok/s;  21198 sec
+[2022-06-22 19:51:47,090 INFO] Weighted corpora loaded so far:
+			* github: 669
+[2022-06-22 19:51:56,805 INFO] Step 46100/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00005; 19215/1936 tok/s;  21221 sec
+[2022-06-22 19:52:16,771 INFO] Weighted corpora loaded so far:
+			* github: 670
+[2022-06-22 19:52:19,999 INFO] Step 46150/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 20263/1979 tok/s;  21244 sec
+[2022-06-22 19:52:42,435 INFO] Step 46200/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 20192/2012 tok/s;  21267 sec
+[2022-06-22 19:52:46,395 INFO] Weighted corpora loaded so far:
+			* github: 671
+[2022-06-22 19:53:05,759 INFO] Step 46250/100000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00005; 20163/1987 tok/s;  21290 sec
+[2022-06-22 19:53:15,278 INFO] Weighted corpora loaded so far:
+			* github: 672
+[2022-06-22 19:53:28,918 INFO] Step 46300/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 20384/2028 tok/s;  21313 sec
+[2022-06-22 19:53:44,760 INFO] Weighted corpora loaded so far:
+			* github: 673
+[2022-06-22 19:53:51,296 INFO] Step 46350/100000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00005; 19876/2026 tok/s;  21336 sec
+[2022-06-22 19:54:14,183 INFO] Step 46400/100000; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00005; 20027/2017 tok/s;  21359 sec
+[2022-06-22 19:54:14,217 INFO] Weighted corpora loaded so far:
+			* github: 674
+[2022-06-22 19:54:37,316 INFO] Step 46450/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 19777/1971 tok/s;  21382 sec
+[2022-06-22 19:54:43,745 INFO] Weighted corpora loaded so far:
+			* github: 675
+[2022-06-22 19:55:00,135 INFO] Step 46500/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 20646/1989 tok/s;  21405 sec
+[2022-06-22 19:55:22,831 INFO] Step 46550/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 20108/2039 tok/s;  21427 sec
+[2022-06-22 19:55:41,605 INFO] Weighted corpora loaded so far:
+			* github: 676
+[2022-06-22 19:55:45,739 INFO] Step 46600/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 20412/2004 tok/s;  21450 sec
+[2022-06-22 19:56:08,443 INFO] Step 46650/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 19583/2019 tok/s;  21473 sec
+[2022-06-22 19:56:11,148 INFO] Weighted corpora loaded so far:
+			* github: 677
+[2022-06-22 19:56:31,127 INFO] Step 46700/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 20755/2008 tok/s;  21496 sec
+[2022-06-22 19:56:40,405 INFO] Weighted corpora loaded so far:
+			* github: 678
+[2022-06-22 19:56:54,681 INFO] Step 46750/100000; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00005; 20480/1986 tok/s;  21519 sec
+[2022-06-22 19:57:09,799 INFO] Weighted corpora loaded so far:
+			* github: 679
+[2022-06-22 19:57:17,517 INFO] Step 46800/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00005; 19672/1967 tok/s;  21542 sec
+[2022-06-22 19:57:38,857 INFO] Weighted corpora loaded so far:
+			* github: 680
+[2022-06-22 19:57:40,252 INFO] Step 46850/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 20511/2058 tok/s;  21565 sec
+[2022-06-22 19:58:02,530 INFO] Step 46900/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00005; 20476/2040 tok/s;  21587 sec
+[2022-06-22 19:58:07,996 INFO] Weighted corpora loaded so far:
+			* github: 681
+[2022-06-22 19:58:26,165 INFO] Step 46950/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00005; 19880/1949 tok/s;  21611 sec
+[2022-06-22 19:58:37,503 INFO] Weighted corpora loaded so far:
+			* github: 682
+[2022-06-22 19:58:49,042 INFO] Step 47000/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00005; 19760/2017 tok/s;  21633 sec
+[2022-06-22 19:59:06,919 INFO] Weighted corpora loaded so far:
+			* github: 683
+[2022-06-22 19:59:11,860 INFO] Step 47050/100000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00005; 20392/2030 tok/s;  21656 sec
