@@ -1,6 +1,9 @@
 *.pt
 adjusted_codebert_emb.txt
+param_sweep_tgt/*
 param_sweep_tgt/*/codebert_embeddings.txt
 fine_tune_data/big_vul/*
 fine_tune_data/cve_fixes/*
+codebert-base-with-vul-tok/*
+
 !param_sweep_tgt/00_parameter_sweep
