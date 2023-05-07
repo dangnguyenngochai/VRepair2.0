@@ -1,0 +1,1 @@
+# The content of this folder is deprecated to ease the process of implementation of this repository across different server. These data processed offline to create vul_data which will be used through out the model development process
