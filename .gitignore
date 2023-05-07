@@ -1,4 +1,5 @@
 *.pt
 adjusted_codebert_emb.txt
 param_sweep_tgt/*/codebert_embeddings.txt
-fine_tune_data/*
+fine_tune_data/big_vul/*
+fine_tune_data/cve_fixes/*
