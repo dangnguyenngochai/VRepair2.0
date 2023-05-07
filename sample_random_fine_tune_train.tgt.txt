@@ -1,0 +1,1 @@
+<S2SV_ModStart> ( ! handle || ! SecIsValidHandle ( handle )

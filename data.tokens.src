@@ -1,0 +1,1 @@
+<s> C WE - 476 Ġvoid Ġ* Ġs sp i _ Secure Handle Get Lower Po inter Ġ( ĠSec Handle Ġ* Ġhandle Ġ) Ġ{ Ġvoid Ġ* Ġpointer Ġ; Ġ< S 2 S V _ Start Bug > Ġif Ġ( Ġ! Ġhandle Ġ) Ġ< S 2 S V _ End Bug > Ġreturn ĠNULL Ġ; Ġpointer Ġ= Ġ( Ġvoid Ġ* Ġ) Ġ~ Ġ( Ġ( Ġsize _ t Ġ) Ġhandle Ġ-> Ġdw Lower Ġ) Ġ; Ġreturn Ġpointer Ġ; Ġ} </s>

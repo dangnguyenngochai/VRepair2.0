@@ -1,0 +1,45 @@
+[2022-07-06 09:10:59,335 INFO] Missing transforms field for github data, set to default: [].
+[2022-07-06 09:10:59,335 WARNING] Corpus github's weight should be given. We default it to 1 for you.
+[2022-07-06 09:10:59,335 INFO] Missing transforms field for valid data, set to default: [].
+[2022-07-06 09:10:59,335 INFO] Parsed 2 corpora from -data.
+[2022-07-06 09:10:59,335 INFO] Get special vocabs from Transforms: {'src': set(), 'tgt': set()}.
+[2022-07-06 09:10:59,335 INFO] Loading vocab from text file...
+[2022-07-06 09:10:59,336 INFO] Loading src vocabulary from /home/lgm/VRepair2.0/param_sweep_tgt/24_parameter_sweep/data.vocab.src
+[2022-07-06 09:10:59,379 INFO] Loaded src vocab has 36352 tokens.
+[2022-07-06 09:10:59,388 INFO] Loading tgt vocabulary from /home/lgm/VRepair2.0/param_sweep_tgt/24_parameter_sweep/data.vocab.tgt
+[2022-07-06 09:10:59,395 INFO] Loaded tgt vocab has 5924 tokens.
+[2022-07-06 09:10:59,396 INFO] Building fields with vocab in counters...
+[2022-07-06 09:10:59,399 INFO]  * tgt vocab size: 2004.
+[2022-07-06 09:10:59,431 INFO]  * src vocab size: 2002.
+[2022-07-06 09:10:59,431 INFO]  * src vocab size = 2002
+[2022-07-06 09:10:59,431 INFO]  * tgt vocab size = 2004
+[2022-07-06 09:10:59,435 INFO] Building model...
+Traceback (most recent call last):
+  File "/home/lgm/miniconda3/bin/onmt_train", line 8, in <module>
+    sys.exit(main())
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/onmt/bin/train.py", line 172, in main
+    train(opt)
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/onmt/bin/train.py", line 157, in train
+    train_process(opt, device_id=0)
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/onmt/train_single.py", line 67, in main
+    model = build_model(model_opt, opt, fields, checkpoint)
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/onmt/model_builder.py", line 315, in build_model
+    model = build_base_model(model_opt, fields, use_gpu(opt), checkpoint)
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/onmt/model_builder.py", line 307, in build_base_model
+    model.to(device)
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 907, in to
+    return self._apply(convert)
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 578, in _apply
+    module._apply(fn)
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 578, in _apply
+    module._apply(fn)
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 578, in _apply
+    module._apply(fn)
+  [Previous line repeated 2 more times]
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 601, in _apply
+    param_applied = fn(param)
+  File "/home/lgm/miniconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 905, in convert
+    return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call,so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.

@@ -1,0 +1,1 @@
+CWE-476 void * sspi_SecureHandleGetLowerPointer ( SecHandle * handle ) { void * pointer ; <S2SV_StartBug> if ( ! handle ) <S2SV_EndBug> return NULL ; pointer = ( void * ) ~ ( ( size_t ) handle -> dwLower ) ; return pointer ; }

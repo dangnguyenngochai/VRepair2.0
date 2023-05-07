@@ -1,0 +1,1 @@
+<s>CWE-476ĠvoidĠ*Ġsspi_SecureHandleGetLowerPointerĠ(ĠSecHandleĠ*ĠhandleĠ)Ġ{ĠvoidĠ*ĠpointerĠ;Ġ<S2SV_StartBug>ĠifĠ(Ġ!ĠhandleĠ)Ġ<S2SV_EndBug>ĠreturnĠNULLĠ;ĠpointerĠ=Ġ(ĠvoidĠ*Ġ)Ġ~Ġ(Ġ(Ġsize_tĠ)ĠhandleĠ->ĠdwLowerĠ)Ġ;ĠreturnĠpointerĠ;Ġ}</s>
