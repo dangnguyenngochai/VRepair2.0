@@ -1,3 +1,4 @@
 *.pt
 adjusted_codebert_emb.txt
-*/codebert_embeddings.txt
+param_sweep_tgt/*/codebert_embeddings.txt
+fine_tune_data/*
