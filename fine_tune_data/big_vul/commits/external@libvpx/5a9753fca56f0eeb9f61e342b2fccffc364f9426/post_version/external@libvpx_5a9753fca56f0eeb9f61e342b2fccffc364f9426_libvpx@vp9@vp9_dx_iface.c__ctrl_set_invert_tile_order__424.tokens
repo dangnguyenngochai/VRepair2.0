@@ -1,1 +1,0 @@
-static vpx_codec_err_t ctrl_set_invert_tile_order ( vpx_codec_alg_priv_t * ctx , //<S2SV> va_list args ) { //<S2SV> ctx -> invert_tile_order = va_arg ( args , int ) ; //<S2SV> return VPX_CODEC_OK ; //<S2SV> } //<S2SV> 

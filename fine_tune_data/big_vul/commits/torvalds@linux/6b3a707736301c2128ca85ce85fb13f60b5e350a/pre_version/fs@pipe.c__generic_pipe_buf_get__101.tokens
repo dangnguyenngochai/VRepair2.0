@@ -1,1 +1,0 @@
-void generic_pipe_buf_get ( struct pipe_inode_info * pipe , struct pipe_buffer * buf ) //<S2SV> { //<S2SV> get_page ( buf -> page ) ; //<S2SV> } //<S2SV> 

@@ -1,1 +1,0 @@
-static int decode_unsigned_max ( struct vpx_read_bit_buffer * rb , int max ) { //<S2SV> const int data = vpx_rb_read_literal ( rb , get_unsigned_bits ( max ) ) ; //<S2SV> return data > max ? max : data ; //<S2SV> } //<S2SV> 

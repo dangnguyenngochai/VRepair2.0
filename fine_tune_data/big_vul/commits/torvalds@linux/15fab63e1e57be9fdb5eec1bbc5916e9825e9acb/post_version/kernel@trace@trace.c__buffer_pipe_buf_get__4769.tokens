@@ -1,1 +1,0 @@
-static bool buffer_pipe_buf_get ( struct pipe_inode_info * pipe , //<S2SV> struct pipe_buffer * buf ) //<S2SV> { //<S2SV> struct buffer_ref * ref = ( struct buffer_ref * ) buf -> private ; //<S2SV> if ( ref -> ref > INT_MAX / 2 ) //<S2SV> return false ; //<S2SV> ref -> ref ++ ; //<S2SV> return true ; //<S2SV> } //<S2SV> 

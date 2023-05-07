@@ -1,1 +1,0 @@
-static int em_call ( struct x86_emulate_ctxt * ctxt ) //<S2SV> { //<S2SV> long rel = ctxt -> src . val ; //<S2SV> ctxt -> src . val = ( unsigned long ) ctxt -> _eip ; //<S2SV> jmp_rel ( ctxt , rel ) ; //<S2SV> return em_push ( ctxt ) ; //<S2SV> } //<S2SV> 

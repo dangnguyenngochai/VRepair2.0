@@ -1,1 +1,0 @@
-static int getnum ( const char * * fmt , int df ) { //<S2SV> if ( ! isdigit ( * * fmt ) ) //<S2SV> return df ; //<S2SV> else { //<S2SV> int a = 0 ; //<S2SV> do { //<S2SV> a = a * 10 + * ( ( * fmt ) ++ ) - '0' ; //<S2SV> } while ( isdigit ( * * fmt ) ) ; //<S2SV> return a ; //<S2SV> } //<S2SV> } //<S2SV> 

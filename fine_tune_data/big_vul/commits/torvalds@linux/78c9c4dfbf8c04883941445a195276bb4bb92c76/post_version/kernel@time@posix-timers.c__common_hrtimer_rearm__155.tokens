@@ -1,1 +1,0 @@
-static void common_hrtimer_rearm ( struct k_itimer * timr ) //<S2SV> { //<S2SV> struct hrtimer * timer = & timr -> it . real . timer ; //<S2SV> if ( ! timr -> it_interval ) //<S2SV> return ; //<S2SV> timr -> it_overrun += hrtimer_forward ( timer , timer -> base -> get_time ( ) , //<S2SV> timr -> it_interval ) ; //<S2SV> hrtimer_restart ( timer ) ; //<S2SV> } //<S2SV> 

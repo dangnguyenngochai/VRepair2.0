@@ -1,1 +1,0 @@
-static void //<S2SV> videobuf_vm_open ( struct vm_area_struct * vma ) //<S2SV> { //<S2SV> struct videobuf_mapping * map = vma -> vm_private_data ; //<S2SV> dprintk ( 2 , "vm_open<S2SV_blank>%p<S2SV_blank>[count=%u,vma=%08lx-%08lx]\\n" , map , //<S2SV> map -> count , vma -> vm_start , vma -> vm_end ) ; //<S2SV> map -> count ++ ; //<S2SV> } //<S2SV> 

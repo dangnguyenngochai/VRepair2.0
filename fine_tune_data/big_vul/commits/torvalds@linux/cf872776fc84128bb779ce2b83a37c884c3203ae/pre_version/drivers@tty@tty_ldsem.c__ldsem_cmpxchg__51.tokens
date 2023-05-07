@@ -1,1 +1,0 @@
-static inline int ldsem_cmpxchg ( long * old , long new , struct ld_semaphore * sem ) //<S2SV> { //<S2SV> long tmp = * old ; //<S2SV> * old = atomic_long_cmpxchg ( & sem -> count , * old , new ) ; //<S2SV> return * old == tmp ; //<S2SV> } //<S2SV> 

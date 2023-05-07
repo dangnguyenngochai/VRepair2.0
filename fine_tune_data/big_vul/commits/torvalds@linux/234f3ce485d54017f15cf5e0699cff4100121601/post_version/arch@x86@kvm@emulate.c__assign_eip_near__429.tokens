@@ -1,1 +1,0 @@
-static inline int assign_eip_near ( struct x86_emulate_ctxt * ctxt , ulong dst ) //<S2SV> { //<S2SV> return assign_eip_far ( ctxt , dst , ctxt -> mode == X86EMUL_MODE_PROT64 ) ; //<S2SV> } //<S2SV> 

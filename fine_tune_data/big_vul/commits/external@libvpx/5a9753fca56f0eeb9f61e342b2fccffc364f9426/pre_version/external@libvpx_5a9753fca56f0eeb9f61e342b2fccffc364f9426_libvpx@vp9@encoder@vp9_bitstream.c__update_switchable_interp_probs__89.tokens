@@ -1,1 +1,0 @@
-static void update_switchable_interp_probs ( VP9_COMMON * cm , vp9_writer * w ) { //<S2SV> int j ; //<S2SV> for ( j = 0 ; j < SWITCHABLE_FILTER_CONTEXTS ; ++ j ) //<S2SV> prob_diff_update ( vp9_switchable_interp_tree , //<S2SV> cm -> fc . switchable_interp_prob [ j ] , //<S2SV> cm -> counts . switchable_interp [ j ] , SWITCHABLE_FILTERS , w ) ; //<S2SV> } //<S2SV> 

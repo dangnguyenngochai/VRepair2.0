@@ -1,1 +1,0 @@
-struct ion_handle * ion_handle_get_by_id ( struct ion_client * client , //<S2SV> int id ) //<S2SV> { //<S2SV> struct ion_handle * handle ; //<S2SV> mutex_lock ( & client -> lock ) ; //<S2SV> handle = ion_handle_get_by_id_nolock ( client , id ) ; //<S2SV> mutex_unlock ( & client -> lock ) ; //<S2SV> return handle ; //<S2SV> } //<S2SV> 

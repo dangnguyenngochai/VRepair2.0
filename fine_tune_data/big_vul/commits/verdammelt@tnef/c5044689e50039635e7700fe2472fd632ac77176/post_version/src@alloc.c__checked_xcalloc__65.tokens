@@ -1,1 +1,0 @@
-void * //<S2SV> checked_xcalloc ( size_t num , size_t size ) //<S2SV> { //<S2SV> size_t res ; //<S2SV> if ( check_mul_overflow ( num , size , & res ) ) //<S2SV> abort ( ) ; //<S2SV> alloc_limit_assert ( "checked_xcalloc" , ( res ) ) ; //<S2SV> return xcalloc ( num , size ) ; //<S2SV> } //<S2SV> 

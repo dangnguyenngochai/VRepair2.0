@@ -1,1 +1,0 @@
-static void y4m_convert_null ( y4m_input * _y4m , unsigned char * _dst , //<S2SV> unsigned char * _aux ) { //<S2SV> } //<S2SV> 

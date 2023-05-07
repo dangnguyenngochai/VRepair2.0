@@ -1,1 +1,0 @@
-void __fput_sync ( struct file * file ) //<S2SV> { //<S2SV> if ( atomic_long_dec_and_test ( & file -> f_count ) ) { //<S2SV> struct task_struct * task = current ; //<S2SV> file_sb_list_del ( file ) ; //<S2SV> BUG_ON ( ! ( task -> flags & PF_KTHREAD ) ) ; //<S2SV> __fput ( file ) ; //<S2SV> } //<S2SV> } //<S2SV> 

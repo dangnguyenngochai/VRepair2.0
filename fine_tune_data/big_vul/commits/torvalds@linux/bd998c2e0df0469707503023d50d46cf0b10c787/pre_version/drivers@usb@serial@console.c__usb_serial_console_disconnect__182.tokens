@@ -1,1 +1,0 @@
-void usb_serial_console_disconnect ( struct usb_serial * serial ) //<S2SV> { //<S2SV> if ( serial -> port [ 0 ] == usbcons_info . port ) { //<S2SV> usb_serial_console_exit ( ) ; //<S2SV> usb_serial_put ( serial ) ; //<S2SV> } //<S2SV> } //<S2SV> 

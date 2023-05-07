@@ -1,1 +1,0 @@
-static bool generic_new ( struct nf_conn * ct , const struct sk_buff * skb , //<S2SV> unsigned int dataoff , unsigned int * timeouts ) //<S2SV> { //<S2SV> return true ; //<S2SV> } //<S2SV> 

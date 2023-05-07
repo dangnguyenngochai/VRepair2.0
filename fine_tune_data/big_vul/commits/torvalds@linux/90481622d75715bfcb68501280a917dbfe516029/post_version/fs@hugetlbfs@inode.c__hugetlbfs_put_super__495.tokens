@@ -1,1 +1,0 @@
-static void hugetlbfs_put_super ( struct super_block * sb ) //<S2SV> { //<S2SV> struct hugetlbfs_sb_info * sbi = HUGETLBFS_SB ( sb ) ; //<S2SV> if ( sbi ) { //<S2SV> sb -> s_fs_info = NULL ; //<S2SV> if ( sbi -> spool ) //<S2SV> hugepage_put_subpool ( sbi -> spool ) ; //<S2SV> kfree ( sbi ) ; //<S2SV> } //<S2SV> } //<S2SV> 

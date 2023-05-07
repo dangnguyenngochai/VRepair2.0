@@ -1,1 +1,0 @@
-void * //<S2SV> xcalloc ( size_t num , size_t size ) //<S2SV> { //<S2SV> void * ptr = malloc ( num * size ) ; //<S2SV> if ( ptr ) //<S2SV> { //<S2SV> memset ( ptr , '\\0' , ( num * size ) ) ; //<S2SV> } //<S2SV> return ptr ; //<S2SV> } //<S2SV> 

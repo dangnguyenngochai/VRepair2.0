@@ -1,1 +1,0 @@
-static void record_recent_object ( struct object * obj , //<S2SV> const char * name , //<S2SV> void * data ) //<S2SV> { //<S2SV> sha1_array_append ( & recent_objects , obj -> oid . hash ) ; //<S2SV> } //<S2SV> 

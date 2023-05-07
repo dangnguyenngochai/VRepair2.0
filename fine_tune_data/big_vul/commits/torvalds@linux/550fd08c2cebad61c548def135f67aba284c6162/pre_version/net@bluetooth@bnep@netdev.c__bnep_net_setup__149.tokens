@@ -1,1 +1,0 @@
-void bnep_net_setup ( struct net_device * dev ) //<S2SV> { //<S2SV> memset ( dev -> broadcast , 0xff , ETH_ALEN ) ; //<S2SV> dev -> addr_len = ETH_ALEN ; //<S2SV> ether_setup ( dev ) ; //<S2SV> dev -> netdev_ops = & bnep_netdev_ops ; //<S2SV> dev -> watchdog_timeo = HZ * 2 ; //<S2SV> } //<S2SV> 

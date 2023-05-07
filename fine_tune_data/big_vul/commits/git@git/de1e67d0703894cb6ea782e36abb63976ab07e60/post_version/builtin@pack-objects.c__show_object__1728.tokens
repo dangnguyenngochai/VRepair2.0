@@ -1,1 +1,0 @@
-static void show_object ( struct object * obj , const char * name , void * data ) //<S2SV> { //<S2SV> add_preferred_base_object ( name ) ; //<S2SV> add_object_entry ( obj -> oid . hash , obj -> type , name , 0 ) ; //<S2SV> obj -> flags |= OBJECT_ADDED ; //<S2SV> } //<S2SV> 

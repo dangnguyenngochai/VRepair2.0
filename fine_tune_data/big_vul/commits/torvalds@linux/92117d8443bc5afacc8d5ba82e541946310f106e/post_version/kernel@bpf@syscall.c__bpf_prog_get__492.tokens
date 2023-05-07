@@ -1,1 +1,0 @@
-struct bpf_prog * bpf_prog_get ( u32 ufd ) //<S2SV> { //<S2SV> struct fd f = fdget ( ufd ) ; //<S2SV> struct bpf_prog * prog ; //<S2SV> prog = __bpf_prog_get ( f ) ; //<S2SV> if ( IS_ERR ( prog ) ) //<S2SV> return prog ; //<S2SV> prog = bpf_prog_inc ( prog ) ; //<S2SV> fdput ( f ) ; //<S2SV> return prog ; //<S2SV> } //<S2SV> 

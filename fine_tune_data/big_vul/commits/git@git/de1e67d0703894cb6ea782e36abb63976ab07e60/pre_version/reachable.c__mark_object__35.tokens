@@ -1,1 +1,0 @@
-static void mark_object ( struct object * obj , struct strbuf * path , //<S2SV> const char * name , void * data ) //<S2SV> { //<S2SV> update_progress ( data ) ; //<S2SV> } //<S2SV> 

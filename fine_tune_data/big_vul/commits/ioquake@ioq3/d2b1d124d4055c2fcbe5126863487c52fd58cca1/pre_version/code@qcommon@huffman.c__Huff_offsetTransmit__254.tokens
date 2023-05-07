@@ -1,1 +1,0 @@
-void Huff_offsetTransmit ( huff_t * huff , int ch , byte * fout , int * offset ) { //<S2SV> bloc = * offset ; //<S2SV> send ( huff -> loc [ ch ] , NULL , fout ) ; //<S2SV> * offset = bloc ; //<S2SV> } //<S2SV> 

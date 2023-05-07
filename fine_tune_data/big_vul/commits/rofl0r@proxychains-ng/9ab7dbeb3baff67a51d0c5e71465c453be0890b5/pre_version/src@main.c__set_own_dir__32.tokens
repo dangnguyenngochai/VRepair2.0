@@ -1,1 +1,0 @@
-static void set_own_dir ( const char * argv0 ) { //<S2SV> size_t l = strlen ( argv0 ) ; //<S2SV> while ( l && argv0 [ l - 1 ] != '/' ) //<S2SV> l -- ; //<S2SV> if ( l == 0 ) //<S2SV> memcpy ( own_dir , "." , 2 ) ; //<S2SV> else { //<S2SV> memcpy ( own_dir , argv0 , l - 1 ) ; //<S2SV> own_dir [ l ] = 0 ; //<S2SV> } //<S2SV> } //<S2SV> 

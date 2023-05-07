@@ -1,1 +1,0 @@
-static void ntlm_free_message_fields_buffer ( NTLM_MESSAGE_FIELDS * fields ) //<S2SV> { //<S2SV> if ( fields ) //<S2SV> { //<S2SV> if ( fields -> Buffer ) //<S2SV> { //<S2SV> free ( fields -> Buffer ) ; //<S2SV> fields -> Len = 0 ; //<S2SV> fields -> MaxLen = 0 ; //<S2SV> fields -> Buffer = NULL ; //<S2SV> fields -> BufferOffset = 0 ; //<S2SV> } //<S2SV> } //<S2SV> } //<S2SV> 

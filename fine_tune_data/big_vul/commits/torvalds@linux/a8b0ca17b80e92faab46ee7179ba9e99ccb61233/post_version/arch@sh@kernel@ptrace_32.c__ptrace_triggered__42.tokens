@@ -1,1 +1,0 @@
-void ptrace_triggered ( struct perf_event * bp , //<S2SV> struct perf_sample_data * data , struct pt_regs * regs ) //<S2SV> { //<S2SV> struct perf_event_attr attr ; //<S2SV> attr = bp -> attr ; //<S2SV> attr . disabled = true ; //<S2SV> modify_user_hw_breakpoint ( bp , & attr ) ; //<S2SV> } //<S2SV> 

@@ -1,1 +1,0 @@
-static void ntlm_write_message_header ( wStream * s , NTLM_MESSAGE_HEADER * header ) //<S2SV> { //<S2SV> Stream_Write ( s , header -> Signature , sizeof ( NTLM_SIGNATURE ) ) ; //<S2SV> Stream_Write_UINT32 ( s , header -> MessageType ) ; //<S2SV> } //<S2SV> 

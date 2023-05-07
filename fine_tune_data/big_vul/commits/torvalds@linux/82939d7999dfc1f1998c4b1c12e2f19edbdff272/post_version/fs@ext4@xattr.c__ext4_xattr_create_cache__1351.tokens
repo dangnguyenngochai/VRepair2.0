@@ -1,1 +1,0 @@
-struct mb2_cache * //<S2SV> ext4_xattr_create_cache ( void ) //<S2SV> { //<S2SV> return mb2_cache_create ( HASH_BUCKET_BITS ) ; //<S2SV> } //<S2SV> 

@@ -1,1 +1,0 @@
-static inline int jmp_rel ( struct x86_emulate_ctxt * ctxt , int rel ) //<S2SV> { //<S2SV> return assign_eip_near ( ctxt , ctxt -> _eip + rel ) ; //<S2SV> } //<S2SV> 

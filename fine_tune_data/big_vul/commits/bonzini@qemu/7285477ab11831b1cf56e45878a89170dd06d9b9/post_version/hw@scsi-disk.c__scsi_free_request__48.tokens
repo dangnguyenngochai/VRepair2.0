@@ -1,1 +1,0 @@
-static void scsi_free_request ( SCSIRequest * req ) //<S2SV> { //<S2SV> SCSIDiskReq * r = DO_UPCAST ( SCSIDiskReq , req , req ) ; //<S2SV> if ( r -> iov . iov_base ) { //<S2SV> qemu_vfree ( r -> iov . iov_base ) ; //<S2SV> } //<S2SV> } //<S2SV> 

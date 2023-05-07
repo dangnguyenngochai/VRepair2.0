@@ -1,1 +1,0 @@
-static void reset_fpf_position ( struct twopass_rc * p , //<S2SV> const FIRSTPASS_STATS * position ) { //<S2SV> p -> stats_in = position ; //<S2SV> } //<S2SV> 

@@ -1,1 +1,0 @@
-static void pcrypt_free ( struct aead_instance * inst ) //<S2SV> { //<S2SV> struct pcrypt_instance_ctx * ctx = aead_instance_ctx ( inst ) ; //<S2SV> crypto_drop_aead ( & ctx -> spawn ) ; //<S2SV> kfree ( inst ) ; //<S2SV> } //<S2SV> 

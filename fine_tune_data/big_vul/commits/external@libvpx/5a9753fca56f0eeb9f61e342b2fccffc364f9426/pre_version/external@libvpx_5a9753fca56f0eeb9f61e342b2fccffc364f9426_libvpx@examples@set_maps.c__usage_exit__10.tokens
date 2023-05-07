@@ -1,1 +1,0 @@
-void usage_exit ( ) { //<S2SV> fprintf ( stderr , "Usage:<S2SV_blank>%s<S2SV_blank><codec><S2SV_blank><width><S2SV_blank><height><S2SV_blank><infile><S2SV_blank><outfile>\\n" , //<S2SV> exec_name ) ; //<S2SV> exit ( EXIT_FAILURE ) ; //<S2SV> } //<S2SV> 

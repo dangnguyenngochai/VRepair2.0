@@ -1,1 +1,0 @@
-static MB_PREDICTION_MODE read_inter_mode ( VP9_COMMON * cm , vp9_reader * r , //<S2SV> int ctx ) { //<S2SV> const int mode = vp9_read_tree ( r , vp9_inter_mode_tree , //<S2SV> cm -> fc . inter_mode_probs [ ctx ] ) ; //<S2SV> if ( ! cm -> frame_parallel_decoding_mode ) //<S2SV> ++ cm -> counts . inter_mode [ ctx ] [ mode ] ; //<S2SV> return NEARESTMV + mode ; //<S2SV> } //<S2SV> 

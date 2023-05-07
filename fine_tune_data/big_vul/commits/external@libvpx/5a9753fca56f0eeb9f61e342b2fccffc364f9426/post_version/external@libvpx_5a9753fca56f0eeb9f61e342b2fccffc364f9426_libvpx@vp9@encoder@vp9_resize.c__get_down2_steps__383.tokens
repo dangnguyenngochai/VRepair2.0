@@ -1,1 +1,0 @@
-static int get_down2_steps ( int in_length , int out_length ) { //<S2SV> int steps = 0 ; //<S2SV> int proj_in_length ; //<S2SV> while ( ( proj_in_length = get_down2_length ( in_length , 1 ) ) >= out_length ) { //<S2SV> ++ steps ; //<S2SV> in_length = proj_in_length ; //<S2SV> } //<S2SV> return steps ; //<S2SV> } //<S2SV> 

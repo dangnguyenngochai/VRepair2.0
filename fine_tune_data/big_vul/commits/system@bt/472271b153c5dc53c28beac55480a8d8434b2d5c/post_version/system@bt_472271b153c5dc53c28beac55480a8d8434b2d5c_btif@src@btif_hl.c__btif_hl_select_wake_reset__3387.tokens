@@ -1,1 +1,0 @@
-static inline int btif_hl_select_wake_reset ( void ) { //<S2SV> char sig_recv = 0 ; //<S2SV> BTIF_TRACE_DEBUG ( "btif_hl_select_wake_reset" ) ; //<S2SV> TEMP_FAILURE_RETRY ( recv ( signal_fds [ 0 ] , & sig_recv , sizeof ( sig_recv ) , MSG_WAITALL ) ) ; //<S2SV> return ( int ) sig_recv ; //<S2SV> } //<S2SV> 

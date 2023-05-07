@@ -1,1 +1,0 @@
-void vp8_setup_intra_recon_top_line ( YV12_BUFFER_CONFIG * ybf ) //<S2SV> { //<S2SV> memset ( ybf -> y_buffer - 1 - ybf -> y_stride , 127 , ybf -> y_width + 5 ) ; //<S2SV> memset ( ybf -> u_buffer - 1 - ybf -> uv_stride , 127 , ybf -> uv_width + 5 ) ; //<S2SV> memset ( ybf -> v_buffer - 1 - ybf -> uv_stride , 127 , ybf -> uv_width + 5 ) ; //<S2SV> } //<S2SV> 

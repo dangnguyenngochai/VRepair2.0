@@ -1,1 +1,0 @@
-static int decode_term_subexp ( vp9_reader * r ) { //<S2SV> if ( ! vp9_read_bit ( r ) ) //<S2SV> return vp9_read_literal ( r , 4 ) ; //<S2SV> if ( ! vp9_read_bit ( r ) ) //<S2SV> return vp9_read_literal ( r , 4 ) + 16 ; //<S2SV> if ( ! vp9_read_bit ( r ) ) //<S2SV> return vp9_read_literal ( r , 5 ) + 32 ; //<S2SV> return decode_uniform ( r ) + 64 ; //<S2SV> } //<S2SV> 

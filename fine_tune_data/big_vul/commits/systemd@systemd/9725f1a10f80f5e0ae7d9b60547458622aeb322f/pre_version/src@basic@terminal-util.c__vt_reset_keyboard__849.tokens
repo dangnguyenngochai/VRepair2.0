@@ -1,1 +1,0 @@
-int vt_reset_keyboard ( int fd ) { //<S2SV> int kb ; //<S2SV> kb = vt_default_utf8 ( ) != 0 ? K_UNICODE : K_XLATE ; //<S2SV> if ( ioctl ( fd , KDSKBMODE , kb ) < 0 ) //<S2SV> return - errno ; //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

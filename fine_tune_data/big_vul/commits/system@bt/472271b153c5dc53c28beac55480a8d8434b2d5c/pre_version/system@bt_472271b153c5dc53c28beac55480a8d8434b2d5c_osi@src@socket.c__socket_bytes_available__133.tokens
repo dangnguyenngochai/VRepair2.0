@@ -1,1 +1,0 @@
-ssize_t socket_bytes_available ( const socket_t * socket ) { //<S2SV> assert ( socket != NULL ) ; //<S2SV> int size = 0 ; //<S2SV> if ( ioctl ( socket -> fd , FIONREAD , & size ) == - 1 ) //<S2SV> return - 1 ; //<S2SV> return size ; //<S2SV> } //<S2SV> 

@@ -1,1 +1,0 @@
-void vp9_reset_segment_features ( struct segmentation * seg ) { //<S2SV> seg -> enabled = 0 ; //<S2SV> seg -> update_map = 0 ; //<S2SV> seg -> update_data = 0 ; //<S2SV> memset ( seg -> tree_probs , 255 , sizeof ( seg -> tree_probs ) ) ; //<S2SV> vp9_clearall_segfeatures ( seg ) ; //<S2SV> } //<S2SV> 

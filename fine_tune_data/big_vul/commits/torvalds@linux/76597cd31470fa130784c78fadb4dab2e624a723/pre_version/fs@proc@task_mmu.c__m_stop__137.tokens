@@ -1,1 +1,0 @@
-static void m_stop ( struct seq_file * m , void * v ) //<S2SV> { //<S2SV> struct proc_maps_private * priv = m -> private ; //<S2SV> struct vm_area_struct * vma = v ; //<S2SV> vma_stop ( priv , vma ) ; //<S2SV> if ( priv -> task ) //<S2SV> put_task_struct ( priv -> task ) ; //<S2SV> } //<S2SV> 

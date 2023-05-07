@@ -1,1 +1,0 @@
-static void send ( node_t * node , node_t * child , byte * fout ) { //<S2SV> if ( node -> parent ) { //<S2SV> send ( node -> parent , node , fout ) ; //<S2SV> } //<S2SV> if ( child ) { //<S2SV> if ( node -> right == child ) { //<S2SV> add_bit ( 1 , fout ) ; //<S2SV> } else { //<S2SV> add_bit ( 0 , fout ) ; //<S2SV> } //<S2SV> } //<S2SV> } //<S2SV> 

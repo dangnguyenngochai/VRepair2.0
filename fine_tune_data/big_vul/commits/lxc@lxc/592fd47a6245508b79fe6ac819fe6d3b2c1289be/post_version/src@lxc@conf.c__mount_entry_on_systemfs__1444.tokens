@@ -1,1 +1,0 @@
-static inline int mount_entry_on_systemfs ( struct mntent * mntent ) //<S2SV> { //<S2SV> return mount_entry_on_generic ( mntent , mntent -> mnt_dir , NULL ) ; //<S2SV> } //<S2SV> 

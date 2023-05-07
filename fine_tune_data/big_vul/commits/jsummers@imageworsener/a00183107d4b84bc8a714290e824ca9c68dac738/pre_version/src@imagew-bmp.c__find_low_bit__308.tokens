@@ -1,1 +1,0 @@
-static int find_low_bit ( unsigned int x ) //<S2SV> { //<S2SV> int i ; //<S2SV> for ( i = 0 ; i <= 31 ; i ++ ) { //<S2SV> if ( x & ( 1 << i ) ) return i ; //<S2SV> } //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

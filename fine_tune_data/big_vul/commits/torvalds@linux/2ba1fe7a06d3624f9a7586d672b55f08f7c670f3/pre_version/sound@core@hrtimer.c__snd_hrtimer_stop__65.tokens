@@ -1,1 +1,0 @@
-static int snd_hrtimer_stop ( struct snd_timer * t ) //<S2SV> { //<S2SV> struct snd_hrtimer * stime = t -> private_data ; //<S2SV> atomic_set ( & stime -> running , 0 ) ; //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

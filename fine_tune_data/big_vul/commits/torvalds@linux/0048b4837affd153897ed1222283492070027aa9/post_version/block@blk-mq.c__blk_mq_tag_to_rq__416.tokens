@@ -1,1 +1,0 @@
-struct request * blk_mq_tag_to_rq ( struct blk_mq_tags * tags , unsigned int tag ) //<S2SV> { //<S2SV> return tags -> rqs [ tag ] ; //<S2SV> } //<S2SV> 

@@ -1,1 +1,0 @@
-static inline void VectorClamp ( DDSVector4 * value ) //<S2SV> { //<S2SV> value -> x = MinF ( 1.0f , MaxF ( 0.0f , value -> x ) ) ; //<S2SV> value -> y = MinF ( 1.0f , MaxF ( 0.0f , value -> y ) ) ; //<S2SV> value -> z = MinF ( 1.0f , MaxF ( 0.0f , value -> z ) ) ; //<S2SV> value -> w = MinF ( 1.0f , MaxF ( 0.0f , value -> w ) ) ; //<S2SV> } //<S2SV> 

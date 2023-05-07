@@ -1,1 +1,0 @@
-static void set_ppflags ( const vpx_codec_alg_priv_t * ctx , //<S2SV> vp9_ppflags_t * flags ) { //<S2SV> flags -> post_proc_flag = //<S2SV> ctx -> postproc_cfg . post_proc_flag ; //<S2SV> flags -> deblocking_level = ctx -> postproc_cfg . deblocking_level ; //<S2SV> flags -> noise_level = ctx -> postproc_cfg . noise_level ; //<S2SV> } //<S2SV> 

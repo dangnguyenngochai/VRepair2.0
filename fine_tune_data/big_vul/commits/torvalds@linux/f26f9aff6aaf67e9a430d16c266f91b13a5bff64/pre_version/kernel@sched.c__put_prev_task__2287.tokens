@@ -1,1 +1,0 @@
-static void put_prev_task ( struct rq * rq , struct task_struct * prev ) //<S2SV> { //<S2SV> if ( prev -> se . on_rq ) //<S2SV> update_rq_clock ( rq ) ; //<S2SV> rq -> skip_clock_update = 0 ; //<S2SV> prev -> sched_class -> put_prev_task ( rq , prev ) ; //<S2SV> } //<S2SV> 

@@ -1,1 +1,0 @@
-void big_key_revoke ( struct key * key ) //<S2SV> { //<S2SV> struct path * path = ( struct path * ) & key -> payload . data [ big_key_path ] ; //<S2SV> key_payload_reserve ( key , 0 ) ; //<S2SV> if ( key_is_instantiated ( key ) && //<S2SV> ( size_t ) key -> payload . data [ big_key_len ] > BIG_KEY_FILE_THRESHOLD ) //<S2SV> vfs_truncate ( path , 0 ) ; //<S2SV> } //<S2SV> 

@@ -1,1 +1,0 @@
-void snd_usb_mixer_disconnect ( struct usb_mixer_interface * mixer ) //<S2SV> { //<S2SV> usb_kill_urb ( mixer -> urb ) ; //<S2SV> usb_kill_urb ( mixer -> rc_urb ) ; //<S2SV> } //<S2SV> 

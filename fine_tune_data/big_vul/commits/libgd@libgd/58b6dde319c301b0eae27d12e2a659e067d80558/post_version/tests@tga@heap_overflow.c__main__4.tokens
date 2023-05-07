@@ -1,1 +1,0 @@
-int main ( ) //<S2SV> { //<S2SV> check_file ( "heap_overflow_1.tga" ) ; //<S2SV> check_file ( "heap_overflow_2.tga" ) ; //<S2SV> return gdNumFailures ( ) ; //<S2SV> } //<S2SV> 

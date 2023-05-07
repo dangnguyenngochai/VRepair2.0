@@ -1,1 +1,0 @@
-static int inv_recenter_nonneg ( int v , int m ) { //<S2SV> if ( v > 2 * m ) //<S2SV> return v ; //<S2SV> return v % 2 ? m - ( v + 1 ) / 2 : m + v / 2 ; //<S2SV> } //<S2SV> 

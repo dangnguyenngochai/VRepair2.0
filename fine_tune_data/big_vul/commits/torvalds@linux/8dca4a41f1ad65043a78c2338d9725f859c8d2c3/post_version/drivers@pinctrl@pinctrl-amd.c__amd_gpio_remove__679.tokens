@@ -1,1 +1,0 @@
-static int amd_gpio_remove ( struct platform_device * pdev ) //<S2SV> { //<S2SV> struct amd_gpio * gpio_dev ; //<S2SV> gpio_dev = platform_get_drvdata ( pdev ) ; //<S2SV> gpiochip_remove ( & gpio_dev -> gc ) ; //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

@@ -1,1 +1,0 @@
-void vp9_tokens_from_tree ( struct vp9_token * tokens , //<S2SV> const vp9_tree_index * tree ) { //<S2SV> tree2tok ( tokens , tree , 0 , 0 , 0 ) ; //<S2SV> } //<S2SV> 

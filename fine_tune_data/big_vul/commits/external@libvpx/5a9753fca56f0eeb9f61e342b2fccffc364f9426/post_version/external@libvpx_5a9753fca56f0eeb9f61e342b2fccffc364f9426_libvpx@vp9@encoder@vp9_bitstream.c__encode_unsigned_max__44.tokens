@@ -1,1 +1,0 @@
-static void encode_unsigned_max ( struct vpx_write_bit_buffer * wb , //<S2SV> int data , int max ) { //<S2SV> vpx_wb_write_literal ( wb , data , get_unsigned_bits ( max ) ) ; //<S2SV> } //<S2SV> 

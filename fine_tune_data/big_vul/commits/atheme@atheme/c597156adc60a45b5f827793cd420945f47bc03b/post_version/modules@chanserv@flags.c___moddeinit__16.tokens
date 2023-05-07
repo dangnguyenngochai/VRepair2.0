@@ -1,1 +1,0 @@
-void _moddeinit ( module_unload_intent_t intent ) //<S2SV> { //<S2SV> service_named_unbind_command ( "chanserv" , & cs_flags ) ; //<S2SV> hook_del_nick_can_register ( check_registration_keywords ) ; //<S2SV> hook_del_user_can_register ( check_registration_keywords ) ; //<S2SV> del_conf_item ( "ANOPE_FLAGS_COMPAT" , & chansvs . me -> conf_table ) ; //<S2SV> } //<S2SV> 

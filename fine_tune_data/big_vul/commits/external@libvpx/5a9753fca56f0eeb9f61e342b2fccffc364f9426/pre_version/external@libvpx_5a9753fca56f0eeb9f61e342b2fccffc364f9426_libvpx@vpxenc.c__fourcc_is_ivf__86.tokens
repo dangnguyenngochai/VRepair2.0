@@ -1,1 +1,0 @@
-int fourcc_is_ivf ( const char detect [ 4 ] ) { //<S2SV> if ( memcmp ( detect , "DKIF" , 4 ) == 0 ) { //<S2SV> return 1 ; //<S2SV> } //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

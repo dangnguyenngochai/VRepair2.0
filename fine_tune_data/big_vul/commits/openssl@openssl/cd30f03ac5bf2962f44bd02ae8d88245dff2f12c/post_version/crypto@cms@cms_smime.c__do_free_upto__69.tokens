@@ -1,1 +1,0 @@
-static void do_free_upto ( BIO * f , BIO * upto ) //<S2SV> { //<S2SV> if ( upto ) //<S2SV> { //<S2SV> BIO * tbio ; //<S2SV> do //<S2SV> { //<S2SV> tbio = BIO_pop ( f ) ; //<S2SV> BIO_free ( f ) ; //<S2SV> f = tbio ; //<S2SV> } //<S2SV> while ( f && f != upto ) ; //<S2SV> } //<S2SV> else //<S2SV> BIO_free_all ( f ) ; //<S2SV> } //<S2SV> 

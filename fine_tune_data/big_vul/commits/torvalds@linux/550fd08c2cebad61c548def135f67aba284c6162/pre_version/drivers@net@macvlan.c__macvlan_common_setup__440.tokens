@@ -1,1 +1,0 @@
-void macvlan_common_setup ( struct net_device * dev ) //<S2SV> { //<S2SV> ether_setup ( dev ) ; //<S2SV> dev -> priv_flags &= ~ IFF_XMIT_DST_RELEASE ; //<S2SV> dev -> netdev_ops = & macvlan_netdev_ops ; //<S2SV> dev -> destructor = free_netdev ; //<S2SV> dev -> header_ops = & macvlan_hard_header_ops , //<S2SV> dev -> ethtool_ops = & macvlan_ethtool_ops ; //<S2SV> } //<S2SV> 

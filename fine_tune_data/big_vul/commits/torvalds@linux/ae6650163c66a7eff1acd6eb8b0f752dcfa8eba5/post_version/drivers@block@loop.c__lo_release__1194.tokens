@@ -1,1 +1,0 @@
-static void lo_release ( struct gendisk * disk , fmode_t mode ) //<S2SV> { //<S2SV> mutex_lock ( & loop_index_mutex ) ; //<S2SV> __lo_release ( disk -> private_data ) ; //<S2SV> mutex_unlock ( & loop_index_mutex ) ; //<S2SV> } //<S2SV> 

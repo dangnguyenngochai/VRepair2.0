@@ -1,1 +1,0 @@
-static void set_segmentation_map ( VP8_COMP * cpi , unsigned char * segmentation_map ) //<S2SV> { //<S2SV> memcpy ( cpi -> segmentation_map , segmentation_map , ( cpi -> common . mb_rows * cpi -> common . mb_cols ) ) ; //<S2SV> cpi -> mb . e_mbd . update_mb_segmentation_map = 1 ; //<S2SV> cpi -> mb . e_mbd . update_mb_segmentation_data = 1 ; //<S2SV> } //<S2SV> 

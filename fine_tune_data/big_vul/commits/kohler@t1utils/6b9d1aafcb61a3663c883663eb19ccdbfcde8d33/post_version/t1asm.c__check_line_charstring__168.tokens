@@ -1,1 +1,0 @@
-static int check_line_charstring ( void ) //<S2SV> { //<S2SV> char * p = line ; //<S2SV> while ( isspace ( ( unsigned char ) * p ) ) //<S2SV> p ++ ; //<S2SV> return ( * p == '/' || ( p [ 0 ] == 'd' && p [ 1 ] == 'u' && p [ 2 ] == 'p' ) ) ; //<S2SV> } //<S2SV> 

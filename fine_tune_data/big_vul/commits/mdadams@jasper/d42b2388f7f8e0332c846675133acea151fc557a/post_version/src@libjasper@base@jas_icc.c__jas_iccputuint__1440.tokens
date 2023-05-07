@@ -1,1 +1,0 @@
-static int jas_iccputuint ( jas_stream_t * out , int n , jas_ulonglong val ) //<S2SV> { //<S2SV> int i ; //<S2SV> int c ; //<S2SV> for ( i = n ; i > 0 ; -- i ) { //<S2SV> c = ( val >> ( 8 * ( i - 1 ) ) ) & 0xff ; //<S2SV> if ( jas_stream_putc ( out , c ) == EOF ) //<S2SV> return - 1 ; //<S2SV> } //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

@@ -1,1 +1,0 @@
-static void kiocb_batch_free ( struct kiocb_batch * batch ) //<S2SV> { //<S2SV> struct kiocb * req , * n ; //<S2SV> list_for_each_entry_safe ( req , n , & batch -> head , ki_batch ) { //<S2SV> list_del ( & req -> ki_batch ) ; //<S2SV> kmem_cache_free ( kiocb_cachep , req ) ; //<S2SV> } //<S2SV> } //<S2SV> 

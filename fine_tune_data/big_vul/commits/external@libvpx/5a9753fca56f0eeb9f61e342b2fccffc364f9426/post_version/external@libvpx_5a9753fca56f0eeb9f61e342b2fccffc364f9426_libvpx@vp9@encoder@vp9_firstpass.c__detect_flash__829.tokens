@@ -1,1 +1,0 @@
-static int detect_flash ( const TWO_PASS * twopass , int offset ) { //<S2SV> const FIRSTPASS_STATS * const next_frame = read_frame_stats ( twopass , offset ) ; //<S2SV> return next_frame != NULL && //<S2SV> next_frame -> pcnt_second_ref > next_frame -> pcnt_inter && //<S2SV> next_frame -> pcnt_second_ref >= 0.5 ; //<S2SV> } //<S2SV> 

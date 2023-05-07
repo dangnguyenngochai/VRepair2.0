@@ -1,1 +1,0 @@
-static size_t consume_init_expr ( ut8 * buf , ut8 * max , ut8 eoc , void * out , ut32 * offset ) { //<S2SV> ut32 i = 0 ; //<S2SV> while ( buf + i < max && buf [ i ] != eoc ) { //<S2SV> i += 1 ; //<S2SV> } //<S2SV> if ( buf [ i ] != eoc ) { //<S2SV> return 0 ; //<S2SV> } //<S2SV> if ( offset ) { //<S2SV> * offset += i + 1 ; //<S2SV> } //<S2SV> return i + 1 ; //<S2SV> } //<S2SV> 

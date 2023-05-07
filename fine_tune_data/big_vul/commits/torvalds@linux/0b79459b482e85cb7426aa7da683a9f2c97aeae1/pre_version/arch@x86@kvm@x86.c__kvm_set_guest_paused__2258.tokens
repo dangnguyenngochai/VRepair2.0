@@ -1,1 +1,0 @@
-static int kvm_set_guest_paused ( struct kvm_vcpu * vcpu ) //<S2SV> { //<S2SV> if ( ! vcpu -> arch . time_page ) //<S2SV> return - EINVAL ; //<S2SV> vcpu -> arch . pvclock_set_guest_stopped_request = true ; //<S2SV> kvm_make_request ( KVM_REQ_CLOCK_UPDATE , vcpu ) ; //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

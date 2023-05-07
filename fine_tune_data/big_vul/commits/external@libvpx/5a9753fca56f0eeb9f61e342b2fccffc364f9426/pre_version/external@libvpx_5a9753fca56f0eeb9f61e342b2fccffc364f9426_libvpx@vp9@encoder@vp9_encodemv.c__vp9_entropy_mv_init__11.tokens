@@ -1,1 +1,0 @@
-void vp9_entropy_mv_init ( ) { //<S2SV> vp9_tokens_from_tree ( mv_joint_encodings , vp9_mv_joint_tree ) ; //<S2SV> vp9_tokens_from_tree ( mv_class_encodings , vp9_mv_class_tree ) ; //<S2SV> vp9_tokens_from_tree ( mv_class0_encodings , vp9_mv_class0_tree ) ; //<S2SV> vp9_tokens_from_tree ( mv_fp_encodings , vp9_mv_fp_tree ) ; //<S2SV> } //<S2SV> 

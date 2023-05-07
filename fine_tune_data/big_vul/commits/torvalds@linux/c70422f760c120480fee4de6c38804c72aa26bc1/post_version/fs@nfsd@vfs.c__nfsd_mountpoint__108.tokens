@@ -1,1 +1,0 @@
-int nfsd_mountpoint ( struct dentry * dentry , struct svc_export * exp ) //<S2SV> { //<S2SV> if ( ! d_inode ( dentry ) ) //<S2SV> return 0 ; //<S2SV> if ( exp -> ex_flags & NFSEXP_V4ROOT ) //<S2SV> return 1 ; //<S2SV> if ( nfsd4_is_junction ( dentry ) ) //<S2SV> return 1 ; //<S2SV> if ( d_mountpoint ( dentry ) ) //<S2SV> return 2 ; //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

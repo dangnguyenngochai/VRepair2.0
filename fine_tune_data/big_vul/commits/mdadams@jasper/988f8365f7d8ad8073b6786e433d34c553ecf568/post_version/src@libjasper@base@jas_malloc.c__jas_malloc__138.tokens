@@ -1,1 +1,0 @@
-void * jas_malloc ( size_t size ) //<S2SV> { //<S2SV> void * result ; //<S2SV> JAS_DBGLOG ( 101 , ( "jas_malloc(%zu)\\n" , size ) ) ; //<S2SV> result = malloc ( size ) ; //<S2SV> JAS_DBGLOG ( 100 , ( "jas_malloc(%zu)<S2SV_blank>-><S2SV_blank>%p\\n" , size , result ) ) ; //<S2SV> return result ; //<S2SV> } //<S2SV> 

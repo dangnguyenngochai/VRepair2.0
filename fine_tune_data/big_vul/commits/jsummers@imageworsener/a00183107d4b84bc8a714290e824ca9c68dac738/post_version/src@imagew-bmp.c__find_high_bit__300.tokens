@@ -1,1 +1,0 @@
-static int find_high_bit ( unsigned int x ) //<S2SV> { //<S2SV> int i ; //<S2SV> for ( i = 31 ; i >= 0 ; i -- ) { //<S2SV> if ( x & ( 1U << ( unsigned int ) i ) ) return i ; //<S2SV> } //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

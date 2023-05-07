@@ -1,1 +1,0 @@
-void * sspi_SecureHandleGetLowerPointer ( SecHandle * handle ) //<S2SV> { //<S2SV> void * pointer ; //<S2SV> if ( ! handle ) //<S2SV> return NULL ; //<S2SV> pointer = ( void * ) ~ ( ( size_t ) handle -> dwLower ) ; //<S2SV> return pointer ; //<S2SV> } //<S2SV> 

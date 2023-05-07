@@ -1,1 +1,0 @@
-static int skcipher_setkey ( void * private , const u8 * key , unsigned int keylen ) //<S2SV> { //<S2SV> struct skcipher_tfm * tfm = private ; //<S2SV> int err ; //<S2SV> err = crypto_skcipher_setkey ( tfm -> skcipher , key , keylen ) ; //<S2SV> tfm -> has_key = ! err ; //<S2SV> return err ; //<S2SV> } //<S2SV> 

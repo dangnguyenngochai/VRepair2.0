@@ -1,1 +1,0 @@
-static void is_skippable ( int plane , int block , //<S2SV> BLOCK_SIZE plane_bsize , TX_SIZE tx_size , //<S2SV> void * argv ) { //<S2SV> struct is_skippable_args * args = argv ; //<S2SV> ( void ) plane ; //<S2SV> ( void ) plane_bsize ; //<S2SV> ( void ) tx_size ; //<S2SV> args -> skippable [ 0 ] &= ( ! args -> eobs [ block ] ) ; //<S2SV> } //<S2SV> 

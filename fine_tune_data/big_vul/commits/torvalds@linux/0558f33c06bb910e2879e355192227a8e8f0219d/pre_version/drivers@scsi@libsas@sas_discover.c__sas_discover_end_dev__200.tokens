@@ -1,1 +1,0 @@
-int sas_discover_end_dev ( struct domain_device * dev ) //<S2SV> { //<S2SV> int res ; //<S2SV> res = sas_notify_lldd_dev_found ( dev ) ; //<S2SV> if ( res ) //<S2SV> return res ; //<S2SV> sas_discover_event ( dev -> port , DISCE_PROBE ) ; //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

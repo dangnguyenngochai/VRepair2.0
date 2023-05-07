@@ -1,1 +1,0 @@
-static int //<S2SV> swabHorDiff16 ( TIFF * tif , uint8 * cp0 , tmsize_t cc ) //<S2SV> { //<S2SV> uint16 * wp = ( uint16 * ) cp0 ; //<S2SV> tmsize_t wc = cc / 2 ; //<S2SV> if ( ! horDiff16 ( tif , cp0 , cc ) ) //<S2SV> return 0 ; //<S2SV> TIFFSwabArrayOfShort ( wp , wc ) ; //<S2SV> return 1 ; //<S2SV> } //<S2SV> 

@@ -1,1 +1,0 @@
-static void write_sync_code ( struct vpx_write_bit_buffer * wb ) { //<S2SV> vpx_wb_write_literal ( wb , VP9_SYNC_CODE_0 , 8 ) ; //<S2SV> vpx_wb_write_literal ( wb , VP9_SYNC_CODE_1 , 8 ) ; //<S2SV> vpx_wb_write_literal ( wb , VP9_SYNC_CODE_2 , 8 ) ; //<S2SV> } //<S2SV> 

@@ -1,1 +1,0 @@
-void //<S2SV> jiffies_to_timespec ( const unsigned long jiffies , struct timespec * value ) //<S2SV> { //<S2SV> u32 rem ; //<S2SV> value -> tv_sec = div_u64_rem ( ( u64 ) jiffies * TICK_NSEC , //<S2SV> NSEC_PER_SEC , & rem ) ; //<S2SV> value -> tv_nsec = rem ; //<S2SV> } //<S2SV> 

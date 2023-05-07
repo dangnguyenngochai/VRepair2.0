@@ -1,1 +1,0 @@
-static int i8042_start ( struct serio * serio ) //<S2SV> { //<S2SV> struct i8042_port * port = serio -> port_data ; //<S2SV> port -> exists = true ; //<S2SV> mb ( ) ; //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

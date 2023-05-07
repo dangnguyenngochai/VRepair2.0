@@ -1,1 +1,0 @@
-void vp9_model_to_full_probs ( const vpx_prob * model , vpx_prob * full ) { //<S2SV> if ( full != model ) //<S2SV> memcpy ( full , model , sizeof ( vpx_prob ) * UNCONSTRAINED_NODES ) ; //<S2SV> extend_to_full_distribution ( & full [ UNCONSTRAINED_NODES ] , model [ PIVOT_NODE ] ) ; //<S2SV> } //<S2SV> 

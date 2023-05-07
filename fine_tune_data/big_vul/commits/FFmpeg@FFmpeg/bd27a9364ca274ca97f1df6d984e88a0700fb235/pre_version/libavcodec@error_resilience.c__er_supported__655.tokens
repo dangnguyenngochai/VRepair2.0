@@ -1,1 +1,0 @@
-static int er_supported ( ERContext * s ) //<S2SV> { //<S2SV> if ( s -> avctx -> hwaccel && s -> avctx -> hwaccel -> decode_slice || //<S2SV> ! s -> cur_pic . f || //<S2SV> s -> cur_pic . field_picture || //<S2SV> s -> avctx -> profile == FF_PROFILE_MPEG4_SIMPLE_STUDIO //<S2SV> ) //<S2SV> return 0 ; //<S2SV> return 1 ; //<S2SV> } //<S2SV> 

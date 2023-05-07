@@ -1,1 +1,0 @@
-static EAS_RESULT PushcdlStack ( EAS_U32 * pStack , EAS_INT * pStackPtr , EAS_U32 value ) //<S2SV> { //<S2SV> if ( * pStackPtr >= CDL_STACK_SIZE ) //<S2SV> return EAS_ERROR_FILE_FORMAT ; //<S2SV> * pStackPtr = * pStackPtr + 1 ; //<S2SV> pStack [ * pStackPtr ] = value ; //<S2SV> return EAS_SUCCESS ; //<S2SV> } //<S2SV> 

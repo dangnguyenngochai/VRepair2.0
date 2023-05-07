@@ -1,1 +1,0 @@
-static LAYER_CONTEXT * get_layer_context ( SVC * svc ) { //<S2SV> return svc -> number_temporal_layers > 1 ? //<S2SV> & svc -> layer_context [ svc -> temporal_layer_id ] : //<S2SV> & svc -> layer_context [ svc -> spatial_layer_id ] ; //<S2SV> } //<S2SV> 

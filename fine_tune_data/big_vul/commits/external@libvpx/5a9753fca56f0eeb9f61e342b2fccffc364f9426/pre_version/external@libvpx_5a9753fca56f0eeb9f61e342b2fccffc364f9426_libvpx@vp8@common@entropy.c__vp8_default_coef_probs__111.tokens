@@ -1,1 +1,0 @@
-void vp8_default_coef_probs ( VP8_COMMON * pc ) //<S2SV> { //<S2SV> vpx_memcpy ( pc -> fc . coef_probs , default_coef_probs , //<S2SV> sizeof ( default_coef_probs ) ) ; //<S2SV> } //<S2SV> 

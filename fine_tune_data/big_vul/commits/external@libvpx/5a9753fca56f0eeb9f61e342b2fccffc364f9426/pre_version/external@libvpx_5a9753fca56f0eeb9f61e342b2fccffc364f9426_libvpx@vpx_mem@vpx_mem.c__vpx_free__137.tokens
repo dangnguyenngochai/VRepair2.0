@@ -1,1 +1,0 @@
-void vpx_free ( void * memblk ) { //<S2SV> if ( memblk ) { //<S2SV> void * addr = ( void * ) ( ( ( size_t * ) memblk ) [ - 1 ] ) ; //<S2SV> # if CONFIG_MEM_MANAGER //<S2SV> hmm_free ( & hmm_d , addr ) ; //<S2SV> # else //<S2SV> VPX_FREE_L ( addr ) ; //<S2SV> # endif //<S2SV> } //<S2SV> } //<S2SV> 

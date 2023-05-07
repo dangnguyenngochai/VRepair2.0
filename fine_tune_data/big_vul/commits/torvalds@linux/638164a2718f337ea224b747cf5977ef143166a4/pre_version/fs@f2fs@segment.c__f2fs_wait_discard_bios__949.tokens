@@ -1,1 +1,0 @@
-void f2fs_wait_discard_bios ( struct f2fs_sb_info * sbi ) //<S2SV> { //<S2SV> __issue_discard_cmd ( sbi , false ) ; //<S2SV> __drop_discard_cmd ( sbi ) ; //<S2SV> __wait_discard_cmd ( sbi , false ) ; //<S2SV> } //<S2SV> 

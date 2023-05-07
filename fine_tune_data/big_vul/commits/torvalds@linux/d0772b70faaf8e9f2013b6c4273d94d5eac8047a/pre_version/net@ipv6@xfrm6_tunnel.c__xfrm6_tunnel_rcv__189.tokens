@@ -1,1 +1,0 @@
-static int xfrm6_tunnel_rcv ( struct sk_buff * skb ) //<S2SV> { //<S2SV> struct ipv6hdr * iph = ipv6_hdr ( skb ) ; //<S2SV> __be32 spi ; //<S2SV> spi = xfrm6_tunnel_spi_lookup ( ( xfrm_address_t * ) & iph -> saddr ) ; //<S2SV> return xfrm6_rcv_spi ( skb , spi ) ; //<S2SV> } //<S2SV> 

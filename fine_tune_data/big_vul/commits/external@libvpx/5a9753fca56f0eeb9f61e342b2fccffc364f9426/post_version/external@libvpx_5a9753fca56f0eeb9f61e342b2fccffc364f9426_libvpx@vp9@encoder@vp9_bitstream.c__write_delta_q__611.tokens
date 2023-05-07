@@ -1,1 +1,0 @@
-static void write_delta_q ( struct vpx_write_bit_buffer * wb , int delta_q ) { //<S2SV> if ( delta_q != 0 ) { //<S2SV> vpx_wb_write_bit ( wb , 1 ) ; //<S2SV> vpx_wb_write_literal ( wb , abs ( delta_q ) , 4 ) ; //<S2SV> vpx_wb_write_bit ( wb , delta_q < 0 ) ; //<S2SV> } else { //<S2SV> vpx_wb_write_bit ( wb , 0 ) ; //<S2SV> } //<S2SV> } //<S2SV> 

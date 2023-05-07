@@ -1,1 +1,0 @@
-static void show_object ( struct object * object , struct strbuf * path , //<S2SV> const char * last , void * data ) //<S2SV> { //<S2SV> struct bitmap * base = data ; //<S2SV> bitmap_set ( base , find_object_pos ( object -> oid . hash ) ) ; //<S2SV> mark_as_seen ( object ) ; //<S2SV> } //<S2SV> 

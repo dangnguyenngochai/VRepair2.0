@@ -1,1 +1,0 @@
-static inline bool unconditional ( const struct ip6t_ip6 * ipv6 ) //<S2SV> { //<S2SV> static const struct ip6t_ip6 uncond ; //<S2SV> return memcmp ( ipv6 , & uncond , sizeof ( uncond ) ) == 0 ; //<S2SV> } //<S2SV> 

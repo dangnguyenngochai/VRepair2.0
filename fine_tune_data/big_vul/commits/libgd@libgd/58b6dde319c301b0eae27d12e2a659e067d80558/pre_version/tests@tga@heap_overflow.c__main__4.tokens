@@ -1,1 +1,0 @@
-int main ( ) //<S2SV> { //<S2SV> gdImagePtr im ; //<S2SV> char * buffer ; //<S2SV> size_t size ; //<S2SV> size = read_test_file ( & buffer , "heap_overflow.tga" ) ; //<S2SV> im = gdImageCreateFromTgaPtr ( size , ( void * ) buffer ) ; //<S2SV> gdTestAssert ( im == NULL ) ; //<S2SV> free ( buffer ) ; //<S2SV> return gdNumFailures ( ) ; //<S2SV> } //<S2SV> 

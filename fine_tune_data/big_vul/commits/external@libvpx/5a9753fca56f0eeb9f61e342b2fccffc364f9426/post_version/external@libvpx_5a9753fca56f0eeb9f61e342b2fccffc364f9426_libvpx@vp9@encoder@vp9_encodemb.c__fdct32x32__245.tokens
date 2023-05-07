@@ -1,1 +1,0 @@
-static INLINE void fdct32x32 ( int rd_transform , //<S2SV> const int16_t * src , tran_low_t * dst , //<S2SV> int src_stride ) { //<S2SV> if ( rd_transform ) //<S2SV> vpx_fdct32x32_rd ( src , dst , src_stride ) ; //<S2SV> else //<S2SV> vpx_fdct32x32 ( src , dst , src_stride ) ; //<S2SV> } //<S2SV> 

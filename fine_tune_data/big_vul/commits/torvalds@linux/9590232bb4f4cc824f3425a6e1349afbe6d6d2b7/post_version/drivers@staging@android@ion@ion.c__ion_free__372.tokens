@@ -1,1 +1,0 @@
-void ion_free ( struct ion_client * client , struct ion_handle * handle ) //<S2SV> { //<S2SV> BUG_ON ( client != handle -> client ) ; //<S2SV> mutex_lock ( & client -> lock ) ; //<S2SV> ion_free_nolock ( client , handle ) ; //<S2SV> mutex_unlock ( & client -> lock ) ; //<S2SV> } //<S2SV> 

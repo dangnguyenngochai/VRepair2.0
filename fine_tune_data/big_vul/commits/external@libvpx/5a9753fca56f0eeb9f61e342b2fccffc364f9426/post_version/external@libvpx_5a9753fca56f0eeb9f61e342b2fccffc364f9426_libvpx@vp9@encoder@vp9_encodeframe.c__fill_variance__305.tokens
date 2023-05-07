@@ -1,1 +1,0 @@
-static void fill_variance ( int64_t s2 , int64_t s , int c , var * v ) { //<S2SV> v -> sum_square_error = s2 ; //<S2SV> v -> sum_error = s ; //<S2SV> v -> log2_count = c ; //<S2SV> } //<S2SV> 

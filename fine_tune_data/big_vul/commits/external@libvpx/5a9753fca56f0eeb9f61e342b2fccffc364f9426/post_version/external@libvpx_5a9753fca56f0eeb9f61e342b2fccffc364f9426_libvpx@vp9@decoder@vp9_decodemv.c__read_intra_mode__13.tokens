@@ -1,1 +1,0 @@
-static PREDICTION_MODE read_intra_mode ( vpx_reader * r , const vpx_prob * p ) { //<S2SV> return ( PREDICTION_MODE ) vpx_read_tree ( r , vp9_intra_mode_tree , p ) ; //<S2SV> } //<S2SV> 

@@ -1,1 +1,0 @@
-static void //<S2SV> cpStripToTile ( uint8 * out , uint8 * in , //<S2SV> uint32 rows , uint32 cols , int outskew , int inskew ) //<S2SV> { //<S2SV> while ( rows -- > 0 ) { //<S2SV> uint32 j = cols ; //<S2SV> while ( j -- > 0 ) //<S2SV> * out ++ = * in ++ ; //<S2SV> out += outskew ; //<S2SV> in += inskew ; //<S2SV> } //<S2SV> } //<S2SV> 

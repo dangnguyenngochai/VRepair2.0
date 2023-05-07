@@ -1,1 +1,0 @@
-static int jas_iccgetuint ( jas_stream_t * in , int n , ulonglong * val ) //<S2SV> { //<S2SV> int i ; //<S2SV> int c ; //<S2SV> ulonglong v ; //<S2SV> v = 0 ; //<S2SV> for ( i = n ; i > 0 ; -- i ) { //<S2SV> if ( ( c = jas_stream_getc ( in ) ) == EOF ) //<S2SV> return - 1 ; //<S2SV> v = ( v << 8 ) | c ; //<S2SV> } //<S2SV> * val = v ; //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

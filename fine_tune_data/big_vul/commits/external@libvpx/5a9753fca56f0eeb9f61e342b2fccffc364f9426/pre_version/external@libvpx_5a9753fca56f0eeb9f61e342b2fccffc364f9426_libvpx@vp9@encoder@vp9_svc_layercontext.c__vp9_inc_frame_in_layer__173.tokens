@@ -1,1 +1,0 @@
-void vp9_inc_frame_in_layer ( SVC * svc ) { //<S2SV> LAYER_CONTEXT * const lc = ( svc -> number_temporal_layers > 1 ) //<S2SV> ? & svc -> layer_context [ svc -> temporal_layer_id ] //<S2SV> : & svc -> layer_context [ svc -> spatial_layer_id ] ; //<S2SV> ++ lc -> current_video_frame_in_layer ; //<S2SV> } //<S2SV> 

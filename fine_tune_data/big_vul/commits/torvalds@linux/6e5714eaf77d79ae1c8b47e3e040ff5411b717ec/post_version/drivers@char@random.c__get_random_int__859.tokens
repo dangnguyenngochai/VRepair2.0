@@ -1,1 +1,0 @@
-unsigned int get_random_int ( void ) //<S2SV> { //<S2SV> __u32 * hash = get_cpu_var ( get_random_int_hash ) ; //<S2SV> unsigned int ret ; //<S2SV> hash [ 0 ] += current -> pid + jiffies + get_cycles ( ) ; //<S2SV> md5_transform ( hash , random_int_secret ) ; //<S2SV> ret = hash [ 0 ] ; //<S2SV> put_cpu_var ( get_random_int_hash ) ; //<S2SV> return ret ; //<S2SV> } //<S2SV> 

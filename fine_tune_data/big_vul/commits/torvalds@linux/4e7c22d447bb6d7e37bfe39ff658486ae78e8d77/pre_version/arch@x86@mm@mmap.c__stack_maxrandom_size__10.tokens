@@ -1,1 +1,0 @@
-static unsigned int stack_maxrandom_size ( void ) //<S2SV> { //<S2SV> unsigned int max = 0 ; //<S2SV> if ( ( current -> flags & PF_RANDOMIZE ) && //<S2SV> ! ( current -> personality & ADDR_NO_RANDOMIZE ) ) { //<S2SV> max = ( ( - 1U ) & STACK_RND_MASK ) << PAGE_SHIFT ; //<S2SV> } //<S2SV> return max ; //<S2SV> } //<S2SV> 

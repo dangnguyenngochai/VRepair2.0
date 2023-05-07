@@ -1,1 +1,0 @@
-static void update_mv_probs ( vp9_prob * p , int n , vp9_reader * r ) { //<S2SV> int i ; //<S2SV> for ( i = 0 ; i < n ; ++ i ) //<S2SV> if ( vp9_read ( r , MV_UPDATE_PROB ) ) //<S2SV> p [ i ] = ( vp9_read_literal ( r , 7 ) << 1 ) | 1 ; //<S2SV> } //<S2SV> 

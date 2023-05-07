@@ -1,1 +1,0 @@
-static int release_vp9_frame_buffer ( void * cb_priv , //<S2SV> vpx_codec_frame_buffer_t * fb ) { //<S2SV> struct ExternalFrameBuffer * const ext_fb = //<S2SV> ( struct ExternalFrameBuffer * ) fb -> priv ; //<S2SV> ( void ) cb_priv ; //<S2SV> ext_fb -> in_use = 0 ; //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

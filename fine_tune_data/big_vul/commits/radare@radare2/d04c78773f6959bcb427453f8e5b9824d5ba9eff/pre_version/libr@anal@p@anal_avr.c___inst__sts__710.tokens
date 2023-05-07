@@ -1,1 +1,0 @@
-INST_HANDLER ( sts ) { //<S2SV> int r = ( ( buf [ 0 ] >> 4 ) & 0xf ) | ( ( buf [ 1 ] & 0x1 ) << 4 ) ; //<S2SV> int k = ( buf [ 3 ] << 8 ) | buf [ 2 ] ; //<S2SV> op -> ptr = k ; //<S2SV> ESIL_A ( "r%d," , r ) ; //<S2SV> __generic_ld_st ( op , "ram" , 0 , 1 , 0 , k , 1 ) ; //<S2SV> op -> cycles = 2 ; //<S2SV> } //<S2SV> 

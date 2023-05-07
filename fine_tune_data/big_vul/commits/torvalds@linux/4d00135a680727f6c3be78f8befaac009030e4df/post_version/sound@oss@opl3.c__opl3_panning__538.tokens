@@ -1,1 +1,0 @@
-static void opl3_panning ( int dev , int voice , int value ) //<S2SV> { //<S2SV> if ( voice < 0 || voice >= devc -> nr_voice ) //<S2SV> return ; //<S2SV> devc -> voc [ voice ] . panning = value ; //<S2SV> } //<S2SV> 

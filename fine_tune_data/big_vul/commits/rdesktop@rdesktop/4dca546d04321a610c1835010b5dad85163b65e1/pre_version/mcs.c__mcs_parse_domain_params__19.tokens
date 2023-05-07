@@ -1,1 +1,0 @@
-static RD_BOOL //<S2SV> mcs_parse_domain_params ( STREAM s ) //<S2SV> { //<S2SV> int length ; //<S2SV> ber_parse_header ( s , MCS_TAG_DOMAIN_PARAMS , & length ) ; //<S2SV> in_uint8s ( s , length ) ; //<S2SV> return s_check ( s ) ; //<S2SV> } //<S2SV> 

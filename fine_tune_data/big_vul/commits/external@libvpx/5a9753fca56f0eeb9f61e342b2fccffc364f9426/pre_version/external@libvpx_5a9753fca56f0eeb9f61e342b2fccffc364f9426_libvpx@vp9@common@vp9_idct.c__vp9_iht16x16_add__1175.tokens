@@ -1,1 +1,0 @@
-void vp9_iht16x16_add ( TX_TYPE tx_type , const int16_t * input , uint8_t * dest , //<S2SV> int stride , int eob ) { //<S2SV> if ( tx_type == DCT_DCT ) { //<S2SV> vp9_idct16x16_add ( input , dest , stride , eob ) ; //<S2SV> } else { //<S2SV> vp9_iht16x16_256_add ( input , dest , stride , tx_type ) ; //<S2SV> } //<S2SV> } //<S2SV> 

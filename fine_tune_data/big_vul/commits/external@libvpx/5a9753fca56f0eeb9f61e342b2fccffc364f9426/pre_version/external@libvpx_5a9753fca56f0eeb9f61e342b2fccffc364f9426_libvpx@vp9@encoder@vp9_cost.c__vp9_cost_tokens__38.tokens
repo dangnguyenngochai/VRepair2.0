@@ -1,1 +1,0 @@
-void vp9_cost_tokens ( int * costs , const vp9_prob * probs , vp9_tree tree ) { //<S2SV> cost ( costs , tree , probs , 0 , 0 ) ; //<S2SV> } //<S2SV> 

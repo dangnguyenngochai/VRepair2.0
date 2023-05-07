@@ -1,1 +1,0 @@
-static int enable ( void ) { //<S2SV> LOG_INFO ( "%s" , __func__ ) ; //<S2SV> if ( ! interface_ready ( ) ) //<S2SV> return BT_STATUS_NOT_READY ; //<S2SV> stack_manager_get_interface ( ) -> start_up_stack_async ( ) ; //<S2SV> return BT_STATUS_SUCCESS ; //<S2SV> } //<S2SV> 

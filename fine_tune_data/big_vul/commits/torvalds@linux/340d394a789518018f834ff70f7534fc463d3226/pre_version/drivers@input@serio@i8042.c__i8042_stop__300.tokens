@@ -1,1 +1,0 @@
-static void i8042_stop ( struct serio * serio ) //<S2SV> { //<S2SV> struct i8042_port * port = serio -> port_data ; //<S2SV> port -> exists = false ; //<S2SV> synchronize_irq ( I8042_AUX_IRQ ) ; //<S2SV> synchronize_irq ( I8042_KBD_IRQ ) ; //<S2SV> port -> serio = NULL ; //<S2SV> } //<S2SV> 

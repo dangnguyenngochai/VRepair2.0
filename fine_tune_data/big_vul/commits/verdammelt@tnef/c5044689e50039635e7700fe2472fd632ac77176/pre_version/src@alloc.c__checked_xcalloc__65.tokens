@@ -1,1 +1,0 @@
-void * //<S2SV> checked_xcalloc ( size_t num , size_t size ) //<S2SV> { //<S2SV> alloc_limit_assert ( "checked_xcalloc" , ( num * size ) ) ; //<S2SV> return xcalloc ( num , size ) ; //<S2SV> } //<S2SV> 

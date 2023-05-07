@@ -1,1 +1,0 @@
-static int calc_iframe_target_size_one_pass_vbr ( const VP9_COMP * const cpi ) { //<S2SV> static const int kf_ratio = 25 ; //<S2SV> const RATE_CONTROL * rc = & cpi -> rc ; //<S2SV> int target = rc -> av_per_frame_bandwidth * kf_ratio ; //<S2SV> return vp9_rc_clamp_iframe_target_size ( cpi , target ) ; //<S2SV> } //<S2SV> 

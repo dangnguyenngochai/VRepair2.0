@@ -1,1 +1,0 @@
-void btif_config_save ( void ) { //<S2SV> assert ( alarm_timer != NULL ) ; //<S2SV> assert ( config != NULL ) ; //<S2SV> alarm_set ( alarm_timer , CONFIG_SETTLE_PERIOD_MS , timer_config_save_cb , NULL ) ; //<S2SV> } //<S2SV> 

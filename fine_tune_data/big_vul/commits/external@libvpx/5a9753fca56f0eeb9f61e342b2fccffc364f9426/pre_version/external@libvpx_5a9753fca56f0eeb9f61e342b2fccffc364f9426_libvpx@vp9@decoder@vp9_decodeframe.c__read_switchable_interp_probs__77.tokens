@@ -1,1 +1,0 @@
-static void read_switchable_interp_probs ( FRAME_CONTEXT * fc , vp9_reader * r ) { //<S2SV> int i , j ; //<S2SV> for ( j = 0 ; j < SWITCHABLE_FILTER_CONTEXTS ; ++ j ) //<S2SV> for ( i = 0 ; i < SWITCHABLE_FILTERS - 1 ; ++ i ) //<S2SV> vp9_diff_update_prob ( r , & fc -> switchable_interp_prob [ j ] [ i ] ) ; //<S2SV> } //<S2SV> 

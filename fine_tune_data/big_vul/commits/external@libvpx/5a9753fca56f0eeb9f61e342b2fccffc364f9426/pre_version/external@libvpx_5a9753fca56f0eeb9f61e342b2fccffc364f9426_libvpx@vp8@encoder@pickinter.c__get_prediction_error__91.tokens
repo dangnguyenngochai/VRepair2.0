@@ -1,1 +1,0 @@
-static int get_prediction_error ( BLOCK * be , BLOCKD * b ) //<S2SV> { //<S2SV> unsigned char * sptr ; //<S2SV> unsigned char * dptr ; //<S2SV> sptr = ( * ( be -> base_src ) + be -> src ) ; //<S2SV> dptr = b -> predictor ; //<S2SV> return vp8_get4x4sse_cs ( sptr , be -> src_stride , dptr , 16 ) ; //<S2SV> } //<S2SV> 

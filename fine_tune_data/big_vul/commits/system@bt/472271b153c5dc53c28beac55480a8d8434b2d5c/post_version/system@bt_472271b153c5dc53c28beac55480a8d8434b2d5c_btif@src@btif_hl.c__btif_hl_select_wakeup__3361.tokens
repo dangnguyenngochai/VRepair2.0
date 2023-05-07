@@ -1,1 +1,0 @@
-static inline int btif_hl_select_wakeup ( void ) { //<S2SV> char sig_on = btif_hl_signal_select_wakeup ; //<S2SV> BTIF_TRACE_DEBUG ( "btif_hl_select_wakeup" ) ; //<S2SV> return TEMP_FAILURE_RETRY ( send ( signal_fds [ 1 ] , & sig_on , sizeof ( sig_on ) , 0 ) ) ; //<S2SV> } //<S2SV> 

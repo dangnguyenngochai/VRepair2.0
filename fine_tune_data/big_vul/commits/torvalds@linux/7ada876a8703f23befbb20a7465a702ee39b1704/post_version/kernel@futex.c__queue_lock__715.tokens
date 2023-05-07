@@ -1,1 +1,0 @@
-static inline struct futex_hash_bucket * queue_lock ( struct futex_q * q ) //<S2SV> { //<S2SV> struct futex_hash_bucket * hb ; //<S2SV> hb = hash_futex ( & q -> key ) ; //<S2SV> q -> lock_ptr = & hb -> lock ; //<S2SV> spin_lock ( & hb -> lock ) ; //<S2SV> return hb ; //<S2SV> } //<S2SV> 

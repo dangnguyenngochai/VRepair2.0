@@ -1,1 +1,0 @@
-static void __local_bh_enable ( unsigned int cnt ) //<S2SV> { //<S2SV> lockdep_assert_irqs_disabled ( ) ; //<S2SV> if ( preempt_count ( ) == cnt ) //<S2SV> trace_preempt_on ( CALLER_ADDR0 , get_lock_parent_ip ( ) ) ; //<S2SV> if ( softirq_count ( ) == ( cnt & SOFTIRQ_MASK ) ) //<S2SV> trace_softirqs_on ( _RET_IP_ ) ; //<S2SV> __preempt_count_sub ( cnt ) ; //<S2SV> } //<S2SV> 

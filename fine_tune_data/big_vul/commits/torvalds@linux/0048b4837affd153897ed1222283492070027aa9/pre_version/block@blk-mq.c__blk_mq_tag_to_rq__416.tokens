@@ -1,1 +1,0 @@
-struct request * blk_mq_tag_to_rq ( struct blk_mq_tags * tags , unsigned int tag ) //<S2SV> { //<S2SV> struct request * rq = tags -> rqs [ tag ] ; //<S2SV> struct blk_flush_queue * fq = blk_get_flush_queue ( rq -> q , rq -> mq_ctx ) ; //<S2SV> if ( ! is_flush_request ( rq , fq , tag ) ) //<S2SV> return rq ; //<S2SV> return fq -> flush_rq ; //<S2SV> } //<S2SV> 

@@ -1,1 +1,0 @@
-ssize_t //<S2SV> cdf_read_sector ( const cdf_info_t * info , void * buf , size_t offs , size_t len , //<S2SV> const cdf_header_t * h , cdf_secid_t id ) //<S2SV> { //<S2SV> assert ( ( size_t ) CDF_SEC_SIZE ( h ) == len ) ; //<S2SV> return cdf_read ( info , ( off_t ) CDF_SEC_POS ( h , id ) , //<S2SV> ( ( char * ) buf ) + offs , len ) ; //<S2SV> } //<S2SV> 

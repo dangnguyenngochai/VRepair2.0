@@ -1,1 +1,0 @@
-static int prob_diff_update_cost ( vp9_prob newp , vp9_prob oldp ) { //<S2SV> int delp = remap_prob ( newp , oldp ) ; //<S2SV> return update_bits [ delp ] * 256 ; //<S2SV> } //<S2SV> 

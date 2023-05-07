@@ -1,1 +1,0 @@
-static void free_user ( struct kref * ref ) //<S2SV> { //<S2SV> struct ipmi_user * user = container_of ( ref , struct ipmi_user , refcount ) ; //<S2SV> kfree ( user ) ; //<S2SV> } //<S2SV> 

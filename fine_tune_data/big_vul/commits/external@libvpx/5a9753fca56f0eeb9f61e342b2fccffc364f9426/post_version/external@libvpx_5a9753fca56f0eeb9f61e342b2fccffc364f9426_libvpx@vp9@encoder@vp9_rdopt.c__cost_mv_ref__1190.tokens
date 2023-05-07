@@ -1,1 +1,0 @@
-static int cost_mv_ref ( const VP9_COMP * cpi , PREDICTION_MODE mode , //<S2SV> int mode_context ) { //<S2SV> assert ( is_inter_mode ( mode ) ) ; //<S2SV> return cpi -> inter_mode_cost [ mode_context ] [ INTER_OFFSET ( mode ) ] ; //<S2SV> } //<S2SV> 

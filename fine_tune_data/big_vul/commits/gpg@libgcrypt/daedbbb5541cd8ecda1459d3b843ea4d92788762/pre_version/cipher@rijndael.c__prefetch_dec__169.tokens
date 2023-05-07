@@ -1,1 +1,0 @@
-static void prefetch_dec ( void ) //<S2SV> { //<S2SV> prefetch_table ( ( const void * ) & dec_tables , sizeof ( dec_tables ) ) ; //<S2SV> } //<S2SV> 

@@ -1,1 +1,0 @@
-static int skcipher_setkey ( void * private , const u8 * key , unsigned int keylen ) //<S2SV> { //<S2SV> return crypto_skcipher_setkey ( private , key , keylen ) ; //<S2SV> } //<S2SV> 

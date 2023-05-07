@@ -1,1 +1,0 @@
-void vpx_img_free ( vpx_image_t * img ) { //<S2SV> if ( img ) { //<S2SV> if ( img -> img_data && img -> img_data_owner ) //<S2SV> vpx_free ( img -> img_data ) ; //<S2SV> if ( img -> self_allocd ) //<S2SV> free ( img ) ; //<S2SV> } //<S2SV> } //<S2SV> 

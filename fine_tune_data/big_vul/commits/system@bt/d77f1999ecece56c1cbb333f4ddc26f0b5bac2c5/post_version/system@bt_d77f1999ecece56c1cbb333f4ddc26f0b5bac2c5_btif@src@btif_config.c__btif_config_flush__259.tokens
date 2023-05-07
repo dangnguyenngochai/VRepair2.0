@@ -1,1 +1,0 @@
-void btif_config_flush ( void ) { //<S2SV> assert ( config != NULL ) ; //<S2SV> assert ( alarm_timer != NULL ) ; //<S2SV> alarm_cancel ( alarm_timer ) ; //<S2SV> btif_config_write ( ) ; //<S2SV> } //<S2SV> 

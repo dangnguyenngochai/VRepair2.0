@@ -1,1 +1,0 @@
-void * H264SwDecMalloc ( u32 size ) //<S2SV> { //<S2SV> return malloc ( size ) ; //<S2SV> } //<S2SV> 

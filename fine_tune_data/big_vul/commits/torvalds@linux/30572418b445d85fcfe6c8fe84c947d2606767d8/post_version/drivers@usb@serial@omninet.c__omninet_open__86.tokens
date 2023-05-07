@@ -1,1 +1,0 @@
-static int omninet_open ( struct tty_struct * tty , struct usb_serial_port * port ) //<S2SV> { //<S2SV> return usb_serial_generic_open ( tty , port ) ; //<S2SV> } //<S2SV> 

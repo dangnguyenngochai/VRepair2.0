@@ -1,1 +1,0 @@
-static int em_ret ( struct x86_emulate_ctxt * ctxt ) //<S2SV> { //<S2SV> ctxt -> dst . type = OP_REG ; //<S2SV> ctxt -> dst . addr . reg = & ctxt -> _eip ; //<S2SV> ctxt -> dst . bytes = ctxt -> op_bytes ; //<S2SV> return em_pop ( ctxt ) ; //<S2SV> } //<S2SV> 

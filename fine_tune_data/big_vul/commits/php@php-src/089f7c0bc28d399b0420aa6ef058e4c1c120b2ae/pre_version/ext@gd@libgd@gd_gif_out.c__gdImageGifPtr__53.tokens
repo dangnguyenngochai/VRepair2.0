@@ -1,1 +1,0 @@
-void * gdImageGifPtr ( gdImagePtr im , int * size ) //<S2SV> { //<S2SV> void * rv ; //<S2SV> gdIOCtx * out = gdNewDynamicCtx ( 2048 , NULL ) ; //<S2SV> gdImageGifCtx ( im , out ) ; //<S2SV> rv = gdDPExtractData ( out , size ) ; //<S2SV> out -> gd_free ( out ) ; //<S2SV> return rv ; //<S2SV> } //<S2SV> 

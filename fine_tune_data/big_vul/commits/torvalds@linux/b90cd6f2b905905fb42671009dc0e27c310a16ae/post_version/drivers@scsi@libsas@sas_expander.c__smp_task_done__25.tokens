@@ -1,1 +1,0 @@
-static void smp_task_done ( struct sas_task * task ) //<S2SV> { //<S2SV> del_timer ( & task -> slow_task -> timer ) ; //<S2SV> complete ( & task -> slow_task -> completion ) ; //<S2SV> } //<S2SV> 

@@ -1,1 +1,0 @@
-void btif_config_flush ( void ) { //<S2SV> assert ( config != NULL ) ; //<S2SV> assert ( alarm_timer != NULL ) ; //<S2SV> alarm_cancel ( alarm_timer ) ; //<S2SV> pthread_mutex_lock ( & lock ) ; //<S2SV> config_save ( config , CONFIG_FILE_PATH ) ; //<S2SV> pthread_mutex_unlock ( & lock ) ; //<S2SV> } //<S2SV> 

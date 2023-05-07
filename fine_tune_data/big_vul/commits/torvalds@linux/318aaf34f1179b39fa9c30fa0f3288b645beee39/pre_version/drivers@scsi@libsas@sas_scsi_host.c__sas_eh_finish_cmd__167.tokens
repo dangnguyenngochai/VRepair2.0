@@ -1,1 +1,0 @@
-static void sas_eh_finish_cmd ( struct scsi_cmnd * cmd ) //<S2SV> { //<S2SV> struct sas_ha_struct * sas_ha = SHOST_TO_SAS_HA ( cmd -> device -> host ) ; //<S2SV> struct sas_task * task = TO_SAS_TASK ( cmd ) ; //<S2SV> sas_end_task ( cmd , task ) ; //<S2SV> scsi_eh_finish_cmd ( cmd , & sas_ha -> eh_done_q ) ; //<S2SV> } //<S2SV> 

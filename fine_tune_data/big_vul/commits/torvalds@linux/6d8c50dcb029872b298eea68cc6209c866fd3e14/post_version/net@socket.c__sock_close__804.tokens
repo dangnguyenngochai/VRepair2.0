@@ -1,1 +1,0 @@
-static int sock_close ( struct inode * inode , struct file * filp ) //<S2SV> { //<S2SV> __sock_release ( SOCKET_I ( inode ) , inode ) ; //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

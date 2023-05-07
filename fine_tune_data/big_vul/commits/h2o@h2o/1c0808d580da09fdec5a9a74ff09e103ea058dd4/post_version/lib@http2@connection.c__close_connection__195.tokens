@@ -1,1 +1,0 @@
-int close_connection ( h2o_http2_conn_t * conn ) //<S2SV> { //<S2SV> conn -> state = H2O_HTTP2_CONN_STATE_IS_CLOSING ; //<S2SV> if ( conn -> _write . buf_in_flight != NULL || h2o_timeout_is_linked ( & conn -> _write . timeout_entry ) ) { //<S2SV> } else { //<S2SV> close_connection_now ( conn ) ; //<S2SV> return - 1 ; //<S2SV> } //<S2SV> return 0 ; //<S2SV> } //<S2SV> 

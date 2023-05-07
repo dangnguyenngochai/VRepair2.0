@@ -1,1 +1,0 @@
-vpx_image_t * vpx_codec_get_frame ( vpx_codec_ctx_t * ctx , //<S2SV> vpx_codec_iter_t * iter ) { //<S2SV> vpx_image_t * img ; //<S2SV> if ( ! ctx || ! iter || ! ctx -> iface || ! ctx -> priv ) //<S2SV> img = NULL ; //<S2SV> else //<S2SV> img = ctx -> iface -> dec . get_frame ( get_alg_priv ( ctx ) , iter ) ; //<S2SV> return img ; //<S2SV> } //<S2SV> 

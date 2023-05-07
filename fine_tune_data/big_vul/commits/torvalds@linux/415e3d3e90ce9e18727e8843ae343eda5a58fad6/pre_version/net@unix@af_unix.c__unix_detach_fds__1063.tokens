@@ -1,1 +1,0 @@
-static void unix_detach_fds ( struct scm_cookie * scm , struct sk_buff * skb ) //<S2SV> { //<S2SV> int i ; //<S2SV> scm -> fp = UNIXCB ( skb ) . fp ; //<S2SV> UNIXCB ( skb ) . fp = NULL ; //<S2SV> for ( i = scm -> fp -> count - 1 ; i >= 0 ; i -- ) //<S2SV> unix_notinflight ( scm -> fp -> fp [ i ] ) ; //<S2SV> } //<S2SV> 
